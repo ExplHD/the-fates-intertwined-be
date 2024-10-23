@@ -1,0 +1,27 @@
+{
+	"format_version": "1.21.10",
+	"animations": {
+		"animation.stars_and_crescent.attack_5": {
+			"animation_length": 1,
+			"timeline": {
+				"0.0": [
+					"/playanimation @s animation.stars_and_crescent.attack_5",
+					"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1 0.4"
+				],
+				"0.5": [
+					"/damage @e[r=8,rm=0.1] 12 entity_attack entity @s",
+					"/tp @s ^^^1 true",
+					"/tp @s ^^^1 true",
+					"/particle fec:light_blast ~~~",
+					"/tp @s ^^^1 true",
+					"/tp @s ^^^1 true",
+					"/tp @s ^^^1 true",
+					"/tp @s ^^^1 true",
+					"/tp @s ^^^1 true",
+					"/tp @s ^^^1 true",
+					"/playsound sword_slash.clash @a[r=16] ~~~ 1 1 0.4"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:shadowplague_guardian",
+			"materials": {
+				"default": "enderman"
+			},
+			"textures": {
+				"default": "textures/entity/shadowplague_guardian"
+			},
+			"geometry": {
+				"default": "geometry.shadowplague_guardian"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+				],
+				"animate": [
+					"root"
+				]
+			},
+			"particle_effects": {
+				"dragon_breath_marker": "fec:dragon_breath_marker"
+			},
+			"animations": {
+				"look_at_target": "animation.common.look_at_target",
+				"attack": "animation.shadowplague_guardian.attack_1",
+				"move": "animation.shadowplague_guardian.walk",
+				"dash": "animation.shadowplague_guardian.dash",
+				"root": "controller.animation.shadowplague_guardian"
+			},
+			"render_controllers": [
+				"controller.render.shadowplague_guardian"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

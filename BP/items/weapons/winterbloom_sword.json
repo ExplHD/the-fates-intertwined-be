@@ -1,0 +1,36 @@
+		{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:winterbloom_sword",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.sword"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_winterbloom_sword",
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:damage": 10,
+			"minecraft:display_name": {
+				"value": "§6Winterbloom Tundra Keris\n§7A sword with two style, Keris from\nEidolon Faction and Sword from Tundra\nFaction fused into one and makes the\ntruly legendary one\n\n§2Right-click / Tap and Hold to :\nCast the selected skill\nSneak + Left Click / tap to :\nChange selected skill"
+			},
+			"minecraft:should_despawn": false,
+			"minecraft:food": {
+				"can_always_eat": true
+			},
+			"minecraft:use_modifiers": {
+                "use_duration": 999999,
+                "movement_modifier": 1
+            },
+			"minecraft:use_animation": "none",
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is-sword"
+				]
+			}
+		}
+	}
+}

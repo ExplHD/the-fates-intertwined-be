@@ -1,0 +1,45 @@
+{
+	"format_version": "1.16.0",
+	"animation_controllers": {
+		"controller.animation.water_eidolon": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"idle",
+						"look_at_target"
+					],
+					"transitions": [
+						{
+							"move": "query.is_moving"
+						},
+						{
+							"attack": "variable.attack_time >= 0.0"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"move": {
+					"animations": [
+						"move"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_moving"
+						}
+					]
+				},
+				"attack": {
+					"animations": [
+						"attack"
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time < 0.0"
+						}
+					]
+				}
+			}
+		}
+	}
+}

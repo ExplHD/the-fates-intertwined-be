@@ -1,0 +1,125 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.reworked_tenacity.hold": {
+			"loop": true,
+			"bones": {
+				"view": {
+					"rotation": [0, 180, 0]
+				}
+			}
+		},
+		"animation.reworked_tenacity.attack_1": {
+			"animation_length": 1.5,
+			"override_previous_animation": true,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [-70.29999, 11.10294, 66.02802],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [77.2, 11.1, 66.03],
+							"lerp_mode": "catmullrom"
+						},
+						"1.2917": {
+							"post": [77.2, 11.1, 66.03],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.375": {
+					"effect": "reworked_tenacity_attack_1",
+					"locator": "tenacity_particle"
+				}
+			}
+		},
+		"animation.reworked_tenacity.attack_2": {
+			"animation_length": 1.5,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [-157.46508, 4.43975, -70.01545],
+							"lerp_mode": "catmullrom"
+						},
+						"0.375": {
+							"post": [-157.47, 4.44, -70.02],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [-2.47, 4.44, -70.02],
+							"lerp_mode": "catmullrom"
+						},
+						"1.125": {
+							"post": [-2.47, 4.44, -70.02],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.3333": {
+					"effect": "reworked_tenacity_attack_2",
+					"locator": "tenacity_particle"
+				}
+			}
+		},
+		"animation.reworked_tenacity.attack_3": {
+			"animation_length": 1.5,
+			"override_previous_animation": true,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [36.83829, -7.57131, 9.97528],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": [-170.45411, -2.99318, 17.25002],
+						"1.25": {
+							"pre": [-170.45, -2.99, 17.25],
+							"post": [-170.45, -2.99, 17.25],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": [-180, 0, -180]
+				}
+			},
+			"particle_effects": {
+				"0.3333": {
+					"effect": "reworked_tenacity_attack_3",
+					"locator": "tenacity_particle"
+				}
+			}
+		}
+	}
+}

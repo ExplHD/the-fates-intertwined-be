@@ -1,0 +1,35 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:frag_grenade"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" G ",
+			"GSG",
+			" G "
+		],
+		"key": {
+			"G": {
+				"item": "minecraft:gunpowder"
+			},
+			"S": {
+				"item": "minecraft:snowball"
+			}
+		},
+		"unlock": [
+			{
+				"item": "minecraft:gunpowder"
+			}
+		],
+		"result": [
+			{
+				"item": "fec:frag_grenade",
+				"count": 2
+			}
+		]
+	}
+}

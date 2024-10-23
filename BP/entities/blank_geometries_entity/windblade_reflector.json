@@ -1,0 +1,72 @@
+{
+	"format_version": "1.16.210",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:wb_reflect",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 0.5
+			},
+			"minecraft:health": {
+				"value": 80,
+				"max": 80
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:nameable": {},
+			"minecraft:persistent": {},
+			"minecraft:physics": {
+				"has_collision": true
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:behavior.knockback_roar": {
+				"priority": 0,
+				"duration": 0.5,
+				"attack_time": 0.5,
+				"knockback_strength": 16,
+				"knockback_damage": 40,
+				"knockback_range": 6,
+				"knockback_filters": {
+					"test": "has_tag",
+					"subject": "other",
+					"operator": "!=",
+					"value": "selfWB"
+				},
+				"damage_filters": {
+					"test": "has_tag",
+					"subject": "other",
+					"operator": "!=",
+					"value": "selfWB"
+				},
+				"on_roar_end": {
+					"event": "remove_projectile"
+				},
+				"cooldown_time": 0.1
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"component_groups": {
+			"remove_projectile": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"events": {
+			"remove_projectile": {
+				"add": {
+					"component_groups": [
+						"remove_projectile"
+					]
+				}
+			}
+		}
+	}
+}

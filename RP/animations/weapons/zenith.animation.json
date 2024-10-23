@@ -1,0 +1,766 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.zenith.attack_1": {
+			"animation_length": 1,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [
+								-85.05074,
+								-11.48029,
+								64.47353
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.375": {
+							"post": [
+								84.95,
+								-11.48,
+								64.47
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								84.95,
+								-11.48,
+								64.47
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker2"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker3"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker4"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker5"
+					}
+				],
+				"0.25": {
+					"effect": "zenith_attack_1",
+					"locator": "zenith_particle"
+				}
+			}
+		},
+		"animation.zenith.attack_2": {
+			"animation_length": 1,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [
+								0,
+								0,
+								65
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								-110,
+								0,
+								65
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								-110,
+								0,
+								65
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-90,
+							0,
+							180
+						],
+						"0.75": [
+							-90,
+							0,
+							180
+						],
+						"1.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker2"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker3"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker4"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker5"
+					}
+				],
+				"0.25": {
+					"effect": "zenith_attack_1",
+					"locator": "zenith_particle"
+				}
+			}
+		},
+		"animation.zenith.attack_3": {
+			"animation_length": 1,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [
+								-85.05074,
+								-11.48029,
+								64.47353
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4583": {
+							"post": [
+								84.95,
+								-11.48,
+								64.47
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								84.95,
+								-11.48,
+								64.47
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker2"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker3"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker4"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker5"
+					}
+				],
+				"0.25": {
+					"effect": "zenith_attack_1",
+					"locator": "zenith_particle"
+				}
+			}
+		},
+		"animation.zenith.skill_1": {
+			"animation_length": 3.75,
+			"bones": {
+				"leftArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								-71.89377,
+								21.48968,
+								6.83037
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								-0.00253,
+								-73.18796,
+								-89.99933
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.0": {
+							"post": [
+								-0.00253,
+								-73.18796,
+								-89.99933
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								-73.19143,
+								-26.48829,
+								-7.6734
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								-0.0072,
+								74.99896,
+								89.99708
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.0": {
+							"post": [
+								-0.01,
+								75,
+								90
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.25": {
+							"post": [
+								-93.52939,
+								-24.0955,
+								-6.87218
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.75": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								0,
+								5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								0,
+								-5,
+								180
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.75": {
+							"post": [
+								0,
+								5,
+								360
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"2.25": {
+							"post": [
+								0,
+								-15,
+								540
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"2.75": {
+							"post": [
+								0,
+								5,
+								720
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.0": {
+							"post": [
+								0,
+								5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								1,
+								-1,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								17,
+								12,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.0": {
+							"post": [
+								17,
+								12,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker2"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker3"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker4"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker5"
+					}
+				],
+				"1.0": [
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker2"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker3"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker4"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker5"
+					}
+				],
+				"2.0": [
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker2"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker3"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker4"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker5"
+					}
+				],
+				"3.0": [
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker2"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker3"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker4"
+					},
+					{
+						"effect": "zenith_marker",
+						"locator": "zenith_marker5"
+					}
+				]
+			}
+		},
+		"animation.zenith.skill_3": {
+			"animation_length": 5,
+			"bones": {
+				"leftArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-57.5,
+							0,
+							0
+						],
+						"3.0": [
+							-49.38593,
+							-23.03856,
+							-15.42806
+						],
+						"3.25": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-100.18513,
+							-6.77211,
+							111.47946
+						],
+						"3.0": [
+							-90.19,
+							-6.77,
+							111.48
+						],
+						"3.5417": [
+							-90.19,
+							-6.77,
+							111.48
+						],
+						"3.7917": [
+							-90.19,
+							-6.77,
+							111.48
+						],
+						"3.8333": [
+							-81.12001,
+							-6.77,
+							111.48
+						],
+						"3.875": [
+							-48.44259,
+							-6.77,
+							111.48
+						],
+						"3.9167": [
+							0.56259,
+							-6.77,
+							111.48
+						],
+						"3.9583": [
+							33.24001,
+							-6.77,
+							111.48
+						],
+						"4.0": [
+							42.31,
+							-6.77,
+							111.48
+						],
+						"4.5417": [
+							42.31,
+							-6.77,
+							111.48
+						],
+						"4.75": [
+							42.31,
+							-6.77,
+							111.48
+						],
+						"4.7917": [
+							39.77567,
+							-6.36448,
+							104.80246
+						],
+						"4.8333": [
+							32.22178,
+							-5.15579,
+							84.89917
+						],
+						"4.9167": [
+							10.08822,
+							-1.61421,
+							26.58083
+						],
+						"4.9583": [
+							2.53433,
+							-0.40552,
+							6.67754
+						],
+						"5.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "zenith_s3_1",
+					"locator": "zenith_particle"
+				},
+				"3.7917": {
+					"effect": "zenith_s3_2",
+					"locator": "zenith_particle"
+				}
+			}
+		},
+		"animation.zenith.hold": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"view": {
+					"rotation": [
+						0,
+						180,
+						0
+					]
+				},
+				"ambience": {
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								6
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"ambience2": {
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								-6
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		}
+	}
+}

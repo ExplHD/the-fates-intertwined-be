@@ -1,0 +1,38 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:bedrock_breaker"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"OEO",
+			"EGE",
+			"OEO"
+		],
+		"key": {
+			"G": {
+				"item": "fec:frag_grenade_flame"
+			},
+			"O": {
+				"item": "minecraft:obsidian"
+			},
+			"E": {
+				"item": "minecraft:ender_eye"
+			}
+		},
+		"unlock": [
+			{
+				"item": "fec:frag_grenade"
+			}
+		],
+		"result": [
+			{
+				"item": "fec:bedrock_breaker",
+				"count": 1
+			}
+		]
+	}
+}

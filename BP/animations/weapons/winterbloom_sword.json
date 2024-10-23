@@ -1,0 +1,74 @@
+{
+	"format_version": "1.21.10",
+	"animations": {
+		"animation.winterbloom_sword.attack_4": {
+			"animation_length": 4,
+			"loop": false,
+			"timeline": {
+				"0.0": [
+					"/effect @s resistance 4 1 true",
+					"/effect @s slowness 4 4 true",
+					"/playanimation @s animation.winterbloom_sword.attack_4",
+					"/playsound mob.wither.spawn",
+					"/title @s actionbar §b< Cherry Bloom Forcefield Activated! >"
+				],
+				"0.75": [
+					"/damage @e[rm=0.1,type=!item,r=5] 10 entity_attack entity @s",
+					"/particle fec:winterbloom_sword_attack_4_area ~~~",
+					"/particle fec:winterbloom_sword_attack_4_shield ~~~"
+				],
+				"1.25": [
+					"/damage @e[rm=0.1,type=!item,r=5] 10 entity_attack entity @s",
+					"/particle fec:winterbloom_sword_attack_4_area ~~~",
+					"/particle fec:winterbloom_sword_attack_4_shield ~~~"
+				],
+				"1.75": [
+					"/damage @e[rm=0.1,type=!item,r=5] 10 entity_attack entity @s",
+					"/particle fec:winterbloom_sword_attack_4_area ~~~",
+					"/particle fec:winterbloom_sword_attack_4_shield ~~~"
+				],
+				"2.25": [
+					"/damage @e[rm=0.1,type=!item,r=5] 10 entity_attack entity @s",
+					"/particle fec:winterbloom_sword_attack_4_area ~~~",
+					"/particle fec:winterbloom_sword_attack_4_shield ~~~"
+				],
+				"2.75": [
+					"/damage @e[rm=0.1,type=!item,r=5] 15 entity_attack entity @s",
+					"/particle fec:winterbloom_sword_attack_4_area ~~~",
+					"/particle fec:winterbloom_sword_attack_4_shield ~~~"
+				],
+				"3.0": [
+					"/particle fec:winterbloom_sword_attack_4_shield ~~~",
+					"/title @s actionbar §c< Cherry Bloom Forcefield Ended >"
+				]
+			}
+		},
+		"animation.winterbloom_sword.ultimate": {
+			"animation_length": 3.8,
+			"timeline": {
+				"0.0": [
+					"/inputpermission set @s movement disabled",
+					"/particle fec:winterbloom_sword_attack_4_shield",
+					"/effect @s regeneration 10 1 true",
+					"/playanimation @s animation.winterbloom_sword.attack_4",
+					"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their Ultimate §dThe Primordial Hunter's Wrath\"}]}"
+				],
+				"0.75": [
+					"/playsound custom_sfx.deathzone_spawn @a[r=128] ~~~ 0.8 1 0.8",
+					"/particle fec:winterbloom_skill_3_ambience ~~~",
+					"/particle fec:winterbloom_skill_3_bullet_impact ~~~"
+				],
+				"2.75": [
+					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:winterbloom_skill_3_bullet_impact ~~~",
+					"/playsound custom_sfx.deathzone_spawn @a[r=128]",
+					"/playanimation @s animation.winterbloom_sword.attack_3",
+					"/scoreboard players set @s winterbloom_sword_c3 150",
+					"/inputpermission set @s movement enabled"
+				],
+				"3.75": [
+					"/stopsound @a custom_sfx.deathzone_spawn"
+				]
+			}
+		}
+	}
+}

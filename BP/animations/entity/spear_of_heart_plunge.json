@@ -1,0 +1,14 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.spear_of_heart.plunge": {
+            "animation_length": 2,
+            "timeline": {
+                "0.55": [
+                    "/damage @e[r=3] 24 entity_attack entity @s",
+                    "/particle fec:spear_water_splash ~~~"
+                ]
+            }
+        }
+    }
+}

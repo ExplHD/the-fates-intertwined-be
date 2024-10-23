@@ -1,0 +1,142 @@
+{
+	"format_version": "1.21.10",
+	"animation_controllers": {
+		"controller.animation.eidolon_4_staff": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+						"/scoreboard players set @s atkp_delay 0"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_1": "variable.attack_time&&!query.is_sneaking&&q.get_equipped_item_name=='eidolon_4_staff'"
+						},
+						{
+							"skill_1": "query.get_equipped_item_name=='eidolon_4_staff'&&query.is_using_item&&(query.scoreboard('eidolon_4_staff')==0)&&(query.scoreboard('eidolon_4_staff_c1')==0)"
+						},
+						{
+							"skill_2": "query.get_equipped_item_name=='eidolon_4_staff'&&query.is_using_item&&(query.scoreboard('eidolon_4_staff')==1)&&(query.scoreboard('eidolon_4_staff_c2')==0)"
+						},
+						{
+							"skill_3": "query.get_equipped_item_name=='eidolon_4_staff'&&query.is_using_item&&(query.scoreboard('eidolon_4_staff')==2)&&(query.scoreboard('eidolon_4_staff_c3')==0)"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='eidolon_4_staff'"
+						}
+					]
+				},
+				"atk_1": {
+					"on_entry": [
+						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/playanimation @s animation.eidolon_4_staff.attack_1",
+						"/playsound sword_slash.medium_slash @a[r=16]",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_2": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=10)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='eidolon_4_staff'"
+						}
+					]
+				},
+				"atk_2": {
+					"animations": [
+						"eidolon_4_staff_atk_2"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_3": "query.all_animations_finished&&variable.attack_time&&(query.scoreboard('atkp_delay')>=20)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='eidolon_4_staff'"
+						}
+					]
+				},
+				"atk_3": {
+					"animations": [
+						"eidolon_4_staff_atk_3"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='eidolon_4_staff'"
+						}
+					]
+				},
+				"skill_1": {
+					"on_entry": [
+						"/playanimation @s animation.eidolon_4_staff.attack_1",
+						"/summon fec:eidolon_4_pillar ~~~ ~ 0",
+						"/summon fec:eidolon_4_pillar ~~~ ~-45 0",
+						"/summon fec:eidolon_4_pillar ~~~ ~45 0",
+						"/summon fec:eidolon_4_pillar ~~~ ~-90 0",
+						"/summon fec:eidolon_4_pillar ~~~ ~90 0",
+						"/effect @s resistance 1 255 true",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §dThe Eager of Sakura\"}]}",
+						"/scoreboard players add @s eidolon_4_staff_c1 50"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				},
+				"skill_2": {
+					"animations": [
+						"eidolon_4_staff_skill_2"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"skill_3": {
+					"animations": [
+						"eidolon_4_staff_ultimate"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"change": {
+					"on_entry": [
+						"/scoreboard players add @s eidolon_4_staff 1",
+						"/scoreboard players set @s[scores={eidolon_4_staff=3}] eidolon_4_staff 0",
+						"/playsound random.click @s",
+						"/tellraw @s[scores={eidolon_4_staff=0}] {\"rawtext\":[{\"text\": \"The Eager of Sakura\"}]}",
+						"/tellraw @s[scores={eidolon_4_staff=1}] {\"rawtext\":[{\"text\": \"Water Shield\"}]}",
+						"/tellraw @s[scores={eidolon_4_staff=2}] {\"rawtext\":[{\"text\": \"Innamorta\"}]}"
+					],
+					"transitions": [
+						{
+							"default": "!variable.attack_time"
+						}
+					]
+				}
+			}
+		}
+	}
+}

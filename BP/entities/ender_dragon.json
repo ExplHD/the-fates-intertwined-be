@@ -1,0 +1,377 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:ender_dragon",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"dragon_phase_2_controller": "controller.animation.ender_dragon",
+				"ender_dragon_arrow_of_doom": "animation.ender_dragon.arrow_of_doom",
+				"ender_dragon_massive_pillar": "animation.ender_dragon.massive_pillar"
+			},
+			"scripts": {
+				"animate": [
+					"dragon_phase_2_controller"
+				]
+			}
+		},
+		"component_groups": {
+			"ed_phase_2_checker": {
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"test": "actor_health",
+								"subject": "self",
+								"operator": "<=",
+								"value": 750
+							},
+							"event": "phase_2"
+						}
+					]
+				}
+			},
+			"phase_2_bossbar": {
+				"minecraft:boss": {
+					"name": "§2§1§r§c§lEnder Dragon : God Of Stars",
+					"should_darken_sky": false,
+					"hud_range": 256
+				},
+				"minecraft:health": {
+					"value": 750,
+					"max": 750
+				}
+			},
+			"dragon_sitting": {
+				"minecraft:behavior.dragonlanding": {
+					"priority": 0
+				},
+				"minecraft:behavior.dragonflaming": {
+					"priority": 1
+				},
+				"minecraft:behavior.dragonscanning": {
+					"priority": 2
+				},
+				"minecraft:timer": {
+					"time": 23,
+					"time_down_event": {
+						"event": "minecraft:start_fly"
+					}
+				}
+			},
+			"dragon_flying": {
+				"minecraft:behavior.dragontakeoff": {
+					"priority": 0
+				},
+				"minecraft:behavior.dragonchargeplayer": {
+					"priority": 1
+				},
+				"minecraft:behavior.dragonstrafeplayer": {
+					"priority": 2
+				},
+				"minecraft:behavior.dragonholdingpattern": {
+					"priority": 3
+				},
+				"minecraft:shooter": {
+					"def": "minecraft:dragon_fireball"
+				},
+				"minecraft:timer": {
+					"time": 10,
+					"looping": true,
+					"time_down_event": {
+						"event": "randomize_pattern",
+						"target": "self"
+					}
+				}
+			},
+			"dragon_roar": {
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.1,
+					"cooldown_time": 0.1,
+					"duration": 0.1,
+					"knockback_range": 128,
+					"knockback_damage": 6,
+					"knockback_vertical_strength": 20,
+					"knockback_horizontal_strength": 20,
+					"on_roar_end": {
+						"event": "expired"
+					}
+				}
+			},
+			"dragon_death": {
+				"minecraft:behavior.dragondeath": {
+					"priority": 0
+				}
+			}
+		},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:type_family": {
+				"family": [
+					"dragon",
+					"mob",
+					"boss"
+				]
+			},
+			"minecraft:experience_reward": {
+				"on_death": 30000
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/boss/ender_dragon.json"
+			},
+			"minecraft:health": {
+				"value": 1500,
+				"max": 1500
+			},
+			"minecraft:boss": {
+				"name": "§2§1§r§dEnder Dragon : God Of Stars",
+				"should_darken_sky": false,
+				"hud_range": 256
+			},
+			"minecraft:collision_box": {
+				"width": 13,
+				"height": 4
+			},
+			"minecraft:movement": {
+				"value": 0.3
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:knockback_resistance": {
+				"value": 100,
+				"max": 100
+			},
+			"minecraft:combat_regeneration": {
+				"apply_to_self": true,
+				"apply_to_family": false,
+				"regeneration_duration": 60
+			},
+			"minecraft:flying_speed": {
+				"value": 0.6
+			},
+			"minecraft:attack": {
+				"damage": 40
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					},
+					{
+						"cause": "void",
+						"deals_damage": false
+					},
+					{
+						"cause": "entity_explosion",
+						"deals_damage": false
+					},
+					{
+						"cause": "block_explosion",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:on_death": {
+				"event": "minecraft:start_death",
+				"target": "self"
+			},
+			"minecraft:persistent": {},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": false
+			},
+			"minecraft:game_event_movement_tracking": {
+				"emit_flap": true
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"must_see": true,
+				"reselect_targets": true,
+				"entity_types": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						},
+						"max_dist": 256
+					},
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "irongolem"
+						},
+						"max_dist": 256
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "baby_turtle"
+								},
+								{
+									"test": "in_water",
+									"subject": "other",
+									"operator": "!=",
+									"value": true
+								}
+							]
+						},
+						"max_dist": 256
+					}
+				]
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"remove": {},
+				"add": {
+					"component_groups": [
+						"dragon_flying",
+						"ed_phase_2_checker"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"event entity @e[type=ender_crystal] minecraft:crystal_explode",
+						"tellraw @a[r=256] {\"rawtext\":[{\"text\":\"§d<Ender Dragon> Let the fight begin with no crystal\"}]}",
+						"music play music.boss.scourge_of_the_universe 0 1 loop"
+					]
+				}
+			},
+			"minecraft:start_land": {
+				"remove": {
+					"component_groups": [
+						"dragon_flying"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"dragon_sitting"
+					]
+				}
+			},
+			"minecraft:start_fly": {
+				"remove": {
+					"component_groups": [
+						"dragon_sitting"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"dragon_flying",
+						"dragon_roar"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"event entity @e[type=ender_crystal] minecraft:crystal_explode",
+						"particle fec:dragon_shockwave ~~~",
+						"playsound mob.enderdragon.growl @a[r=256]"
+					]
+				}
+			},
+			"minecraft:start_death": {
+				"remove": {
+					"component_groups": [
+						"dragon_sitting",
+						"dragon_flying"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"dragon_death"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"music stop 3"
+					]
+				}
+			},
+			"expired": {
+				"remove": {
+					"component_groups": [
+						"dragon_roar"
+					]
+				}
+			},
+			"randomize_pattern": {
+				"randomize": [
+					{
+						"weight": 1,
+						"queue_command": {
+							"command": [
+								"execute as @s at @e[r=256,c=20,type=enderman] run summon fec:dragon_fireball_gravitational ~~128~",
+								"effect @a[r=256] night_vision 3 1 true",
+								"tellraw @a[r=256] {\"rawtext\":[{\"text\":\"§d<Ender Dragon> Meteor Cataclysm\"}]}"
+							]
+						}
+					},
+					{
+						"weight": 1,
+						"queue_command": {
+							"command": [
+								"execute as @s at @a[r=256] run summon fec:dragon_pillar ~~~",
+								"execute as @s at @a[r=256] run summon fec:dragon_pillar ~3~~",
+								"execute as @s at @a[r=256] run summon fec:dragon_pillar ~~~3",
+								"execute as @s at @a[r=256] run summon fec:dragon_pillar ~-3~~",
+								"execute as @s at @a[r=256] run summon fec:dragon_pillar ~~~-3",
+								"execute as @s at @a[r=256] run summon fec:dragon_pillar ~3~~3",
+								"execute as @s at @a[r=256] run summon fec:dragon_pillar ~-3~~3",
+								"execute as @s at @a[r=256] run summon fec:dragon_pillar ~-3~~-3",
+								"execute as @s at @a[r=256] run summon fec:dragon_pillar ~3~~-3",
+								"effect @a[r=256] night_vision 3 1 true",
+								"tellraw @a[r=256] {\"rawtext\":[{\"text\":\"§d<Ender Dragon> Behold, the power of §lGod Of Stars\"}]}"
+							]
+						}
+					},
+					{
+						"weight": 1,
+						"queue_command": {
+							"command": [
+								"tellraw @a[r=256] {\"rawtext\":[{\"text\":\"The Dragons is sitting, it's the chance to attack!\"}]}"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"dragon_flying"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"dragon_sitting"
+							]
+						}
+					}
+				],
+				"trigger": "expired"
+			},
+			"phase_2": {
+				"queue_command": {
+					"command": [
+						"tag @s add ender_dragon_p2",
+						"effect @a[r=256] night_vision 15 1 true",
+						"execute as @s at @e[type=enderman,r=256] run summon ender_crystal ~~~ 0 0 minecraft:crystal_explode",
+						"tellraw @a[r=256] {\"rawtext\":[{\"text\":\"§d<Ender Dragon> You will witness the great power of God of Stars\"}]}"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ed_phase_2_checker"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"phase_2_bossbar"
+					]
+				}
+			}
+		}
+	}
+}

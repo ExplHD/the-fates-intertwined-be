@@ -1,0 +1,309 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "minecraft:player",
+			"materials": {
+				"default": "entity_alphatest",
+				"cape": "entity_alphatest",
+				"animated": "player_animated",
+				"spectator": "player_spectator"
+			},
+			"textures": {
+				"default": "textures/entity/steve",
+				"cape": "textures/entity/cape_invisible",
+				"rage_of_sakura": "textures/none",
+				"spear_of_heart": "textures/none",
+				"winterbloom_sword": "textures/none",
+				"murasama_calamity": "textures/none",
+				"windblade_claymore": "textures/none",
+				"blade_of_the_end": "textures/none",
+				"zenith": "textures/none",
+				"eidolon_4_staff": "textures/none",
+				"stars_and_crescent": "textures/none",
+				"shadow_revolver": "textures/none",
+				"mythic_tenacity": "textures/none",
+				"reworked_tenacity": "textures/none"
+			},
+			"geometry": {
+				"default": "geometry.humanoid.custom",
+				"cape": "geometry.cape",
+				"rage_of_sakura": "geometry.rage_of_sakura",
+				"spear_of_heart": "geometry.spear_of_heart",
+				"winterbloom_sword": "geometry.winterbloom_sword",
+				"murasama_calamity": "geometry.murasama_calamity",
+				"windblade_claymore": "geometry.windblade_claymore",
+				"blade_of_the_end": "geometry.blade_of_the_end",
+				"zenith": "geometry.zenith",
+				"eidolon_4_staff": "geometry.eidolon_4_staff",
+				"stars_and_crescent": "geometry.stars_and_crescent",
+				"shadow_revolver": "geometry.shadow_revolver",
+				"tenacity": "geometry.tenacity",
+				"tenacity_axe": "geometry.tenacity_axe"
+			},
+			"particle_effects": {
+				"cherry_marker": "fec:cherry_marker",
+				"snow_marker": "fec:snow_marker",
+				"blood_marker": "fec:blood_marker",
+				"leaf_marker": "fec:leaf_marker",
+				"water_marker": "fec:water_marker",
+				"wind_marker": "fec:wind_marker",
+				"zenith_marker": "fec:zenith_marker",
+				"light_marker": "fec:light_marker",
+				"dragon_breath_marker": "fec:dragon_breath_marker",
+				"mythic_tenacity_marker": "fec:mythic_tenacity_marker",
+				"winterbloom_attack_1": "fec:winterbloom_sword_attack_1",
+				"winterbloom_attack_2": "fec:winterbloom_sword_attack_2",
+				"winterbloom_attack_3": "fec:winterbloom_sword_attack_3",
+				"spear_of_heart_attack_1": "fec:spear_of_heart_attack_1",
+				"spear_of_heart_attack_2": "fec:spear_of_heart_attack_2",
+				"spear_of_heart_attack_3": "fec:spear_of_heart_attack_3",
+				"spear_of_heart_attack_4": "fec:spear_of_heart_attack_4",
+				"rage_of_sakura_attack_1": "fec:rage_of_sakura_attack_1",
+				"rage_of_sakura_attack_2": "fec:rage_of_sakura_attack_2",
+				"rage_of_sakura_attack_3": "fec:rage_of_sakura_attack_3",
+				"rage_of_sakura_attack_4": "fec:rage_of_sakura_attack_4",
+				"rage_of_sakura_attack_5_blood": "fec:rage_of_sakura_attack_5_blood",
+				"rage_of_sakura_attack_5_sakura": "fec:rage_of_sakura_attack_5_sakura",
+				"murasama_calamity_attack_1": "fec:murasama_calamity_attack_1",
+				"murasama_calamity_attack_2": "fec:murasama_calamity_attack_2",
+				"murasama_calamity_attack_3": "fec:murasama_calamity_attack_3",
+				"windblade_claymore_attack_1": "fec:windblade_claymore_attack_1",
+				"windblade_claymore_attack_2": "fec:windblade_claymore_attack_2",
+				"windblade_claymore_attack_3": "fec:windblade_claymore_attack_3",
+				"murasama_calamity_s2_1": "fec:murasama_calamity_skill_2_1",
+				"murasama_calamity_s2_2": "fec:murasama_calamity_skill_2_2",
+				"blade_of_the_end_attack_1": "fec:blade_of_the_end_attack_1",
+				"blade_of_the_end_attack_2": "fec:blade_of_the_end_attack_2",
+				"blade_of_the_end_attack_3": "fec:blade_of_the_end_attack_3",
+				"blade_of_the_end_attack_4": "fec:blade_of_the_end_attack_4",
+				"zenith_attack_1": "fec:zenith_attack_1",
+				"zenith_s3_1": "fec:zenith_skill_3_1",
+				"zenith_s3_2": "fec:zenith_skill_3_2",
+				"eidolon_4_staff_attack_1": "fec:eidolon_4_staff_attack_1",
+				"eidolon_4_staff_attack_2": "fec:eidolon_4_staff_attack_2",
+				"stars_and_crescent_attack_1": "fec:stars_and_crescent_attack_1",
+				"stars_and_crescent_attack_2": "fec:stars_and_crescent_attack_2",
+				"stars_and_crescent_attack_3": "fec:stars_and_crescent_attack_3",
+				"stars_and_crescent_attack_4": "fec:stars_and_crescent_attack_4",
+				"shadow_revolver_muzzle_flash": "fec:shadow_revolver_muzzle_flash",
+				"shadow_revolver_muzzle_smoke": "fec:shadow_revolver_muzzle_smoke",
+				"mythic_tenacity_attack_1": "fec:mythic_tenacity_attack_1",
+				"mythic_tenacity_attack_2": "fec:mythic_tenacity_attack_2",
+				"mythic_tenacity_attack_3": "fec:mythic_tenacity_attack_3",
+				"mythic_tenacity_attack_5": "fec:mythic_tenacity_attack_5",
+				"reworked_tenacity_attack_1": "fec:reworked_tenacity_attack_1",
+				"reworked_tenacity_attack_2": "fec:reworked_tenacity_attack_2",
+				"reworked_tenacity_attack_3": "fec:reworked_tenacity_attack_3"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"initialize": [
+					"variable.is_holding_right = 0.0;",
+					"variable.is_blinking = 0.0;",
+					"variable.last_blink_time = 0.0;",
+					"variable.hand_bob = 0.0;"
+				],
+				"pre_animation": [
+					"variable.helmet_layer_visible = 1.0;",
+					"variable.leg_layer_visible = 1.0;",
+					"variable.boot_layer_visible = 1.0;",
+					"variable.chest_layer_visible = 1.0;",
+					"variable.attack_body_rot_y = Math.sin(360*Math.sqrt(variable.attack_time)) * 5.0;",
+					"variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+					"variable.first_person_rotation_factor = math.sin((1 - variable.attack_time) * 180.0);",
+					"variable.hand_bob = query.life_time < 0.01 ? 0.0 : variable.hand_bob + ((query.is_on_ground && query.is_alive ? math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) : 0.0) - variable.hand_bob) * 0.02;",
+					"variable.map_angle = math.clamp(1 - variable.player_x_rotation / 45.1, 0.0, 1.0);",
+					"variable.winterbloom_sword = query.get_equipped_item_name(0) == 'winterbloom_sword';",
+					"variable.rage_of_sakura = query.get_equipped_item_name(0) == 'rage_of_sakura';",
+					"variable.windblade_claymore = query.get_equipped_item_name(0) == 'windblade_claymore';",
+					"variable.blade_of_the_end = query.get_equipped_item_name(0) == 'blade_of_the_end';",
+					"variable.murasama_calamity = query.get_equipped_item_name(0) == 'murasama_calamity';",
+					"variable.spear_of_heart = query.get_equipped_item_name(0) == 'spear_of_heart';",
+					"variable.zenith = query.get_equipped_item_name(0) == 'zenith';",
+					"variable.eidolon_4_staff = query.get_equipped_item_name(0) == 'eidolon_4_staff';",
+					"variable.stars_and_crescent = query.get_equipped_item_name(0) == 'stars_and_crescent';",
+					"variable.shadow_revolver = query.get_equipped_item_name(0) == 'shadow_revolver';",
+					"variable.tenacity = query.get_equipped_item_name(0) == 'tenacity';",
+					"variable.tenacity_axe = query.get_equipped_item_name(0) == 'tenacity_axe';",
+					"variable.reworked_tenacity = query.get_equipped_item_name(0) == 'reworked_tenacity';",
+					"variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;"
+				],
+				"animate": [
+					"root",
+					"stars_and_crescent_controller",
+					"shadow_revolver_controller",
+					{
+						"winterbloom_sword_hold": "variable.winterbloom_sword&&!variable.is_first_person"
+					},
+					{
+						"winterbloom_sword_fpp": "variable.winterbloom_sword&&variable.is_first_person"
+					},
+					{
+						"rage_of_sakura_hold": "variable.rage_of_sakura&&!variable.is_first_person"
+					},
+					{
+						"rage_of_sakura_fpp": "variable.rage_of_sakura&&variable.is_first_person"
+					},
+					{
+						"murasama_calamity_hold": "variable.murasama_calamity&&!variable.is_first_person"
+					},
+					{
+						"murasama_calamity_fpp": "variable.murasama_calamity&&variable.is_first_person"
+					},
+					{
+						"spear_of_heart_hold": "variable.spear_of_heart&&!variable.is_first_person"
+					},
+					{
+						"spear_of_heart_fpp": "variable.spear_of_heart&&variable.is_first_person"
+					},
+					{
+						"windblade_claymore_hold": "variable.windblade_claymore&&!variable.is_first_person"
+					},
+					{
+						"windblade_claymore_fpp": "variable.windblade_claymore&&variable.is_first_person"
+					},
+					{
+						"blade_of_the_end_hold": "variable.blade_of_the_end&&!variable.is_first_person"
+					},
+					{
+						"blade_of_the_end_fpp": "variable.blade_of_the_end&&variable.is_first_person"
+					},
+					{
+						"zenith_hold": "variable.zenith&&!variable.is_first_person"
+					},
+					{
+						"zenith_fpp": "variable.zenith&&variable.is_first_person"
+					},
+					{
+						"eidolon_4_staff_hold": "variable.eidolon_4_staff&&!variable.is_first_person"
+					},
+					{
+						"eidolon_4_staff_fpp": "variable.eidolon_4_staff&&variable.is_first_person"
+					},
+					{
+						"stars_and_crescent_hold": "variable.stars_and_crescent&&!variable.is_first_person"
+					},
+					{
+						"stars_and_crescent_fpp": "variable.stars_and_crescent&&variable.is_first_person"
+					},
+					{
+						"shadow_revolver_hold": "variable.shadow_revolver&&!variable.is_first_person"
+					},
+					{
+						"shadow_revolver_fpp": "variable.shadow_revolver&&variable.is_first_person"
+					},
+					{
+						"mythic_tenacity_hold": "variable.tenacity&&!variable.is_first_person"
+					},
+					{
+						"mythic_tenacity_fpp": "variable.tenacity&&variable.is_first_person"
+					},
+					{
+						"mythic_tenacity_axe_hold": "variable.tenacity_axe&&!variable.is_first_person"
+					},
+					{
+						"mythic_tenacity_axe_fpp": "variable.tenacity_axe&&variable.is_first_person"
+					},
+					{
+						"reworked_tenacity_hold": "variable.reworked_tenacity&&!variable.is_first_person"
+					},
+					{
+						"reworked_tenacity_fpp": "variable.reworked_tenacity&&variable.is_first_person"
+					}
+				]
+			},
+			"animations": {
+				"root": "controller.animation.player.root",
+				"winterbloom_sword_hold": "animation.winterbloom_sword.hold",
+				"winterbloom_sword_fpp": "animation.item.hand_2",
+				"rage_of_sakura_hold": "animation.rage_of_sakura.hold",
+				"rage_of_sakura_fpp": "animation.item.hand_2",
+				"murasama_calamity_hold": "animation.murasama_calamity.hold",
+				"murasama_calamity_fpp": "animation.item.hand_2",
+				"spear_of_heart_hold": "animation.spear_of_heart.hold",
+				"spear_of_heart_fpp": "animation.item.hand_2",
+				"windblade_claymore_hold": "animation.windblade_claymore.hold",
+				"windblade_claymore_fpp": "animation.item.hand_2",
+				"blade_of_the_end_hold": "animation.blade_of_the_end.hold",
+				"blade_of_the_end_fpp": "animation.item.hand_2",
+				"zenith_hold": "animation.zenith.hold",
+				"zenith_fpp": "animation.item.hand_2",
+				"eidolon_4_staff_hold": "animation.eidolon_4_staff.hold",
+				"eidolon_4_staff_fpp": "animation.item.hand_2",
+				"stars_and_crescent_hold": "animation.stars_and_crescent.hold",
+				"stars_and_crescent_fpp": "animation.item.stars_and_crescent",
+				"stars_and_crescent_controller": "controller.animation.stars_and_crescent",
+				"stars_and_crescent_move": "animation.stars_and_crescent.move",
+				"shadow_revolver_hold": "animation.shadow_revolver.hold",
+				"shadow_revolver_fpp": "animation.item.shadow_revolver",
+				"shadow_revolver_controller": "controller.animation.shadow_revolver",
+				"shadow_revolver_take_aim": "animation.shadow_revolver.take_aim",
+				"shadow_revolver_take_aim_fpp": "animation.shadow_revolver.take_aim_fpp",
+				"mythic_tenacity_hold": "animation.mythic_tenacity.mythic_hold",
+				"mythic_tenacity_fpp": "animation.item.hand_2",
+				"mythic_tenacity_axe_hold": "animation.mythic_tenacity.mythic_axe_hold",
+				"mythic_tenacity_axe_fpp": "animation.item.hand_2",
+				"reworked_tenacity_hold": "animation.reworked_tenacity.hold",
+				"reworked_tenacity_fpp": "animation.item.hand_2"
+			},
+			"render_controllers": [
+				{
+					"controller.render.player.first_person_spectator": "variable.is_first_person&&query.is_spectator"
+				},
+				{
+					"controller.render.player.third_person_spectator": "!variable.is_first_person&&!variable.map_face_icon&&query.is_spectator"
+				},
+				{
+					"controller.render.player.first_person": "variable.is_first_person&&!query.is_spectator"
+				},
+				{
+					"controller.render.player.third_person": "!variable.is_first_person&&!variable.map_face_icon&&!query.is_spectator"
+				},
+				{
+					"controller.render.winterbloom_sword": "variable.winterbloom_sword"
+				},
+				{
+					"controller.render.blade_of_the_end": "variable.blade_of_the_end"
+				},
+				{
+					"controller.render.rage_of_sakura": "variable.rage_of_sakura"
+				},
+				{
+					"controller.render.murasama_calamity": "variable.murasama_calamity"
+				},
+				{
+					"controller.render.spear_of_heart": "variable.spear_of_heart"
+				},
+				{
+					"controller.render.windblade_claymore": "variable.windblade_claymore"
+				},
+				{
+					"controller.render.zenith": "variable.zenith"
+				},
+				{
+					"controller.render.eidolon_4_staff": "variable.eidolon_4_staff"
+				},
+				{
+					"controller.render.stars_and_crescent": "variable.stars_and_crescent"
+				},
+				{
+					"controller.render.shadow_revolver": "variable.shadow_revolver"
+				},
+				{
+					"controller.render.tenacity": "variable.tenacity"
+				},
+				{
+					"controller.render.tenacity_axe": "variable.tenacity_axe"
+				},
+				{
+					"controller.render.reworked_tenacity": "variable.reworked_tenacity"
+				},
+				{
+					"controller.render.player.map": "variable.map_face_icon"
+				}
+			],
+			"enable_attachables": true
+		}
+	}
+}

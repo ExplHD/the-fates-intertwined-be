@@ -1,0 +1,35 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:shadow_revolver",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:should_despawn": false,
+			"minecraft:hand_equipped": true,
+			"minecraft:icon": "fec_shadow_revolver",
+			"minecraft:food": {
+				"can_always_eat": true
+			},
+			"minecraft:use_modifiers": {
+				"use_duration": 999999,
+				"movement_modifier": 1
+			},
+			"minecraft:use_animation": "none",
+			"minecraft:display_name": {
+				"value": "§4Shadow Destroyer Revolver\n§7A revolver that made from pure Shadow\nCore and the Newest Tenacity\n\n§2Right-click / Tap and Hold to :\nCast the selected skill\nSneak + Left Click / tap to :\nChange selected skill\nSneak + Right-click / Tap and Hold to :\nAim and Shot"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_sword",
+					"minecraft:is_tool"
+				]
+			},
+			"minecraft:max_stack_size": 1
+		}
+	}
+}

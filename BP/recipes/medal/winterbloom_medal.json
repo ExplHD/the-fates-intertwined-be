@@ -1,0 +1,38 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:winterbloom_medal"
+		},
+		"key": {
+			"Q": {
+				"item": "minecraft:quartz"
+			},
+			"M": {
+				"item": "fec:winterbloom_medal_wireframe"
+			},
+			"P": {
+				"item": "minecraft:pink_petals"
+			},
+			"S": {
+				"item": "minecraft:snowball"
+			}
+		},
+		"pattern": [
+			"QPQ",
+			"PMS",
+			"QSQ"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"unlock": [
+			{
+				"item": "fec:winterbloom_medal_wireframe"
+			}
+		],
+		"result": {
+			"item": "fec:winterbloom_medal"
+		}
+	}
+}

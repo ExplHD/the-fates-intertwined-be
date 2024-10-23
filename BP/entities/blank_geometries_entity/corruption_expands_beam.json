@@ -1,0 +1,66 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:corruption_expands_beam",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"despawned": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 2000,
+				"max": 2000
+			},
+			"minecraft:scale": {
+				"value": 2
+			},
+			"minecraft:collision_box": {
+				"height": 0,
+				"width": 0
+			},
+			"minecraft:type_family": {
+				"family": [
+					"pillars"
+				]
+			},
+			"minecraft:persistent": {},
+			"minecraft:physics": {},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:timer": {
+				"time": 7,
+				"time_down_event": {
+					"event": "despawn",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawned"
+					]
+				},
+				"queue_command": {
+					"command": "tag @a remove corruption_immunity"
+				}
+			}
+		}
+	}
+}

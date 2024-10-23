@@ -1,0 +1,75 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:murasama_expansion",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"immediate_despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 2000,
+				"max": 2000
+			},
+			"minecraft:collision_box": {
+				"height": 2.7,
+				"width": 1.5
+			},
+			"minecraft:knockback_resistance": {
+				"value": 2,
+				"max": 2
+			},
+			"minecraft:behavior.knockback_roar": {
+				"attack_time": 0.5,
+				"cooldown_time": 0.1,
+				"duration": 0.5,
+				"priority": 0,
+				"knockback_range": 32,
+				"knockback_vertical_strength": 3,
+				"knockback_horizontal_strength": 7,
+				"knockback_damage": 6,
+				"damage_filters": {
+					"test": "has_tag",
+					"subject": "other",
+					"operator": "!=",
+					"value": "murasama_expansion"
+				},
+				"knockback_filters": {
+					"test": "has_tag",
+					"subject": "other",
+					"operator": "!=",
+					"value": "murasama_expansion"
+				}
+			},
+			"minecraft:timer": {
+				"time": 60,
+				"time_down_event": {
+					"event": "despawn",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"immediate_despawn"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"tag @s remove murasama_expansion"
+					]
+				}
+			}
+		}
+	}
+}

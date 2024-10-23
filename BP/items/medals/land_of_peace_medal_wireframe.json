@@ -1,0 +1,14 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:land_of_peace_medal_wireframe",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_land_of_peace_medal_wireframe"
+		}
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"format_version": [
+		1,
+		1,
+		0
+	],
+	"fec:legendary_fabricator": {
+		"sound": "metal"
+	},
+	"fec:zenith_fabricator": {
+		"sound": "metal",
+		"textures": "fec_zenith_fabricator"
+	},
+	"fec:shadow_corruption": {
+		"sound": "grass",
+		"textures": {
+			"side": "fec_shadow_grass_side",
+			"up": "fec_shadow_grass_top",
+			"down": "fec_shadow_grass_bottom"
+		}
+	},
+	"fec:shadow_bench": {
+		"sound": "stone"
+	}
+}

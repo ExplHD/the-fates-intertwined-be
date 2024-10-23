@@ -1,0 +1,43 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "fec:reworked_tenacity"
+        },
+        "pattern": [
+            "EEE",
+            "SBR",
+            "TTT"
+        ],
+        "key": {
+            "B": {
+                "item": "fec:weapon_billet"
+            },
+            "E": {
+                "item": "minecraft:echo_shard"
+            },
+            "R": {
+                "item": "minecraft:redstone_block"
+            },
+            "S": {
+                "item": "minecraft:sculk_shrieker"
+            },
+            "T": {
+                "item": "fec:iron_stick"
+            }
+        },
+        "unlock": [
+            {
+                "item": "fec:weapon_billet"
+            }
+        ],
+        "tags": [
+            "legendary_fabricator"
+        ],
+        "result": [
+            {
+                "item": "fec:reworked_tenacity"
+            }
+        ]
+    }
+}

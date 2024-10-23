@@ -1,0 +1,28 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:thrown_frag_grenade_flame",
+			"materials": {
+				"default": "snowball"
+			},
+			"textures": {
+				"default": "textures/items/frag_grenade_flame"
+			},
+			"geometry": {
+				"default": "geometry.item_sprite"
+			},
+			"render_controllers": [
+				"controller.render.item_sprite"
+			],
+			"animations": {
+				"flying": "animation.actor.billboard"
+			},
+			"scripts": {
+				"animate": [
+					"flying"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+scoreboard players reset @a atkp_delay
+scoreboard players reset @a murasama_expansion
+scoreboard players reset @a cosmic_tag
+scoreboard players reset @a winterbloom_sword
+scoreboard players reset @a rage_of_sakura
+scoreboard players reset @a murasama_calamity
+scoreboard players reset @a spear_of_heart
+scoreboard players reset @a blade_of_the_end
+scoreboard players reset @a windblade_claymore
+scoreboard players reset @a eidolon_4_staff
+scoreboard players reset @a zenith
+scoreboard players reset @a stars_and_crescent
+inputpermission set @a movement enabled
+inputpermission set @a camera enabled

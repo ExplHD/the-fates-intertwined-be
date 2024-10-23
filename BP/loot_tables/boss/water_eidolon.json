@@ -1,0 +1,38 @@
+{
+    "pools": [
+        {
+            "rolls": {
+                "min": 1,
+                "max": 1
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "fec:eidolon_4_staff"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "killed_by_player_or_pets"
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 1,
+                "max": 3
+            },
+            "conditions": [
+                {
+                    "condition": "killed_by_player_or_pets"
+                }
+            ],
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "fec:water_essence"
+                }
+            ]
+        }
+    ]
+}

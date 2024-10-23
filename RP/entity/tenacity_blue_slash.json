@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:tenacity_blue_slash",
+			"materials": {
+				"default": "entity_beam_additive"
+			},
+			"textures": {
+				"default": "textures/entity/tenacity_blue_slash"
+			},
+			"geometry": {
+				"default": "geometry.shadow_slash"
+			},
+			"render_controllers": [
+				"controller.render.tenacity_blue_slash"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			},
+			"animations": {
+				"shadow_slash": "animation.tenacity_blue_slash.root"
+			},
+			"scripts": {
+				"animate": [
+					"shadow_slash"
+				]
+			}
+		}
+	}
+}

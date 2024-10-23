@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "fec:spear_of_heart"
+		},
+		"tags": [
+			"legendary_fabricator"
+		],
+		"ingredients": [
+			{
+				"item": "fec:land_of_peace_medal"
+			},
+			{
+				"item": "minecraft:water_bucket"
+			},
+			{
+				"item": "minecraft:netherite_sword"
+			}
+		],
+		"unlock": [
+			{
+				"item": "fec:land_of_peace_medal"
+			}
+		],
+		"result": [
+			{
+				"item": "fec:spear_of_heart"
+			}
+		]
+	}
+}

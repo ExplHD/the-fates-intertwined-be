@@ -1,0 +1,40 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:legendary_fabricator"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"RRR",
+			"BDB",
+			"BNB"
+		],
+		"key": {
+			"B": {
+				"item": "minecraft:stonebrick"
+			},
+			"D": {
+				"item": "minecraft:diamond"
+			},
+			"N": {
+				"item": "minecraft:netherite_ingot"
+			},
+			"R": {
+				"item": "minecraft:redstone"
+			}
+		},
+		"unlock": [
+			{
+				"item": "minecraft:netherite_ingot"
+			}
+		],
+		"result": [
+			{
+				"item": "fec:legendary_fabricator"
+			}
+		]
+	}
+}

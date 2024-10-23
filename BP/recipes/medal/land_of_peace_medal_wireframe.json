@@ -1,0 +1,35 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:land_of_peace_medal_wireframe"
+		},
+		"key": {
+			"I": {
+				"item": "fec:circle_medal_line"
+			},
+			"C": {
+				"item": "fec:corner_medal_line"
+			}
+		},
+		"pattern": [
+			" C ",
+			"CIC",
+			" C "
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"unlock": [
+			{
+				"item": "fec:circle_medal_line"
+			},
+			{
+				"item": "minecraft:diamond_pickaxe"
+			}
+		],
+		"result": {
+			"item": "fec:land_of_peace_medal_wireframe"
+		}
+	}
+}

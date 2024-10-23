@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:murasama_expansion",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/murasama_expansion"
+			},
+			"geometry": {
+				"default": "geometry.murasama_expansion"
+			},
+			"render_controllers": [
+				"controller.render.murasama_expansion"
+			],
+			"animations": {
+				"idle": "animation.murasama_expansion.idle"
+			},
+			"scripts": {
+				"animate": [
+					"idle"
+				]
+			},
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+{
+    "namespace": "title_ui",
+    "title_alert_ui": {
+        "type": "panel",
+        "size": [
+            241, 60
+        ],
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "bindings": [
+            {
+                "binding_name": "(#text = $text)",
+                "binding_type": "global",
+                "binding_name_override": "#visible"
+            }
+        ]
+    },
+    
+    "judgement_slash_alert@title_alert_ui": {
+        "controls": [
+            {
+                "title_text": {
+                    "type": "label",
+                    "font_size": "normal",
+                    "text": "! Warning, Use shield to Defend yourself from Judgement Slash !",
+                    "color": "red",
+                    "font_type": "MinecraftTen",
+                    "layer": 1
+                }
+            }
+        ]
+    },
+
+    "orange_vignette":{
+        "type": "image",
+        "texture": "textures/ui/alert_vignette"
+    }
+}

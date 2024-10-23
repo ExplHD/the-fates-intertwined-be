@@ -1,0 +1,75 @@
+{
+	"format_version": "1.21.10",
+	"animations": {
+		"animation.murasama_calamity.skill_2": {
+			"animation_length": 5,
+			"timeline": {
+				"0.0": [
+					"/playanimation @s animation.murasama_calamity.skill_2",
+					"/stopsound @s custom_sfx.high_voltage",
+					"/inputpermission set @s movement disabled",
+					"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §c§lVoltra Charge\"}]}",
+					"/scoreboard players remove @s voltra_charge 100",
+					"/playsound mob.wither.spawn @a[r=55] ~~~ 2 1 0.3",
+					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
+					"/effect @s resistance 5 3 true"
+				],
+				"0.5": [
+					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
+					"/damage @e[r=12,rm=0.1,type=!item] 5 entity_attack entity @s"
+				],
+				"1.0": [
+					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
+					"/damage @e[r=12,rm=0.1,type=!item] 5 entity_attack entity @s"
+				],
+				"1.5": [
+					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
+					"/damage @e[r=12,rm=0.1,type=!item] 5 entity_attack entity @s"
+				],
+				"2.0": [
+					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
+					"/damage @e[r=12,rm=0.1,type=!item] 5 entity_attack entity @s"
+				],
+				"2.5": [
+					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
+					"/damage @e[r=12,rm=0.1,type=!item] 5 entity_attack entity @s"
+				],
+				"3.0": [
+					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
+					"/damage @e[r=12,rm=0.1,type=!item] 5 entity_attack entity @s"
+				],
+				"4.0": [
+					"/playsound random.explode @a[r=55] ~~~ 2 1 2",
+					"/damage @e[r=12,rm=0.1,type=!item] 30 entity_explosion entity @s",
+					"/inputpermission set @s movement enabled"
+				],
+				"5.0": [
+					"/effect @s instant_health 1 0",
+					"/stopsound @s custom_sfx.high_voltage"
+				]
+			}
+		},
+		"animation.murasama_calamity.ultimate": {
+			"animation_length": 3.1,
+			"timeline": {
+				"0.0": [
+					"/tag @a[r=32,c=2] add murasama_expansion",
+					"/playsound custom_sfx.domain_expansion @a[r=128]"
+				],
+				"0.4": [
+					"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their Ultimate §cKill Contract\"}]}",
+					"/tellraw @a[r=64,tag=murasama_expansion,rm=0.1,type=!item] {\"rawtext\":[{\"text\":\"You are challenged to fight the true legendary user\"}]}",
+					"/inputpermission set @a[tag=murasama_expansion] movement disabled",
+					"/inputpermission set @a[tag=murasama_expansion] camera disabled",
+					"/scoreboard players set @a murasama_expansion 0"
+				],
+				"3.0": [
+					"/inputpermission set @a[tag=murasama_expansion] movement enabled",
+					"/inputpermission set @a[tag=murasama_expansion] camera enabled",
+					"/scoreboard players add @s murasama_calamity_c4 60",
+					"/summon fec:murasama_expansion ~~~"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,6 @@
+{
+    "ui_defs": [
+        "ui/boss_panel.json",
+        "ui/title_interface.json"
+    ]
+}

@@ -1,0 +1,17 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:land_of_peace_medal",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_land_of_peace_medal",
+			"minecraft:display_name": {
+				"value": "§dLand Of Peace Medalion\n§8A Medalion that used to create Land Of Peace Related Items"
+			}
+		}
+	}
+}

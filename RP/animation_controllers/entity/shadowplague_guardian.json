@@ -1,0 +1,45 @@
+	{
+    "format_version": "1.16.0",
+    "animation_controllers": {
+        "controller.animation.shadowplague_guardian": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "animations": [
+                        "look_at_target"
+                    ],
+                    "blend_transition": 0.2,
+                    "transitions": [
+                        {
+                            "attack": "variable.attack_time > 0.0f"
+                        },
+                        {
+                            "move": "query.modified_move_speed >= 0.5"
+                        }
+                    ]
+                },
+                "attack": {
+                    "animations": [
+                        "attack"
+                    ],
+                    "blend_transition": 0.2,
+                    "transitions": [
+                        {
+                            "default": "variable.attack_time <= 0.0f"
+                        }
+                    ]
+                },
+                "move": {
+                    "animations": [
+                        "move"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.modified_move_speed <= 0.1"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

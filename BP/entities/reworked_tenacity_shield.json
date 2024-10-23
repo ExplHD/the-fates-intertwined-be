@@ -1,0 +1,116 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:reworked_tenacity_shield",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"instant_despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"despawning": {
+				"minecraft:timer": {
+					"time": 0.4,
+					"time_down_event": {
+						"event": "despawn",
+						"target": "self"
+					}
+				}
+			},
+			"timer_to_despawn": {
+				"minecraft:timer": {
+					"time": 30,
+					"time_down_event": {
+						"event": "despawning",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 450,
+				"max": 450
+			},
+			"minecraft:collision_box": {
+				"height": 10,
+				"width": 10
+			},
+			"minecraft:scale": {
+				"value": 2
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					},
+					{
+						"cause": "lava",
+						"deals_damage": false
+					},
+					{
+						"cause": "suffocation",
+						"deals_damage": false
+					},
+					{
+						"cause": "entity_explosion",
+						"damage_modifier": 0.6
+					}
+				]
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:knockback_resistance": {
+				"value": 100,
+				"max": 100
+			},
+			"minecraft:timer": {
+				"time": 1,
+				"looping": true,
+				"time_down_event": {
+					"event": "refresh_inside_shield",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"refresh_inside_shield": {
+				"queue_command": {
+					"command": [
+						"tag @a[r=10] add tenacity_shield",
+						"effect @a[r=10] resistance 2 1 true",
+						"tag @a[rm=10,r=64] remove tenacity_shield"
+					]
+				}
+			},
+			"despawning": {
+				"add": {
+					"component_groups": [
+						"despawning"
+					]
+				},
+				"queue_command": {
+					"command": "playanimation @s animation.reworked_tenacity_shields.despawn",
+					"target": "self"
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"instant_despawn"
+					]
+				}
+			}
+		}
+	}
+}

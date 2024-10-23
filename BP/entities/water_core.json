@@ -1,0 +1,125 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:water_core",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"explode": {
+				"minecraft:explode": {
+					"destroy_affected_by_griefing": true,
+					"fire_affected_by_griefing": true,
+					"fuse_lit": true,
+					"fuse_length": 0,
+					"power": 16
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 200,
+				"max": 200
+			},
+			"minecraft:boss": {
+				"should_darken_sky": true,
+				"hud_range": 55,
+				"name": "Water Core, Eidolon Healer"
+			},
+			"minecraft:movement": {
+				"value": 0
+			},
+			"minecraft:timer": {
+				"time": 20,
+				"time_down_event": {
+					"event": "start_exploding"
+				}
+			},
+			"minecraft:knockback_resistance": {
+				"value": 100
+			},
+			"minecraft:collision_box": {
+				"width": 1.8,
+				"height": 1.8
+			},
+			"minecraft:scale": {
+				"value": 2
+			},
+			"minecraft:on_death": {
+				"event": "destroy"
+			}
+		},
+		"events": {
+			"start_exploding": {
+				"add": {
+					"component_groups": [
+						"explode"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"effect @e[type=fec:water_eidolon] regeneration 3 21 true",
+						"effect @e[type=fec:water_eidolon] resistance 10 255",
+						"particle minecraft:huge_explosion_emitter ~~~5",
+						"particle minecraft:huge_explosion_emitter ~~~-5",
+						"particle minecraft:huge_explosion_emitter ~5~~",
+						"particle minecraft:huge_explosion_emitter ~-5~~",
+						"particle minecraft:huge_explosion_emitter ~5~~5",
+						"particle minecraft:huge_explosion_emitter ~-5~~5",
+						"particle minecraft:huge_explosion_emitter ~5~~-5",
+						"particle minecraft:huge_explosion_emitter ~-5~~-5",
+						"particle minecraft:huge_explosion_emitter ~~5~5",
+						"particle minecraft:huge_explosion_emitter ~~5~-5",
+						"particle minecraft:huge_explosion_emitter ~5~5~",
+						"particle minecraft:huge_explosion_emitter ~-5~5~",
+						"particle minecraft:huge_explosion_emitter ~5~5~5",
+						"particle minecraft:huge_explosion_emitter ~-5~5~5",
+						"particle minecraft:huge_explosion_emitter ~5~5~-5",
+						"particle minecraft:huge_explosion_emitter ~-5~5~-5",
+						"particle minecraft:huge_explosion_emitter ~~-5~5",
+						"particle minecraft:huge_explosion_emitter ~~-5~-5",
+						"particle minecraft:huge_explosion_emitter ~5~-5~",
+						"particle minecraft:huge_explosion_emitter ~-5~-5~",
+						"particle minecraft:huge_explosion_emitter ~5~-5~5",
+						"particle minecraft:huge_explosion_emitter ~-5~-5~5",
+						"particle minecraft:huge_explosion_emitter ~5~-5~-5",
+						"particle minecraft:huge_explosion_emitter ~-5~-5~-5"
+					]
+				}
+			},
+			"destroy": {
+				"queue_command": {
+					"command": [
+						"damage @e[type=fec:water_eidolon] 100 void",
+						"particle minecraft:huge_explosion_emitter ~~~5",
+						"particle minecraft:huge_explosion_emitter ~~~-5",
+						"particle minecraft:huge_explosion_emitter ~5~~",
+						"particle minecraft:huge_explosion_emitter ~-5~~",
+						"particle minecraft:huge_explosion_emitter ~5~~5",
+						"particle minecraft:huge_explosion_emitter ~-5~~5",
+						"particle minecraft:huge_explosion_emitter ~5~~-5",
+						"particle minecraft:huge_explosion_emitter ~-5~~-5",
+						"particle minecraft:huge_explosion_emitter ~~5~5",
+						"particle minecraft:huge_explosion_emitter ~~5~-5",
+						"particle minecraft:huge_explosion_emitter ~5~5~",
+						"particle minecraft:huge_explosion_emitter ~-5~5~",
+						"particle minecraft:huge_explosion_emitter ~5~5~5",
+						"particle minecraft:huge_explosion_emitter ~-5~5~5",
+						"particle minecraft:huge_explosion_emitter ~5~5~-5",
+						"particle minecraft:huge_explosion_emitter ~-5~5~-5",
+						"particle minecraft:huge_explosion_emitter ~~-5~5",
+						"particle minecraft:huge_explosion_emitter ~~-5~-5",
+						"particle minecraft:huge_explosion_emitter ~5~-5~",
+						"particle minecraft:huge_explosion_emitter ~-5~-5~",
+						"particle minecraft:huge_explosion_emitter ~5~-5~5",
+						"particle minecraft:huge_explosion_emitter ~-5~-5~5",
+						"particle minecraft:huge_explosion_emitter ~5~-5~-5",
+						"particle minecraft:huge_explosion_emitter ~-5~-5~-5"
+					]
+				}
+			}
+		}
+	}
+}

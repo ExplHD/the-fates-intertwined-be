@@ -1,0 +1,35 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:land_of_peace_medal"
+		},
+		"key": {
+			"Q": {
+				"item": "minecraft:quartz"
+			},
+			"M": {
+				"item": "fec:land_of_peace_medal_wireframe"
+			},
+			"W": {
+				"item": "minecraft:water_bucket"
+			}
+		},
+		"pattern": [
+			"QWQ",
+			"WMW",
+			"QWQ"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"unlock": [
+			{
+				"item": "fec:land_of_peace_medal_wireframe"
+			}
+		],
+		"result": {
+			"item": "fec:land_of_peace_medal"
+		}
+	}
+}

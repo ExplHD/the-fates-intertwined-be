@@ -1,0 +1,215 @@
+{
+	"format_version": "1.21.10",
+	"animation_controllers": {
+		"controller.animation.rage_of_sakura": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+						"/scoreboard players set @s atkp_delay 0"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_1": "variable.attack_time&&!query.is_sneaking&&q.get_equipped_item_name=='rage_of_sakura'"
+						},
+						{
+							"skill_1": "query.get_equipped_item_name=='rage_of_sakura'&&query.is_using_item&&(query.scoreboard('rage_of_sakura')==0)&&(query.scoreboard('rage_of_sakura_c1')==0)"
+						},
+						{
+							"skill_2": "query.get_equipped_item_name=='rage_of_sakura'&&query.is_using_item&&(query.scoreboard('rage_of_sakura')==1)&&(query.scoreboard('rage_of_sakura_c2')==0)"
+						},
+						{
+							"skill_3": "query.get_equipped_item_name=='rage_of_sakura'&&query.is_using_item&&(query.scoreboard('rage_of_sakura')==2)&&(query.scoreboard('rage_of_sakura_c3')==0)"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='rage_of_sakura'"
+						}
+					]
+				},
+				"atk_1": {
+					"on_entry": [
+						"/damage @e[r=4,rm=0.1,type=!item] 11 entity_attack entity @s",
+						"/playanimation @s animation.rage_of_sakura.attack_1",
+						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.2 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_2": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=10)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='rage_of_sakura'"
+						}
+					]
+				},
+				"atk_2": {
+					"on_entry": [
+						"/playanimation @s animation.rage_of_sakura.attack_2",
+						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.1 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_3": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=10)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='rage_of_sakura'"
+						}
+					]
+				},
+				"atk_3": {
+					"on_entry": [
+						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/playanimation @s animation.rage_of_sakura.attack_3",
+						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_4": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=10)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='rage_of_sakura'"
+						}
+					]
+				},
+				"atk_4": {
+					"on_entry": [
+						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/playanimation @s animation.rage_of_sakura.attack_4",
+						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 0.9 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_5": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=10)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='rage_of_sakura'"
+						}
+					]
+				},
+				"atk_5": {
+					"animations": [
+						"rage_of_sakura_atk_5"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='rage_of_sakura'"
+						}
+					]
+				},
+				"skill_1": {
+					"on_entry": [
+						"/effect @s instant_health 1 1",
+						"/effect @s health_boost 60 4 true",
+						"/effect @s regeneration 30 1 true",
+						"/effect @s resistance 15 2",
+						"/effect @s poison 0 0",
+						"/effect @s hunger 0 0",
+						"/effect @s blindness 0 0",
+						"/effect @s weakness 0 0",
+						"/effect @s mining_fatigue 0 0",
+						"/effect @s wither 0 0",
+						"/effect @s fatal_poison 0 0",
+						"/effect @s nausea 0 0",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §dLove is Love\"}]}",
+						"/particle fec:winterbloom_sword_attack_4_area",
+						"/playsound custom_sfx.heal @s",
+						"/scoreboard players add @s rage_of_sakura_c1 50"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				},
+				"skill_2": {
+					"on_entry": [
+						"/tag @s add rage_of_sakura",
+						"/playanimation @s animation.rage_of_sakura.attack_5",
+						"/playsound custom_sfx.male_scream @a[r=32]",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §dQuestioning Lust\"}]}",
+						"/scoreboard players add @s rage_of_sakura_c2 30"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				},
+				"skill_3": {
+					"on_entry": [
+						"/playsound custom_sfx.villain_laugh @a[r=32]",
+						"/particle fec:rage_of_sakura_skill_3 ~~~",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their Ultimate §d§lBlinding Heartbroken\"}]}",
+						"/effect @s speed 15 2 true",
+						"/effect @s jump_boost 15 2 true",
+						"/effect @e[r=14,rm=0.1,type=!item] hunger 15 0",
+						"/effect @e[r=14,rm=0.1,type=!item] blindness 15 0",
+						"/effect @e[r=14,rm=0.1,type=!item] weakness 15 2",
+						"/effect @e[r=14,rm=0.1,type=!item] mining_fatigue 15 2",
+						"/effect @e[r=14,rm=0.1,type=!item] wither 15 2",
+						"/effect @e[r=14,rm=0.1,type=!item] nausea 15 0",
+						"/scoreboard players set @s rage_of_sakura_c3 120"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				},
+				"change": {
+					"on_entry": [
+						"/scoreboard players add @s rage_of_sakura 1",
+						"/scoreboard players set @s[scores={rage_of_sakura=3}] rage_of_sakura 0",
+						"/playsound random.click @s",
+						"/tellraw @s[scores={rage_of_sakura=0}] {\"rawtext\":[{\"text\": \"Love is Love\"}]}",
+						"/tellraw @s[scores={rage_of_sakura=1}] {\"rawtext\":[{\"text\": \"Questioning Lust\"}]}",
+						"/tellraw @s[scores={rage_of_sakura=2}] {\"rawtext\":[{\"text\": \"Blinding Heartbroken\"}]}"
+					],
+					"transitions": [
+						{
+							"default": "!variable.attack_time"
+						}
+					]
+				}
+			}
+		}
+	}
+}

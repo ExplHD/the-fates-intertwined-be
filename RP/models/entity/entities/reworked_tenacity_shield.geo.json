@@ -1,0 +1,36 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.reworked_tenacity_shield",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-12, 0, -3], "size": [24, 1, 1], "uv": [0, 0]},
+						{"origin": [-12, 0, -7], "size": [24, 1, 1], "uv": [0, 2]},
+						{"origin": [-11, 0, -4], "size": [22, 1, 1], "uv": [0, 6]},
+						{"origin": [-11, 0, -6], "size": [22, 1, 1], "uv": [0, 8]},
+						{"origin": [-12, 0, -5], "size": [24, 1, 1], "uv": [0, 4]},
+						{"origin": [-10, 0, -2], "size": [20, 1, 2], "uv": [0, 10]},
+						{"origin": [-4, 0, 0], "size": [8, 1, 2], "uv": [18, 13]},
+						{"origin": [-2, 0, -11], "size": [4, 1, 4], "uv": [0, 19]},
+						{"origin": [-3, 0, -10], "size": [1, 1, 1], "uv": [22, 21]},
+						{"origin": [-2, 0, 2], "size": [4, 1, 5], "uv": [0, 13]},
+						{"origin": [-4, 0, 8], "size": [8, 1, 2], "uv": [18, 16]},
+						{"origin": [-3, 0, 7], "size": [6, 1, 1], "uv": [16, 19]},
+						{"origin": [-1, 0, 10], "size": [2, 1, 1], "uv": [16, 21]}
+					]
+				}
+			]
+		}
+	]
+}

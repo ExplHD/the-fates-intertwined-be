@@ -1,0 +1,15 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:stardust_upgrade_smithing_template",
+			"menu_category": {
+				"category": "items",
+				"group": "itemGroup.name.smithing_templates"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_stardust_upgrade_smithing_template"
+		}
+	}
+}

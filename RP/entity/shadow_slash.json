@@ -1,0 +1,28 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "fec:shadow_slash",
+      "materials": {
+        "default": "entity_beam_additive"
+      },
+      "textures": {
+        "default": "textures/entity/shadow_slash"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "geometry": {
+        "default": "geometry.shadow_slash"
+      },
+      "animations": {
+        "shadow_slash": "animation.shadow_slash.root"
+      },
+      "scripts": {
+        "animate": [
+          "shadow_slash"
+        ]
+      }
+    }
+  }
+}

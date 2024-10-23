@@ -1,0 +1,30 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "fec:frag_grenade_unexplosive"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "minecraft:snowball"
+			},
+			{
+				"item": "minecraft:gunpowder"
+			}
+		],
+		"unlock": [
+			{
+				"item": "minecraft:gunpowder"
+			}
+		],
+		"result": [
+			{
+				"item": "fec:frag_grenade_unexplosive",
+				"count": 1
+			}
+		]
+	}
+}

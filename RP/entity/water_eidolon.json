@@ -1,0 +1,42 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:water_eidolon",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/water_eidolon"
+			},
+			"geometry": {
+				"default": "geometry.water_eidolon"
+			},
+			"render_controllers": [
+				"controller.render.water_eidolon"
+			],
+			"animations": {
+				"water_eidolon_controller": "controller.animation.water_eidolon",
+				"look_at_target": "animation.common.look_at_target",
+				"idle": "animation.water_eidolon.idle",
+				"move": "animation.water_eidolon.move",
+				"smash": "animation.water_eidolon.smash",
+				"attack": "animation.water_eidolon.water_pillar"
+			},
+			"particle_effects": {
+				"water_ball": "fec:water_ball",
+				"water_laser": "fec:water_laser",
+				"water_laser_warn": "fec:water_laser_warn"
+			},
+			"scripts": {
+				"animate": [
+					"water_eidolon_controller"
+				]
+			},
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

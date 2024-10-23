@@ -1,0 +1,9 @@
+{
+    "individual_event_sounds": {
+        "events": {
+            "boss.ender_dragon": {
+                "sound": "music.boss.ender_dragon"
+            }
+        }
+    }
+}

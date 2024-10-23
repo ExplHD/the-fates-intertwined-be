@@ -1,0 +1,14 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:corner_medal_line",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_corner_medal_line"
+		}
+	}
+}

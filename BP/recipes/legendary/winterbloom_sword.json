@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "fec:winterbloom_sword"
+		},
+		"tags": [
+			"legendary_fabricator"
+		],
+		"ingredients": [
+			{
+				"item": "fec:winterbloom_medal"
+			},
+			{
+				"item": "minecraft:pink_petals"
+			},
+			{
+				"item": "minecraft:netherite_sword"
+			}
+		],
+		"unlock": [
+			{
+				"item": "fec:winterbloom_medal"
+			}
+		],
+		"result": [
+			{
+				"item": "fec:winterbloom_sword"
+			}
+		]
+	}
+}

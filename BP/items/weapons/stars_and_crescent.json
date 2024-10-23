@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:stars_and_crescent",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.sword"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_stars_and_crescent",
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:damage": 10,
+			"minecraft:display_name": {
+				"value": "§4Stars and Crescent\n§7A sword made from the other universes,\nand this sword is owned by the unknown\ntraveler\n\n§2Right-click / Tap and Hold to :\ncast the selected skill\nSneak + Left Click / tap to :\nchange selected skill"
+			},
+			"minecraft:should_despawn": false,
+			"minecraft:food": {
+				"can_always_eat": true
+			},
+			"minecraft:use_modifiers": {
+				"use_duration": 999999,
+				"movement_modifier": 1
+			},
+			"minecraft:use_animation": "none",
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"tag:minecraft:is_sword": {}
+		}
+	}
+}

@@ -1,0 +1,77 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.shadow_revolver.attack_1": {
+            "animation_length": 1.25,
+            "timeline": {
+                "0.0": [
+                    "/playanimation @s animation.shadow_revolver.attack_1"
+                ],
+                "0.33": [
+                    "/playsound shadow_revolver.shot_normal @a[r=16] ~~~ 1 1 1",
+                    "/tp @s ~~~ ~ 0",
+                    "/scoreboard players remove @s shadow_revolver_rounds 1",
+                    "@s fec:shadow_revolver_bullet_base_atk"
+                ],
+                "0.54": [
+                    "/playsound shadow_revolver.shot_normal @a[r=16] ~~~ 1 1 1",
+                    "/tp @s ~~~ ~ 0",
+                    "/scoreboard players remove @s shadow_revolver_rounds 1",
+                    "@s fec:shadow_revolver_bullet_base_atk"
+                ]
+            }
+        },
+        "animation.shadow_revolver.attack_2": {
+            "animation_length": 1.50,
+            "timeline": {
+                "0.0": [
+                    "/playanimation @s animation.shadow_revolver.attack_2",
+                    "/tp @s ~~~ ~ 0"
+                ],
+                "0.79": [
+                    "/playsound shadow_revolver.shot_normal @a[r=16] ~~~ 1 1 1",
+                    "/tp @s ~~~ ~ 0",
+                    "@s fec:shadow_revolver_bullet_base_atk"
+                ]
+            }
+        },
+        "animation.shadow_revolver.fire": {
+            "animation_length": 0.5,
+            "loop": false,
+            "timeline": {
+                "0.0": [
+                    "@s fec:shadow_revolver_bullet",
+                    "/playanimation @s animation.shadow_revolver.fire",
+                    "/stopsound @a[r=64] shadow_revolver.shot_normal",
+                    "/scoreboard players remove @s shadow_revolver_rounds 1",
+                    "/scoreboard players add @s atkp_delay 1",
+                    "/scoreboard players add @s legendCounter 1"
+                ],
+                "0.05": [
+                    "/tp @s ^^^ ~ ~-2",
+                    "/playsound shadow_revolver.shot_normal @a[r=64]"
+                ]
+            }
+        },
+        "animation.shadow_revolver.reload": {
+            "animation_length": 2.5,
+            "timeline": {
+                "0.0": [
+                    "/playanimation @s animation.shadow_revolver.reload",
+                    "/title @s actionbar §aRELOADING"
+                ],
+                "1.0": [
+                    "/playsound shadow_revolver.reload @s"
+                ],
+                "2.0": [
+                    "/scoreboard players set @s shadow_revolver_rounds 8",
+                    "/particle fec:paranoia ~~~",
+                    "/title @s actionbar §eRELOAD CANCEL READY"
+                ],
+                "2.33": [
+                    "/title @s actionbar §6RELOADED"
+                ]
+            }
+        }
+    }
+}

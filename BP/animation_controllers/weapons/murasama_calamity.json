@@ -1,0 +1,231 @@
+{
+	"format_version": "1.21.10",
+	"animation_controllers": {
+		"controller.animation.murasama_calamity": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+						"/scoreboard players set @s atkp_delay 0"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_1": "variable.attack_time&&!query.is_sneaking&&q.get_equipped_item_name=='murasama_calamity'"
+						},
+						{
+							"skill_1": "query.get_equipped_item_name=='murasama_calamity'&&query.is_using_item&&(query.scoreboard('murasama_calamity')==0)&&(query.scoreboard('murasama_calamity_c1')==0)"
+						},
+						{
+							"skill_2": "query.get_equipped_item_name=='murasama_calamity'&&query.is_using_item&&(query.scoreboard('murasama_calamity')==1)&&(query.scoreboard('murasama_calamity_c2')==0)"
+						},
+						{
+							"skill_3": "query.get_equipped_item_name=='murasama_calamity'&&query.is_using_item&&(query.scoreboard('murasama_calamity')==2)&&(query.scoreboard('murasama_calamity_c3')==0)"
+						},
+						{
+							"skill_4": "query.get_equipped_item_name=='murasama_calamity'&&query.is_using_item&&(query.scoreboard('murasama_calamity')==3)&&(query.scoreboard('murasama_calamity_c4')>=2)"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='murasama_calamity'"
+						}
+					]
+				},
+				"atk_1": {
+					"on_entry": [
+						"/damage @e[r=4,rm=0.1,type=!item] 5 entity_attack entity @s",
+						"/playanimation @s animation.murasama_calamity.attack_1",
+						"/playsound sword_slash.light_slash @a[r=16] ~~~ 1 1 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_2": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=6)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='murasama_calamity'"
+						}
+					]
+				},
+				"atk_2": {
+					"on_entry": [
+						"/playanimation @s animation.murasama_calamity.attack_2",
+						"/damage @e[r=4,rm=0.1,type=!item] 5 entity_attack entity @s",
+						"/playsound sword_slash.light_slash @a[r=16] ~~~ 1 1.15 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_3": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=8)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='murasama_calamity'"
+						}
+					]
+				},
+				"atk_3": {
+					"on_entry": [
+						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/playanimation @s animation.murasama_calamity.attack_3",
+						"/scoreboard players add @s voltra_charge 5",
+						"/playsound sword_slash.heavy_slash @a[r=16] ~~~ 1 1.15 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_1": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=6)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='murasama_calamity'"
+						}
+					]
+				},
+				"skill_1": {
+					"on_entry": [
+						"/playanimation @s animation.murasama_calamity.attack_3",
+						"/scoreboard players add @s voltra_charge 30",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/summon lightning_bolt ^^^-10",
+						"/summon lightning_bolt ^^^-7",
+						"/summon lightning_bolt ^^^-4",
+						"/summon lightning_bolt ^^^-1",
+						"/effect @s resistance 1 255 true",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §cDragon's Rising Slash\"}]}",
+						"/scoreboard players add @s murasama_calamity_c1 5"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				},
+				"skill_2": {
+					"on_entry": [
+						"/tag @s add voltra_charging",
+						"/playsound custom_sfx.high_voltage @s"
+					],
+					"on_exit": [
+						"/tag @s remove voltra_charging",
+						"/stopsound @s custom_sfx.high_voltage"
+					],
+					"transitions": [
+						{
+							"skill_2_empty": "!query.is_using_item&&(query.scoreboard('voltra_charge')<=99)"
+						},
+						{
+							"skill_2_full": "!query.is_using_item&&(query.scoreboard('voltra_charge')>=100)"
+						}
+					]
+				},
+				"skill_2_empty": {
+					"on_entry": [
+						"/playanimation @s animation.murasama_calamity.attack_3",
+						"/playsound random.explode @a[r=55] ~~~ 2 1 2",
+						"/damage @e[r=12,rm=0.1,type=!item] 20 entity_explosion entity @s",
+						"/inputpermission set @s movement enabled",
+						"/particle fec:murasama_calamity_skill_2_2 ~~~",
+						"/scoreboard players add @s murasama_calamity_c2 12",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §cVoltra Charge\"}]}",
+						"/stopsound @s custom_sfx.high_voltage"
+					],
+					"transitions": [
+						{
+							"default": "1"
+						}
+					]
+				},
+				"skill_2_full": {
+					"animations": [
+						"murasama_calamity_skill_2"
+					],
+					"on_exit": [
+						"/scoreboard players add @s murasama_calamity_c2 30",
+						"/scoreboard players add @s murasama_calamity_c4 1"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"skill_3": {
+					"on_entry": [
+						"/execute as @s at @s unless entity @e[tag=murasamaTag] run tag @e[r=64,rm=1,type=wither] add murasamaTag",
+						"/execute as @s at @s unless entity @e[tag=murasamaTag] run tag @e[r=128,rm=1,type=ender_dragon] add murasamaTag",
+						"/execute as @s at @s unless entity @e[tag=murasamaTag] run tag @e[r=64,rm=1,type=warden] add murasamaTag",
+						"/execute as @s at @s unless entity @e[tag=murasamaTag] run tag @e[r=32,rm=1,type=fec:elemental_legionnaire] add murasamaTag",
+						"/execute as @s at @s unless entity @e[tag=murasamaTag] run tag @e[r=32,rm=1,type=fec:water_eidolon] add murasamaTag",
+						"/execute as @s at @s unless entity @e[tag=murasamaTag] run tag @e[r=20,rm=1,type=player] add murasamaTag",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §cMurasama Atomic Slash\"}]}",
+						"/playsound mob.wither.spawn @a[r=32]"
+					],
+					"on_exit": [
+						"/scoreboard players add @s murasama_calamity_c3 40"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"skill_4": {
+					"animations": [
+						"murasama_calamity_ultimate"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"change": {
+					"on_entry": [
+						"/scoreboard players add @s murasama_calamity 1",
+						"/scoreboard players set @s[scores={murasama_calamity=4}] murasama_calamity 0",
+						"/playsound random.click @s",
+						"/tellraw @s[scores={murasama_calamity=0}] {\"rawtext\":[{\"text\": \"Dragon's Rising Slash\"}]}",
+						"/tellraw @s[scores={murasama_calamity=1}] {\"rawtext\":[{\"text\": \"Voltra Charge\"}]}",
+						"/tellraw @s[scores={murasama_calamity=2}] {\"rawtext\":[{\"text\": \"Murasama Atomic Slash\"}]}",
+						"/tellraw @s[scores={murasama_calamity=3}] {\"rawtext\":[{\"text\": \"Kill Contract\"}]}"
+					],
+					"transitions": [
+						{
+							"default": "!variable.attack_time"
+						}
+					]
+				}
+			}
+		}
+	}
+}

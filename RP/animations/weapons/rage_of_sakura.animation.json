@@ -1,0 +1,558 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.rage_of_sakura.attack_1": {
+			"animation_length": 1.5,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.2083": {
+							"pre": [
+								0,
+								0,
+								0
+							],
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": {
+							"post": [
+								-170.03729,
+								-0.86717,
+								4.92442
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								-170.04,
+								-0.87,
+								4.92
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2083": {
+							"post": [
+								180,
+								0,
+								180
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": {
+							"post": [
+								193.92875,
+								3.69043,
+								179.85095
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								193.92875,
+								3.69043,
+								179.85095
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2083": {
+							"post": [
+								0,
+								0,
+								-6
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": {
+							"post": [
+								0,
+								0,
+								-6.48
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								0,
+								0,
+								-6.48
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.2083": {
+					"effect": "rage_of_sakura_attack_1",
+					"locator": "ros_particle"
+				}
+			}
+		},
+		"animation.rage_of_sakura.attack_2": {
+			"animation_length": 1,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.125": {
+							"post": [
+								0,
+								0,
+								80
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [
+								-102.5,
+								0,
+								80
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								-102.5,
+								0,
+								80
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								90,
+								180,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								90,
+								180,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								-2
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								0,
+								0,
+								-2
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.125": {
+					"effect": "rage_of_sakura_attack_2",
+					"locator": "ros_particle"
+				}
+			}
+		},
+		"animation.rage_of_sakura.attack_3": {
+			"animation_length": 1,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.125": {
+							"post": [
+								-86.10567,
+								-9.48926,
+								74.84619
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [
+								53.89,
+								-9.49,
+								74.85
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								53.89,
+								-9.49,
+								74.85
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.125": {
+					"effect": "rage_of_sakura_attack_3",
+					"locator": "ros_particle"
+				}
+			}
+		},
+		"animation.rage_of_sakura.attack_4": {
+			"animation_length": 1.25,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2083": {
+							"post": [
+								32.5,
+								0,
+								82.5
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.375": {
+							"post": [
+								-37.5,
+								0,
+								82.5
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								-37.5,
+								0,
+								82.5
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.2083": {
+							"pre": [
+								0,
+								0,
+								0
+							],
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.375": {
+							"post": [
+								42.5,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								42.5,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								9,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.2083": {
+							"pre": [
+								0,
+								0,
+								0
+							],
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.375": {
+							"post": [
+								0,
+								3,
+								-1
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								3,
+								-1
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.375": {
+					"effect": "rage_of_sakura_attack_4",
+					"locator": "ros_particle"
+				}
+			}
+		},
+		"animation.rage_of_sakura.attack_5": {
+			"animation_length": 1,
+			"bones": {
+				"leftArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-87.5,
+							0,
+							0
+						],
+						"0.8333": [
+							-87.5,
+							0,
+							0
+						],
+						"1.0": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"leftItem": {
+					"rotation": {
+						"0.0": [
+							-90,
+							0,
+							0
+						],
+						"0.8333": [
+							-87.5,
+							0,
+							0
+						],
+						"1.0": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							0,
+							0,
+							32
+						],
+						"0.3333": [
+							0,
+							-13,
+							32
+						],
+						"0.8333": [
+							0,
+							-13,
+							32
+						],
+						"1.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.375": [
+					{
+						"effect": "rage_of_sakura_attack_5_blood",
+						"locator": "damn"
+					},
+					{
+						"effect": "rage_of_sakura_attack_5_blood",
+						"locator": "damn"
+					}
+				]
+			}
+		},
+		"animation.rage_of_sakura.hold": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"view": {
+					"rotation": [
+						0,
+						180,
+						0
+					]
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "blood_marker",
+						"locator": "ros1"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "ros2"
+					},
+					{
+						"effect": "blood_marker",
+						"locator": "ros3"
+					}
+				]
+			}
+		}
+	}
+}

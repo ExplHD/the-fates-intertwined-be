@@ -1,0 +1,87 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:zenith_base",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"base": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"done": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"height": 0.1,
+				"width": 0.1
+			},
+			"minecraft:health": {
+				"value": 100,
+				"max": 100
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"base"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"done"
+					]
+				}
+			},
+			"done": {
+				"add": {
+					"component_groups": [
+						"done"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"base"
+					]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

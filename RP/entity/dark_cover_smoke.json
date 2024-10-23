@@ -1,0 +1,34 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:dark_cover_smoke",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/dark_cover_smoke"
+			},
+			"geometry": {
+				"default": "geometry.dark_cover_smoke"
+			},
+			"render_controllers": [
+				"controller.render.dark_cover_smoke"
+			],
+			"animations": {
+				"idle": "animation.dark_cover_smoke.idle",
+				"spawn": "animation.dark_cover_smoke.spawn"
+			},
+			"scripts": {
+				"animate": [
+					"spawn",
+					"idle"
+				]
+			},
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:spear_of_heart_plunge",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/spear_of_heart"
+			},
+			"geometry": {
+				"default": "geometry.spear_of_heart_plunge"
+			},
+			"render_controllers": [
+				"controller.render.spear_of_heart_plunge"
+			],
+			"animations": {
+				"spear_plunge": "animation.spear_of_heart_plunge.plunge"
+			},
+			"scripts": {
+				"animate": [
+					"spear_plunge"
+				]
+			},
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

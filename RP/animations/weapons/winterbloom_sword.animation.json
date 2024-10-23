@@ -1,0 +1,804 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.winterbloom_sword.attack_1": {
+			"animation_length": 1.25,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								-112.5,
+								0,
+								85
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [
+								22.5,
+								0,
+								85
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								22.5,
+								0,
+								85
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [
+								90,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								90,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.1667": {
+							"pre": [
+								0,
+								0,
+								0
+							],
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [
+								0,
+								0,
+								-2
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								-2
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "snow_marker",
+						"locator": "winterbloom1"
+					},
+					{
+						"effect": "snow_marker",
+						"locator": "winterbloom2"
+					},
+					{
+						"effect": "snow_marker",
+						"locator": "winterbloom3"
+					}
+				],
+				"0.1667": {
+					"effect": "winterbloom_attack_1",
+					"locator": "winterbloom_particle"
+				}
+			}
+		},
+		"animation.winterbloom_sword.attack_2": {
+			"animation_length": 1.54167,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								27.5,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": {
+							"post": [
+								27.5,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								27.5,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.541": {
+							"post": [
+								27.5,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								-112.7344,
+								17.17705,
+								83.66558
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": {
+							"post": [
+								-112.73,
+								17.18,
+								83.67
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								44.77,
+								17.18,
+								83.67
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								44.77,
+								17.18,
+								83.67
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5833": {
+							"post": [
+								120,
+								-30,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"leftLeg": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								-17.5,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": {
+							"post": [
+								-17.5,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								-17.5,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"rightLeg": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								32.5,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": {
+							"post": [
+								32.5,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								32.5,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "cherry_marker",
+						"locator": "winterbloom1"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "winterbloom2"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "winterbloom3"
+					}
+				],
+				"0.4167": {
+					"effect": "winterbloom_attack_2",
+					"locator": "winterbloom_particle"
+				}
+			}
+		},
+		"animation.winterbloom_sword.attack_3": {
+			"animation_length": 1.5,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								-7.98205,
+								23.7695,
+								70.81754
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3333": {
+							"post": [
+								-128.66884,
+								-3.08716,
+								93.8741
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								-128.67,
+								-3.09,
+								93.87
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								-90,
+								0,
+								180
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3333": {
+							"post": [
+								-90,
+								0,
+								180
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								-90,
+								0,
+								180
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "snow_marker",
+						"locator": "winterbloom1"
+					},
+					{
+						"effect": "snow_marker",
+						"locator": "winterbloom2"
+					},
+					{
+						"effect": "snow_marker",
+						"locator": "winterbloom3"
+					}
+				],
+				"0.1667": {
+					"effect": "winterbloom_attack_3",
+					"locator": "winterbloom_particle"
+				}
+			}
+		},
+		"animation.winterbloom_sword.attack_4": {
+			"animation_length": 3.75,
+			"bones": {
+				"leftArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								-71.89377,
+								21.48968,
+								6.83037
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								-0.00253,
+								-73.18796,
+								-89.99933
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.0": {
+							"post": [
+								-0.00253,
+								-73.18796,
+								-89.99933
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								-73.19143,
+								-26.48829,
+								-7.6734
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								-0.0072,
+								74.99896,
+								89.99708
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.0": {
+							"post": [
+								-0.01,
+								75,
+								90
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.25": {
+							"post": [
+								-93.52939,
+								-24.0955,
+								-6.87218
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.75": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								0,
+								5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								0,
+								-5,
+								180
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.75": {
+							"post": [
+								0,
+								5,
+								360
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"2.25": {
+							"post": [
+								0,
+								-15,
+								540
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"2.75": {
+							"post": [
+								0,
+								5,
+								720
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.0": {
+							"post": [
+								0,
+								5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								1,
+								-1,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								17,
+								12,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.0": {
+							"post": [
+								17,
+								12,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.5": [
+					{
+						"effect": "cherry_marker",
+						"locator": "winterbloom1"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "winterbloom2"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "winterbloom3"
+					}
+				],
+				"1.5": [
+					{
+						"effect": "cherry_marker",
+						"locator": "winterbloom1"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "winterbloom2"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "winterbloom3"
+					}
+				],
+				"2.5": [
+					{
+						"effect": "cherry_marker",
+						"locator": "winterbloom1"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "winterbloom2"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "winterbloom3"
+					}
+				],
+				"3.5": [
+					{
+						"effect": "cherry_marker",
+						"locator": "winterbloom1"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "winterbloom2"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "winterbloom3"
+					}
+				]
+			}
+		},
+		"animation.winterbloom_sword.hold": {
+			"loop": true,
+			"bones": {
+				"view": {
+					"rotation": [
+						0,
+						180,
+						0
+					]
+				}
+			}
+		}
+	}
+}

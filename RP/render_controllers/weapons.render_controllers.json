@@ -1,0 +1,148 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.winterbloom_sword": {
+			"textures": [
+				"texture.winterbloom_sword"
+			],
+			"geometry": "geometry.winterbloom_sword",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		},
+		"controller.render.rage_of_sakura": {
+			"textures": [
+				"texture.rage_of_sakura"
+			],
+			"geometry": "geometry.rage_of_sakura",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		},
+		"controller.render.murasama_calamity": {
+			"textures": [
+				"texture.murasama_calamity"
+			],
+			"geometry": "geometry.murasama_calamity",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		},
+		"controller.render.spear_of_heart": {
+			"textures": [
+				"texture.spear_of_heart"
+			],
+			"geometry": "geometry.spear_of_heart",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		},
+		"controller.render.windblade_claymore": {
+			"textures": [
+				"texture.windblade_claymore"
+			],
+			"geometry": "geometry.windblade_claymore",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		},
+		"controller.render.blade_of_the_end": {
+			"textures": [
+				"texture.blade_of_the_end"
+			],
+			"geometry": "geometry.blade_of_the_end",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		},
+		"controller.render.zenith": {
+			"textures": [
+				"texture.zenith"
+			],
+			"geometry": "geometry.zenith",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		},
+		"controller.render.eidolon_4_staff": {
+			"textures": [
+				"texture.eidolon_4_staff"
+			],
+			"geometry": "geometry.eidolon_4_staff",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		},
+		"controller.render.stars_and_crescent": {
+			"textures": [
+				"texture.stars_and_crescent"
+			],
+			"geometry": "geometry.stars_and_crescent",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		},
+		"controller.render.shadow_revolver": {
+			"textures": [
+				"texture.shadow_revolver"
+			],
+			"geometry": "geometry.shadow_revolver",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		},
+		"controller.render.tenacity": {
+			"textures": [
+				"texture.mythic_tenacity"
+			],
+			"geometry": "geometry.tenacity",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		},
+		"controller.render.tenacity_axe": {
+			"textures": [
+				"texture.mythic_tenacity"
+			],
+			"geometry": "geometry.tenacity_axe",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		},
+		"controller.render.reworked_tenacity": {
+			"textures": [
+				"texture.reworked_tenacity"
+			],
+			"geometry": "geometry.tenacity",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		}
+	}
+}

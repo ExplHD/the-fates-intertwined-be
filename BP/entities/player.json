@@ -1,0 +1,393 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:player",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false,
+			"animations": {
+				"death": "controller.animation.death",
+				"walk": "controller.animation.walk",
+				"jump": "controller.animation.jump",
+				"walking": "animation.walking",
+				"jumping": "animation.jumping",
+				"blade_of_the_end": "controller.animation.blade_of_the_end",
+				"blade_of_the_end_atk_4": "animation.blade_of_the_end.attack_4",
+				"blade_of_the_end_skill_3": "animation.blade_of_the_end.skill_3",
+				"rage_of_sakura": "controller.animation.rage_of_sakura",
+				"rage_of_sakura_atk_5": "animation.rage_of_sakura.attack_5",
+				"winterbloom_sword": "controller.animation.winterbloom_sword",
+				"winterbloom_sword_atk_4": "animation.winterbloom_sword.attack_4",
+				"winterbloom_sword_ultimate": "animation.winterbloom_sword.ultimate",
+				"murasama_calamity": "controller.animation.murasama_calamity",
+				"murasama_calamity_skill_2": "animation.murasama_calamity.skill_2",
+				"murasama_calamity_ultimate": "animation.murasama_calamity.ultimate",
+				"windblade_claymore": "controller.animation.windblade_claymore",
+				"windblade_claymore_atk_3": "animation.windblade_claymore.attack_3",
+				"windblade_claymore_skill_1": "animation.windblade_claymore.skill_1",
+				"windblade_claymore_skill_2": "animation.windblade_claymore.skill_2",
+				"spear_of_heart": "controller.animation.spear_of_heart",
+				"spear_of_heart_atk_4": "animation.spear_of_heart.attack_4",
+				"spear_of_heart_skill_1": "animation.spear_of_heart.skill_1",
+				"zenith": "controller.animation.zenith",
+				"zenith_skill_1": "animation.zenith.skill_1",
+				"zenith_skill_3": "animation.zenith.skill_3",
+				"zenith_ultimate": "animation.zenith.ultimate",
+				"eidolon_4_staff": "controller.animation.eidolon_4_staff",
+				"eidolon_4_staff_atk_2": "animation.eidolon_4_staff.attack_2",
+				"eidolon_4_staff_atk_3": "animation.eidolon_4_staff.attack_3",
+				"eidolon_4_staff_skill_2": "animation.eidolon_4_staff.skill_2",
+				"eidolon_4_staff_ultimate": "animation.eidolon_4_staff.ultimate",
+				"stars_and_crescent": "controller.animation.stars_and_crescent",
+				"stars_and_crescent_atk_5": "animation.stars_and_crescent.attack_5",
+				"shadow_revolver": "controller.animation.shadow_revolver",
+				"shadow_revolver_fire": "animation.shadow_revolver.fire",
+				"shadow_revolver_reload": "animation.shadow_revolver.reload",
+				"shadow_revolver_atk_1": "animation.shadow_revolver.attack_1",
+				"shadow_revolver_atk_2": "animation.shadow_revolver.attack_2",
+				"mythic_tenacity": "controller.animation.mythic_tenacity",
+				"mythic_tenacity_axe": "animation.mythic_tenacity.tenacity_axe",
+				"mythic_tenacity_scythe": "animation.mythic_tenacity.tenacity_scythe",
+				"mythic_tenacity_attack_4_scythe": "animation.mythic_tenacity.attack_4_scythe",
+				"mythic_tenacity_skill_2_scythe": "animation.mythic_tenacity.skill_2_scythe",
+				"mythic_tenacity_ultimate_scythe": "animation.mythic_tenacity.ultimate_scythe",
+				"mythic_tenacity_skill_2_axe": "animation.mythic_tenacity.skill_2_axe",
+				"mythic_tenacity_ultimate_axe": "animation.mythic_tenacity.ultimate_axe",
+				"reworked_tenacity": "controller.animation.reworked_tenacity"
+			},
+			"scripts": {
+				"animate": [
+					"death",
+					"walk",
+					"jump",
+					"blade_of_the_end",
+					"winterbloom_sword",
+					"rage_of_sakura",
+					"murasama_calamity",
+					"windblade_claymore",
+					"spear_of_heart",
+					"zenith",
+					"eidolon_4_staff",
+					"stars_and_crescent",
+					"shadow_revolver",
+					"mythic_tenacity",
+					"reworked_tenacity"
+				]
+			},
+			"properties": {
+				"fec:shadow_revolver_state": {
+					"type": "int",
+					"client_sync": true,
+					"default": 0,
+					"range": [
+						0,
+						1
+					]
+				}
+			}
+		},
+		"component_groups": {
+			"minecraft:add_raid_omen": {
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "raid_omen",
+							"duration": 30,
+							"display_on_screen_animation": true
+						}
+					],
+					"remove_effects": "bad_omen"
+				},
+				"minecraft:timer": {
+					"time": [
+						0.0,
+						0.0
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "minecraft:clear_add_raid_omen",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:clear_raid_omen_spell_effect": {
+				"minecraft:spell_effects": {}
+			},
+			"minecraft:raid_trigger": {
+				"minecraft:raid_trigger": {
+					"triggered_event": {
+						"event": "minecraft:remove_raid_trigger",
+						"target": "self"
+					}
+				}
+			},
+			"fec:shadow_revolver_bullet": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"num_to_spawn": 1,
+							"single_use": true,
+							"spawn_entity": "fec:shadow_revolver_bullet",
+							"spawn_event": "fec:shadow_revolver_bullet"
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": 0.1,
+					"looping": false,
+					"time_down_event": {
+						"event": "fec:remove_all_shooter",
+						"target": "self"
+					}
+				}
+			},
+			"fec:shadow_revolver_bullet_base_atk": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"num_to_spawn": 1,
+							"single_use": true,
+							"spawn_entity": "fec:shadow_revolver_bullet",
+							"spawn_event": "fec:shadow_revolver_bullet_base_atk"
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": 0.1,
+					"looping": false,
+					"time_down_event": {
+						"event": "fec:remove_all_shooter",
+						"target": "self"
+					}
+				}
+			},
+			"fec:shadow_revolver_protocol_impact_0078": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"num_to_spawn": 1,
+							"single_use": true,
+							"spawn_entity": "fec:shadow_revolver_bullet",
+							"spawn_event": "fec:shadow_revolver_bullet_protocol_impact_0078"
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": 0.1,
+					"looping": false,
+					"time_down_event": {
+						"event": "fec:remove_all_shooter",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:experience_reward": {
+				"on_death": "math.min(query.player_level*7,100)"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"player"
+				]
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:loot": {
+				"table": "loot_tables/empty.json"
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.8
+			},
+			"minecraft:can_climb": {},
+			"minecraft:movement": {
+				"value": 0.1
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 10
+					}
+				]
+			},
+			"minecraft:attack": {
+				"damage": 1
+			},
+			"minecraft:player.saturation": {
+				"value": 20
+			},
+			"minecraft:player.exhaustion": {
+				"value": 0,
+				"max": 4
+			},
+			"minecraft:player.level": {
+				"value": 0,
+				"max": 32768
+			},
+			"minecraft:player.experience": {
+				"value": 0,
+				"max": 1
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": -1,
+				"inhale_time": 3.75,
+				"generates_bubbles": false
+			},
+			"minecraft:nameable": {
+				"always_show": true,
+				"allow_name_tag_renaming": false
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:insomnia": {
+				"days_until_insomnia": 3
+			},
+			"minecraft:combat_regeneration": {
+				"apply_to_self": true,
+				"regeneration_duration": 15
+			},
+			"minecraft:rideable": {
+				"seat_count": 2,
+				"family_types": [
+					"parrot_tame"
+				],
+				"pull_in_entities": true,
+				"seats": [
+					{
+						"position": [
+							0.4,
+							-0.2,
+							-0.1
+						],
+						"min_rider_count": 0,
+						"max_rider_count": 0,
+						"lock_rider_rotation": 0
+					},
+					{
+						"position": [
+							-0.4,
+							-0.2,
+							-0.1
+						],
+						"min_rider_count": 1,
+						"max_rider_count": 2,
+						"lock_rider_rotation": 0
+					}
+				]
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:block_climber": {},
+			"minecraft:environment_sensor": {
+				"triggers": {
+					"filters": {
+						"all_of": [
+							{
+								"test": "has_mob_effect",
+								"subject": "self",
+								"value": "bad_omen"
+							},
+							{
+								"test": "is_in_village",
+								"subject": "self",
+								"value": true
+							}
+						]
+					},
+					"event": "minecraft:trigger_raid"
+				}
+			}
+		},
+		"events": {
+			"minecraft:gain_raid_omen": {
+				"add": {
+					"component_groups": [
+						"minecraft:add_raid_omen"
+					]
+				}
+			},
+			"minecraft:clear_add_raid_omen": {
+				"remove": {
+					"component_groups": [
+						"minecraft:add_raid_omen"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:clear_raid_omen_spell_effect"
+					]
+				}
+			},
+			"minecraft:trigger_raid": {
+				"add": {
+					"component_groups": [
+						"minecraft:raid_trigger"
+					]
+				}
+			},
+			"minecraft:remove_raid_trigger": {
+				"remove": {
+					"component_groups": [
+						"minecraft:raid_trigger"
+					]
+				}
+			},
+			"fec:remove_all_shooter": {
+				"remove": {
+					"component_groups": [
+						"fec:shadow_revolver_bullet",
+						"fec:shadow_revolver_bullet_base_atk"
+					]
+				}
+			},
+			"fec:shadow_revolver_bullet": {
+				"add": {
+					"component_groups": [
+						"fec:shadow_revolver_bullet"
+					]
+				}
+			},
+			"fec:shadow_revolver_bullet_base_atk": {
+				"add": {
+					"component_groups": [
+						"fec:shadow_revolver_bullet_base_atk"
+					]
+				}
+			},
+			"fec:shadow_revolver_protocol_impact_0078": {
+				"add": {
+					"component_groups": [
+						"fec:shadow_revolver_protocol_impact_0078"
+					]
+				}
+			},
+			"fec:set_ultimate_state_to_1": {
+				"set_property": {
+					"fec:shadow_revolver_state": 1
+				}
+			},
+			"fec:set_ultimate_state_to_0": {
+				"set_property": {
+					"fec:shadow_revolver_state": 0
+				}
+			}
+		}
+	}
+}

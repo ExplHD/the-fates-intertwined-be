@@ -1,0 +1,45 @@
+{
+    "format_version": "1.21.10",
+    "animation_controllers": {
+        "controller.animation.shadowplague_guardian": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/scoreboard players set @s atkp_delay 0"
+                    ],
+                    "transitions": [
+                        {
+                            "attack_1": "variable.attack_time"
+                        }
+                    ]
+                },
+                "attack_1": {
+                    "on_entry": [
+                        "/playanimation @s animation.shadowplague_guardian.attack_1",
+                        "/scoreboard players add @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.scoreboard('atkp_delay') >= 30"
+                        },
+                        {
+                            "attack_2": "variable.attack_time && query.scoreboard('atkp_delay') >= 10"
+                        }
+                    ]
+                },
+                "attack_2": {
+                    "on_entry": [
+                        "/playanimation @s animation.shadowplague_guardian.attack_2",
+                        "/scoreboard players set @s atkp_delay 0"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(1.0)"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

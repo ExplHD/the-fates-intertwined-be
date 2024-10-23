@@ -1,0 +1,53 @@
+{
+    "format_version": "1.16.0",
+    "animation_controllers": {
+        "controller.animation.shadow_revolver": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "blend_transition": 0.2,
+                    "transitions": [
+                        {
+                            "shadow_revolver_take_aim": "query.is_sneaking && query.is_using_item && query.get_equipped_item_name('main_hand') == 'shadow_revolver'"
+                        },
+                        {
+                            "shadow_revolver_take_aim_ultimate": "query.is_using_item && query.get_equipped_item_name('main_hand') == 'shadow_revolver'&&query.is_using_item&&query.property('fec:shadow_revolver_state')==1"
+                        }
+                    ]
+                },
+                "shadow_revolver_take_aim": {
+                    "animations": [
+                        {
+                            "shadow_revolver_take_aim": "!v.is_first_person"
+                        },
+                        {
+                            "shadow_revolver_take_aim_fpp": "v.is_first_person"
+                        }
+                    ],
+                    "blend_transition": 0.2,
+                    "transitions": [
+                        {
+                            "default": "!query.is_sneaking"
+                        }
+                    ]
+                },
+                "shadow_revolver_take_aim_ultimate": {
+                    "animations": [
+                        {
+                            "shadow_revolver_take_aim": "!v.is_first_person"
+                        },
+                        {
+                            "shadow_revolver_take_aim_fpp": "v.is_first_person"
+                        }
+                    ],
+                    "blend_transition": 0.2,
+                    "transitions": [
+                        {
+                            "default": "!query.is_using_item"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

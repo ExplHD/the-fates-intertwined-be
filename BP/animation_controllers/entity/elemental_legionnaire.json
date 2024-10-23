@@ -1,0 +1,62 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.elemental_legionnaire": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/scoreboard players set @s atkp_delay 0"
+                    ],
+                    "transitions": [
+                        {
+                            "attack_1": "variable.attack_time"
+                        }
+                    ]
+                },
+                "attack_1": {
+                    "on_entry": [
+                        "/playanimation @s animation.windblade_claymore.attack_1",
+                        "/damage @e[r=4,rm=0.1] 15 entity_attack entity @s",
+                        "/playsound item.trident.riptide_1 @a[r=16]",
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.scoreboard('atkp_delay') >= 60"
+                        },
+                        {
+                            "attack_2": "variable.attack_time && query.scoreboard('atkp_delay') >= 15"
+                        }
+                    ]
+                },
+                "attack_2": {
+                    "on_entry": [
+                        "/playanimation @s animation.windblade_claymore.attack_2",
+                        "/damage @e[r=4,rm=0.1] 10 entity_attack entity @s",
+                        "/playsound item.trident.riptide_2 @a[r=16]",
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.scoreboard('atkp_delay') >= 60"
+                        },
+                        {
+                            "attack_3": "variable.attack_time && query.scoreboard('atkp_delay') >= 15"
+                        }
+                    ]
+                },
+                "attack_3": {
+                    "animations": [
+                        "windblade_atk_3"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.scoreboard('atkp_delay') >= 60"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

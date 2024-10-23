@@ -1,0 +1,47 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.fire_pillar_remastered.idle": {
+			"loop": true,
+			"animation_length": 5,
+			"bones": {
+				"flame": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"5.0": [0, 360, 0]
+					}
+				}
+			}
+		},
+		"animation.fire_pillar_remastered.despawn": {
+			"animation_length": 0.5,
+			"bones": {
+				"flame": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [0, 360, 0]
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.5": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.fire_pillar_remastered.spawn": {
+			"animation_length": 0.5,
+			"bones": {
+				"flame": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [0, 360, 0]
+					},
+					"scale": {
+						"0.0": [0, 0, 0],
+						"0.5": [1, 1, 1]
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,69 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:thrown_frag_grenade",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"component_groups": {
+			"grenade_explode": {
+				"minecraft:explode": {
+					"fuse_lit": true,
+					"fuse_length": 0,
+					"power": 3,
+					"destroy_affected_by_griefing": false,
+					"causes_fire": false
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": 3,
+						"knockback": true
+					},
+					"definition_event": {
+						"event_trigger": {
+							"event": "grenade_explode",
+							"target": "self"
+						}
+					}
+				},
+				"anchor": 1,
+				"power": 1.5,
+				"gravity": 0.03,
+				"angle_offset": 0,
+				"offset": [
+					0,
+					-0.1,
+					0
+				],
+				"shoot_target": true,
+				"catch_fire": true,
+				"reflect_on_hurt": true
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"grenade_explode": {
+				"add": {
+					"component_groups": [
+						"grenade_explode"
+					]
+				}
+			}
+		}
+	}
+}

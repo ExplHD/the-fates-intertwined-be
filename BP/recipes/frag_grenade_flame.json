@@ -1,0 +1,30 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "fec:frag_grenade_flame"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "fec:frag_grenade"
+			},
+			{
+				"item": "minecraft:blaze_powder"
+			}
+		],
+		"unlock": [
+			{
+				"item": "fec:frag_grenade"
+			}
+		],
+		"result": [
+			{
+				"item": "fec:frag_grenade_flame",
+				"count": 1
+			}
+		]
+	}
+}

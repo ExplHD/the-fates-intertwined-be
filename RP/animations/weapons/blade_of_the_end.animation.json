@@ -1,0 +1,418 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.blade_of_the_end.attack_1": {
+			"animation_length": 1,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								-78.38115,
+								-13.08017,
+								70.73397
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [
+								69.12,
+								-13.08,
+								70.73
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								69.12,
+								-13.08,
+								70.73
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod1"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod2"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod3"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod4"
+					}
+				],
+				"0.1667": {
+					"effect": "blade_of_the_end_attack_1",
+					"locator": "bod_particle"
+				}
+			}
+		},
+		"animation.blade_of_the_end.attack_2": {
+			"animation_length": 0.75,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								0,
+								0,
+								75
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3333": {
+							"post": [
+								-155,
+								0,
+								75
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								-155,
+								0,
+								75
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								90,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								90,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								0,
+								0,
+								-2
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								0,
+								0,
+								-2
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod1"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod2"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod3"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod4"
+					}
+				],
+				"0.1667": {
+					"effect": "blade_of_the_end_attack_2",
+					"locator": "bod_particle"
+				}
+			}
+		},
+		"animation.blade_of_the_end.attack_3": {
+			"animation_length": 0.83333,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							37.5,
+							0,
+							95
+						],
+						"0.4167": [
+							-82.5,
+							0,
+							95
+						],
+						"0.5833": [
+							-82.5,
+							0,
+							95
+						],
+						"0.8333": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.25": [
+							0,
+							0,
+							0
+						],
+						"0.4167": [
+							82.5,
+							0,
+							0
+						],
+						"0.5833": [
+							82.5,
+							0,
+							0
+						],
+						"0.8333": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod1"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod2"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod3"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod4"
+					}
+				],
+				"0.25": {
+					"effect": "blade_of_the_end_attack_3",
+					"locator": "bod_particle"
+				}
+			}
+		},
+		"animation.blade_of_the_end.skill_3": {
+			"animation_length": 3,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							-92.5,
+							0,
+							0
+						],
+						"2.5": [
+							-92.5,
+							0,
+							0
+						],
+						"3.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod1"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod2"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod3"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod4"
+					}
+				],
+				"1.0": [
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod1"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod2"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod3"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod4"
+					}
+				],
+				"2.0": [
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod1"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod2"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod3"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod4"
+					}
+				],
+				"3.0": [
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod1"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod2"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod3"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "bod4"
+					}
+				]
+			}
+		},
+		"animation.blade_of_the_end.hold": {
+			"loop": true,
+			"bones": {
+				"view": {
+					"rotation": [
+						0,
+						180,
+						0
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,50 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "The Fates Interwined 2024.10.1 (RP)",
+		"description": "A Minecraft addons that adds a lot of content that will be updated every 2-3 months",
+		"min_engine_version": [
+			1,
+			21,
+			20
+		],
+		"uuid": "d0c57fa8-3727-4c70-b9f6-5f45c0664181",
+		"version": [
+			2024,
+			10,
+			1
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "d114bf56-ca92-4046-91eb-a4fd69d508fc",
+			"version": [
+				2024,
+				10,
+				1
+			]
+		}
+	],
+	"capabilities": [
+		"experimental_custom_ui"
+	],
+	"dependencies": [
+		{
+			"uuid": "c262e66a-698b-4fe6-89f5-3175a8e40d31",
+			"version": [
+				2024,
+				10,
+				1
+			]
+		},
+		{
+			"uuid": "dec5c848-fee6-420d-8a7a-0cc8f878bd7e",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}

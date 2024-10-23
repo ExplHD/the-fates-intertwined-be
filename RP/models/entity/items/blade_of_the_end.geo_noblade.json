@@ -1,0 +1,449 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.blade_of_the_end_noblade",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 6,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "view",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"rotation": [
+						0,
+						180,
+						0
+					],
+					"binding": "q.item_slot_to_bone_name(c.item_slot)"
+				},
+				{
+					"name": "root",
+					"parent": "view",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"locators": {
+						"bod_particle": {
+							"offset": [
+								0,
+								0,
+								0
+							],
+							"rotation": [
+								180,
+								0,
+								0
+							]
+						}
+					}
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [
+						0,
+						12,
+						0
+					]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [
+						0,
+						24,
+						0
+					]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [
+						0,
+						24,
+						0
+					]
+				},
+				{
+					"name": "hat",
+					"parent": "head",
+					"pivot": [
+						0,
+						24,
+						0
+					]
+				},
+				{
+					"name": "leftArm",
+					"parent": "body",
+					"pivot": [
+						5,
+						22,
+						0
+					]
+				},
+				{
+					"name": "leftSleeve",
+					"parent": "leftArm",
+					"pivot": [
+						5,
+						22,
+						0
+					]
+				},
+				{
+					"name": "leftItem",
+					"parent": "leftArm",
+					"pivot": [
+						6,
+						15,
+						1
+					]
+				},
+				{
+					"name": "rightArm",
+					"parent": "body",
+					"pivot": [
+						-5,
+						22,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								13,
+								-4
+							],
+							"size": [
+								2,
+								2,
+								8
+							],
+							"uv": [
+								27,
+								0
+							]
+						},
+						{
+							"origin": [
+								-7,
+								12,
+								-8
+							],
+							"size": [
+								2,
+								4,
+								4
+							],
+							"uv": [
+								12,
+								12
+							]
+						},
+						{
+							"origin": [
+								-7,
+								16,
+								-8
+							],
+							"size": [
+								2,
+								5,
+								2
+							],
+							"uv": [
+								27,
+								0
+							]
+						},
+						{
+							"origin": [
+								-7,
+								7,
+								-8
+							],
+							"size": [
+								2,
+								5,
+								2
+							],
+							"uv": [
+								16,
+								0
+							]
+						},
+						{
+							"origin": [
+								-7,
+								16,
+								-6
+							],
+							"size": [
+								2,
+								2,
+								2
+							],
+							"uv": [
+								7,
+								29
+							]
+						},
+						{
+							"origin": [
+								-7,
+								10,
+								-6
+							],
+							"size": [
+								2,
+								2,
+								2
+							],
+							"uv": [
+								16,
+								7
+							]
+						},
+						{
+							"origin": [
+								-7,
+								12,
+								-11
+							],
+							"size": [
+								2,
+								4,
+								3
+							],
+							"uv": [
+								28,
+								10
+							]
+						},
+						{
+							"origin": [
+								-7,
+								13,
+								-16
+							],
+							"size": [
+								2,
+								2,
+								4
+							],
+							"uv": [
+								0,
+								16
+							]
+						},
+						{
+							"origin": [
+								-7,
+								11.74645,
+								-12.49645
+							],
+							"size": [
+								2,
+								2.75,
+								2.75
+							],
+							"pivot": [
+								-6,
+								13.64645,
+								-12.14645
+							],
+							"rotation": [
+								45,
+								0,
+								0
+							],
+							"uv": [
+								13,
+								20
+							]
+						},
+						{
+							"origin": [
+								-7,
+								15.94645,
+								-15.29645
+							],
+							"size": [
+								2,
+								1.4,
+								1.4
+							],
+							"pivot": [
+								-6,
+								13.64645,
+								-12.14645
+							],
+							"rotation": [
+								45,
+								0,
+								0
+							],
+							"uv": [
+								1,
+								22
+							]
+						},
+						{
+							"origin": [
+								-6.5,
+								9.9,
+								-1.6
+							],
+							"size": [
+								1,
+								1,
+								5.1
+							],
+							"pivot": [
+								-6,
+								12,
+								0
+							],
+							"rotation": [
+								45,
+								0,
+								0
+							],
+							"uv": [
+								0,
+								29
+							]
+						},
+						{
+							"origin": [
+								-6.5,
+								10.2,
+								-3.8
+							],
+							"size": [
+								1,
+								1,
+								5.75
+							],
+							"pivot": [
+								-6,
+								12,
+								0
+							],
+							"rotation": [
+								-40,
+								0,
+								0
+							],
+							"uv": [
+								27,
+								17
+							]
+						}
+					],
+					"locators": {
+						"bod1": [
+							-6,
+							14,
+							-17
+						],
+						"bod2": [
+							-6,
+							14,
+							-24
+						],
+						"bod3": [
+							-6,
+							14,
+							-31
+						],
+						"bod4": [
+							-6,
+							14,
+							-38
+						]
+					}
+				},
+				{
+					"name": "rightSleeve",
+					"parent": "rightArm",
+					"pivot": [
+						-5,
+						22,
+						0
+					]
+				},
+				{
+					"name": "rightItem",
+					"parent": "rightArm",
+					"pivot": [
+						-6,
+						15,
+						1
+					]
+				},
+				{
+					"name": "jacket",
+					"parent": "body",
+					"pivot": [
+						0,
+						24,
+						0
+					]
+				},
+				{
+					"name": "leftLeg",
+					"parent": "root",
+					"pivot": [
+						1.9,
+						12,
+						0
+					]
+				},
+				{
+					"name": "leftPants",
+					"parent": "leftLeg",
+					"pivot": [
+						1.9,
+						12,
+						0
+					]
+				},
+				{
+					"name": "rightLeg",
+					"parent": "root",
+					"pivot": [
+						-1.9,
+						12,
+						0
+					]
+				},
+				{
+					"name": "rightPants",
+					"parent": "rightLeg",
+					"pivot": [
+						-1.9,
+						12,
+						0
+					]
+				}
+			]
+		}
+	]
+}

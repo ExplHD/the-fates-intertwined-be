@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:wind_essence"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"###",
+			"###",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "fec:wind_shard"
+			}
+		},
+		"unlock": [
+			{
+				"item": "fec:wind_shard"
+			}
+		],
+		"result": {
+			"item": "fec:wind_essence"
+		}
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:murasama_medal"
+		},
+		"key": {
+			"Q": {
+				"item": "minecraft:quartz"
+			},
+			"M": {
+				"item": "fec:lightning_phoenix_medal_wireframe"
+			},
+			"R": {
+				"item": "minecraft:redstone"
+			}
+		},
+		"pattern": [
+			"QRQ",
+			"RMR",
+			"QRQ"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"unlock": [
+			{
+				"item": "fec:lightning_phoenix_medal_wireframe"
+			}
+		],
+		"result": {
+			"item": "fec:murasama_medal"
+		}
+	}
+}

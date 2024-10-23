@@ -1,0 +1,343 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.eidolon_4_staff.attack_1": {
+			"animation_length": 1,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							-110.41319,
+							-3.21132,
+							14.65993
+						],
+						"0.4167": [
+							74.59,
+							-3.21,
+							14.66
+						],
+						"0.75": [
+							74.59,
+							-3.21,
+							14.66
+						],
+						"1.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_1"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_2"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_3"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_4"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_5"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_6"
+					}
+				],
+				"0.25": {
+					"effect": "eidolon_4_staff_attack_1",
+					"locator": "eidolon_4_particle"
+				}
+			}
+		},
+		"animation.eidolon_4_staff.attack_2": {
+			"animation_length": 1.5,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							0,
+							0,
+							90
+						],
+						"0.6667": [
+							-90,
+							0,
+							90
+						],
+						"0.9583": [
+							90,
+							0,
+							90
+						],
+						"1.25": [
+							90,
+							0,
+							90
+						],
+						"1.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							0,
+							0,
+							-90
+						],
+						"0.375": [
+							0,
+							0,
+							-90
+						],
+						"0.6667": [
+							360,
+							0,
+							-90
+						],
+						"0.9583": [
+							720,
+							0,
+							-90
+						],
+						"1.25": [
+							720,
+							0,
+							-90
+						],
+						"1.5": [
+							720,
+							0,
+							-90
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_1"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_2"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_3"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_4"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_5"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_6"
+					}
+				],
+				"0.25": {
+					"effect": "eidolon_4_staff_attack_2",
+					"locator": "eidolon4_7"
+				},
+				"0.375": {
+					"effect": "eidolon_4_staff_attack_2",
+					"locator": "eidolon4_7"
+				},
+				"0.5": {
+					"effect": "eidolon_4_staff_attack_2",
+					"locator": "eidolon4_7"
+				},
+				"0.625": {
+					"effect": "eidolon_4_staff_attack_2",
+					"locator": "eidolon4_7"
+				},
+				"0.75": {
+					"effect": "eidolon_4_staff_attack_2",
+					"locator": "eidolon4_7"
+				},
+				"0.875": {
+					"effect": "eidolon_4_staff_attack_2",
+					"locator": "eidolon4_7"
+				},
+				"1.0": {
+					"effect": "eidolon_4_staff_attack_2",
+					"locator": "eidolon4_7"
+				},
+				"1.125": {
+					"effect": "eidolon_4_staff_attack_2",
+					"locator": "eidolon4_7"
+				},
+				"1.25": {
+					"effect": "eidolon_4_staff_attack_2",
+					"locator": "eidolon4_7"
+				}
+			}
+		},
+		"animation.eidolon_4_staff.attack_3": {
+			"animation_length": 1.5,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							-207.5,
+							0,
+							0
+						],
+						"0.375": [
+							-207.5,
+							0,
+							0
+						],
+						"0.4583": [
+							-180,
+							0,
+							0
+						],
+						"1.0": [
+							-180,
+							0,
+							0
+						],
+						"1.25": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"weapon_root": {
+					"position": {
+						"0.25": [
+							0,
+							0,
+							0
+						],
+						"0.4583": [
+							0,
+							0,
+							0
+						],
+						"0.8333": [
+							0,
+							0,
+							320
+						],
+						"1.1667": [
+							0,
+							0,
+							320
+						],
+						"1.25": [
+							0,
+							0,
+							0
+						]
+					},
+					"scale": {
+						"0.7083": [
+							1,
+							1,
+							1
+						],
+						"1.0": [
+							0,
+							0,
+							0
+						],
+						"1.375": [
+							0,
+							0,
+							0
+						],
+						"1.5": [
+							1,
+							1,
+							1
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_1"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_2"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_3"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_4"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_5"
+					},
+					{
+						"effect": "cherry_marker",
+						"locator": "eidolon4_6"
+					}
+				]
+			}
+		},
+		"animation.eidolon_4_staff.hold": {
+			"loop": true,
+			"bones": {
+				"view": {
+					"rotation": [
+						0,
+						180,
+						0
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,143 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.winterbloom_sword",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 10,
+				"visible_bounds_height": 9,
+				"visible_bounds_offset": [0, -1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "view",
+					"pivot": [0, 0, 0],
+					"rotation": [0, 180, 0]
+				},
+				{
+					"name": "root",
+					"parent": "view",
+					"pivot": [0, 0, 0],
+					"binding": "q.item_slot_to_bone_name(c.item_slot)"
+				},
+				{
+					"name": "particle",
+					"parent": "root",
+					"pivot": [0, 0, 0],
+					"locators": {
+						"winterbloom_particle": {
+							"offset": [0, 2, 0],
+							"rotation": [180, 0, 0]
+						}
+					}
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 13, 0]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "hat",
+					"parent": "head",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "leftArm",
+					"parent": "body",
+					"pivot": [5, 22, 0],
+					"cubes": [
+						{"origin": [4, 12, -2], "size": [4, 12, 4], "uv": [48, 48]}
+					]
+				},
+				{
+					"name": "leftSleeve",
+					"parent": "leftArm",
+					"pivot": [5, 22, 0]
+				},
+				{
+					"name": "leftItem",
+					"parent": "leftArm",
+					"pivot": [6, 15, 1]
+				},
+				{
+					"name": "rightArm",
+					"parent": "body",
+					"pivot": [-5, 22, 0],
+					"cubes": [
+						{"origin": [-8, 12, -2], "size": [4, 12, 4], "uv": [48, 48]}
+					]
+				},
+				{
+					"name": "rightSleeve",
+					"parent": "rightArm",
+					"pivot": [-5, 22, 0]
+				},
+				{
+					"name": "rightItem",
+					"parent": "rightArm",
+					"pivot": [-6, 15, 1]
+				},
+				{
+					"name": "weapon_root",
+					"parent": "rightArm",
+					"pivot": [-6, 15, 1],
+					"cubes": [
+						{"origin": [-7, 13, -3], "size": [2, 2, 8], "uv": [12, 36]},
+						{"origin": [-8, 12, -4], "size": [4, 4, 1], "pivot": [-6, 14, -3.5], "rotation": [0, 0, 45], "uv": [12, 12]},
+						{"origin": [-6.5, 13.83559, -7.50597], "size": [1, 2, 4], "pivot": [-6, 14.83559, -5.50597], "rotation": [-22.5, 0, 0], "uv": [12, 0]},
+						{"origin": [-6.5, 12.97873, -15.12342], "size": [1, 2, 9], "pivot": [-6, 13.97873, -10.62342], "rotation": [-22.5, 0, 0], "uv": [29, 7]},
+						{"origin": [-6.5, 11.46722, -23.62027], "size": [1, 2, 10], "pivot": [-6, 12.46722, -16.12027], "rotation": [-22.5, 0, 0], "uv": [0, 12]},
+						{"origin": [-6.5, 8.21722, -30.87027], "size": [1, 2, 10], "pivot": [-6, 12.46722, -16.12027], "rotation": [-22.5, 0, 0], "uv": [0, 0]},
+						{"origin": [-6.5, 14.09188, -31.91509], "size": [1, 1.4, 1.4], "pivot": [-6, 15.49188, -31.91509], "rotation": [22.5, 0, 0], "uv": [0, 0]},
+						{"origin": [-6.5, 12.15876, -7.4786], "size": [1, 2, 4], "pivot": [-6, 13.15876, -5.4786], "rotation": [27.5, 0, 0], "uv": [0, 12]},
+						{"origin": [-6.5, 12.63561, -15.01821], "size": [1, 2, 9], "pivot": [-6, 13.63561, -10.51821], "rotation": [27.5, 0, 0], "uv": [25, 27]},
+						{"origin": [-6.5, 12.87889, -23.12301], "size": [1, 2, 9.75], "pivot": [-6, 13.77889, -17.49801], "rotation": [27.5, 0, 0], "uv": [0, 27]},
+						{"origin": [-6.5, 16.37889, -25.12301], "size": [1, 2, 4.25], "pivot": [-6, 13.77889, -17.49801], "rotation": [27.5, 0, 0], "uv": [0, 0]}
+					],
+					"locators": {
+						"winterbloom1": [-6, 14, -7],
+						"winterbloom2": [-6, 14, -14],
+						"winterbloom3": [-6, 14, -21]
+					}
+				},
+				{
+					"name": "jacket",
+					"parent": "body",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "leftLeg",
+					"parent": "root",
+					"pivot": [1.9, 12, 0]
+				},
+				{
+					"name": "leftPants",
+					"parent": "leftLeg",
+					"pivot": [1.9, 12, 0]
+				},
+				{
+					"name": "rightLeg",
+					"parent": "root",
+					"pivot": [-1.9, 12, 0]
+				},
+				{
+					"name": "rightPants",
+					"parent": "rightLeg",
+					"pivot": [-1.9, 12, 0]
+				}
+			]
+		}
+	]
+}

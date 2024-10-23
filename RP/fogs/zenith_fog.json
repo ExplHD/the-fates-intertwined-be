@@ -1,0 +1,46 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:fog_settings": {
+		"description": {
+			"identifier": "fec:zenith_fog"
+		},
+		"distance": {
+			"air": {
+				"fog_start": 0.92,
+				"fog_end": 1,
+				"fog_color": "#4F007B",
+				"render_distance_type": "fixed",
+				"transition_fog": {
+					"init_fog": {
+						"fog_start": 0.0,
+						"fog_end": 0.01,
+						"fog_color": "#4F007B",
+						"render_distance_type": "fixed"
+					},
+					"min_percent": 0.25,
+					"mid_seconds": 1,
+					"mid_percent": 0.6,
+					"max_seconds": 2
+				}
+			},
+			"water": {
+				"fog_start": 0.0,
+				"fog_end": 15.0,
+				"fog_color": "#4F007B",
+				"render_distance_type": "fixed",
+				"transition_fog": {
+					"init_fog": {
+						"fog_start": 0.0,
+						"fog_end": 0.01,
+						"fog_color": "#4F007B",
+						"render_distance_type": "fixed"
+					},
+					"min_percent": 0.25,
+					"mid_seconds": 1,
+					"mid_percent": 0.6,
+					"max_seconds": 2
+				}
+			}
+		}
+	}
+}

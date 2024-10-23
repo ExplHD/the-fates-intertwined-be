@@ -1,0 +1,376 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mythic_tenacity.mythic_axe_hold": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"view": {
+					"rotation": [0, 180, 0]
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "mythic_tenacity_marker",
+						"locator": "tenacity_axe_1"
+					},
+					{
+						"effect": "mythic_tenacity_marker",
+						"locator": "tenacity_axe_2"
+					},
+					{
+						"effect": "mythic_tenacity_marker",
+						"locator": "tenacity_axe_3"
+					},
+					{
+						"effect": "mythic_tenacity_marker",
+						"locator": "tenacity_axe_4"
+					},
+					{
+						"effect": "mythic_tenacity_marker",
+						"locator": "tenacity_axe_5"
+					}
+				]
+			}
+		},
+		"animation.mythic_tenacity.mythic_hold": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"view": {
+					"rotation": [0, 180, 0]
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "mythic_tenacity_marker",
+						"locator": "tenacity_1"
+					},
+					{
+						"effect": "mythic_tenacity_marker",
+						"locator": "tenacity_2"
+					},
+					{
+						"effect": "mythic_tenacity_marker",
+						"locator": "tenacity_3"
+					},
+					{
+						"effect": "mythic_tenacity_marker",
+						"locator": "tenacity_4"
+					},
+					{
+						"effect": "mythic_tenacity_marker",
+						"locator": "tenacity_5"
+					}
+				]
+			}
+		},
+		"animation.mythic_tenacity.attack_1_scythe": {
+			"animation_length": 1.5,
+			"override_previous_animation": true,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [-70.29999, 11.10294, 66.02802],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [77.2, 11.1, 66.03],
+							"lerp_mode": "catmullrom"
+						},
+						"1.2917": {
+							"post": [77.2, 11.1, 66.03],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.375": {
+					"effect": "mythic_tenacity_attack_1",
+					"locator": "tenacity_particle"
+				}
+			}
+		},
+		"animation.mythic_tenacity.attack_2_scythe": {
+			"animation_length": 1.5,
+			"override_previous_animation": true,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [36.83829, -7.57131, 9.97528],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": [-170.45411, -2.99318, 17.25002],
+						"1.25": {
+							"pre": [-170.45, -2.99, 17.25],
+							"post": [-170.45, -2.99, 17.25],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": [-180, 0, -180]
+				}
+			},
+			"particle_effects": {
+				"0.3333": {
+					"effect": "mythic_tenacity_attack_2",
+					"locator": "tenacity_particle"
+				}
+			}
+		},
+		"animation.mythic_tenacity.attack_3_scythe": {
+			"animation_length": 1.5,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [-157.46508, 4.43975, -70.01545],
+							"lerp_mode": "catmullrom"
+						},
+						"0.375": {
+							"post": [-157.47, 4.44, -70.02],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": {
+							"post": [-2.47, 4.44, -70.02],
+							"lerp_mode": "catmullrom"
+						},
+						"1.125": {
+							"post": [-2.47, 4.44, -70.02],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.3333": {
+					"effect": "mythic_tenacity_attack_3",
+					"locator": "tenacity_particle"
+				}
+			}
+		},
+		"animation.mythic_tenacity.attack_4_scythe": {
+			"animation_length": 3.5,
+			"bones": {
+				"root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.75": [0, 0, 0],
+						"1.0": [360, 0, 0],
+						"1.25": [720, 0, 0],
+						"1.5": [1080, 0, 0],
+						"1.75": [1440, 0, 0]
+					},
+					"position": {
+						"0.75": [0, 0, 0],
+						"1.125": [0, 16, 0],
+						"1.75": [0, 0, 0]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.1667": [72.3747, 31.2646, 9.363],
+						"1.75": [0, 0, 32.5],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.1667": [-72.37472, -31.26463, -9.36302],
+						"2.25": [-72.37, -31.26, -9.36],
+						"2.5": [-72.37, 180, -9.36],
+						"3.25": [-72.37, 180, -9.36],
+						"3.5": [0, 0, 0]
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.1667": [0, 0, 32.5],
+						"1.75": [0, 0, 32.5],
+						"2.0": [0, -90, 0],
+						"3.25": [0, -90, 0],
+						"3.5": [0, 0, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.75": [
+					{
+						"effect": "mythic_tenacity_marker",
+						"locator": "tenacity_1"
+					},
+					{
+						"effect": "mythic_tenacity_marker",
+						"locator": "tenacity_2"
+					},
+					{
+						"effect": "mythic_tenacity_marker",
+						"locator": "tenacity_3"
+					},
+					{
+						"effect": "mythic_tenacity_marker",
+						"locator": "tenacity_4"
+					},
+					{
+						"effect": "mythic_tenacity_marker",
+						"locator": "tenacity_5"
+					}
+				],
+				"2.3333": {
+					"effect": "mythic_tenacity_attack_5",
+					"locator": "tenacity_particle"
+				}
+			}
+		},
+		"animation.mythic_tenacity.ultimate_scale": {
+			"animation_length": 5.5,
+			"bones": {
+				"root": {
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.25": [0, 0, 0],
+						"5.0": [0, 0, 0],
+						"5.5": [1, 1, 1]
+					}
+				},
+				"head": {
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.25": [0, 0, 0],
+						"5.0": [0, 0, 0],
+						"5.5": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.mythic_tenacity.change_to_axe": {
+			"animation_length": 0.25,
+			"bones": {
+				"blade": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.0417": [2.8452, 0, 0],
+						"0.0833": [11.3257, 0, 0],
+						"0.1667": [36.1743, 0, 0],
+						"0.2083": [44.6548, 0, 0],
+						"0.25": [47.5, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.0417": [0, 0, 0.0599],
+						"0.0833": [0, 0, 0.23844],
+						"0.1667": [0, 0, 0.76156],
+						"0.2083": [0, 0, 0.9401],
+						"0.25": [0, 0, 1]
+					}
+				}
+			}
+		},
+		"animation.mythic_tenacity.change_to_scythe": {
+			"animation_length": 0.25,
+			"bones": {
+				"blade": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.0417": [-2.8452, 0, 0],
+						"0.0833": [-11.3257, 0, 0],
+						"0.1667": [-36.1743, 0, 0],
+						"0.2083": [-44.6548, 0, 0],
+						"0.25": [-47.5, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.mythic_tenacity.skill_2_axe": {
+			"animation_length": 2,
+			"bones": {
+				"leftArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-67.62826, 37.80946, 14.1614],
+						"0.75": [-67.63, 37.81, 14.16],
+						"1.0": [-20.13, 37.81, 14.16],
+						"1.5": [-20.13, 37.81, 14.16],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-69.50193, -30.82594, -10.8448],
+						"0.75": [-69.50193, -30.82594, -10.8448],
+						"1.0": [9.50206, -15.17742, -0.94423],
+						"1.5": [37.99807, -30.82594, -10.8448],
+						"2.0": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.mythic_tenacity.ultimate_axe": {
+			"animation_length": 4,
+			"bones": {
+				"leftArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [-97.05323, 44.78238, -4.98107],
+						"3.5": [-97.05323, 44.78238, -4.98107],
+						"4.0": [0, 0, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [-98.17831, -52.21677, 6.48009],
+						"3.5": [-98.17831, -52.21677, 6.48009],
+						"4.0": [0, 0, 0]
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [180, 0, 0],
+						"3.5": [180, 0, 0],
+						"4.0": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

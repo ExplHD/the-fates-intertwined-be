@@ -1,0 +1,30 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:totem_of_undying"
+		},
+		"pattern": [
+			"  ",
+			"GQG",
+			" Q "
+		],
+		"key": {
+			"G": {
+				"item": "minecraft:gold_ingot"
+			},
+			"Q": {
+				"item": "minecraft:emerald"
+			}
+		},
+		"priority": 1,
+		"tags": [
+			"crafting_table"
+		],
+		"result": [
+			{
+				"item": "minecraft:totem_of_undying"
+			}
+		]
+	}
+}

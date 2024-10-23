@@ -1,0 +1,22 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "fec:zenith_fabricator_altar",
+			"places_feature": "fec:zenith_fabricator_altar"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass"
+		},
+		"distribution": {
+			"iterations": 1,
+			"scatter_chance": {
+				"numerator": 1,
+				"denominator": 500
+			},
+			"x": 0,
+			"y": "query.heightmap(variable.worldx, variable.worldz) - 2",
+			"z": 0
+		}
+	}
+}

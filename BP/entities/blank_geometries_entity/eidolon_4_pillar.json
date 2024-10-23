@@ -1,0 +1,62 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:eidolon_4_pillar",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"despawned": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 2000,
+				"max": 2000
+			},
+			"minecraft:scale": {
+				"value": 2
+			},
+			"minecraft:collision_box": {
+				"height": 0,
+				"width": 0
+			},
+			"minecraft:type_family": {
+				"family": [
+					"pillars"
+				]
+			},
+			"minecraft:persistent": {},
+			"minecraft:physics": {},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:timer": {
+				"time": 2,
+				"time_down_event": {
+					"event": "despawn",
+					"target": "self"
+				}
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+				  "max_optimized_distance": 256,
+				  "max_dropped_ticks": 7,
+				  "use_motion_prediction_hints": true
+				}
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawned"
+					]
+				}
+			}
+		}
+	}
+}

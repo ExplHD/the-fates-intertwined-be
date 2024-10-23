@@ -1,0 +1,26 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:water_essence",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_water_essence",
+			"minecraft:max_stack_size": 1,
+			"minecraft:should_despawn": false,
+			"minecraft:display_name": {
+				"value": "§bWater Essence\n§2Right-click / Tap and Hold to Heal Yourself\nSneak and Right-click / Tap and hold to Heals one of your ally\n\n§9Cooldown : 45 Seconds"
+			},
+			"minecraft:cooldown": {
+				"category": "water_essence",
+				"duration": 45
+			},
+			"minecraft:custom_components": [
+				"fec:essence_use"
+			]
+		}
+	}
+}

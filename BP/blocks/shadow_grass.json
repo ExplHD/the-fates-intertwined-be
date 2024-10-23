@@ -1,0 +1,66 @@
+{
+    "format_version": "1.21.10",
+    "minecraft:block": {
+        "description": {
+            "identifier": "fec:shadow_corruption",
+            "menu_category": {
+                "category": "nature"
+            },
+            "states": {
+                "fec:spread_type": [
+                    0,
+                    1
+                ]
+            }
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "fec_shadow_grass_side",
+                    "render_method": "opaque"
+                },
+                "up": {
+                    "texture": "fec_shadow_grass_top",
+                    "render_method": "opaque"
+                },
+                "down": {
+                    "texture": "fec_shadow_grass_bottom",
+                    "render_method": "opaque"
+                }
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 1.2
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1.0
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('fec:spread_type')==0",
+                "components": {
+                    "minecraft:custom_components": [
+                        "fec:spread",
+                        "fec:magic_poisoning"
+                    ]
+                }
+            },
+            {
+                "condition": "query.block_state('fec:spread_type')==1",
+                "components": {
+                    "minecraft:tick": {
+                        "interval_range": [
+                            200,
+                            300
+                        ],
+                        "looping": true
+                    },
+                    "minecraft:custom_components": [
+                        "fec:temporary_corruption",
+                        "fec:magic_poisoning"
+                    ]
+                }
+            }
+        ]
+    }
+}

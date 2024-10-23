@@ -1,0 +1,233 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.shadowplague_guardian.attack_1": {
+			"animation_length": 1.25,
+			"override_previous_animation": true,
+			"bones": {
+				"leftArm": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [-17.7, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [-118.32159, 13.27207, -44.55309],
+							"lerp_mode": "catmullrom"
+						},
+						"0.9167": {
+							"post": [-118.32, 13.27, -44.55],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle2"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle3"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle4"
+					}
+				],
+				"1.0": [
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle2"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle3"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle4"
+					}
+				]
+			}
+		},
+		"animation.shadowplague_guardian.attack_2": {
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.1667": [-51.2143, 59.35447, -17.18883],
+						"0.3333": [-99.04052, -40.11799, 49.62312],
+						"0.5": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.shadowplague_guardian.dash": {
+			"animation_length": 2,
+			"override_previous_animation": true,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [20, 0, 0],
+						"1.5": [20, 0, 0],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"cape": {
+					"rotation": {
+						"0.25": [0, 0, 0],
+						"1.0": {
+							"pre": [0, 0, 0],
+							"post": [90, 0, 0]
+						},
+						"1.0417": [89.05671, 0, 0],
+						"1.0833": [87.49966, 0, 0],
+						"1.125": [85.69567, 0, 0],
+						"1.1667": [83.72554, 0, 0],
+						"1.2083": [81.62245, 0, 0],
+						"1.25": [79.40198, 0, 0],
+						"1.2917": [77.0719, 0, 0],
+						"1.3333": [74.63621, 0, 0],
+						"1.375": [72.09382, 0, 0],
+						"1.4167": [69.44272, 0, 0],
+						"1.4583": [66.67779, 0, 0],
+						"1.5": [63.79163, 0, 0],
+						"1.5417": [60.77418, 0, 0],
+						"1.5833": [57.61212, 0, 0],
+						"1.625": [54.28804, 0, 0],
+						"1.6667": [50.7791, 0, 0],
+						"1.7083": [47.05271, 0, 0],
+						"1.75": [43.06767, 0, 0],
+						"1.7917": [38.75972, 0, 0],
+						"1.8333": [34.03279, 0, 0],
+						"1.875": [28.72737, 0, 0],
+						"1.9167": [22.53061, 0, 0],
+						"1.9583": [14.66194, 0, 0],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-145, 17.5, -90],
+						"0.75": [-145, 17.5, -90],
+						"1.0": [22.5, 17.5, -90],
+						"1.5": [22.5, 17.5, -90],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"leftLeg": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-22.5, 0, 0],
+						"1.5": [-22.5, 0, 0],
+						"2.0": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -1, -1],
+						"1.5": [0, -1, -1],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"rightLeg": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [40, 0, 0],
+						"1.5": [40, 0, 0],
+						"2.0": [0, 0, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle2"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle3"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle4"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "core_particle"
+					}
+				],
+				"1.0": [
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle2"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle3"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "sword_particle4"
+					},
+					{
+						"effect": "dragon_breath_marker",
+						"locator": "core_particle"
+					}
+				]
+			}
+		},
+		"animation.shadowplague_guardian.walk": {
+			"loop": true,
+			"bones": {
+				"cape": {
+					"rotation": ["math.lerp(0.0, -126.0, query.cape_flap_amount) - 6.0", 0, 0],
+					"position": [0, "query.get_root_locator_offset('armor_offset.default_neck', 1)", 0]
+				},
+				"leftArm": {
+					"rotation": ["variable.tcos0", 0, 0]
+				},
+				"rightArm": {
+					"rotation": ["-variable.tcos0", 0, 0]
+				},
+				"leftLeg": {
+					"rotation": ["variable.tcos0 * -1.4", -0.1, -0.1]
+				},
+				"rightLeg": {
+					"rotation": ["variable.tcos0 * 1.4", 0.1, 0.1]
+				}
+			}
+		}
+	}
+}

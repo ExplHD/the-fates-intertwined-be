@@ -1,0 +1,89 @@
+{
+	"format_version": "1.21.10",
+	"animations": {
+		"animation.windblade_claymore.attack_3": {
+			"animation_length": 1.5,
+			"timeline": {
+				"0.0": [
+					"/playanimation @s animation.windblade_claymore.attack_3"
+				],
+				"0.5": [
+					"/damage @e[r=4,rm=0.1,type=!item] 23 entity_attack entity @s",
+					"/playsound random.explode @a[r=16]"
+				]
+			}
+		},
+		"animation.windblade_claymore.skill_1": {
+			"animation_length": 2,
+			"timeline": {
+				"0.0": [
+					"/playsound mob.wither.spawn @a[r=24]"
+				],
+				"0.5": [
+					"/playsound mob.wither.shoot @a[r=24]",
+					"/damage @e[r=8,rm=0.1,type=!item] 16 entity_attack entity @s"
+				],
+				"0.6": [
+					"/playsound mob.wither.shoot @a[r=24]",
+					"/damage @e[r=8,rm=0.1,type=!item] 16 entity_attack entity @s"
+				],
+				"0.7": [
+					"/playsound mob.wither.shoot @a[r=24]",
+					"/damage @e[r=8,rm=0.1,type=!item] 16 entity_attack entity @s"
+				],
+				"0.16": [
+					"/playsound mob.wither.shoot @a[r=24]",
+					"/damage @e[r=8,rm=0.1,type=!item] 16 entity_attack entity @s"
+				],
+				"0.9": [
+					"/playsound mob.wither.shoot @a[r=24]",
+					"/damage @e[r=8,rm=0.1,type=!item] 16 entity_attack entity @s"
+				],
+				"1.0": [
+					"/playsound mob.wither.shoot @a[r=24]",
+					"/damage @e[r=8,rm=0.1,type=!item] 16 entity_attack entity @s"
+				],
+				"1.1": [
+					"/playsound mob.wither.shoot @a[r=24]",
+					"/damage @e[r=8,rm=0.1,type=!item] 16 entity_attack entity @s"
+				],
+				"1.2": [
+					"/playsound mob.wither.shoot @a[r=24]",
+					"/damage @e[r=8,rm=0.1,type=!item] 16 entity_attack entity @s"
+				],
+				"1.3": [
+					"/playsound mob.wither.shoot @a[r=24]",
+					"/damage @e[r=8,rm=0.1,type=!item] 16 entity_attack entity @s"
+				],
+				"1.4": [
+					"/playsound mob.wither.shoot @a[r=24]",
+					"/damage @e[r=8,rm=0.1,type=!item] 16 entity_attack entity @s"
+				],
+				"1.5": [
+					"/playsound mob.wither.shoot @a[r=24]",
+					"/damage @e[r=8,rm=0.1,type=!item] 16 entity_attack entity @s"
+				]
+			}
+		},
+		"animation.windblade_claymore.skill_2": {
+			"animation_length": 1,
+			"timeline": {
+				"0.0": [
+					"/playsound random.explode @a[r=24]",
+					"/inputpermission set @s movement disabled",
+					"/inputpermission set @s camera disabled",
+					"/tag @s add selfWB",
+					"/summon fec:wb_reflect ~~~"
+				],
+				"0.5": [
+					"/playsound random.explode @a[r=24]",
+					"/inputpermission set @s movement enabled",
+					"/inputpermission set @s camera enabled"
+				],
+				"1.0": [
+					"/tag @s remove selfWB"
+				]
+			}
+		}
+	}
+}

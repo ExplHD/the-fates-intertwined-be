@@ -1,0 +1,246 @@
+{
+    "format_version": "1.21.10",
+    "animation_controllers": {
+        "controller.animation.shadow_revolver": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/scoreboard players set @s atkp_delay 0",
+                        "/effect @s resistance 0 12 true",
+                        "/effect @s slowness 0 12 true"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_1": "v.attack_time&&!q.is_sneaking&&q.get_equipped_item_name=='shadow_revolver'"
+                        },
+                        {
+                            "hip_fire": "q.get_equipped_item_name=='shadow_revolver'&&!q.is_sneaking&&q.is_using_item&&(q.scoreboard('shadow_revolver')==0)"
+                        },
+                        {
+                            "skill_1": "q.get_equipped_item_name=='shadow_revolver'&&!q.is_sneaking&&q.is_using_item&&(q.scoreboard('shadow_revolver')==1)&&(q.scoreboard('shadow_revolver_c1')==0)"
+                        },
+                        {
+                            "skill_2": "q.get_equipped_item_name=='shadow_revolver'&&!q.is_sneaking&&q.is_using_item&&(q.scoreboard('shadow_revolver')==2)&&(q.scoreboard('shadow_revolver_c2')==0)"
+                        },
+                        {
+                            "skill_3": "q.get_equipped_item_name=='shadow_revolver'&&!q.is_sneaking&&q.is_using_item&&(q.scoreboard('shadow_revolver')==3)&&(q.scoreboard('shadow_revolver_c3')==0)"
+                        },
+                        {
+                            "skill_4": "q.get_equipped_item_name=='shadow_revolver'&&!q.is_sneaking&&q.is_using_item&&(q.scoreboard('shadow_revolver')==4)&&(q.scoreboard('shadow_revolver_c4')==0)"
+                        },
+                        {
+                            "aim": "q.is_sneaking && q.is_using_item && q.get_equipped_item_name('main_hand') == 'shadow_revolver'"
+                        },
+                        {
+                            "reload": "q.get_equipped_item_name=='shadow_revlolver'&&(q.scoreboard('shadow_revolver_rounds')<=0)"
+                        },
+                        {
+                            "change_skill": "v.attack_time&&q.is_sneaking&&q.get_equipped_item_name=='shadow_revolver'"
+                        }
+                    ]
+                },
+                "atk_1": {
+                    "animations": [
+                        "shadow_revolver_atk_1"
+                    ],
+                    "on_entry": [
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_2": "(v.attack_time)&&(q.scoreboard('atkp_delay')>=20)"
+                        },
+                        {
+                            "default": "q.all_animations_finished"
+                        },
+                        {
+                            "reload": "q.get_equipped_item_name=='shadow_revolver'&&(q.scoreboard('shadow_revolver_rounds')<=0)"
+                        }
+                    ]
+                },
+                "atk_2": {
+                    "animations": [
+                        "shadow_revolver_atk_2"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "q.all_animations_finished"
+                        }
+                    ]
+                },
+                "hip_fire": {
+                    "animations": [
+                        "shadow_revolver_fire"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!q.is_using_item && q.all_animations_finished"
+                        },
+                        {
+                            "hip_fire": "q.is_using_item && q.all_animations_finished"
+                        },
+                        {
+                            "reload": "q.get_equipped_item_name=='shadow_revolver'&&(q.scoreboard('shadow_revolver_rounds')<=0)"
+                        }
+                    ]
+                },
+                "skill_1": {
+                    "on_entry": [
+                        "/damage @e[r=16,rm=0.1,family=!inanimate] 20 entity_explosion entity @s",
+                        "/effect @s speed 3 3 true",
+                        "/particle fec:paranoia ~~~",
+                        "/scoreboard players add @s shadow_revolver_c1 20",
+                        "/playsound block.enchanting_table.use @a[r=24]",
+                        "/effect @a[r=16,rm=0.1] blindness 5 1 true",
+                        "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §5Shadow Turbulence\"}]}"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!q.is_using_item"
+                        }
+                    ]
+                },
+                "skill_2": {
+                    "on_entry": [
+                        "/summon fec:dark_cover_smoke ~~~",
+                        "/summon fec:dark_cover_smoke ~~~",
+                        "/summon fec:dark_cover_smoke ~~~",
+                        "/playanimation @s animation.mythic_tenacity.ultimate_scale",
+                        "/scoreboard players add @s shadow_revolver_c2 45",
+                        "/playsound mob.breeze.shoot @a[r=24]",
+                        "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §5Dark Cover\"}]}"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!q.is_using_item"
+                        }
+                    ]
+                },
+                "skill_3": {
+                    "on_entry": [
+                        "/tag @s add corruption_immunity",
+                        "/summon fec:corruption_expands_beam ~10~~ 90 0",
+                        "/summon fec:corruption_expands_beam ~-10~~ 270 0",
+                        "/summon fec:corruption_expands_beam ~~~10 0 0",
+                        "/summon fec:corruption_expands_beam ~~~=10 180 0",
+                        "/summon fec:corruption_expands_beam ~-10~~-10 135 0",
+                        "/summon fec:corruption_expands_beam ~10~~-10 135 0",
+                        "/summon fec:corruption_expands_beam ~-10~~10 45 0",
+                        "/summon fec:corruption_expands_beam ~10~~10 225 0",
+                        "/scoreboard players add @s shadow_revolver_c3 70",
+                        "/playsound mob.wither.spawn @a[r=24]",
+                        "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §5§lCorruption §kEXPANDS\"}]}"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!q.is_using_item"
+                        }
+                    ]
+                },
+                "skill_4": {
+                    "on_entry": [
+                        "/tag @s add nuke_executor",
+                        "/scoreboard players add @s shadow_revolver_c4 140",
+                        "/playsound custom_sfx.siren @a[r=128]",
+                        "@s fec:set_ultimate_state_to_1",
+                        "/tellraw @a[r=128] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §5§lProtocol Impact : 0078\"}]}",
+                        "/tellraw @s {\"rawtext\":[{\"text\":\"Now you have one extra bullets that acts like nuke, shoot them on the ground to make the nuke triggered, If you shot it right at entity, the bullet deals 250 Damages\"}]}"
+                    ],
+                    "transitions": [
+                        {
+                            "ultimate_state": "!q.is_using_item"
+                        }
+                    ]
+                },
+                "ultimate_state": {
+                    "transitions": [
+                        {
+                            "ultimate_aim": "q.is_using_item"
+                        }
+                    ]
+                },
+                "ultimate_aim": {
+                    "on_entry": [
+                        "/effect @s slowness 999999 3 true",
+                        "/effect @s resistance 999999 255 true",
+                        "/title @s actionbar Now you are invulnerable, and zoom further"
+                    ],
+                    "transitions": [
+                        {
+                            "ultimate_fire": "!q.is_using_item"
+                        }
+                    ]
+                },
+                "ultimate_fire": {
+                    "on_entry": [
+                        "/effect @s slowness 0 255 true",
+                        "/effect @s resistance 0 255 true",
+                        "/playsound shadow_revolver.shot_protocol_impact_0078 @a[r=128]",
+                        "@s fec:shadow_revolver_protocol_impact_0078",
+                        "@s fec:set_ultimate_state_to_0"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!q.is_using_item"
+                        }
+                    ]
+                },
+                "aim": {
+                    "on_entry": [
+                        "/effect @s slowness 999999 1 true",
+                        "/effect @s resistance 999999 2 true"
+                    ],
+                    "transitions": [
+                        {
+                            "shot": "!q.is_sneaking || !q.is_using_item"
+                        }
+                    ]
+                },
+                "shot": {
+                    "animations": [
+                        "shadow_revolver_fire"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!q.is_sneaking && q.all_animations_finished"
+                        },
+                        {
+                            "aim": "q.is_sneaking && q.all_animations_finished"
+                        },
+                        {
+                            "reload": "q.get_equipped_item_name=='shadow_revolver'&&(q.scoreboard('shadow_revolver_rounds')<=0)"
+                        }
+                    ]
+                },
+                "reload": {
+                    "animations": [
+                        "shadow_revolver_reload"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "q.all_animations_finished"
+                        }
+                    ]
+                },
+                "change_skill": {
+                    "on_entry": [
+                        "/scoreboard players add @s shadow_revolver 1",
+                        "/scoreboard players set @s[scores={shadow_revolver=5}] shadow_revolver 0",
+                        "/playsound random.click @s",
+                        "/tellraw @s[scores={shadow_revolver=0}] {\"rawtext\":[{\"text\": \"§bPASSIVE : HIP FIRE\"}]}",
+                        "/tellraw @s[scores={shadow_revolver=1}] {\"rawtext\":[{\"text\": \"§cShadow Turbulence\"}]}",
+                        "/tellraw @s[scores={shadow_revolver=2}] {\"rawtext\":[{\"text\": \"§cDark Cover\"}]}",
+                        "/tellraw @s[scores={shadow_revolver=3}] {\"rawtext\":[{\"text\": \"§cCorruption Expands\"}]}",
+                        "/tellraw @s[scores={shadow_revolver=4}] {\"rawtext\":[{\"text\": \"§cProtocol Impact : 0078\"}]}"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!v.attack_time"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

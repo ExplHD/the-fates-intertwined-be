@@ -1,0 +1,46 @@
+	{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:eidolon_4_staff",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.sword"
+			}
+		},
+		"components": {
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:should_despawn": false,
+			"minecraft:damage": 6,
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": "minecraft:web",
+						"speed": 15
+					},
+					{
+						"block": "minecraft:bamboo",
+						"speed": 60
+					}
+				]
+			},
+			"minecraft:hand_equipped": true,
+			"minecraft:icon": "fec_eidolon_4_staff",
+			"minecraft:display_name": {
+				"value": "§6Eidolon Staff : Water Sakura\n§7A double sided blade staff that crafted\nwith the remnant power of Unknown\nmortals, crafted using the Eidolon Power\nType 4\n\n§2Right-click / Tap and Hold to :\ncast nthe selected skill\nSneak + Left Click / tap to :\nChange selected skill"
+			},
+			"minecraft:food": {
+				"can_always_eat": true
+			},
+			"minecraft:use_modifiers": {
+				"use_duration": 999999,
+				"movement_modifier": 1
+			},
+			"minecraft:use_animation": "none",
+			"minecraft:max_stack_size": 1,
+			"tag:minecraft:is_sword": {},
+			"tag:minecraft:is_tool": {}
+		}
+	}
+}

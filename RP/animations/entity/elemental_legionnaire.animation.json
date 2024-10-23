@@ -1,0 +1,368 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.elemental_legionnaire.idle": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [
+						0,
+						0,
+						2.5
+					]
+				},
+				"leftArm": {
+					"rotation": [
+						0,
+						0,
+						-2.5
+					]
+				}
+			}
+		},
+		"animation.elemental_legionnaire.fly": {
+			"loop": true,
+			"anim_time_update": "query.is_moving",
+			"bones": {
+				"rightArm": {
+					"rotation": [
+						25,
+						0,
+						0
+					]
+				},
+				"leftArm": {
+					"rotation": [
+						25,
+						0,
+						0
+					]
+				},
+				"rightLeg": {
+					"rotation": [
+						25,
+						0,
+						0
+					]
+				},
+				"leftLeg": {
+					"rotation": [
+						25,
+						0,
+						0
+					]
+				},
+				"root": {
+					"rotation": [
+						17.5,
+						0,
+						0
+					]
+				},
+				"arrow_up": {
+					"position": [
+						0,
+						9,
+						0
+					]
+				},
+				"arrow_down": {
+					"position": [
+						0,
+						-9,
+						0
+					]
+				},
+				"arrow_left": {
+					"position": [
+						9,
+						0,
+						0
+					]
+				},
+				"arrow_right": {
+					"position": [
+						-9,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.elemental_legionnaire.left_attack": {
+			"loop": true,
+			"animation_length": 0.375,
+			"bones": {
+				"leftArm": {
+					"rotation": [
+						0,
+						0,
+						-62.5
+					]
+				},
+				"balls": {
+					"rotation": [
+						0,
+						0,
+						0
+					],
+					"position": [
+						4,
+						1,
+						0
+					]
+				},
+				"arrow_left": {
+					"position": [
+						9,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.elemental_legionnaire.right_attack": {
+			"animation_length": 4,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							-120.70872,
+							-45.16289,
+							76.61905
+						],
+						"3.0": [
+							-120.70872,
+							-45.16289,
+							76.61905
+						],
+						"3.25": [
+							45.37439,
+							-22.58953,
+							100.8565
+						],
+						"3.6667": [
+							45.37439,
+							-22.58953,
+							100.8565
+						],
+						"4.0": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"halo": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"3.0": [
+							0,
+							0,
+							720
+						]
+					}
+				},
+				"arrow_up": {
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"3.0": [
+							0,
+							0,
+							0
+						],
+						"3.25": [
+							0,
+							9,
+							0
+						],
+						"3.6667": [
+							0,
+							9,
+							0
+						],
+						"4.0": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"arrow_down": {
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"3.0": [
+							0,
+							0,
+							0
+						],
+						"3.25": [
+							0,
+							-9,
+							0
+						],
+						"3.6667": [
+							0,
+							-9,
+							0
+						],
+						"4.0": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"arrow_left": {
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"3.0": [
+							0,
+							0,
+							0
+						],
+						"3.25": [
+							9,
+							0,
+							0
+						],
+						"3.6667": [
+							9,
+							0,
+							0
+						],
+						"4.0": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"arrow_right": {
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"3.0": [
+							0,
+							0,
+							0
+						],
+						"3.25": [
+							-8,
+							0,
+							0
+						],
+						"3.6667": [
+							-8,
+							0,
+							0
+						],
+						"4.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.elemental_legionnaire.up_attack": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.33333,
+			"bones": {
+				"arrow_up": {
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							0,
+							8,
+							0
+						]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							0,
+							0,
+							137.5
+						]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							0,
+							0,
+							-140
+						]
+					}
+				}
+			}
+		},
+		"animation.elemental_legionnaire.down_attack": {
+			"loop": true,
+			"bones": {
+				"arrow_down": {
+					"position": [
+						0,
+						-9,
+						0
+					]
+				},
+				"leftArm": {
+					"rotation": [
+						-90,
+						0,
+						0
+					]
+				},
+				"balls": {
+					"position": [
+						0,
+						-5,
+						0
+					]
+				}
+			}
+		}
+	}
+}

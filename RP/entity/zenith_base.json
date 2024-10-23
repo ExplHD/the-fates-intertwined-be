@@ -1,0 +1,33 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:zenith_base",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/zenith_base",
+				"zenith": "textures/weapons/zenith"
+			},
+			"geometry": {
+				"default": "geometry.zenith_base"
+			},
+			"render_controllers": [
+				"controller.render.zenith_base"
+			],
+			"animations": {
+				"zenith_animation": "animation.zenith.hold"
+			},
+			"scripts": {
+				"animate": [
+					"zenith_animation"
+				]
+			},
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

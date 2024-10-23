@@ -1,0 +1,38 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:shadow_revolver_bullet",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/shadow_revolver_bullet",
+				"shadow_revolver_bullet_impact_protocol": "textures/entity/shadow_revolver_bullet/shadow_revolver_bullet_impact_protocol"
+			},
+			"geometry": {
+				"default": "geometry.shadow_revolver_bullet"
+			},
+			"render_controllers": [
+				"controller.render.shadow_revolver_bullet"
+			],
+			"particle_effects": {
+				"shadow_revolver_bullet_trail": "fec:shadow_revolver_bullet_trail"
+			},
+			"scripts": {
+				"animate": [
+					"face",
+					"idle"
+				]
+			},
+			"animations": {
+				"face": "animation.projectile.face",
+				"idle": "animation.shadow_revolver_bullet.idle"
+			},
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

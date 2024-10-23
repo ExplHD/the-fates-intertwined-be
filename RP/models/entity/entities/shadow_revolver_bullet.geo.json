@@ -1,0 +1,46 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.shadow_revolver_bullet",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bullet",
+					"pivot": [0, 3, 0],
+					"cubes": [
+						{"origin": [-2, 1, -5], "size": [4, 4, 10], "uv": [0, 0]},
+						{"origin": [1, 1, 5], "size": [1, 4, 1], "uv": [4, 14]},
+						{"origin": [-1, 4, 4.5], "size": [2, 1, 1], "uv": [10, 16]},
+						{"origin": [-1, 1, 4.5], "size": [2, 1, 1], "uv": [10, 14]},
+						{"origin": [-2, 1, 5], "size": [1, 4, 1], "uv": [0, 14]},
+						{"origin": [2, 3.5, -4], "size": [1, 1, 8], "uv": [20, 27]},
+						{"origin": [1, 2.5, -6.5], "size": [1, 1, 1], "uv": [18, 4]},
+						{"origin": [-2, 2.5, -6.5], "size": [1, 1, 1], "uv": [18, 2]},
+						{"origin": [-0.5, 4, -6.5], "size": [1, 1, 1], "uv": [18, 0]},
+						{"origin": [-0.5, 1, -6.5], "size": [1, 1, 1], "uv": [6, 5]},
+						{"origin": [0.5, 5, -4], "size": [1, 1, 8], "uv": [0, 23]},
+						{"origin": [-1.5, 5, -4], "size": [1, 1, 8], "uv": [20, 18]},
+						{"origin": [0.5, 0, -4], "size": [1, 1, 8], "uv": [0, 14]},
+						{"origin": [-1.5, 0, -4], "size": [1, 1, 8], "uv": [10, 15]},
+						{"origin": [2, 1.5, -4], "size": [1, 1, 8], "uv": [10, 24]},
+						{"origin": [-3, 3.5, -4], "size": [1, 1, 8], "uv": [18, 0]},
+						{"origin": [-3, 1.5, -4], "size": [1, 1, 8], "uv": [20, 9]},
+						{"origin": [-1.5, 1.5, -7], "size": [3, 3, 2], "uv": [0, 0]},
+						{"origin": [-1, 2, -9], "size": [2, 2, 2], "uv": [0, 5]},
+						{"origin": [-0.5, 2.5, -10], "size": [1, 1, 1], "uv": [18, 6]}
+					],
+					"locators": {
+						"shadow_revolver_bullet": [0, 3, 5]
+					}
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,371 @@
+{
+    "format_version": "1.21.10",
+    "animation_controllers": {
+        /*
+         New Mythic Weapons :
+            Tenacity (subjects may to changed later if released) : 
+            Sebuah senjata mythical yang terkuat, sangat sulit untuk didapatkan, memiliki keunggulan untuk merusak pemain dan boss dengan cepat
+            Senjata ini memiliki 4 Skills dan 2 mode :
+            S1. Flaming Sonic Blast > Done <
+            S2. Tempered Strike > Done < / Wrath of Tenacity > Done <
+            S3. Curtain of Hellfire > Done < / Fenomenal Slayer > Done <
+            S4. The Domain of Origin > Done < / The drop from the skies > Done <
+            
+            Seperti senjata mythic biasanya, memiliki hal khusus seperti berikut :
+            1. Animasi khusus > NO IDEA <
+            2. Dual Mode (> Scythe < / > Axe <)
+        */
+        "controller.animation.mythic_tenacity": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/scoreboard players set @s atkp_delay 0"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_1_scythe": "variable.attack_time&&!query.is_sneaking&&query.get_equipped_item_name=='tenacity'"
+                        },
+                        {
+                            "atk_1_axe": "variable.attack_time&&!query.is_sneaking&&query.get_equipped_item_name=='tenacity_axe'"
+                        },
+                        {
+                            "skill_1": "query.get_equipped_item_name=='tenacity'&&query.is_using_item&&query.scoreboard('tenacity_c1')==0&&query.scoreboard('mythic_tenacity')==0&&!query.is_sneaking"
+                        },
+                        {
+                            "skill_1": "query.get_equipped_item_name=='tenacity_axe'&&query.is_using_item&&query.scoreboard('tenacity_c1')==0&&query.scoreboard('mythic_tenacity')==0&&!query.is_sneaking"
+                        },
+                        {
+                            "skill_2_scythe": "query.get_equipped_item_name=='tenacity'&&query.is_using_item&&query.scoreboard('tenacity_c2')==0&&query.scoreboard('mythic_tenacity')==1&&!query.is_sneaking"
+                        },
+                        {
+                            "skill_2_axe": "query.get_equipped_item_name=='tenacity_axe'&&query.is_using_item&&query.scoreboard('tenacity_c2_axe')==0&&query.scoreboard('mythic_tenacity')==1&&!query.is_sneaking"
+                        },
+                        {
+                            "skill_3_scythe": "query.get_equipped_item_name=='tenacity'&&query.is_using_item&&query.scoreboard('tenacity_c3')==0&&query.scoreboard('mythic_tenacity')==2&&!query.is_sneaking"
+                        },
+                        {
+                            "skill_3_axe": "query.get_equipped_item_name=='tenacity_axe'&&query.is_using_item&&query.scoreboard('tenacity_c3_axe')==0&&query.scoreboard('mythic_tenacity')==2&&!query.is_sneaking"
+                        },
+                        {
+                            "skill_4_scythe": "query.get_equipped_item_name=='tenacity'&&query.is_using_item&&query.scoreboard('tenacity_c4')==0&&query.scoreboard('mythic_tenacity')==3&&!query.is_sneaking"
+                        },
+                        {
+                            "skill_4_axe": "query.get_equipped_item_name=='tenacity_axe'&&query.is_using_item&&query.scoreboard('tenacity_c4_axe')==0&&query.scoreboard('mythic_tenacity')==3&&!query.is_sneaking"
+                        },
+                        {
+                            "change_skill": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='tenacity'"
+                        },
+                        {
+                            "change_skill": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='tenacity_axe'"
+                        },
+                        {
+                            "change_to_axe": "query.get_equipped_item_name=='tenacity'&&query.is_using_item&&query.is_sneaking"
+                        },
+                        {
+                            "change_to_scythe": "query.get_equipped_item_name=='tenacity_axe'&&query.is_using_item&&query.is_sneaking"
+                        }
+                    ]
+                },
+                "atk_1_scythe": {
+                    "on_entry": [
+                        "/damage @e[r=4,rm=0.1,type=!item] 12 entity_attack entity @s",
+                        "/playanimation @s animation.mythic_tenacity.attack_1_scythe",
+                        "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 1.15 0.4",
+                        "/scoreboard players add @s legendCounter 1"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_2_scythe": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=10)"
+                        },
+                        {
+                            "default": "query.scoreboard('atkp_delay')>=30"
+                        },
+                        {
+                            "change_skill": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='tenacity'"
+                        }
+                    ]
+                },
+                "atk_2_scythe": {
+                    "on_entry": [
+                        "/damage @e[r=4,rm=0.1,type=!item] 14 entity_attack entity @s",
+                        "/playanimation @s animation.mythic_tenacity.attack_2_scythe",
+                        "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 0.9 0.4",
+                        "/scoreboard players add @s legendCounter 1"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_3_scythe": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=15)"
+                        },
+                        {
+                            "default": "query.scoreboard('atkp_delay')>30"
+                        },
+                        {
+                            "change_skill": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='tenacity'"
+                        }
+                    ]
+                },
+                "atk_3_scythe": {
+                    "on_entry": [
+                        "/damage @e[r=4,rm=0.1,type=!item] 12 entity_attack entity @s",
+                        "/playanimation @s animation.mythic_tenacity.attack_3_scythe",
+                        "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 1 0.4",
+                        "/scoreboard players add @s legendCounter 1"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s atkp_delay 0"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_4_scythe": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=12)"
+                        },
+                        {
+                            "default": "query.scoreboard('atkp_delay')>30"
+                        },
+                        {
+                            "change_skill": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='tenacity'"
+                        }
+                    ]
+                },
+                "atk_4_scythe": {
+                    "animations": [
+                        "mythic_tenacity_attack_4_scythe"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "atk_1_axe": {
+                    "on_entry": [
+                        "/damage @e[r=4,rm=0.1,type=!item] 16 entity_attack entity @s",
+                        "/playanimation @s animation.mythic_tenacity.attack_3_scythe",
+                        "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 1.15 0.4",
+                        "/scoreboard players add @s legendCounter 1",
+                        "/execute at @s[scores={tenacity_c3_charge=1..}] run summon fec:tenacity_orange_slash ^^^7 ~ 0",
+                        "/scoreboard players remove @s[scores={tenacity_c3_charge=1..}] tenacity_c3_charge 1"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_2_axe": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=15)"
+                        },
+                        {
+                            "default": "query.scoreboard('atkp_delay')>=30"
+                        },
+                        {
+                            "change_skill": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='tenacity'"
+                        }
+                    ]
+                },
+                "atk_2_axe": {
+                    "on_entry": [
+                        "/damage @e[r=4,rm=0.1,type=!item] 16 entity_attack entity @s",
+                        "/playanimation @s animation.mythic_tenacity.attack_1_scythe",
+                        "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 0.9 0.4",
+                        "/scoreboard players add @s legendCounter 1",
+                        "/execute at @s[scores={tenacity_c3_charge=1..}] run summon fec:tenacity_orange_slash ^^^7 ~ 0",
+                        "/scoreboard players remove @s[scores={tenacity_c3_charge=1..}] tenacity_c3_charge 1"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_3_axe": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=20)"
+                        },
+                        {
+                            "default": "query.scoreboard('atkp_delay')>30"
+                        },
+                        {
+                            "change_skill": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='tenacity'"
+                        }
+                    ]
+                },
+                "atk_3_axe": {
+                    "on_entry": [
+                        "/damage @e[r=4,rm=0.1,type=!item] 17 entity_attack entity @s",
+                        "/playanimation @s animation.mythic_tenacity.attack_2_scythe",
+                        "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 1 0.4",
+                        "/scoreboard players add @s legendCounter 1",
+                        "/summon fec:tenacity_orange_slash ^^^7 ~ 0",
+                        "/execute at @s[scores={tenacity_c3_charge=1..}] run summon fec:tenacity_blue_slash ^-6.5^^6.5 ~45 0",
+                        "/execute at @s[scores={tenacity_c3_charge=1..}] run summon fec:tenacity_blue_slash ^6.5^^6.5 ~315 0",
+                        "/scoreboard players remove @s[scores={tenacity_c3_charge=1..}] tenacity_c3_charge 1"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s atkp_delay 0"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.scoreboard('atkp_delay')>30"
+                        },
+                        {
+                            "change_skill": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='tenacity'"
+                        }
+                    ]
+                },
+                "skill_1": {
+                    "on_entry": [
+                        "/damage @e[r=16,rm=0.1,family=!inanimate] 20 entity_explosion entity @s",
+                        "/particle fec:mythic_tenacity_skill_1 ~~~",
+                        "/scoreboard players add @s tenacity_c1 15",
+                        "/playsound random.explode @a[r=32]",
+                        "/execute at @e[r=16,rm=1] as @s run setblock ~~~ fire",
+                        "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §6Flaming Sonic Blast\"}]}"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!q.is_using_item"
+                        }
+                    ]
+                },
+                "skill_2_scythe": {
+                    "on_entry": [
+                        "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §6Tempered Strike\"}]}",
+                        "/effect @s speed 1 19 true"
+                    ],
+                    "animations": [
+                        "mythic_tenacity_skill_2_scythe"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s tenacity_c2 20"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "skill_2_axe": {
+                    "animations": [
+                        "mythic_tenacity_skill_2_axe"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s tenacity_c2_axe 20"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "skill_3_scythe": {
+                    "on_entry": [
+                        "/scoreboard players set @s tenacity_c3 60",
+                        "/playsound lt.reaction.fire @a[r=32]",
+                        "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §6Curtain of Hellfire\"}]}",
+                        "/playanimation @s animation.mythic_tenacity.attack_1_scythe",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~~~5 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~~~-5 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~5~~ 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~-5~~ 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~3~~5 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~-3~~5 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~3~~-5 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~-3~~-5 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~5~~3 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~5~~-3 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~-5~~3 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~-5~~-3 0 0 fec:tenacity_fire_pillar"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_using_item"
+                        }
+                    ]
+                },
+                "skill_3_axe": {
+                    "on_entry": [
+                        "/scoreboard players set @s tenacity_c3_charge 12",
+                        "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §6Phenomenal Slayer\"}]}",
+                        "/effect @s speed 1 4 true"
+                    ],
+                    "animations": [
+                        "mythic_tenacity_skill_2_scythe"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players add @s tenacity_c3_axe 60",
+                        "/tellraw @a[r=64] {\"rawtext\":[{\"text\":\"§6Your normal attacks for axe mode is improved for 12 attacks\"}]}"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "skill_4_scythe": {
+                    "animations": [
+                        "mythic_tenacity_ultimate_scythe"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "skill_4_axe": {
+                    "animations": [
+                        "mythic_tenacity_ultimate_axe"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "change_skill": {
+                    "on_entry": [
+                        "/scoreboard players add @s mythic_tenacity 1",
+                        "/scoreboard players set @s[scores={mythic_tenacity=4}] mythic_tenacity 0",
+                        "/playsound random.click @s",
+                        "/tellraw @s[scores={mythic_tenacity=0}] {\"rawtext\":[{\"text\": \"§cFlaming Sonic Blast\"}]}",
+                        "/tellraw @s[scores={mythic_tenacity=1},hasitem={item=fec:tenacity,location=slot.weapon.mainhand}] {\"rawtext\":[{\"text\": \"§cTempered Strike\"}]}",
+                        "/tellraw @s[scores={mythic_tenacity=1},hasitem={item=fec:tenacity_axe,location=slot.weapon.mainhand}] {\"rawtext\":[{\"text\": \"§cWrath Of Tenacity\"}]}",
+                        "/tellraw @s[scores={mythic_tenacity=2},hasitem={item=fec:tenacity,location=slot.weapon.mainhand}] {\"rawtext\":[{\"text\": \"§cCurtain of Hellfire\"}]}",
+                        "/tellraw @s[scores={mythic_tenacity=2},hasitem={item=fec:tenacity_axe,location=slot.weapon.mainhand}] {\"rawtext\":[{\"text\": \"§cPhenomenal Slayer \"}]}",
+                        "/tellraw @s[scores={mythic_tenacity=3},hasitem={item=fec:tenacity,location=slot.weapon.mainhand}] {\"rawtext\":[{\"text\": \"§cThe Domain of Origin\"}]}",
+                        "/tellraw @s[scores={mythic_tenacity=3},hasitem={item=fec:tenacity_axe,location=slot.weapon.mainhand}] {\"rawtext\":[{\"text\": \"§cThe drop from skies \"}]}"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!v.attack_time"
+                        }
+                    ]
+                },
+                "change_to_axe": {
+                    "animations": [
+                        "mythic_tenacity_axe"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "change_to_scythe": {
+                    "animations": [
+                        "mythic_tenacity_scythe"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

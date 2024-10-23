@@ -1,0 +1,190 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:block": {
+		"description": {
+			"identifier": "fec:shadow_bench",
+			"menu_category": {
+				"category": "items"
+			},
+			"states": {
+				"fec:shadow_revolver_process": [
+					0,
+					1, // REWORKED TENACITY, start_operate
+					2, // SHADOWCORE, reworked_tenacity
+					3, // SHADOWCORE, shadowcore_1
+					4, // SHADOWCORE, shadowcore_1
+					5, // SHADOWCORE, shadowcore_1
+					6, // SHADOWCORE, shadowcore_2
+					7, // SHADOWCORE, shadowcore_2
+					8, // NETHER STAR, shadowcore_2
+					9, // Full
+					10 // cooldown
+				],
+				"fec:shadow_bench_item": [
+					0, // Shadow Revolver
+					1 // Grass Conversion
+				]
+			}
+		},
+		"components": {
+			"minecraft:geometry": "geometry.zenith_fabricator",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "fec_shadow_bench",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:light_emission": 0,
+			"minecraft:light_dampening": 1,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 5
+			},
+			"minecraft:display_name": "§dShadow bench\n§8A Blocks that used for crafting many items that contains\nShadow Corruption, mainly used for craft Shadow Revolver",
+			"minecraft:destructible_by_explosion": false,
+			"minecraft:tick": {
+				"interval_range": [
+					100,
+					400
+				],
+				"looping": true
+			},
+			"minecraft:custom_components": [
+				"fec:shadow_bench"
+			]
+		},
+		"permutations": [
+			{
+				"condition": "query.block_state('fec:shadow_bench_item') == 1",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_shadow_bench_convert",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('fec:shadow_bench_item') == 0 && query.block_state('fec:shadow_revolver_process') == 0",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_shadow_bench",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('fec:shadow_bench_item') == 0 && query.block_state('fec:shadow_revolver_process') == 1",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_shadow_bench_start_operate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('fec:shadow_bench_item') == 0 && query.block_state('fec:shadow_revolver_process') == 2",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_shadow_bench_reworked_tenacity",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('fec:shadow_bench_item') == 0 && query.block_state('fec:shadow_revolver_process') == 3",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_shadow_bench_shadowcore_1",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('fec:shadow_bench_item') == 0 && query.block_state('fec:shadow_revolver_process') == 4",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_shadow_bench_shadowcore_1",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('fec:shadow_bench_item') == 0 && query.block_state('fec:shadow_revolver_process') == 5",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_shadow_bench_shadowcore_1",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('fec:shadow_bench_item') == 0 && query.block_state('fec:shadow_revolver_process') == 6",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_shadow_bench_shadowcore_2",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('fec:shadow_bench_item') == 0 && query.block_state('fec:shadow_revolver_process') == 7",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_shadow_bench_shadowcore_2",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('fec:shadow_bench_item') == 0 && query.block_state('fec:shadow_revolver_process') == 8",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_shadow_bench_shadowcore_2",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('fec:shadow_bench_item') == 0 && query.block_state('fec:shadow_revolver_process') == 9",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_shadow_bench",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('fec:shadow_bench_item') == 0 && query.block_state('fec:shadow_revolver_process') == 10",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_shadow_bench_cooldown",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

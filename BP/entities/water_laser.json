@@ -1,0 +1,84 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:water_laser",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"minecraft:exploding": {
+				"minecraft:explode": {
+					"fuse_length": 0,
+					"fuse_lit": true,
+					"power": 4,
+					"causes_fire": true,
+					"fire_affected_by_griefing": true,
+					"destroy_affected_by_griefing": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 0.6
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": 30,
+						"knockback": false,
+						"semi_random_diff_damage": false
+					},
+					"definition_event": {
+						"affect_projectile": true,
+						"event_trigger": {
+							"event": "explode",
+							"target": "self"
+						}
+					}
+				},
+				"power": 10,
+				"gravity": 0,
+				"inertia": 1,
+				"liquid_inertia": 1,
+				"uncertainty_base": 0,
+				"uncertainty_multiplier": 0,
+				"anchor": 0,
+				"offset": [
+					0,
+					0,
+					0
+				],
+				"reflect_on_hurt": true,
+				"catch_fire": true
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 256,
+					"max_dropped_ticks": 7,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:despawn": {
+				"min_range_inactivity_timer": 15,
+				"despawn_from_inactivity": true
+			}
+		},
+		"events": {
+			"explode": {
+				"add": {
+					"component_groups": [
+						"explode"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+	{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "fec:tenacity_axe",
+            "materials": {
+                "default": "entity_alphatest",
+                "enchanted": "entity_alphatest_glint"
+            },
+            "textures": {
+                "default": "textures/weapons/mythical_tenacity",
+                "enchanted": "textures/misc/enchanted_item_glint"
+            },
+            "geometry": {
+                "default": "geometry.tenacity_axe"
+            },
+            "render_controllers": [
+                "controller.render.item_default"
+            ],
+            "animations": {
+                "hold": "animation.mythic_tenacity.mythic_axe_hold"
+            },
+            "scripts": {
+                "animate": [
+                    {
+                        "hold": "c.is_first_person"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,140 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.murasama_calamity",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "view",
+					"pivot": [0, 0, 0],
+					"rotation": [0, 180, 0]
+				},
+				{
+					"name": "root",
+					"parent": "view",
+					"pivot": [0, 0, 0],
+					"binding": "q.item_slot_to_bone_name(c.item_slot)"
+				},
+				{
+					"name": "particle",
+					"parent": "root",
+					"pivot": [0, 0, 0],
+					"locators": {
+						"murasama_particle": {
+							"offset": [0, 2, 0],
+							"rotation": [180, 0, 0]
+						}
+					}
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 13, 0]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "hat",
+					"parent": "head",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "leftArm",
+					"parent": "body",
+					"pivot": [5, 22, 0],
+					"cubes": [
+						{"origin": [4, 12, -2], "size": [4, 12, 4], "uv": [48, 48]}
+					]
+				},
+				{
+					"name": "leftSleeve",
+					"parent": "leftArm",
+					"pivot": [5, 22, 0]
+				},
+				{
+					"name": "leftItem",
+					"parent": "leftArm",
+					"pivot": [6, 15, 1],
+					"locators": {
+						"damn": [6, 14, 0]
+					}
+				},
+				{
+					"name": "rightArm",
+					"parent": "body",
+					"pivot": [-5, 22, 0],
+					"cubes": [
+						{"origin": [-8, 12, -2], "size": [4, 12, 4], "uv": [48, 48]}
+					]
+				},
+				{
+					"name": "rightSleeve",
+					"parent": "rightArm",
+					"pivot": [-5, 22, 0]
+				},
+				{
+					"name": "rightItem",
+					"parent": "rightArm",
+					"pivot": [-6, 15, 3]
+				},
+				{
+					"name": "weapon_root",
+					"parent": "rightArm",
+					"pivot": [-6, 15, 1],
+					"cubes": [
+						{"origin": [-7, 13, -3], "size": [2, 2, 6], "uv": [19, 0]},
+						{"origin": [-6.5, 13, -27], "size": [1, 2, 23], "uv": [-6, -6]},
+						{"origin": [-6.5, 14, -28], "size": [1, 1, 1], "uv": [0, 0]},
+						{"origin": [-6.5, 9.95, -28.15], "size": [1, 1, 2.8], "pivot": [-6, 13.5, -22.5], "rotation": [-45, 0, 0], "uv": [19, 0]},
+						{"origin": [-8, 12, -4], "size": [4, 4, 1], "uv": [19, 8]}
+					],
+					"locators": {
+						"murasama1": [-6, 14, -6],
+						"murasama2": [-6, 14, -13],
+						"murasama3": [-6, 14, -20]
+					}
+				},
+				{
+					"name": "jacket",
+					"parent": "body",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "leftLeg",
+					"parent": "root",
+					"pivot": [1.9, 12, 0]
+				},
+				{
+					"name": "leftPants",
+					"parent": "leftLeg",
+					"pivot": [1.9, 12, 0]
+				},
+				{
+					"name": "rightLeg",
+					"parent": "root",
+					"pivot": [-1.9, 12, 0]
+				},
+				{
+					"name": "rightPants",
+					"parent": "rightLeg",
+					"pivot": [-1.9, 12, 0]
+				}
+			]
+		}
+	]
+}

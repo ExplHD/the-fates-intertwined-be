@@ -1,0 +1,35 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:shulker_shell"
+		},
+		"pattern": [
+			" A ",
+			" M ",
+			" A "
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:phantom_membrane"
+			},
+			"M": {
+				"item": "minecraft:ender_eye"
+			}
+		},
+		"unlock": [
+			{
+				"item": "minecraft:phantom_membrane"
+			}
+		],
+		"result": [
+			{
+				"item": "minecraft:shulker_shell",
+				"count": 4
+			}
+		]
+	}
+}

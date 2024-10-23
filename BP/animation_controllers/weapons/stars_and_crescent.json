@@ -1,0 +1,266 @@
+{
+	"format_version": "1.21.10",
+	"animation_controllers": {
+		"controller.animation.stars_and_crescent": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+						"/scoreboard players set @s atkp_delay 0",
+						"/camera @s clear"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"sprint": "q.is_sprinting&&q.get_equipped_item_name=='stars_and_crescent'"
+						},
+						{
+							"atk_1": "!q.is_sprinting&&variable.attack_time&&!query.is_sneaking&&q.get_equipped_item_name=='stars_and_crescent'"
+						},
+						{
+							"skill_1_fail": "query.get_equipped_item_name=='stars_and_crescent'&&query.is_using_item&&(query.scoreboard('stars_and_crescent')==0)&&(query.scoreboard('stars_and_crescent_c1')==0)"
+						},
+						{
+							"skill_2": "query.get_equipped_item_name=='stars_and_crescent'&&query.is_using_item&&(query.scoreboard('stars_and_crescent')==1)&&(query.scoreboard('stars_and_crescent_c2')==0)"
+						},
+						{
+							"skill_3": "query.get_equipped_item_name=='stars_and_crescent'&&query.is_using_item&&(query.scoreboard('stars_and_crescent')==2)&&(query.scoreboard('stars_and_crescent_c3')==0)"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='stars_and_crescent'"
+						}
+					]
+				},
+				"sprint": {
+					"on_entry": [
+						"/camera @s set minecraft:third_person",
+						"/scoreboard players set @s atkp_delay 0"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"default": "!q.is_sprinting&&q.get_equipped_item_name=='stars_and_crescent'"
+						},
+						{
+							"atk_1": "q.is_sprinting&&variable.attack_time&&!query.is_sneaking&&q.get_equipped_item_name=='stars_and_crescent'"
+						},
+						{
+							"skill_1": "query.get_equipped_item_name=='stars_and_crescent'&&query.is_using_item&&(query.scoreboard('stars_and_crescent')==0)&&(query.scoreboard('stars_and_crescent_c1')==0)"
+						},
+						{
+							"skill_2": "query.get_equipped_item_name=='stars_and_crescent'&&query.is_using_item&&(query.scoreboard('stars_and_crescent')==1)&&(query.scoreboard('stars_and_crescent_c2')==0)"
+						},
+						{
+							"skill_3": "query.get_equipped_item_name=='stars_and_crescent'&&query.is_using_item&&(query.scoreboard('stars_and_crescent')==2)&&(query.scoreboard('stars_and_crescent_c3')==0)"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='stars_and_crescent'"
+						}
+					]
+				},
+				"atk_1": {
+					"on_entry": [
+						"/damage @e[r=4,rm=0.1,type=!item] 11 entity_attack entity @s",
+						"/playanimation @s animation.stars_and_crescent.attack_1",
+						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_2": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=10)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30&&!q.is_sprinting"
+						},
+						{
+							"sprint": "query.scoreboard('atkp_delay')>=30&&q.is_sprinting"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='stars_and_crescent'"
+						}
+					]
+				},
+				"atk_2": {
+					"on_entry": [
+						"/playanimation @s animation.stars_and_crescent.attack_2",
+						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.1 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_3": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=10)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30&&!q.is_sprinting"
+						},
+						{
+							"sprint": "query.scoreboard('atkp_delay')>=30&&q.is_sprinting"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='stars_and_crescent'"
+						}
+					]
+				},
+				"atk_3": {
+					"on_entry": [
+						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/playanimation @s animation.stars_and_crescent.attack_3",
+						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.15 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_4": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=10)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30&&!q.is_sprinting"
+						},
+						{
+							"sprint": "query.scoreboard('atkp_delay')>=30&&q.is_sprinting"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='stars_and_crescent'"
+						}
+					]
+				},
+				"atk_4": {
+					"on_entry": [
+						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/playanimation @s animation.stars_and_crescent.attack_4",
+						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.05 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_5": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=10)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30&&!q.is_sprinting"
+						},
+						{
+							"sprint": "query.scoreboard('atkp_delay')>=30&&q.is_sprinting"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='stars_and_crescent'"
+						}
+					]
+				},
+				"atk_5": {
+					"animations": [
+						"stars_and_crescent_atk_5"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished&&!q.is_sprinting"
+						},
+						{
+							"sprint": "query.all_animations_finished&&q.is_sprinting"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='stars_and_crescent'"
+						}
+					]
+				},
+				"skill_1_fail": {
+					"on_entry": [
+						"/tellraw @s {\"rawtext\":[{\"text\":\"§cYou need to sprint to use this ability\"}]}"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				},
+				"skill_1": {
+					"on_entry": [
+						"/damage @e[r=8,rm=0.01] 6 entity_attack entity @s",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/particle fec:light_blast ~~~",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/tp @s ^^^1 true",
+						"/playsound item.trident.hit",
+						"/scoreboard players add @s stars_and_crescent_c1 10"
+					],
+					"transitions": [
+						{
+							"sprint": "!query.is_using_item"
+						}
+					]
+				},
+				"skill_2": {
+					"on_entry": [
+						"/playanimation @s animation.stars_and_crescent.attack_4",
+						"/particle fec:light_slash",
+						"/damage @e[r=24,rm=0.1,type=!item] 24 entity_attack entity @s",
+						"/playsound custom_sfx.sword_slash_with_flashring @a[r=32]",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §eStar Slash\"}]}",
+						"/scoreboard players add @s stars_and_crescent_c2 30"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				},
+				"skill_3": {
+					"on_entry": [
+						"/playsound conduit.short @a[r=32]",
+						"/effect @s resistance 1 255",
+						"/summon fec:crescent_pillar ~~~ 0 0",
+						"/summon fec:crescent_pillar ~~~ 90 0",
+						"/summon fec:crescent_pillar ~~~ 180 0",
+						"/summon fec:crescent_pillar ~~~ 270 0",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §eCrescent Moon Pillar\"}]}",
+						"/scoreboard players set @s stars_and_crescent_c3 60"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				},
+				"change": {
+					"on_entry": [
+						"/scoreboard players add @s stars_and_crescent 1",
+						"/scoreboard players set @s[scores={stars_and_crescent=3}] stars_and_crescent 0",
+						"/playsound random.click @s",
+						"/tellraw @s[scores={stars_and_crescent=0}] {\"rawtext\":[{\"text\":\"§cStar Dash\"}]}",
+						"/tellraw @s[scores={stars_and_crescent=1}] {\"rawtext\":[{\"text\":\"§cStar Slash\"}]}",
+						"/tellraw @s[scores={stars_and_crescent=2}] {\"rawtext\":[{\"text\":\"§cCrescent Moon Pillar\"}]}"
+					],
+					"transitions": [
+						{
+							"default": "!variable.attack_time"
+						}
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:zenith",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.sword"
+			}
+		},
+		"components": {
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:damage": 10,
+			"minecraft:should_despawn": false,
+			"minecraft:hand_equipped": true,
+			"minecraft:icon": "fec_zenith",
+			"minecraft:use_modifiers": {
+				"use_duration": 999999,
+				"movement_modifier": 1
+			},
+			"minecraft:use_animation": "none",
+			"minecraft:food": {
+				"can_always_eat": true
+			},
+			"minecraft:display_name": {
+				"value": "§4Zenith\n§7A Sword that made with all powers\nof legendary sword existed\n\n§2Right-click / Tap and Hold to :\nCast the selected skill\nSneak + Left Click / tap to :\nChange selected skill"
+			},
+			"minecraft:max_stack_size": 1,
+			"tag:minecraft:is_sword": {},
+			"tag:minecraft:is_tool": {}
+		}
+	}
+}

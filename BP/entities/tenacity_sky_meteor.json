@@ -1,0 +1,144 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:tenacity_sky_meteor",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"spawn": {
+				"minecraft:physics": {
+					"has_gravity": false,
+					"has_collision": false
+				},
+				"minecraft:timer": {
+					"time": 0.5,
+					"time_down_event": {
+						"event": "add_physics",
+						"target": "self"
+					}
+				}
+			},
+			"normal": {
+				"minecraft:physics": {
+					"has_gravity": true,
+					"has_collision": true
+				}
+			},
+			"despawning": {
+				"minecraft:timer": {
+					"time": 0.95,
+					"time_down_event": {
+						"event": "despawn",
+						"target": "self"
+					}
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 120,
+				"max": 120
+			},
+			"minecraft:scale": {
+				"value": 2
+			},
+			"minecraft:collision_box": {
+				"height": 2.71,
+				"width": 2.9
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "entity_attack",
+						"deals_damage": false
+					},
+					{
+						"cause": "entity_explosion",
+						"deals_damage": false
+					},
+					{
+						"cause": "anvil",
+						"deals_damage": false
+					},
+					{
+						"cause": "suffocation",
+						"deals_damage": false
+					},
+					{
+						"cause": "fall",
+						"damage_modifier": 0,
+						"on_damage": {
+							"event": "explode",
+							"target": "self"
+						}
+					}
+				]
+			},
+			"minecraft:fire_immune": true
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"spawn"
+					]
+				}
+			},
+			"explode": {
+				"queue_command": {
+					"command": [
+						"particle fec:mythic_tenacity_ultimate_axe_meteor_explosion ~~2~",
+						"damage @e[r=32,rm=0.01,family=!boss,type=!wither,type=!warden] 48 entity_explosion entity @s",
+						"playanimation @s animation.tenacity_sky_meteor.despawn",
+						"camerashake add @a[r=64] 1.6 3 positional",
+						"playsound random.explode @a[r=64]",
+						"damage @e[r=32,rm=0.01,type=wither] 95 entity_explosion entity @s",
+						"damage @e[r=32,rm=0.01,type=warden] 190 entity_explosion entity @s",
+						"damage @e[r=32,rm=0.01,family=boss] 245 entity_explosion entity @s"
+					],
+					"target": "self"
+				},
+				"add": {
+					"component_groups": [
+						"despawning"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"normal"
+					]
+				}
+			},
+			"add_physics": {
+				"add": {
+					"component_groups": [
+						"normal"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spawn"
+					]
+				}
+			},
+			"despawn": {
+				"remove": {
+					"component_groups": [
+						"despawning"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

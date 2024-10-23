@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:water_essence"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"###",
+			"###",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "fec:water_shard"
+			}
+		},
+		"unlock": [
+			{
+				"item": "fec:water_shard"
+			}
+		],
+		"result": {
+			"item": "fec:water_essence"
+		}
+	}
+}

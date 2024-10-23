@@ -1,0 +1,177 @@
+{
+	"format_version": "1.21.10",
+	"animation_controllers": {
+		"controller.animation.spear_of_heart": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+						"/scoreboard players set @s atkp_delay 0"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_1": "variable.attack_time&&!query.is_sneaking&&q.get_equipped_item_name=='spear_of_heart'"
+						},
+						{
+							"skill_1": "query.get_equipped_item_name=='spear_of_heart'&&query.is_using_item&&(query.scoreboard('spear_of_heart')==0)&&(query.scoreboard('spear_of_heart_c1')==0)"
+						},
+						{
+							"skill_2": "query.get_equipped_item_name=='spear_of_heart'&&query.is_using_item&&(query.scoreboard('spear_of_heart')==1)&&(query.scoreboard('spear_of_heart_c2')==0)"
+						},
+						{
+							"skill_3": "query.get_equipped_item_name=='spear_of_heart'&&query.is_using_item&&(query.scoreboard('spear_of_heart')==2)&&(query.scoreboard('spear_of_heart_c3')==0)"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='spear_of_heart'"
+						}
+					]
+				},
+				"atk_1": {
+					"on_entry": [
+						"/damage @e[r=6,rm=0.1,type=!item] 11 entity_attack entity @s",
+						"/playanimation @s animation.spear_of_heart.attack_1",
+						"/playsound sword_slash.heavy_slash @a[r=16] ~~~ 1 0.9 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_2": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=16)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='spear_of_heart'"
+						}
+					]
+				},
+				"atk_2": {
+					"on_entry": [
+						"/playanimation @s animation.spear_of_heart.attack_2",
+						"/damage @e[r=6,rm=0.1,type=!item] 13 entity_attack entity @s",
+						"/playsound sword_slash.heavy_slash @a[r=16] ~~~ 1 1 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_3": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=20)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='spear_of_heart'"
+						}
+					]
+				},
+				"atk_3": {
+					"on_entry": [
+						"/damage @e[r=6,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/playanimation @s animation.spear_of_heart.attack_3",
+						"/playsound sword_slash.heavy_slash @a[r=16] ~~~ 1 1 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_4": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=15)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='spear_of_heart'"
+						}
+					]
+				},
+				"atk_4": {
+					"animations": [
+						"spear_of_heart_atk_4"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"transitions": [
+						{
+							"default": "query.any_animation_finished('spear_of_heart_atk_4')"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='spear_of_heart'"
+						}
+					]
+				},
+				"skill_1": {
+					"animations": [
+						"spear_of_heart_skill_1"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"skill_2": {
+					"on_entry": [
+						"/execute at @e[r=16,rm=0.1,type=!item,c=3] as @s run summon fec:spear_of_heart_plunge ~~~",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §c§lSpear Plunge\"}]}",
+						"/playanimation @s animation.spear_of_heart.attack_4",
+						"/particle fec:spear_of_heart_skill_1_circle ~~~",
+						"/scoreboard players set @s spear_of_heart_c2 30"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				},
+				"skill_3": {
+					"on_entry": [
+						"/playsound custom_sfx.villain_laugh @a[r=64]",
+						"/particle fec:spear_of_heart_skill_3 ~~1~",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their Ultimate §bNatural §aFusion : §cForms of Death Sentence\"}]}",
+						"/damage @e[r=9,rm=0.1,type=!item] 10 void entity @s",
+						"/effect @e[r=9,rm=0.1,type=!item] hunger 5 0",
+						"/effect @e[r=9,rm=0.1,type=!item] blindness 5 0",
+						"/effect @e[r=9,rm=0.1,type=!item] weakness 5 2",
+						"/effect @e[r=9,rm=0.1,type=!item] mining_fatigue 5 2",
+						"/effect @e[r=9,rm=0.1,type=!item] wither 5 0",
+						"/effect @e[r=9,rm=0.1,type=!item] nausea 5 0",
+						"/scoreboard players set @s spear_of_heart_c3 120"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				},
+				"change": {
+					"on_entry": [
+						"/scoreboard players add @s spear_of_heart 1",
+						"/scoreboard players set @s[scores={spear_of_heart=3}] spear_of_heart 0",
+						"/playsound random.click @s",
+						"/tellraw @s[scores={spear_of_heart=0}] {\"rawtext\":[{\"text\": \"Vortex Sinkhole\"}]}",
+						"/tellraw @s[scores={spear_of_heart=1}] {\"rawtext\":[{\"text\": \"Spear Plunge\"}]}",
+						"/tellraw @s[scores={spear_of_heart=2}] {\"rawtext\":[{\"text\": \"Natural Fusion : Forms of Death Sentence\"}]}"
+					],
+					"transitions": [
+						{
+							"default": "!variable.attack_time"
+						}
+					]
+				}
+			}
+		}
+	}
+}

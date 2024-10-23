@@ -1,0 +1,39 @@
+{
+    "format_version": "1.21.10",
+    "minecraft:item": {
+        "description": {
+            "identifier": "fec:tenacity",
+            "menu_category": {
+                "category": "equipment",
+                "group": "itemGroup.name.hoe"
+            }
+        },
+        "components": {
+            "minecraft:icon": "fec_tenacity",
+            "minecraft:allow_off_hand": true,
+            "minecraft:can_destroy_in_creative": false,
+            "minecraft:damage": {
+                "value": 12
+            },
+            "minecraft:display_name": {
+                "value": "§4Tenacity\n§7A Scythe made from the unknown Ascended,\nHells, under the overworld and above\nthe nether. This is the true\nabomination weapons\n\n§2Right-click / Tap and Hold to :\ncast the selected skill\nSneak + Left Click / tap to :\nchange selected skill\nSneak + Right Click / tap and hold to :\nchange weapon mode"
+            },
+            "minecraft:should_despawn": false,
+            "minecraft:food": {
+                "can_always_eat": true
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 999999,
+                "movement_modifier": 1
+            },
+            "minecraft:use_animation": "none",
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:is_sword"
+                ]
+            }
+        }
+    }
+}

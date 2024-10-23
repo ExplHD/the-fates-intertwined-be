@@ -1,0 +1,71 @@
+{
+	"resource_pack_name": "The Fates Intertwined",
+	"texture_name": "atlas.terrain",
+	"num_mip_levels": 0,
+	"padding": 0,
+	"texture_data": {
+		"fec_legendary_fabricator": {
+			"textures": "textures/blocks/legendary_fabricator"
+		},
+		"fec_legendary_fabricator_deactivated": {
+			"textures": "textures/blocks/legendary_fabricator_deactivated"
+		},
+		"fec_zenith_fabricator": {
+			"textures": "textures/blocks/mythic_fabricator/zenith_fabricator"
+		},
+		"fec_zenith_fabricator_open": {
+			"textures": "textures/blocks/mythic_fabricator/zenith_fabricator_open"
+		},
+		"fec_zenith_fabricator_start_operate": {
+			"textures": "textures/blocks/mythic_fabricator/zenith_start_operate"
+		},
+		"fec_zenith_fabricator_start_operate_1": {
+			"textures": "textures/blocks/mythic_fabricator/zenith_start_operate_1"
+		},
+		"fec_zenith_fabricator_start_operate_2": {
+			"textures": "textures/blocks/mythic_fabricator/zenith_start_operate_2"
+		},
+		"fec_zenith_fabricator_start_operate_3": {
+			"textures": "textures/blocks/mythic_fabricator/zenith_start_operate_3"
+		},
+		"fec_zenith_fabricator_start_operate_4": {
+			"textures": "textures/blocks/mythic_fabricator/zenith_start_operate_4"
+		},
+		"fec_zenith_fabricator_crafting": {
+			"textures": "textures/blocks/mythic_fabricator/zenith_fabricator_crafting"
+		},
+		"fec_zenith_fabricator_stop": {
+			"textures": "textures/blocks/mythic_fabricator/zenith_fabricator_stop"
+		},
+		"fec_shadow_grass_top": {
+			"textures": "textures/blocks/shadow_grass_top"
+		},
+		"fec_shadow_grass_side": {
+			"textures": "textures/blocks/shadow_grass_side"
+		},
+		"fec_shadow_grass_bottom": {
+			"textures": "textures/blocks/dirt"
+		},
+		"fec_shadow_bench": {
+			"textures": "textures/blocks/shadow_bench"
+		},
+		"fec_shadow_bench_convert": {
+			"textures": "textures/blocks/shadow_bench/shadow_bench_convert"
+		},
+		"fec_shadow_bench_start_operate": {
+			"textures": "textures/blocks/shadow_bench/shadow_bench_start_operate"
+		},
+		"fec_shadow_bench_cooldown": {
+			"textures": "textures/blocks/shadow_bench/shadow_bench_cooldown"
+		},
+		"fec_shadow_bench_reworked_tenacity": {
+			"textures": "textures/blocks/shadow_bench/shadow_bench_reworked_tenacity"
+		},
+		"fec_shadow_bench_shadowcore_1": {
+			"textures": "textures/blocks/shadow_bench/shadow_bench_shadowcore_1"
+		},
+		"fec_shadow_bench_shadowcore_2": {
+			"textures": "textures/blocks/shadow_bench/shadow_bench_shadowcore_2"
+		}
+	}
+}

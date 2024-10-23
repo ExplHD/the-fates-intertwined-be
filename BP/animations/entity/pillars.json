@@ -1,0 +1,36 @@
+{
+	"format_version": "1.21.10",
+	"animations": {
+		"animation.entity.dragon_pillar": {
+			"animation_length": 4,
+			"loop": false,
+			"timeline": {
+				"2.0": [
+					"/damage @e[r=3,type=!fec:dragon_pillar] 30 entity_attack entity @s",
+					"/particle fec:dragon_pillar ~~~"
+				],
+				"2.5": [
+					"/damage @e[r=3,type=!fec:dragon_pillar] 30 entity_attack entity @s"
+				],
+				"3.0": [
+					"/damage @e[r=3,type=!fec:dragon_pillar] 30 entity_attack entity @s"
+				],
+				"3.5": [
+					"/damage @e[r=3,type=!fec:dragon_pillar] 30 entity_attack entity @s"
+				],
+				"4.0": [
+					"/damage @e[r=3,type=!fec:dragon_pillar] 30 entity_attack entity @s"
+				]
+			}
+		},
+		"animation.entity.fire_pillar": {
+			"animation_length": 2,
+			"loop": false,
+			"timeline": {
+				"1.0": [
+					"/summon fec:fire_pillar_remastered ~~~ 0 0 fec:elemental_legionnaire_fire_pillar"
+				]
+			}
+		}
+	}
+}

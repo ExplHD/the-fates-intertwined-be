@@ -1,0 +1,204 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:block": {
+		"description": {
+			"identifier": "fec:zenith_fabricator",
+			"menu_category": {
+				"category": "items"
+			},
+			"states": {
+				"fec:zenith_fabricator": [
+					0,
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9
+				]
+			}
+		},
+		"components": {
+			"minecraft:geometry": "geometry.zenith_fabricator",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "fec_zenith_fabricator",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:display_name": "§dZenith Fabricator\n§8A Blocks that used for crafting Mythical Zenith, this block is §cUNOBTAINABLE",
+			"minecraft:destructible_by_explosion": false,
+			"minecraft:destructible_by_mining": false,
+			"minecraft:light_emission": 7,
+			"minecraft:light_dampening": 0,
+			"minecraft:flammable": false
+		},
+		"permutations": [
+			{
+				"condition": "query.block_state('fec:zenith_fabricator') == 0",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_zenith_fabricator",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:custom_components": [
+						"fec:zenith_fabricator"
+					]
+				}
+			},
+			{
+				"condition": "query.block_state('fec:zenith_fabricator') == 1",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_zenith_fabricator_open",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:custom_components": [
+						"fec:zenith_fabricator_tick_thing"
+					],
+					"minecraft:tick": {
+						"interval_range": [
+							20,
+							20
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('fec:zenith_fabricator') == 2",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_zenith_fabricator_start_operate",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:custom_components": [
+						"fec:zenith_fabricator"
+					]
+				}
+			},
+			{
+				"condition": "query.block_state('fec:zenith_fabricator') == 3",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_zenith_fabricator_start_operate_1",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:custom_components": [
+						"fec:zenith_fabricator"
+					]
+				}
+			},
+			{
+				"condition": "query.block_state('fec:zenith_fabricator') == 4",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_zenith_fabricator_start_operate_2",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:custom_components": [
+						"fec:zenith_fabricator"
+					]
+				}
+			},
+			{
+				"condition": "query.block_state('fec:zenith_fabricator') == 5",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_zenith_fabricator_start_operate_3",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:custom_components": [
+						"fec:zenith_fabricator"
+					]
+				}
+			},
+			{
+				"condition": "query.block_state('fec:zenith_fabricator') == 6",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_zenith_fabricator_start_operate_4",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:light_emission": 15,
+					"minecraft:custom_components": [
+						"fec:zenith_fabricator"
+					]
+				}
+			},
+			{
+				"condition": "query.block_state('fec:zenith_fabricator') == 7",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_zenith_fabricator_crafting",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:custom_components": [
+						"fec:zenith_fabricator_tick_thing"
+					],
+					"minecraft:light_emission": 15,
+					"minecraft:tick": {
+						"interval_range": [
+							900,
+							900
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('fec:zenith_fabricator') == 8",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_zenith_fabricator_start_operate",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:light_emission": 7,
+					"minecraft:custom_components": [
+						"fec:zenith_fabricator"
+					]
+				}
+			},
+			{
+				"condition": "query.block_state('fec:zenith_fabricator') == 9",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_zenith_fabricator_stop",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:light_emission": 0,
+					"minecraft:custom_components": [
+						"fec:zenith_fabricator_tick_thing"
+					],
+					"minecraft:tick": {
+						"interval_range": [
+							6000,
+							8400
+						]
+					}
+				}
+			}
+		]
+	}
+}

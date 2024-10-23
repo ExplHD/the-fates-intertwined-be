@@ -1,0 +1,29 @@
+{
+	"format_version": "1.16.0",
+	"animation_controllers": {
+		"controller.animation.stars_and_crescent": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"transitions": [
+						{
+							"walking": "(query.get_equipped_item_name=='stars_and_crescent')&&(q.is_sprinting)"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"walking": {
+					"animations": [
+						"stars_and_crescent_move"
+					],
+					"transitions": [
+						{
+							"idle": "(!q.is_sprinting)||(query.get_equipped_item_name!='stars_and_crescent')"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

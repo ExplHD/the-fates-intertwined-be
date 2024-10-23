@@ -1,0 +1,65 @@
+{
+	"format_version": "1.21.10",
+	"animations": {
+		"animation.spear_of_heart.attack_4": {
+			"animation_length": 1,
+			"loop": false,
+			"timeline": {
+				"0.0": [
+					"/playsound",
+					"/playanimation @s animation.spear_of_heart.attack_4",
+					"/scoreboard players set @s atkp_delay 1",
+					"/inputpermission set @s movement disabled",
+					"/title @s actionbar §b< 0.5 >"
+				],
+				"0.1": [
+					"/title @s actionbar §b< 0.4 >"
+				],
+				"0.2": [
+					"/title @s actionbar §b< 0.3 >"
+				],
+				"0.3": [
+					"/title @s actionbar §b< 0.2 >"
+				],
+				"0.4": [
+					"/title @s actionbar §b< 0.1 >"
+				],
+				"0.5": [
+					"/damage @e[rm=0.1,type=!item,r=7] 15 entity_attack entity @s",
+					"/playsound sword_slash.clash @a[r=16] ~~~ 1 1 0.4",
+					"/tp ~~~ ~ 0",
+					"/inputpermission set @s movement enabled",
+					"/title @s actionbar §a< Charge Successfully >"
+				]
+			}
+		},
+		"animation.spear_of_heart.skill_1": {
+			"animation_length": 5,
+			"timeline": {
+				"0.0": [
+					"/tag @e[r=16,rm=0.1,type=!item] add black_hole",
+					"/effect @s resistance 5 255 true",
+					"/playsound custom_sfx.black_hole @a[r=64]",
+					"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §bVortex Sinkhole\"}]}",
+					"/particle fec:spear_of_heart_skill_1_circle ^^3^3",
+					"/inputpermission set @s movement disabled",
+					"/particle fec:spear_of_heart_skill_1_sphere ^^3^3"
+				],
+				"2.0": [
+					"/particle fec:spear_of_heart_skill_1_circle ^^3^3",
+					"/particle fec:spear_of_heart_skill_1_sphere ^^3^3"
+				],
+				"4.0": [
+					"/particle fec:spear_of_heart_skill_1_circle ^^3^3",
+					"/inputpermission set @s movement enabled",
+					"/particle fec:spear_of_heart_skill_1_sphere ^^3^3",
+					"/tp @e[tag=black_hole] ^^3^3"
+				],
+				"5.0": [
+					"/tag @e remove black_hole",
+					"/scoreboard players set @s spear_of_heart_c1 30"
+				]
+			}
+		}
+	}
+}

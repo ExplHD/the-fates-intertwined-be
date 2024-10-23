@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:water_core",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/water_core"
+			},
+			"geometry": {
+				"default": "geometry.water_core"
+			},
+			"render_controllers": [
+				"controller.render.water_core"
+			],
+			"animations": {
+				"general": "animation.water_core.general"
+			},
+			"scripts": {
+				"animate": [
+					"general"
+				]
+			},
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

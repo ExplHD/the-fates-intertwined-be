@@ -1,0 +1,149 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:fire_pillar_remastered",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"despawning": {
+				"minecraft:timer": {
+					"time": 0.5,
+					"time_down_event": {
+						"event": "instant_despawn",
+						"target": "self"
+					}
+				}
+			},
+			"instant_despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"fec:elemental_legionnaire_fire_pillar": {
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:timer": {
+					"time": 2,
+					"time_down_event": {
+						"event": "despawn",
+						"target": "self"
+					}
+				},
+				"minecraft:area_attack": {
+					"cause": "entity_attack",
+					"damage_per_tick": 6,
+					"damage_cooldown": 0.3,
+					"play_attack_sound": false,
+					"damage_range": 0.8,
+					"entity_filter": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "legionnaire"
+							}
+						]
+					}
+				},
+				"minecraft:scale": {
+					"value": 1.5
+				}
+			},
+			"fec:tenacity_fire_pillar": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:timer": {
+					"time": 4,
+					"time_down_event": {
+						"event": "despawn",
+						"target": "self"
+					}
+				},
+				"minecraft:area_attack": {
+					"cause": "entity_attack",
+					"damage_per_tick": 6,
+					"damage_cooldown": 0.3,
+					"play_attack_sound": false,
+					"damage_range": 1
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 200,
+				"max": 200
+			},
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 7
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+			"minecraft:knockback_resistance": {
+				"value": 100,
+				"max": 100
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"queue_command": {
+					"command": [
+						"playanimation @s animation.fire_pillar_remastered.spawn",
+						"playsound fire.ignite @a[r=16]"
+					],
+					"target": "self"
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawning"
+					]
+				},
+				"queue_command": {
+					"command": "playanimation @s animation.fire_pillar_remastered.despawn",
+					"target": "self"
+				}
+			},
+			"instant_despawn": {
+				"add": {
+					"component_groups": [
+						"instant_despawn"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"despawning"
+					]
+				}
+			},
+			"fec:elemental_legionnaire_fire_pillar": {
+				"add": {
+					"component_groups": [
+						"fec:elemental_legionnaire_fire_pillar"
+					]
+				}
+			},
+			"fec:tenacity_fire_pillar": {
+				"add": {
+					"component_groups": [
+						"fec:tenacity_fire_pillar"
+					]
+				}
+			}
+		}
+	}
+}

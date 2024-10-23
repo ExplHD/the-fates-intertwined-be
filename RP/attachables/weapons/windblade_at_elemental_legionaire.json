@@ -1,0 +1,37 @@
+{
+    "format_version": "1.21.10",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "fec:windblade_at_elemental_legionnaire",
+            "item": {
+                "fec:windblade_claymore": "query.owner_identifier == 'fec:elemental_legionnaire'"
+            },
+            "materials": {
+                "default": "phantom",
+                "enchanted": "phantom"
+            },
+            "textures": {
+                "default": "textures/weapons/windblade_claymore",
+                "enchanted": "textures/misc/enchanted_item_glint"
+            },
+            "geometry": {
+                "default": "geometry.windblade_claymore"
+            },
+            "render_controllers": [
+                "controller.render.item_default"
+            ],
+            "animations": {
+                "first_person": "animation.item.hand_2",
+                "hold": "animation.windblade_claymore.hold"
+            },
+            "scripts": {
+                "animate": [
+                    "hold",
+                    {
+                        "first_person": "c.is_first_person"
+                    }
+                ]
+            }
+        }
+    }
+}

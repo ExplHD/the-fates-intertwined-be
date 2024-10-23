@@ -1,0 +1,125 @@
+{
+	"format_version": "1.21.10",
+	"sound_definitions": {
+		"custom_sfx.i_am_the_hunter": {
+			"sounds": [
+				"sounds/custom_sfx/i_am_the_hunter_sova"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.build_up_railgun": {
+			"sounds": [
+				"sounds/custom_sfx/build_up_laser"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.deathzone_spawn": {
+			"sounds": [
+				"sounds/custom_sfx/laser_summon"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.male_scream": {
+			"sounds": [
+				"sounds/custom_sfx/male_scream"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.villain_laugh": {
+			"sounds": [
+				"sounds/custom_sfx/villain_laugh"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.heal": {
+			"sounds": [
+				"sounds/custom_sfx/heal"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.high_voltage": {
+			"sounds": [
+				"sounds/custom_sfx/high_voltage"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.domain_expansion": {
+			"sounds": [
+				"sounds/custom_sfx/domain_expansion"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.black_hole": {
+			"sounds": [
+				"sounds/custom_sfx/black_hole"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.metal_chain": {
+			"sounds": [
+				"sounds/custom_sfx/metal_chain"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.sword_slash_with_flashring": {
+			"sounds": [
+				"sounds/custom_sfx/sword_slash_with_flashring"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.clash_3x": {
+			"sounds": [
+				"sounds/custom_sfx/clash_3x"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.siren": {
+			"sounds": [
+				"sounds/custom_sfx/siren"
+			],
+			"category": "ui"
+		},
+		"sword_slash.light_slash": {
+			"category": "ui",
+			"sounds": [
+				"sounds/swords_slash/slash_light"
+			]
+		},
+		"sword_slash.heavy_slash": {
+			"category": "ui",
+			"sounds": [
+				"sounds/swords_slash/slash_heavy"
+			]
+		},
+		"sword_slash.medium_slash": {
+			"category": "ui",
+			"sounds": [
+				"sounds/swords_slash/slash_medium"
+			]
+		},
+		"sword_slash.clash": {
+			"category": "ui",
+			"sounds": [
+				"sounds/swords_slash/slash_clash"
+			]
+		},
+		"shadow_revolver.shot_normal": {
+			"category": "ui",
+			"sounds": [
+				"sounds/shadow_revolver/shot_normal"
+			]
+		},
+		"shadow_revolver.shot_protocol_impact_0078": {
+			"category": "ui",
+			"sounds": [
+				"sounds/shadow_revolver/shot_protocol_impact_0078"
+			]
+		},
+		"shadow_revolver.reload": {
+			"category": "ui",
+			"sounds": [
+				"sounds/shadow_revolver/reload_sound"
+			]
+		}
+	}
+}

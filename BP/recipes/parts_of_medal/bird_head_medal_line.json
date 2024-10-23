@@ -1,0 +1,33 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:bird_head_medal_line"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"C# ",
+			"# #",
+			" #C"
+		],
+		"key": {
+			"#": {
+				"item": "fec:iron_stick"
+			},
+			"C": {
+				"item": "fec:corner_medal_line"
+			}
+		},
+		"unlock": [
+			{
+				"item": "fec:iron_stick"
+			}
+		],
+		"result": {
+			"item": "fec:bird_head_medal_line",
+			"count": 1
+		}
+	}
+}

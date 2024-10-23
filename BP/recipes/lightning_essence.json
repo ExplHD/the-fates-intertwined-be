@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:lightning_essence"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"###",
+			"###",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "fec:lightning_shard"
+			}
+		},
+		"unlock": [
+			{
+				"item": "fec:lightning_shard"
+			}
+		],
+		"result": {
+			"item": "fec:lightning_essence"
+		}
+	}
+}

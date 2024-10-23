@@ -1,0 +1,68 @@
+{
+	"format_version": "1.21.10",
+	"animations": {
+		"animation.blade_of_the_end.attack_4": {
+			"animation_length": 1.2,
+			"timeline": {
+				"0.0": [
+					"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+					"/tag @e[r=12,rm=0.1,type=!item] add cosmic_tag",
+					"/playanimation @s animation.blade_of_the_end.attack_1",
+					"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1 0.4",
+					"/scoreboard players add @s atkp_delay 1"
+				],
+				"1.0": [
+					"/damage @e[tag=cosmic_tag] 10 entity_attack entity @s",
+					"/execute at @e[tag=cosmic_tag] run particle fec:blade_of_the_end_attack_4 ~~1~",
+					"/damage @e[tag=cosmic_tag_buffed] 20 entity_attack entity @s",
+					"/execute at @e[tag=cosmic_tag_buffed] run particle fec:luminicious_star_slash ~~1~",
+					"/playsound sword_slash.clash @a[r=16] ~~~ 1 1 0.4",
+					"/playsound sword_slash.clash @a[tag=cosmic_tag]",
+					"/execute if entity @e[tag=cosmic_tag_buffed] run playsound sword_slash.heavy_slash @a[r=24]",
+					"/playsound sword_slash.heavy_slash @a[tag=cosmic_tag_buffed]"
+				],
+				"1.1": [
+					"/tag @e remove cosmic_tag"
+				]
+			}
+		},
+		"animation.blade_of_the_end.skill_3": {
+			"animation_length": 3.1,
+			"timeline": {
+				"0.0": [
+					"/playanimation @s animation.blade_of_the_end.skill_3",
+					"/particle fec:blade_of_the_end_skill_3",
+					"/playsound custom_sfx.build_up_railgun @a[r=64] ~~~ 1 0.45 1",
+					"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §dCosmic Stars : Cosmic Smokescreen\"}]}",
+					"/effect @e[r=32,rm=0.1] blindness 18 0 false",
+					"/tag @e[r=32,rm=0.1] add cosmic_tag",
+					"/inputpermission set @s movement disabled",
+					"/inputpermission set @s camera disabled"
+				],
+				"1.0": [
+					"/damage @e[tag=cosmic_tag] 15 entity_attack entity @s",
+					"/execute at @e[tag=cosmic_tag] run particle fec:blade_of_the_end_attack_4 ~~1~",
+					"/playsound sword_slash.clash @a[r=16]",
+					"/playsound sword_slash.clash @a[tag=cosmic_tag]"
+				],
+				"2.0": [
+					"/damage @e[tag=cosmic_tag] 15 entity_attack entity @s",
+					"/execute at @e[tag=cosmic_tag] run particle fec:blade_of_the_end_attack_4 ~~1~",
+					"/playsound sword_slash.clash @a[r=16]",
+					"/playsound sword_slash.clash @a[tag=cosmic_tag]"
+				],
+				"3.0": [
+					"/damage @e[tag=cosmic_tag] 15 entity_attack entity @s",
+					"/execute at @e[tag=cosmic_tag] run particle fec:blade_of_the_end_attack_4 ~~1~",
+					"/playsound sword_slash.clash @a[r=16]",
+					"/playsound sword_slash.clash @a[tag=cosmic_tag]",
+					"/inputpermission set @s movement enabled",
+					"/inputpermission set @s camera enabled"
+				],
+				"3.1": [
+					"/tag @e[tag=cosmic_tag] remove cosmic_tag"
+				]
+			}
+		}
+	}
+}

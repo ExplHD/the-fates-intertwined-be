@@ -1,0 +1,44 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:stardust_armor_boots",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.boots"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:enchantable": {
+				"value": 9,
+				"slot": "armor_feet"
+			},
+			"minecraft:icon": "fec_stardust_armor_boots",
+			"tag:minecraft:trimmable_armors": {},
+			"minecraft:wearable": {
+				"slot": "slot.armor.feet",
+				"protection": 8
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"minecraft:nether_star"
+						],
+						"repair_amount": "query.max_durability*0.25"
+					},
+					{
+						"items": [
+							"fec:stardust_armor_boots"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:durability": {
+				"max_durability": 5050
+			}
+		}
+	}
+}

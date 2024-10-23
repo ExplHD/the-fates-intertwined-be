@@ -1,0 +1,61 @@
+{
+	"format_version": "1.21.10",
+	"animation_controllers": {
+		"controller.animation.ender_dragon": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"phase_2_lightning_blast": "query.scoreboard('ender_dragon_p2')==600"
+						},
+						{
+							"phase_2_arrow_of_doom": "query.scoreboard('ender_dragon_p2')==1200"
+						},
+						{
+							"phase_2_massive_pillar": "query.scoreboard('ender_dragon_p2')==1800"
+						}
+					]
+				},
+				"phase_2_lightning_blast": {
+					"on_entry": [
+						"/function boss/ender_dragon/lightning_blast",
+						"/tellraw @a[r=256] {\"rawtext\":[{\"text\":\"§d<Ender Dragon> The Blast of Stars!\"}]}"
+					],
+					"transitions": [
+						{
+							"default": "1"
+						}
+					]
+				},
+				"phase_2_arrow_of_doom": {
+					"on_entry": [
+						"/tellraw @a[r=256] {\"rawtext\":[{\"text\":\"§d<Ender Dragon> Stray Projectiles From the End!\"}]}"
+					],
+					"animations": [
+						"ender_dragon_arrow_of_doom"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"phase_2_massive_pillar": {
+					"on_entry": [
+						"/tellraw @a[r=256] {\"rawtext\":[{\"text\":\"§d<Ender Dragon> A GOD DOES NOT FEAR DEATH!\"}]}",
+						"/damage @s 40 contact"
+					],
+					"animations": [
+						"ender_dragon_massive_pillar"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				}
+			}
+		}
+	}
+}

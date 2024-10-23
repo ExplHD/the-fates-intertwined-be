@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:winterbloom_medal_wireframe"
+		},
+		"key": {
+			"C": {
+				"item": "fec:corner_medal_line"
+			}
+		},
+		"pattern": [
+			"CCC",
+			"   ",
+			"CCC"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"unlock": [
+			{
+				"item": "fec:corner_medal_line"
+			},
+			{
+				"item": "minecraft:diamond_pickaxe"
+			}
+		],
+		"result": {
+			"item": "fec:winterbloom_medal_wireframe"
+		}
+	}
+}

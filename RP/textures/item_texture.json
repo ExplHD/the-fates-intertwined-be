@@ -1,0 +1,184 @@
+{
+	"resource_pack_name": "theFatesIntertwined",
+	"texture_data": {
+		"fec_winterbloom_sword": {
+			"textures": "textures/items/weapons/winterbloom_sword"
+		},
+		"fec_rage_of_sakura": {
+			"textures": "textures/items/weapons/rage_of_sakura"
+		},
+		"fec_murasama_calamity": {
+			"textures": "textures/items/weapons/murasama_calamity"
+		},
+		"fec_spear_of_heart": {
+			"textures": "textures/items/weapons/spear_of_heart"
+		},
+		"fec_windblade_claymore": {
+			"textures": "textures/items/weapons/windblade_claymore"
+		},
+		"fec_winterbloom_medal": {
+			"textures": "textures/items/medals/winterbloom_medal"
+		},
+		"fec_loving_sakura_medal": {
+			"textures": "textures/items/medals/loving_sakura_medal"
+		},
+		"fec_murasama_medal": {
+			"textures": "textures/items/medals/lightning_phoenix_medal"
+		},
+		"fec_land_of_peace_medal": {
+			"textures": "textures/items/medals/land_of_peace_medal"
+		},
+		"fec_frag_grenade": {
+			"textures": "textures/items/frag_grenade"
+		},
+		"fec_blade_of_the_end": {
+			"textures": "textures/items/weapons/blade_of_the_end"
+		},
+		"fec_frag_grenade_unexplosive": {
+			"textures": "textures/items/frag_grenade_unexplosive"
+		},
+		"fec_frag_grenade_flame": {
+			"textures": "textures/items/frag_grenade_flame"
+		},
+		"fec_bedrock_breaker": {
+			"textures": "textures/items/bedrock_breaker"
+		},
+		"fec_lightning_shard": {
+			"textures": "textures/items/lightning_shard"
+		},
+		"fec_wind_shard": {
+			"textures": "textures/items/wind_shard"
+		},
+		"fec_fire_shard": {
+			"textures": "textures/items/fire_shard"
+		},
+		"fec_earth_shard": {
+			"textures": "textures/items/earth_shard"
+		},
+		"fec_lightning_essence": {
+			"textures": "textures/items/lightning_essence"
+		},
+		"fec_wind_essence": {
+			"textures": "textures/items/wind_essence"
+		},
+		"fec_fire_essence": {
+			"textures": "textures/items/fire_essence"
+		},
+		"fec_earth_essence": {
+			"textures": "textures/items/earth_essence"
+		},
+		"fec_water_shard": {
+			"textures": "textures/items/water_shard"
+		},
+		"fec_water_essence": {
+			"textures": "textures/items/water_essence"
+		},
+		"fec_zenith": {
+			"textures": "textures/items/weapons/zenith"
+		},
+		"fec_eidolon_4_staff": {
+			"textures": "textures/items/weapons/eidolon_4_staff"
+		},
+		"fec_stars_and_crescent": {
+			"textures": "textures/items/weapons/stars_and_crescent"
+		},
+		"fec_iron_stick": {
+			"textures": "textures/items/iron_stick"
+		},
+		"fec_winterbloom_medal_wireframe": {
+			"textures": "textures/items/medals/winterbloom_medal_wireframe"
+		},
+		"fec_loving_sakura_medal_wireframe": {
+			"textures": "textures/items/medals/loving_sakura_medal_wireframe"
+		},
+		"fec_lightning_phoenix_medal_wireframe": {
+			"textures": "textures/items/medals/lightning_phoenix_medal_wireframe"
+		},
+		"fec_land_of_peace_medal_wireframe": {
+			"textures": "textures/items/medals/land_of_peace_medal_wireframe"
+		},
+		"fec_legionnaire_medalion": {
+			"textures": "textures/items/boss_summon/legionnaire_medalion"
+		},
+		"fec_glorified_water_essence": {
+			"textures": "textures/items/boss_summon/glorified_water_essence"
+		},
+		"fec_stardust_armor_helmet": {
+			"textures": [
+				"textures/items/armor/stardust_armor_helmet"
+			]
+		},
+		"fec_stardust_armor_chestplate": {
+			"textures": [
+				"textures/items/armor/stardust_armor_chestplate"
+			]
+		},
+		"fec_stardust_armor_leggings": {
+			"textures": [
+				"textures/items/armor/stardust_armor_leggings"
+			]
+		},
+		"fec_stardust_armor_boots": {
+			"textures": [
+				"textures/items/armor/stardust_armor_boots"
+			]
+		},
+		"fec_stardust_upgrade_smithing_template": {
+			"textures": "textures/items/stardust_upgrade_smithing_template"
+		},
+		"fec_corner_medal_line": {
+			"textures": "textures/items/parts_of_medal/corner_medal_line"
+		},
+		"fec_circle_medal_line": {
+			"textures": "textures/items/parts_of_medal/circle_medal_line"
+		},
+		"fec_heart_medal_line": {
+			"textures": "textures/items/parts_of_medal/heart_medal_line"
+		},
+		"fec_bird_head_medal_line": {
+			"textures": "textures/items/parts_of_medal/bird_head_medal_line"
+		},
+		"fec_stardust_clear_helmet": {
+			"textures": [
+				"textures/items/armor/stardust_armor_helmet"
+			]
+		},
+		"fec_stardust_clear_chestplate": {
+			"textures": [
+				"textures/items/armor/stardust_armor_chestplate"
+			]
+		},
+		"fec_stardust_clear_leggings": {
+			"textures": [
+				"textures/items/armor/stardust_armor_leggings"
+			]
+		},
+		"fec_stardust_clear_boots": {
+			"textures": [
+				"textures/items/armor/stardust_armor_boots"
+			]
+		},
+		"fec_shadowcore": {
+			"textures": "textures/items/shadowcore"
+		},
+		"fec_shadow_heart": {
+			"textures": "textures/items/boss_summon/shadow_heart"
+		},
+		"fec_shadow_revolver": {
+			"textures": "textures/items/weapons/shadow_revolver"
+		},
+		"fec_tenacity": {
+			"textures": "textures/items/weapons/tenacity"
+		},
+		"fec_tenacity_axe": {
+			"textures": "textures/items/weapons/tenacity_axe"
+		},
+		"fec_reworked_tenacity": {
+			"textures": "textures/items/weapons/reworked_tenacity"
+		},
+		"fec_weapon_billet": {
+			"textures": "textures/items/weapon_billet"
+		}
+	},
+	"texture_name": "atlas.items"
+}

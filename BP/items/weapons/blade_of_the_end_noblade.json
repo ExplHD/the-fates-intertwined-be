@@ -1,0 +1,36 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:blade_of_the_end_noblade",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.sword"
+			}
+		},
+		"components": {
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:damage": 10,
+			"minecraft:should_despawn": false,
+			"minecraft:enchantable": {
+				"value": 14,
+				"slot": "sword"
+			},
+			"minecraft:food": {
+				"can_always_eat": true
+			},
+			"minecraft:use_modifiers": {
+				"use_duration": 999999,
+				"movement_modifier": 1
+			},
+			"minecraft:display_name": {
+				"value": "Blade of The End\n§7A Cosmic blade that forged with the\nvoid power, §cBLADE DISABLED\n\n§2Sneak + Right-click / Tap and Hold to :\nShow the blade"
+			},
+			"minecraft:hand_equipped": true,
+			"minecraft:icon": "fec_blade_of_the_end",
+			"minecraft:max_stack_size": 1,
+			"tag:minecraft:is_sword": {},
+			"tag:minecraft:is_tool": {}
+		}
+	}
+}

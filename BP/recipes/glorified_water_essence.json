@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "fec:glorified_water_essence"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "fec:water_essence"
+			},
+			{
+				"item": "minecraft:pink_petals"
+			},
+			{
+				"item": "minecraft:water_bucket"
+			}
+		],
+		"unlock": [
+			{
+				"item": "fec:water_essence"
+			}
+		],
+		"result": [
+			{
+				"item": "fec:glorified_water_essence"
+			}
+		]
+	}
+}

@@ -1,0 +1,41 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:legionnaire_medalion"
+		},
+		"tags": [
+			"legendary_fabricator"
+		],
+		"pattern": [
+			" W ",
+			"LNF",
+			" E "
+		],
+		"key": {
+			"E": {
+				"item": "fec:earth_essence"
+			},
+			"F": {
+				"item": "fec:fire_essence"
+			},
+			"L": {
+				"item": "fec:lightning_essence"
+			},
+			"W": {
+				"item": "fec:wind_essence"
+			},
+			"N": {
+				"item": "minecraft:nether_star"
+			}
+		},
+		"unlock": [
+			{
+				"item": "minecraft:nether_star"
+			}
+		],
+		"result": {
+			"item": "fec:legionnaire_medalion"
+		}
+	}
+}

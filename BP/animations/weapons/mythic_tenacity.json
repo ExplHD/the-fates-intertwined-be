@@ -1,0 +1,248 @@
+{
+    "format_version": "1.20.80",
+    "animations": {
+        "animation.mythic_tenacity.attack_4_scythe": {
+            "animation_length": 3.5,
+            "timeline": {
+                "0.0": [
+                    "/inputpermission set @s movement disabled",
+                    "/playanimation @s animation.mythic_tenacity.attack_4_scythe",
+                    "/playsound random.click @s",
+                    "/title @s actionbar §c>>> Charging. Turn your camera to your target <<<"
+                ],
+                "0.25": [
+                    "/title @s actionbar §c>> Charging. Turn your camera to your target <<",
+                    "/playsound random.click @s"
+                ],
+                "0.5": [
+                    "/title @s actionbar §c> Charging. Turn your camera to your target <",
+                    "/playsound random.click @s"
+                ],
+                "0.75": [
+                    "/inputpermission set @s movement enabled",
+                    "/title @s actionbar §e< CHARGE! >"
+                ],
+                "1.0": [
+                    "/playsound sword_slash.light_slash @a[r=16]",
+                    "/effect @s speed 1 6 true",
+                    "/damage @e[rm=0.1,r=4] 15 entity_attack entity @s",
+                    "/title @s actionbar §c< CHARGE! >"
+                ],
+                "1.25": [
+                    "/playsound sword_slash.light_slash @a[r=16]",
+                    "/damage @e[rm=0.1,r=4] 15 entity_attack entity @s"
+                ],
+                "1.5": [
+                    "/playsound sword_slash.light_slash @a[r=16]",
+                    "/damage @e[rm=0.1,r=4] 15 entity_attack entity @s"
+                ],
+                "1.75": [
+                    "/playsound sword_slash.light_slash @a[r=16]",
+                    "/damage @e[rm=0.1,r=4] 15 entity_attack entity @s",
+                    "/effect @s speed 0 6 true",
+                    "/effect @s levitation 0 4 true",
+                    "/effect @s slowness 1 4 true",
+                    "/title @a[r=16] actionbar §c< PREPARE FOR EXPLOSION! >"
+                ],
+                "2.33": [
+                    "/tp ~ ~ ~ ~ 0",
+                    "/playsound sword_slash.heavy_slash @a[r=24]",
+                    "/damage @e[rm=0.1,r=6] 32 entity_attack entity @s",
+                    "/effect @s slowness 0 255 true",
+                    "/title @a[r=16] actionbar §6< EXPLOSION IMMINENT! >"
+                ]
+            }
+        },
+        "animation.mythic_tenacity.tenacity_axe": {
+            "animation_length": 0.30,
+            "timeline": {
+                "0.0": [
+                    "/playanimation @s animation.mythic_tenacity.change_to_axe",
+                    "/playsound tile.piston.in @s",
+                    "/title @s actionbar §6< Changing >"
+                ],
+                "0.25": [
+                    "/replaceitem entity @s slot.weapon.mainhand 0 fec:tenacity_axe",
+                    "/playsound random.orb @s",
+                    "/title @s actionbar §a< CHANGED! >"
+                ]
+            }
+        },
+        "animation.mythic_tenacity.tenacity_scythe": {
+            "animation_length": 0.30,
+            "timeline": {
+                "0.0": [
+                    "/playanimation @s animation.mythic_tenacity.change_to_scythe",
+                    "/playsound tile.piston.out @s",
+                    "/title @s actionbar §6< Changing >"
+                ],
+                "0.25": [
+                    "/replaceitem entity @s slot.weapon.mainhand 0 fec:tenacity",
+                    "/playsound random.orb @s",
+                    "/title @s actionbar §a< CHANGED! >"
+                ]
+            }
+        },
+        "animation.mythic_tenacity.skill_2_scythe": {
+            "animation_length": 2,
+            "timeline": {
+                "0.0": [
+                    "/playanimation @s animation.mythic_tenacity.attack_2_scythe",
+                    "/playsound random.click @s",
+                    "/title @s actionbar §c>>> MOVE! <<<",
+                    "/effect @s resistance 1 255 true"
+                ],
+                "0.25": [
+                    "/playsound random.click @s",
+                    "/title @s actionbar §c>> MOVE! <<"
+                ],
+                "0.5": [
+                    "/playsound random.click @s",
+                    "/title @s actionbar §c> MOVE! <"
+                ],
+                "0.6": [
+                    "/inputpermission set @s movement disabled",
+                    "/title @s actionbar §6> ATTACK INITIATED! <",
+                    "/damage @e[r=12,rm=0.1] 26 entity_attack entity @s",
+                    "/particle fec:mythic_tenacity_attack_5 ~~~",
+                    "/playsound sword_slash.heavy_slash @a[r=16]",
+                    "/effect @s clear"
+                ],
+                "0.7": [
+                    "/inputpermission set @s movement enabled"
+                ]
+            }
+        },
+        "animation.mythic_tenacity.ultimate_scythe": {
+            "animation_length": 6,
+            "timeline": {
+                "0.0": [
+                    "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §6The Domain of Origin\"}]}",
+                    "/particle fec:mythic_tenacity_ultimate_scythe_clock ~~~",
+                    "/playsound custom_sfx.clash_3x @a[r=64]",
+                    "/playanimation @s animation.mythic_tenacity.ultimate_scale",
+                    "/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=wither] add hunterTarget",
+                    "/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=ender_dragon] add hunterTarget",
+                    "/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=warden] add hunterTarget",
+                    "/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=fec:elemental_legionnaire] add hunterTarget",
+                    "/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=fec:water_eidolon] add hunterTarget",
+                    "/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=player] add hunterTarget",
+                    "/summon armor_stand ~~~ 0 0 minecraft:entity_spawned TPTAG",
+                    "/effect @e[name=TPTAG] invisibility"
+                ],
+                "0.1": [
+                    "/tp @s @e[tag=hunterTarget]",
+                    "/damage @e[tag=hunterTarget,type=player] 35 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=wither] 48 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=ender_dragon] 85 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 100 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=fec:water_eidolon] 125 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=warden] 48 entity_attack entity @s",
+                    "/particle fec:mythic_tenacity_ultimate_teleport_slash ~~~"
+                ],
+                "1.28": [
+                    "/tp @s @e[tag=hunterTarget]",
+                    "/damage @e[tag=hunterTarget,type=player] 35 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=wither] 48 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=ender_dragon] 85 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 100 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=fec:water_eidolon] 125 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=warden] 48 entity_attack entity @s",
+                    "/particle fec:mythic_tenacity_ultimate_teleport_slash ~~~"
+                ],
+                "3.5": [
+                    "/tp @s @e[tag=hunterTarget]",
+                    "/damage @e[tag=hunterTarget,type=player] 35 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=wither] 48 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=ender_dragon] 85 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 100 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=fec:water_eidolon] 125 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=warden] 48 entity_attack entity @s",
+                    "/particle fec:mythic_tenacity_ultimate_teleport_slash ~~~"
+                ],
+                "4.5": [
+                    "/tag @e[tag=hunterTarget] remove hunterTarget",
+                    "/tp @s @e[name=TPTAG]"
+                ],
+                "5.0": [
+                    "/kill @e[name=TPTAG,r=5]",
+                    "/scoreboard players add @s tenacity_c4 135"
+                ]
+            }
+        },
+        "animation.mythic_tenacity.skill_2_axe": {
+            "animation_length": 2,
+            "timeline": {
+                "0.0": [
+                    "/tp ~~1~ true",
+                    "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §6§lWrath of Tenacity\"}]}",
+                    "/effect @s resistance 2 255 true",
+                    "/playanimation @s animation.mythic_tenacity.skill_2_axe",
+                    "/playsound sword_slash.medium_slash @a[r=16]"
+                ],
+                "0.1": [
+                    "/tp ~~1~ true"
+                ],
+                "0.2": [
+                    "/tp ~~1~ true"
+                ],
+                "0.3": [
+                    "/tp ~~1~ true"
+                ],
+                "0.4": [
+                    "/tp ~~1~ true"
+                ],
+                "0.5": [
+                    "/tp ~~~ true"
+                ],
+                "0.6": [
+                    "/tp ~~-1~ true"
+                ],
+                "0.7": [
+                    "/tp ~~-1~ true"
+                ],
+                "0.8": [
+                    "/tp ~~-1~ true"
+                ],
+                "0.9": [
+                    "/tp ~~-1~ true",
+                    "/playsound sword_slash.clash @a[r=24]"
+                ],
+                "1.0": [
+                    "/tp ~~-1~ true",
+                    "/summon fec:tenacity_orange_slash ^^^7 ~ 0",
+                    "/summon fec:tenacity_orange_slash ^-7^^ ~90 0",
+                    "/summon fec:tenacity_orange_slash ^^^-7 ~180 0",
+                    "/summon fec:tenacity_orange_slash ^7^^ ~270 0",
+                    "/summon fec:tenacity_blue_slash ^-5.5^^5.5 ~45 0",
+                    "/summon fec:tenacity_blue_slash ^-5.5^^-5.5 ~135 0",
+                    "/summon fec:tenacity_blue_slash ^5.5^^-5.5 ~225 0",
+                    "/summon fec:tenacity_blue_slash ^5.5^^5.5 ~315 0"
+                ]
+            }
+        },
+        "animation.mythic_tenacity.ultimate_axe": {
+            "animation_length": 4,
+            "timeline": {
+                "0.0": [
+                    "/tp @s ~~~ ~ 0",
+                    "/playanimation @s animation.mythic_tenacity.ultimate_axe",
+                    "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §b§lThe drop from the skies\"}]}",
+                    "/tellraw @a[r=64,rm=3] {\"rawtext\":[{\"text\":\"§cWATCH OUT! There is a meteor inbound\"}]}",
+                    "/effect @a[r=3] resistance 5 255 true",
+                    "/playsound custom_sfx.deathzone_spawn @a[r=64] ~~~ 0.6 1 0.6",
+                    "/playsound custom_sfx.siren @a[r=64] ~~~ 1 1 1",
+                    "/particle fec:mythic_tenacity_ultimate_axe_shield ~~~",
+                    "/inputpermission set @a[r=3] movement disabled",
+                    "/inputpermission set @a[r=3] camera disabled",
+                    "/summon fec:tenacity_sky_meteor ^^60^10 ~ 0 minecraft:entity_spawned"
+                ],
+                "3.9": [
+                    "/inputpermission set @a[r=3] movement enabled",
+                    "/inputpermission set @a[r=3] camera enabled",
+                    "/scoreboard players set @s tenacity_c4_axe 200"
+                ]
+            }
+        }
+    }
+}

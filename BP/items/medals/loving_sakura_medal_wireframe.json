@@ -1,0 +1,14 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:loving_sakura_medal_wireframe",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_loving_sakura_medal_wireframe"
+		}
+	}
+}

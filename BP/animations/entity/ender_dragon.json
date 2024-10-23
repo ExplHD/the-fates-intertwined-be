@@ -1,0 +1,59 @@
+{
+	"format_version": "1.21.10",
+	"animations": {
+		"animation.ender_dragon.arrow_of_doom": {
+			"animation_length": 2,
+			"loop": false,
+			"timeline": {
+				"0.0": [
+					"/function boss/ender_dragon/arrow_of_doom"
+				],
+				"0.5": [
+					"/function boss/ender_dragon/arrow_of_doom"
+				],
+				"1.0": [
+					"/function boss/ender_dragon/arrow_of_doom"
+				],
+				"1.5": [
+					"/function boss/ender_dragon/arrow_of_doom"
+				],
+				"2.0": [
+					"/function boss/ender_dragon/arrow_of_doom"
+				]
+			}
+		},
+		"animation.ender_dragon.massive_pillar": {
+			"animation_length": 4,
+			"loop": false,
+			"timeline": {
+				"0.0": [
+					"/function boss/ender_dragon/pillars_upgraded"
+				],
+				"0.5": [
+					"/function boss/ender_dragon/pillars_upgraded"
+				],
+				"1.0": [
+					"/function boss/ender_dragon/pillars_upgraded"
+				],
+				"1.5": [
+					"/function boss/ender_dragon/pillars_upgraded"
+				],
+				"2.0": [
+					"/function boss/ender_dragon/pillars_upgraded"
+				],
+				"2.5": [
+					"/function boss/ender_dragon/pillars_upgraded"
+				],
+				"3.0": [
+					"/function boss/ender_dragon/pillars_upgraded"
+				],
+				"3.5": [
+					"/function boss/ender_dragon/pillars_upgraded"
+				],
+				"4.0": [
+					"/function boss/ender_dragon/pillars_upgraded"
+				]
+			}
+		}
+	}
+}

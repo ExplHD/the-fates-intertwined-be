@@ -1,0 +1,223 @@
+{
+	"format_version": "1.21.10",
+	"animation_controllers": {
+		"controller.animation.zenith": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+						"/scoreboard players set @s atkp_delay 0"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"idle": "q.get_equipped_item_name=='zenith'&&!q.is_moving&&!q.is_sneaking&&(query.scoreboard('atkp_delay')==0)&&(query.scoreboard('idle_timeout')>=600)"
+						},
+						{
+							"atk_1": "variable.attack_time&&!query.is_sneaking&&q.get_equipped_item_name=='zenith'"
+						},
+						{
+							"skill_1": "query.get_equipped_item_name=='zenith'&&query.is_using_item&&(query.scoreboard('zenith')==0)&&(query.scoreboard('zenith_c1')==0)"
+						},
+						{
+							"skill_2": "query.get_equipped_item_name=='zenith'&&query.is_using_item&&(query.scoreboard('zenith')==1)&&(query.scoreboard('zenith_c2')==0)"
+						},
+						{
+							"skill_3": "query.get_equipped_item_name=='zenith'&&query.is_using_item&&(query.scoreboard('zenith')==2)&&(query.scoreboard('zenith_c3')==0)"
+						},
+						{
+							"skill_4": "query.get_equipped_item_name=='zenith'&&query.is_using_item&&(query.scoreboard('zenith')==3)&&(query.scoreboard('zenith_c4')==0)"
+						},
+						{
+							"skill_5": "query.get_equipped_item_name=='zenith'&&query.is_using_item&&(query.scoreboard('zenith')==4)&&(query.scoreboard('zenith_c5')==0)"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='zenith'"
+						}
+					]
+				},
+				"idle": {
+					"on_entry": [
+						"/playanimation @s animation.zenith.skill_1",
+						"/playsound mob.wither.spawn @s",
+						"/fog @s push fec:zenith_fog zenith"
+					],
+					"on_exit": [
+						"/fog @s pop zenith",
+						"/scoreboard players set @s idle_timeout 0"
+					],
+					"transitions": [
+						{
+							"default": "query.is_moving"
+						},
+						{
+							"atk_1": "variable.attack_time&&!query.is_sneaking&&q.get_equipped_item_name=='zenith'"
+						}
+					]
+				},
+				"atk_1": {
+					"on_entry": [
+						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/playanimation @s animation.zenith.attack_1",
+						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1 0.4",
+						"/scoreboard players add @s legendCounter 1",
+						"/scoreboard players set @s idle_timeout 0"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_2": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=10)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='zenith'"
+						}
+					]
+				},
+				"atk_2": {
+					"on_entry": [
+						"/playanimation @s animation.zenith.attack_2",
+						"/damage @e[r=4,rm=0.1,type=!item] 12 entity_attack entity @s",
+						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.1 0.4",
+						"/scoreboard players add @s legendCounter 1",
+						"/scoreboard players set @s idle_timeout 0"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_3": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=10)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='zenith'"
+						}
+					]
+				},
+				"atk_3": {
+					"on_entry": [
+						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/playanimation @s animation.zenith.attack_3",
+						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 0.9 0.4",
+						"/scoreboard players add @s legendCounter 1",
+						"/scoreboard players set @s idle_timeout 0"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_1": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=10)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='zenith'"
+						}
+					]
+				},
+				"skill_1": {
+					"animations": [
+						"zenith_skill_1"
+					],
+					"on_entry": [
+						"/scoreboard players set @s idle_timeout 0"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"skill_2": {
+					"on_entry": [
+						"/playanimation @s animation.zenith.attack_1",
+						"/damage @e[r=16,rm=0.1,type=!item] 20 entity_attack entity @s",
+						"/particle fec:zenith_radial_blast ~~1~",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §d§lRadial Zenith Gust\"}]}",
+						"/scoreboard players add @s zenith_c2 40",
+						"/scoreboard players set @s idle_timeout 0"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				},
+				"skill_3": {
+					"animations": [
+						"zenith_skill_3"
+					],
+					"on_entry": [
+						"/scoreboard players set @s idle_timeout 0"
+					],
+					"on_exit": [
+						"/scoreboard players add @s zenith_c3 50"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"skill_4": {
+					"on_entry": [
+						"/particle fec:blade_of_the_end_skill_1 ~~~",
+						"/camera @a[r=16,rm=0.1] fade time 0 4 2 color 255 0 255",
+						"/camera @s fade time 0 0.3 0.2 color 255 0 255",
+						"/playsound random.screenshot @a[r=24]",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §d§lRadiant Flash\"}]}",
+						"/scoreboard players add @s zenith_c4 30",
+						"/scoreboard players set @s idle_timeout 0"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				},
+				"skill_5": {
+					"animations": [
+						"zenith_ultimate"
+					],
+					"on_entry": [
+						"/scoreboard players set @s idle_timeout 0"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"change": {
+					"on_entry": [
+						"/scoreboard players add @s zenith 1",
+						"/scoreboard players set @s[scores={zenith=5}] zenith 0",
+						"/playsound random.click @s",
+						"/tellraw @s[scores={zenith=0}] {\"rawtext\":[{\"text\": \"§cShield, Assemble\"}]}",
+						"/tellraw @s[scores={zenith=1}] {\"rawtext\":[{\"text\": \"§cRadial Zenith Gust\"}]}",
+						"/tellraw @s[scores={zenith=2}] {\"rawtext\":[{\"text\": \"§cZenith Storm\"}]}",
+						"/tellraw @s[scores={zenith=3}] {\"rawtext\":[{\"text\": \"§cRadiant Flash\"}]}",
+						"/tellraw @s[scores={zenith=4}] {\"rawtext\":[{\"text\": \"§cSphere of Red Light\"}]}",
+						"/scoreboard players set @s idle_timeout 0"
+					],
+					"transitions": [
+						{
+							"default": "!variable.attack_time"
+						}
+					]
+				}
+			}
+		}
+	}
+}

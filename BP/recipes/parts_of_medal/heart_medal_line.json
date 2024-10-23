@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:heart_medal_line"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"C",
+			"O"
+		],
+		"key": {
+			"O": {
+				"item": "fec:circle_medal_line"
+			},
+			"C": {
+				"item": "fec:corner_medal_line"
+			}
+		},
+		"unlock": [
+			{
+				"item": "fec:iron_stick"
+			}
+		],
+		"result": {
+			"item": "fec:heart_medal_line",
+			"count": 1
+		}
+	}
+}

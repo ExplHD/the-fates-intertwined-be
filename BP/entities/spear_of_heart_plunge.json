@@ -1,0 +1,59 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:spear_of_heart_plunge",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"runner": "animation.spear_of_heart.plunge"
+			},
+			"scripts": {
+				"animate": [
+					"runner"
+				]
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"max": 40,
+				"value": 40
+			},
+			"minecraft:collision_box": {
+				"height": 4.25,
+				"width": 0.5
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:timer": {
+				"time": 1.9,
+				"looping": false,
+				"time_down_event": {
+					"event": "despawn",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

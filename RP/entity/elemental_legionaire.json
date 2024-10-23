@@ -1,0 +1,47 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:elemental_legionnaire",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/elemental_legionnaire"
+			},
+			"geometry": {
+				"default": "geometry.elemental_legionnaire"
+			},
+			"render_controllers": [
+				"controller.render.elemental_legionnaire"
+			],
+			"animations": {
+				"elemental_legionnaire_controller": "controller.animation.elemental_legionnaire",
+				"windblade_claymore_hold": "animation.windblade_claymore.hold",
+				"idle": "animation.elemental_legionnaire.idle",
+				"fly": "animation.elemental_legionnaire.fly",
+				"attack": "animation.windblade_claymore.attack_1",
+				"left_attack": "animation.elemental_legionnaire.left_attack",
+				"down_attack": "animation.elemental_legionnaire.down_attack",
+				"look_at_target": "animation.common.look_at_target"
+				
+			},
+			"enable_attachables": true,
+			"particle_effects": {
+				"spell": "minecraft:evoker_spell",
+				"wind_marker": "fec:wind_marker",
+				"windblade_claymore_attack_1": "fec:windblade_claymore_attack_1"
+			},
+			"scripts": {
+				"animate": [
+					"elemental_legionnaire_controller",
+					"windblade_claymore_hold"
+				]
+			},
+			"spawn_egg": {
+				"base_color": "#FFFD82",
+				"overlay_color": "#9E0000"
+			}
+		}
+	}
+}

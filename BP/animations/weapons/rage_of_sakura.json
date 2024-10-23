@@ -1,0 +1,35 @@
+{
+	"format_version": "1.21.10",
+	"animations": {
+		"animation.rage_of_sakura.attack_5": {
+			"animation_length": 1,
+			"timeline": {
+				"0.0": [
+					"/playsound portal.trigger @s",
+					"/playanimation @s animation.rage_of_sakura.attack_5",
+					"/scoreboard players set @s atkp_delay 1",
+					"/inputpermission set @s movement disabled",
+					"/title @s actionbar §b< 0.5 >"
+				],
+				"0.1": [
+					"/title @s actionbar §b< 0.4 >"
+				],
+				"0.2": [
+					"/title @s actionbar §b< 0.3 >"
+				],
+				"0.3": [
+					"/title @s actionbar §b< 0.2 >"
+				],
+				"0.4": [
+					"/title @s actionbar §b< 0.1 >"
+				],
+				"0.5": [
+					"/damage @e[rm=0.1,type=!item,r=7] 15 entity_attack entity @s",
+					"/playsound random.screenshot @a[r=16]",
+					"/inputpermission set @s movement enabled",
+					"/title @s actionbar §a< Charge Successfully >"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"ExplerHD"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.10"
+			],
+			"dash": [
+				"github:bridge-core/dash-compiler#8fa35c73292f6382747d0f411fca26431a6d2c8e"
+			]
+		}
+	},
+	"header": {
+		"name": "The Fates Intertwined (Music)",
+		"description": "Sebuah resource pack tambahan untuk musik di server hexagovival",
+		"min_engine_version": [
+			1,
+			20,
+			50
+		],
+		"uuid": "dec5c848-fee6-420d-8a7a-0cc8f878bd7e",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "22754627-e1e9-4f68-8cbb-36cec0db7223",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}

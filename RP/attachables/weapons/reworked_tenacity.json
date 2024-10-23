@@ -1,0 +1,32 @@
+{
+    "format_version": "1.21.10",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "fec:reworked_tenacity",
+            "materials": {
+                "default": "phantom",
+                "enchanted": "phantom"
+            },
+            "textures": {
+                "default": "textures/weapons/revamped_tenacity",
+                "enchanted": "textures/misc/enchanted_item_glint"
+            },
+            "geometry": {
+                "default": "geometry.tenacity"
+            },
+            "render_controllers": [
+                "controller.render.item_default"
+            ],
+            "animations": {
+                "hold": "animation.reworked_tenacity.hold"
+            },
+            "scripts": {
+                "animate": [
+                    {
+                        "hold": "c.is_first_person"
+                    }
+                ]
+            }
+        }
+    }
+}

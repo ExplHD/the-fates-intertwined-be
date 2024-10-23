@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:fire_essence"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"###",
+			"###",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "fec:fire_shard"
+			}
+		},
+		"unlock": [
+			{
+				"item": "fec:fire_shard"
+			}
+		],
+		"result": {
+			"item": "fec:fire_essence"
+		}
+	}
+}

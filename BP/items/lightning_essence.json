@@ -1,0 +1,30 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:lightning_essence",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon": "fec_lightning_essence",
+			"minecraft:cooldown": {
+				"category": "lightning_essence",
+				"duration": 15
+			},
+			"minecraft:display_name": {
+				"value": "§bLightning Essence\n§2Right-click / Tap and Hold to :\nCast Lightning Teleport\n\n§9Cooldown : 15 Seconds"
+			},
+			"minecraft:should_despawn": false,
+			"minecraft:projectile": {
+				"projectile_entity": "fec:thrown_lightning_essence"
+			},
+			"minecraft:throwable": {
+				"do_swing_animation": true,
+				"launch_power_scale": 2
+			}
+		}
+	}
+}

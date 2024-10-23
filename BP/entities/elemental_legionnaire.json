@@ -1,0 +1,562 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:elemental_legionnaire",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"controller": "controller.animation.elemental_legionnaire",
+				"windblade_atk_3": "animation.windblade_claymore.attack_3"
+			},
+			"scripts": {
+				"animate": [
+					"controller"
+				]
+			},
+			"properties": {
+				"fec:legionnaire_ultimate_charge": {
+					"type": "int",
+					"range": [
+						0,
+						30
+					],
+					"default": 0,
+					"client_sync": false
+				}
+			}
+		},
+		"component_groups": {
+			"pattern_randomizer": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 5,
+					"time_down_event": {
+						"event": "randomize_pattern"
+					}
+				},
+				"minecraft:boss": {
+					"hud_range": 55,
+					"name": "§2§4§rElemental Legionnaire",
+					"should_darken_sky": false
+				}
+			},
+			"left_attack": {
+				"minecraft:behavior.summon_entity": {
+					"priority": 0,
+					"summon_choices": [
+						{
+							"min_activation_range": 0,
+							"max_activation_range": 48,
+							"cooldown_time": 2,
+							"weight": 3,
+							"cast_duration": 1,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "line",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 16,
+									"entity_type": "fec:fire_pillar",
+									"size": 64,
+									"entity_lifespan": -1,
+									"sound_event": "prepare.attack"
+								},
+								{
+									"shape": "circle",
+									"target": "other",
+									"base_delay": 1,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 8,
+									"size": 3,
+									"entity_type": "fec:fire_pillar",
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 16,
+									"entity_type": "fec:fire_pillar",
+									"size": 6,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 24,
+									"entity_type": "fec:fire_pillar",
+									"size": 9,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 32,
+									"entity_type": "fec:fire_pillar",
+									"size": 12,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 40,
+									"entity_type": "fec:fire_pillar",
+									"size": 15,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 48,
+									"entity_type": "fec:fire_pillar",
+									"size": 18,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "other",
+									"base_delay": 1,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 4,
+									"entity_type": "fec:fire_pillar",
+									"size": 3,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								}
+							]
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 9,
+					"time_down_event": {
+						"event": "start_randomize"
+					}
+				}
+			},
+			"right_attack": {
+				"minecraft:timer": {
+					"time": 3,
+					"looping": false,
+					"time_down_event": {
+						"event": "doomed"
+					}
+				}
+			},
+			"up_attack": {
+				"minecraft:timer": {
+					"time": 3,
+					"looping": false,
+					"time_down_event": {
+						"event": "lightning_cast"
+					}
+				}
+			},
+			"down_attack": {
+				"minecraft:behavior.ranged_attack": {
+					"attack_radius": 64,
+					"attack_radius_min": 5,
+					"attack_interval": 0.1,
+					"priority": 0,
+					"ranged_fov": 90,
+					"speed_multiplier": 0.6,
+					"burst_shots": 32,
+					"burst_interval": 0.5
+				},
+				"minecraft:shooter": {
+					"def": "minecraft:small_fireball"
+				},
+				"minecraft:timer": {
+					"time": 5,
+					"looping": false,
+					"time_down_event": {
+						"event": "start_randomize"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"max": 1950,
+				"value": 1950
+			},
+			"minecraft:collision_box": {
+				"width": 1.3,
+				"height": 2.4
+			},
+			"minecraft:experience_reward": {
+				"on_death": 15000
+			},
+			"minecraft:on_death": {
+				"event": "despawn"
+			},
+			"minecraft:movement.generic": {},
+			"minecraft:navigation.generic": {
+				"avoid_water": true,
+				"can_jump": true,
+				"can_swim": true,
+				"can_walk": true,
+				"can_walk_in_lava": true,
+				"can_path_over_lava": true,
+				"avoid_damage_blocks": false
+			},
+			"minecraft:combat_regeneration": {
+				"apply_to_self": true,
+				"regeneration_duration": 60
+			},
+			"minecraft:jump.static": {
+				"jump_power": 1
+			},
+			"minecraft:breathable": {
+				"breathes_air": true,
+				"breathes_water": true,
+				"breathes_solids": true,
+				"breathes_lava": true
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:knockback_resistance": {
+				"value": 5
+			},
+			"minecraft:movement": {
+				"value": 0.35
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 1,
+				"interval": 120,
+				"speed_multiplier": 1.1
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"within_radius": 48,
+				"scan_interval": 10,
+				"target_invisible_multiplier": 0.3,
+				"target_sneak_visibility_multiplier": 0.8,
+				"priority": 0,
+				"must_see": false,
+				"entity_types": [
+					{
+						"max_dist": 64,
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "legionnaire"
+						}
+					}
+				]
+			},
+			"minecraft:follow_range": {
+				"value": 64,
+				"max": 64
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 1,
+				"require_complete_path": true,
+				"track_target": true,
+				"cooldown_time": 2,
+				"on_attack": {
+					"event": "attack_successful",
+					"target": "self"
+				}
+			},
+			"minecraft:attack": {
+				"damage": 0
+			},
+			"minecraft:attack_cooldown": {
+				"attack_cooldown_time": [
+					1.5,
+					2
+				]
+			},
+			"minecraft:type_family": {
+				"family": [
+					"legionnaire",
+					"boss"
+				]
+			},
+			"minecraft:persistent": {},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:physics": {},
+			"minecraft:equipment": {
+				"table": "loot_tables/equipment/boss/elemental_legionnaire.json",
+				"slot_drop_chance": [
+					{
+						"drop_chance": 100,
+						"slot": "slot.weapon.mainhand"
+					}
+				]
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 2,
+				"look_distance": 16
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 2,
+				"look_distance": 16,
+				"probability": 0.8
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"pattern_randomizer"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"down_attack",
+						"up_attack",
+						"left_attack",
+						"right_attack"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"music play music.boss.unfiltered_calamity 1 1 loop",
+						"gamemode 2 @a[r=64,m=d]",
+						"title @a[r=64] title Elemental Legionnaire",
+						"title @a[r=64] subtitle Master of Elemental"
+					]
+				}
+			},
+			"music_stop": {
+				"queue_command": {
+					"command": [
+						"music stop 3",
+						"tellraw @a[r=64] {\"rawtext\":[{\"text\":\"<Elemental Legionnaire> Marvelous! you defeated me, take this weapons. I'm not dead yet, see you next time\"}]}",
+						"clear @p fec:legionnaire_medalion 0 1",
+						"gamemode d @a[r=64,m=2]"
+					]
+				}
+			},
+			"despawn": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "actor_health",
+							"subject": "self",
+							"operator": ">=",
+							"value": 1
+						},
+						"queue_command": {
+							"command": [
+								"music stop 3",
+								"kill @s",
+								"kill @e[r=6]",
+								"tellraw @a[r=64] {\"rawtext\":[{\"text\":\"<Elemental Legionnaire> You are not worthy using this weapons, summon me next time if you are prepared\"}]}",
+								"gamemode d @a[r=64,m=2]"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "actor_health",
+							"subject": "self",
+							"operator": "<",
+							"value": 1
+						},
+						"queue_command": {
+							"command": [
+								"music stop 3",
+								"tellraw @a[r=64,m=2] {\"rawtext\":[{\"text\":\"<Elemental Legionnaire> Marvelous! you defeated me, take this weapon, I'm not dead yet, see you next time\"}]}",
+								"clear @p fec:legionnaire_medalion 0 1",
+								"gamemode d @a[r=64,m=2]"
+							]
+						}
+					}
+				]
+			},
+			"attack_successful": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "int_property",
+							"domain": "fec:legionnaire_ultimate_charge",
+							"subject": "self",
+							"operator": "<",
+							"value": 30
+						},
+						"set_property": {
+							"fec:legionnaire_ultimate_charge": "query.property('fec:legionnaire_ultimate_charge') + 1"
+						}
+					}
+				]
+			},
+			"start_randomize": {
+				"add": {
+					"component_groups": [
+						"pattern_randomizer"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"down_attack",
+						"up_attack",
+						"left_attack",
+						"right_attack"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"execute at @a[r=64] run summon xp_bottle ~~~",
+						"execute at @a[r=64] run summon xp_bottle ~~~",
+						"execute at @a[r=64] run summon xp_bottle ~~~",
+						"execute at @a[r=64] run summon xp_bottle ~~~",
+						"execute at @a[r=64] run summon xp_bottle ~~~",
+						"execute at @a[r=64] run summon xp_bottle ~~~",
+						"execute at @a[r=64] run summon xp_bottle ~~~",
+						"execute at @a[r=64] run summon xp_bottle ~~~",
+						"execute at @a[r=64] run summon xp_bottle ~~~",
+						"execute at @a[r=64] run summon xp_bottle ~~~"
+					]
+				}
+			},
+			"doomed": {
+				"add": {
+					"component_groups": [
+						"pattern_randomizer"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"particle fec:nuclear_explosion_wipe ~~~",
+						"damage @e[r=64,type=!fec:elemental_legionnaire] 256 entity_explosion entity @s"
+					]
+				}
+			},
+			"lightning_cast": {
+				"add": {
+					"component_groups": [
+						"pattern_randomizer"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"summon lightning_bolt ~2~~",
+						"summon lightning_bolt ~-2~~",
+						"summon lightning_bolt ~~~2",
+						"summon lightning_bolt ~~~-2",
+						"summon lightning_bolt ~4~~",
+						"summon lightning_bolt ~-4~~",
+						"summon lightning_bolt ~~~4",
+						"summon lightning_bolt ~~~-4",
+						"summon lightning_bolt ~3~~3",
+						"summon lightning_bolt ~-3~~3",
+						"summon lightning_bolt ~-3~~-3",
+						"summon lightning_bolt ~3~~-3",
+						"damage @e[r=6,type=!fec:elemental_legionnaire] 21 lightning"
+					]
+				}
+			},
+			"randomize_pattern": {
+				"remove": {
+					"component_groups": [
+						"pattern_randomizer"
+					]
+				},
+				"sequence": [
+					{
+						"filters": {
+							"test": "int_property",
+							"domain": "fec:legionnaire_ultimate_charge",
+							"subject": "self",
+							"operator": "<",
+							"value": 30
+						},
+						"randomize": [
+							{
+								"weight": 32,
+								"add": {
+									"component_groups": [
+										"left_attack"
+									]
+								}
+							},
+							{
+								"weight": 4,
+								"queue_command": {
+									"command": [
+										"playanimation @s animation.elemental_legionnaire.right_attack",
+										"effect @s resistance 3 255",
+										"effect @s slowness 3 255 true",
+										"particle fec:charge_up ~~2~",
+										"title @a[r=64] title ! ELEMENTAL WIND GUST !",
+										"titleraw @a[r=64] subtitle {\"rawtext\":[{\"text\":\"! USE SHIELD OR UPDRAFT TO AVOID THE ATTACKS !\n! LETHAL ATTACK !\"}]}"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"right_attack"
+									]
+								}
+							},
+							{
+								"weight": 32,
+								"queue_command": {
+									"command": [
+										"playanimation @s animation.elemental_legionnaire.down_attack",
+										"title @a[r=64] title ! LIGHTNING STRIKE IS COMING !",
+										"titleraw @a[r=64] subtitle {\"rawtext\":[{\"text\":\"! DODGE TO AVOID THIS ATTACK !\"}]}"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"up_attack"
+									]
+								}
+							},
+							{
+								"weight": 32,
+								"add": {
+									"component_groups": [
+										"down_attack"
+									]
+								}
+							}
+						]
+					},
+					{
+						"filters": {
+							"test": "int_property",
+							"domain": "fec:legionnaire_ultimate_charge",
+							"subject": "self",
+							"operator": ">=",
+							"value": 30
+						},
+						"queue_command": {
+							"command": [
+								"playanimation @s animation.elemental_legionnaire.right_attack",
+								"effect @s resistance 3 255",
+								"effect @s slowness 3 255 true",
+								"particle fec:charge_up ~~2~",
+								"title @a[r=64] title ! ELEMENTAL WIND GUST !",
+								"titleraw @a[r=64] subtitle {\"rawtext\":[{\"text\":\"! USE SHIELD OR UPDRAFT TO AVOID THE ATTACKS !\n! LETHAL ATTACK !\"}]}"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,613 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.windblade_claymore.attack_1": {
+			"animation_length": 1.375,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [
+								-112.5,
+								0,
+								85
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": {
+							"post": [
+								22.5,
+								0,
+								85
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.125": {
+							"post": [
+								22.5,
+								0,
+								85
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.375": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": {
+							"post": [
+								90,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.125": {
+							"post": [
+								90,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.375": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.2917": {
+							"pre": [
+								0,
+								0,
+								0
+							],
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": {
+							"post": [
+								0,
+								0,
+								-2
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.125": {
+							"post": [
+								0,
+								0,
+								-2
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.375": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "wind_marker",
+						"locator": "windblade1"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade2"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade3"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade4"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade5"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade6"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade7"
+					}
+				],
+				"0.2917": {
+					"effect": "windblade_claymore_attack_1",
+					"locator": "windblade_particle"
+				}
+			}
+		},
+		"animation.windblade_claymore.attack_2": {
+			"animation_length": 1.5,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								-7.98205,
+								23.7695,
+								70.81754
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3333": {
+							"post": [
+								-128.66884,
+								-3.08716,
+								93.8741
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								-128.67,
+								-3.09,
+								93.87
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								-90,
+								0,
+								180
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3333": {
+							"post": [
+								-90,
+								0,
+								180
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								-90,
+								0,
+								180
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "wind_marker",
+						"locator": "windblade1"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade2"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade3"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade4"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade5"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade6"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade7"
+					}
+				],
+				"0.2917": {
+					"effect": "windblade_claymore_attack_2",
+					"locator": "windblade_particle"
+				}
+			}
+		},
+		"animation.windblade_claymore.attack_3": {
+			"animation_length": 1.25,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [
+								-92.26837,
+								-6.13784,
+								-4.31837
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								-92.26837,
+								-6.13784,
+								-4.31837
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.6667": {
+							"post": [
+								17.73,
+								-6.14,
+								-4.32
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								17.73,
+								-6.14,
+								-4.32
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "wind_marker",
+						"locator": "windblade1"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade2"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade3"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade4"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade5"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade6"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade7"
+					}
+				],
+				"0.625": {
+					"effect": "windblade_claymore_attack_3",
+					"locator": "windblade_particle"
+				}
+			}
+		},
+		"animation.windblade_claymore.skill_1": {
+			"animation_length": 2,
+			"bones": {
+				"root": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						],
+						"1.0": [
+							0,
+							360,
+							0
+						],
+						"1.375": [
+							0,
+							720,
+							0
+						],
+						"1.5833": [
+							0,
+							360,
+							0
+						],
+						"1.75": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							0,
+							0,
+							90
+						],
+						"1.75": [
+							0,
+							0,
+							90
+						],
+						"2.0": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							90,
+							0,
+							0
+						],
+						"1.75": [
+							90,
+							0,
+							0
+						],
+						"2.0": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							0,
+							0,
+							-2
+						],
+						"1.75": [
+							0,
+							0,
+							-2
+						],
+						"2.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "wind_marker",
+						"locator": "windblade1"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade2"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade3"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade4"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade5"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade6"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade7"
+					}
+				],
+				"1.0": [
+					{
+						"effect": "wind_marker",
+						"locator": "windblade1"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade2"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade3"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade4"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade5"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade6"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade7"
+					}
+				],
+				"2.0": [
+					{
+						"effect": "wind_marker",
+						"locator": "windblade1"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade2"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade3"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade4"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade5"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade6"
+					},
+					{
+						"effect": "wind_marker",
+						"locator": "windblade7"
+					}
+				]
+			}
+		},
+		"animation.windblade_claymore.hold": {
+			"loop": true,
+			"bones": {
+				"view": {
+					"rotation": [
+						0,
+						180,
+						0
+					]
+				}
+			}
+		}
+	}
+}

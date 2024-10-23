@@ -1,0 +1,14 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "fec:zenith_fabricator_altar"
+		},
+		"structure_name": "mystructure:zenith_fabricator_altar",
+		"adjustment_radius": 4,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {}
+		}
+	}
+}

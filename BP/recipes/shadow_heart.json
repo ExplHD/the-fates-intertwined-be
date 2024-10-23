@@ -1,0 +1,36 @@
+{
+    "format_version": "1.21.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "fec:shadow_heart"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            " C ",
+            "CSC",
+            " C "
+        ],
+        "key": {
+            "C": {
+                "item": "minecraft:sculk"
+            },
+            "S": {
+                "item": "minecraft:echo_shard"
+            }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:echo_shard"
+            },
+            {
+                "item": "minecraft:sculk"
+            }
+        ],
+        "result": {
+            "item": "fec:shadow_heart",
+            "count": 1
+        }
+    }
+}

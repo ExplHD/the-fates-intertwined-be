@@ -1,0 +1,163 @@
+{
+	"format_version": "1.21.10",
+	"animation_controllers": {
+		"controller.animation.windblade_claymore": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+						"/scoreboard players set @s atkp_delay 0"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_1": "variable.attack_time&&!query.is_sneaking&&q.get_equipped_item_name=='windblade_claymore'"
+						},
+						{
+							"skill_1": "query.get_equipped_item_name=='windblade_claymore'&&query.is_using_item&&(query.scoreboard('windblade_claymore')==0)&&(query.scoreboard('windblade_claymore_c1')==0)"
+						},
+						{
+							"skill_2": "query.get_equipped_item_name=='windblade_claymore'&&query.is_using_item&&(query.scoreboard('windblade_claymore')==1)&&(query.scoreboard('windblade_claymore_c2')==0)"
+						},
+						{
+							"skill_3": "query.get_equipped_item_name=='windblade_claymore'&&query.is_using_item&&(query.scoreboard('windblade_claymore')==2)&&(query.scoreboard('windblade_claymore_c3')==0)"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='windblade_claymore'"
+						}
+					]
+				},
+				"atk_1": {
+					"on_entry": [
+						"/damage @e[r=4,rm=0.1,type=!item] 16 entity_attack entity @s",
+						"/playanimation @s animation.windblade_claymore.attack_1",
+						"/playsound sword_slash.heavy_slash @a[r=16] ~~~ 1 1.1 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_2": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=15)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='windblade_claymore'"
+						}
+					]
+				},
+				"atk_2": {
+					"on_entry": [
+						"/playanimation @s animation.windblade_claymore.attack_2",
+						"/damage @e[r=4,rm=0.1,type=!item] 15 entity_attack entity @s",
+						"/playsound sword_slash.heavy_slash @a[r=16] ~~~ 1 1 0.4",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1"
+					],
+					"transitions": [
+						{
+							"atk_3": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=15)"
+						},
+						{
+							"default": "query.scoreboard('atkp_delay')>=30"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='windblade_claymore'"
+						}
+					]
+				},
+				"atk_3": {
+					"animations": [
+						"windblade_claymore_atk_3"
+					],
+					"on_exit": [
+						"/scoreboard players set @s atkp_delay 1",
+						"/scoreboard players add @s legendCounter 1"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						},
+						{
+							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='windblade_claymore'"
+						}
+					]
+				},
+				"skill_1": {
+					"on_entry": [
+						"/playanimation @s animation.windblade_claymore.skill_1",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §lTornado Attack\"}]}",
+						"/scoreboard players add @s windblade_claymore_c1 25"
+					],
+					"animations": [
+						"windblade_claymore_skill_1"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"skill_2": {
+					"on_entry": [
+						"/playanimation @s animation.windblade_claymore.attack_3",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §lGroundbreaking Terra Slash\"}]}"
+					],
+					"animations": [
+						"windblade_claymore_skill_2"
+					],
+					"on_exit": [
+						"/scoreboard players add @s windblade_claymore_c2 30"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"skill_3": {
+					"on_entry": [
+						"/playanimation @s animation.windblade_claymore.attack_1",
+						"/execute at @e[r=64,rm=0.1] run particle fec:windblade_claymore_attack_3 ~~~",
+						"/damage @e[r=64,type=wither] 50 entity_attack entity @s",
+						"/damage @e[r=64,type=ender_dragon] 100 entity_attack entity @s",
+						"/damage @e[r=64,type=fec:elemental_legionnaire] 10 entity_attack entity @s",
+						"/damage @e[r=64,type=fec:water_eidolon] 100 entity_attack entity @s",
+						"/damage @e[r=64,type=warden] 50 entity_attack entity @s",
+						"/damage @e[r=64,rm=0.1,type=!item] 20 entity_attack entity @s",
+						"/particle fec:nuclear_explosion_wipe ~~1~",
+						"/tellraw @a[r=128] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their Ultimate §lPerfect Annillator\"}]}",
+						"/scoreboard players add @s windblade_claymore_c3 140"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"change": {
+					"on_entry": [
+						"/scoreboard players add @s windblade_claymore 1",
+						"/scoreboard players set @s[scores={windblade_claymore=3}] windblade_claymore 0",
+						"/playsound random.click @s",
+						"/tellraw @s[scores={windblade_claymore=0}] {\"rawtext\":[{\"text\": \"Tornado Attack\"}]}",
+						"/tellraw @s[scores={windblade_claymore=1}] {\"rawtext\":[{\"text\": \"Groundbreaking Terra Slash\"}]}",
+						"/tellraw @s[scores={windblade_claymore=2}] {\"rawtext\":[{\"text\": \"Perfect Annihilator\"}]}"
+					],
+					"transitions": [
+						{
+							"default": "!variable.attack_time"
+						}
+					]
+				}
+			}
+		}
+	}
+}

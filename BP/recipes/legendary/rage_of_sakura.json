@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "fec:rage_of_sakura"
+		},
+		"tags": [
+			"legendary_fabricator"
+		],
+		"ingredients": [
+			{
+				"item": "fec:loving_sakura_medal"
+			},
+			{
+				"item": "minecraft:redstone"
+			},
+			{
+				"item": "minecraft:netherite_sword"
+			}
+		],
+		"unlock": [
+			{
+				"item": "fec:loving_sakura_medal"
+			}
+		],
+		"result": [
+			{
+				"item": "fec:rage_of_sakura"
+			}
+		]
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "fec:reworked_tenacity_skill_2",
+			"basic_render_parameters": {
+				"material": "particles_add",
+				"texture": "textures/particle/sonic_explosion"
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 100
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_point": {
+				"offset": ["math.random(-3,3)*math.sin(v.particle_random_2*180)", "64*math.sin(v.particle_random_1*180)", "math.random(-3,3)*math.sin(v.particle_random_2*180)"]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 0.6
+			},
+			"minecraft:particle_initial_speed": 0.6,
+			"minecraft:particle_appearance_billboard": {
+				"size": [1, 1],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 32,
+					"texture_height": 512,
+					"flipbook": {
+						"base_UV": [0, 256],
+						"size_UV": [32, 32],
+						"step_UV": [0, 32],
+						"frames_per_second": 8,
+						"max_frame": 8,
+						"stretch_to_lifetime": true
+					}
+				}
+			}
+		}
+	}
+}

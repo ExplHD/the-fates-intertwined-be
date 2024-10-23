@@ -1,0 +1,398 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.murasama_calamity.attack_1": {
+			"animation_length": 1,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.125": {
+							"post": [
+								-85.05074,
+								-11.48029,
+								64.47353
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [
+								84.95,
+								-11.48,
+								64.47
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								84.95,
+								-11.48,
+								64.47
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "blood_marker",
+						"locator": "murasama1"
+					},
+					{
+						"effect": "blood_marker",
+						"locator": "murasama2"
+					},
+					{
+						"effect": "blood_marker",
+						"locator": "murasama3"
+					}
+				],
+				"0.125": {
+					"effect": "murasama_calamity_attack_1",
+					"locator": "murasama_particle"
+				}
+			}
+		},
+		"animation.murasama_calamity.attack_2": {
+			"animation_length": 1.125,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								0,
+								0,
+								65
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3333": {
+							"post": [
+								-110,
+								0,
+								65
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								-110,
+								0,
+								65
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-90,
+							0,
+							180
+						],
+						"0.75": [
+							-90,
+							0,
+							180
+						],
+						"1.0": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							0,
+							0,
+							-2
+						],
+						"0.75": [
+							0,
+							0,
+							-2
+						],
+						"1.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "blood_marker",
+						"locator": "murasama1"
+					},
+					{
+						"effect": "blood_marker",
+						"locator": "murasama2"
+					},
+					{
+						"effect": "blood_marker",
+						"locator": "murasama3"
+					}
+				],
+				"0.1667": {
+					"effect": "murasama_calamity_attack_2",
+					"locator": "murasama_particle"
+				}
+			}
+		},
+		"animation.murasama_calamity.attack_3": {
+			"animation_length": 1,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.125": {
+							"post": [
+								-85.05074,
+								-11.48029,
+								64.47353
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [
+								84.95,
+								-11.48,
+								64.47
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								84.95,
+								-11.48,
+								64.47
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "blood_marker",
+						"locator": "murasama1"
+					},
+					{
+						"effect": "blood_marker",
+						"locator": "murasama2"
+					},
+					{
+						"effect": "blood_marker",
+						"locator": "murasama3"
+					}
+				],
+				"0.125": {
+					"effect": "murasama_calamity_attack_3",
+					"locator": "murasama_particle"
+				}
+			}
+		},
+		"animation.murasama_calamity.skill_2": {
+			"animation_length": 5,
+			"bones": {
+				"leftArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-57.5,
+							0,
+							0
+						],
+						"3.0": [
+							-49.38593,
+							-23.03856,
+							-15.42806
+						],
+						"3.25": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-100.18513,
+							-6.77211,
+							111.47946
+						],
+						"3.0": [
+							-90.19,
+							-6.77,
+							111.48
+						],
+						"3.5417": [
+							-90.19,
+							-6.77,
+							111.48
+						],
+						"3.7917": [
+							-90.19,
+							-6.77,
+							111.48
+						],
+						"3.8333": [
+							-81.12001,
+							-6.77,
+							111.48
+						],
+						"3.875": [
+							-48.44259,
+							-6.77,
+							111.48
+						],
+						"3.9167": [
+							0.56259,
+							-6.77,
+							111.48
+						],
+						"3.9583": [
+							33.24001,
+							-6.77,
+							111.48
+						],
+						"4.0": [
+							42.31,
+							-6.77,
+							111.48
+						],
+						"4.5417": [
+							42.31,
+							-6.77,
+							111.48
+						],
+						"4.75": [
+							42.31,
+							-6.77,
+							111.48
+						],
+						"4.7917": [
+							39.77567,
+							-6.36448,
+							104.80246
+						],
+						"4.8333": [
+							32.22178,
+							-5.15579,
+							84.89917
+						],
+						"4.9167": [
+							10.08822,
+							-1.61421,
+							26.58083
+						],
+						"4.9583": [
+							2.53433,
+							-0.40552,
+							6.67754
+						],
+						"5.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "murasama_calamity_s2_1",
+					"locator": "murasama_particle"
+				},
+				"3.7917": {
+					"effect": "murasama_calamity_s2_2",
+					"locator": "murasama_particle"
+				}
+			}
+		},
+		"animation.murasama_calamity.hold": {
+			"loop": true,
+			"bones": {
+				"view": {
+					"rotation": [
+						0,
+						180,
+						0
+					]
+				}
+			}
+		}
+	}
+}

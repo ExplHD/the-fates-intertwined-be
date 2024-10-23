@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:iron_stick"
+		},
+		"key": {
+			"I": {
+				"item": "minecraft:iron_ingot"
+			}
+		},
+		"pattern": [
+			"I",
+			"I"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"unlock": [
+			{
+				"item": "minecraft:iron_ingot"
+			}
+		],
+		"result": {
+			"item": "fec:iron_stick",
+			"count": 2
+		}
+	}
+}

@@ -1,0 +1,83 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.spear_of_heart_plunge.plunge": {
+			"animation_length": 2,
+			"bones": {
+				"weapon_root": {
+					"position": {
+						"0.0": [
+							0,
+							64,
+							0
+						],
+						"0.25": [
+							0,
+							71,
+							0
+						],
+						"0.5": [
+							0,
+							-10,
+							0
+						],
+						"1.5": [
+							0,
+							-10,
+							0
+						],
+						"2.0": [
+							0,
+							-51,
+							0
+						]
+					},
+					"scale": {
+						"1.5": [
+							1,
+							1,
+							1
+						],
+						"2.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "water_marker",
+						"locator": "plungerspear1"
+					},
+					{
+						"effect": "water_marker",
+						"locator": "plungerspear2"
+					},
+					{
+						"effect": "water_marker",
+						"locator": "plungerspear3"
+					},
+					{
+						"effect": "water_marker",
+						"locator": "plungerspear4"
+					},
+					{
+						"effect": "water_marker",
+						"locator": "plungerspear5"
+					},
+					{
+						"effect": "water_marker",
+						"locator": "plungerspear6"
+					},
+					{
+						"effect": "water_marker",
+						"locator": "plungerspear7"
+					}
+				]
+			}
+		}
+	}
+}

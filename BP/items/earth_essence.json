@@ -1,0 +1,26 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:earth_essence",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_earth_essence",
+			"minecraft:cooldown": {
+				"category": "earth_essence",
+				"duration": 30
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:display_name": {
+				"value": "§bEarth Essence\n§2Right-click To :\nCreate a Invincible Shield for 3 Seconds\n§9Cooldown : 30 Second"
+			},
+			"minecraft:should_despawn": false,
+			"minecraft:custom_components": [
+				"fec:essence_use"
+			]
+		}
+	}
+}

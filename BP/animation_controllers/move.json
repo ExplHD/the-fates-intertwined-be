@@ -1,0 +1,49 @@
+{
+	"format_version": "1.21.10",
+	"animation_controllers": {
+		"controller.animation.walk": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walk": "query.is_moving"
+						}
+					]
+				},
+				"walk": {
+					"animations": [
+						"walking"
+					],
+					"transitions": [
+						{
+							"default": "query.any_animation_finished('walk')"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.jump": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"jumping": "query.is_jumping"
+						}
+					]
+				},
+				"jumping": {
+					"transitions": [
+						{
+							"default": "query.any_animation_finished('walk')"
+						}
+					],
+					"animations": [
+						"jumping"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:shadow_heart",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_shadow_heart",
+			"minecraft:max_stack_size": 1,
+			"minecraft:cooldown": {
+				"category": "boss_summon",
+				"duration": 120
+			},
+			"minecraft:display_name": {
+				"value": "§6Shadow Heart\n§8A Heart that come from the Sculk Infection"
+			},
+			"minecraft:custom_components": [
+				"fec:boss_summon"
+			]
+		}
+	}
+}

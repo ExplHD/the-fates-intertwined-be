@@ -1,0 +1,35 @@
+{
+	"format_version": "1.14.0",
+	"sound_definitions": {
+		"music.duel.scourge_of_the_universe": {
+			"sounds": [
+				"sounds/music/duel/scourge_of_the_universe"
+			],
+			"category": "ui"
+		},
+		"music.duel.supercharger": {
+			"sounds": [
+				"sounds/music/duel/supercharger"
+			],
+			"category": "ui"
+		},
+		"music.duel.demonic_cat": {
+			"sounds": [
+				"sounds/music/duel/demonic_cat"
+			],
+			"category": "ui"
+		},
+		"music.boss.unfiltered_calamity": {
+			"sounds": [
+				"sounds/music/boss/unfiltered_calamity"
+			],
+			"category": "ui"
+		},
+		"music.boss.the_heaven_sent_abomination": {
+			"sounds": [
+				"sounds/music/boss/the_heaven_sent_abomination"
+			],
+			"category": "ui"
+		}
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "fec:stardust_clear_chestplate"
+		},
+		"tags": [
+			"legendary_fabricator"
+		],
+		"ingredients": [
+			{
+				"item": "fec:stardust_upgrade_smithing_template"
+			},
+			{
+				"item": "minecraft:quartz"
+			},
+			{
+				"item": "minecraft:amethyst_shard"
+			},
+			{
+				"item": "minecraft:netherite_chestplate"
+			}
+		],
+		"unlock": [
+			{
+				"item": "fec:stardust_upgrade_smithing_template"
+			}
+		],
+		"result": {
+			"item": "fec:stardust_clear_chestplate"
+		}
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:legionnaire_medalion",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_legionnaire_medalion",
+			"minecraft:max_stack_size": 1,
+			"minecraft:cooldown": {
+				"category": "boss_summon",
+				"duration": 120
+			},
+			"minecraft:display_name": {
+				"value": "§6Legionnaire Medalion\n§8A Artifact that used for sumoning the Ancient Elemental Legionnaire"
+			},
+			"minecraft:custom_components": [
+				"fec:boss_summon"
+			]
+		}
+	}
+}

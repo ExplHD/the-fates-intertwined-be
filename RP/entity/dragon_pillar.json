@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:dragon_pillar",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/fire_pillar"
+			},
+			"geometry": {
+				"default": "geometry.fire_pillar"
+			},
+			"render_controllers": [
+				"controller.render.fire_pillar"
+			],
+			"animations": {
+				"fire_pillar_controller": "controller.animation.fire_pillar",
+				"fire_pillar_animation": "animation.fire_pillar.target"
+			},
+			"scripts": {
+				"animate": [
+					"fire_pillar_controller"
+				]
+			}
+		}
+	}
+}
