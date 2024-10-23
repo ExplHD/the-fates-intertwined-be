@@ -142,3 +142,11 @@ execute as @e[type=fec:shadowplague_guardian] at @s run gamemode 2 @a[m=d,r=80]
 execute as @e[type=fec:elemental_legionnaire] at @s unless entity @a[r=80,m=2] run event entity @s despawn
 execute as @e[type=fec:water_eidolon] at @s unless entity @a[r=64,m=2] run event entity @s despawn
 execute as @e[type=fec:shadowplague_guardian] at @s unless entity @a[r=80,m=2] run event entity @s despawn
+
+# Player Join Event
+tellraw @a[tag=!joined] {"rawtext":[{"text": "Recommended Settings to Run This Pack :"}]}
+tellraw @a[tag=!joined] {"rawtext":[{"text": "Simulation Distance : §e8"}]}
+tellraw @a[tag=!joined] {"rawtext":[{"text": "Mob Grief : §cOFF"}]}
+give @a[tag=!joined] compass
+tellraw @a[tag=!joined] {"rawtext":[{"translate": "text.the_fates.welcome"}]}
+tag @a[tag=!joined] add joined

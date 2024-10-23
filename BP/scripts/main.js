@@ -1,4 +1,4 @@
-import { system, world } from '@minecraft/server'
+	import { system, world } from '@minecraft/server'
 import { ActionFormData, MessageFormData } from '@minecraft/server-ui'
 import { } from './items/essence'
 import { } from './items/boss_summon'
@@ -182,19 +182,6 @@ world.afterEvents.itemUse.subscribe((starting) => {
                 player.runCommandAsync(`clear "${player.name}" compass`);
             }
         })
-    }
-});
-
-world.afterEvents.playerJoin.subscribe(() => {
-    for (const player of world.getPlayers()) {
-        if (!player.hasTag('joined')) {
-            players.runCommand(`give @a[tag=!joined] compass`);
-            players.runCommand(`tellraw @a[tag=!joined] {"rawtext":[{"translate": "text.the_fates.welcome"}]}`);
-            players.runCommand(`tag @a[tag=!joined] add joined`);
-            players.sendMessage('Recommended Settings to Run This Pack :');
-            players.sendMessage('Simulation Distance : §e8');
-            players.sendMessage('Mob Grief : §cOFF');
-        }
     }
 });
 
