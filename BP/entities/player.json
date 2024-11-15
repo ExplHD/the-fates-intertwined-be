@@ -198,6 +198,17 @@
 					"player"
 				]
 			},
+			"minecraft:exhaustion_values": {
+				"heal": 6,
+				"jump": 0.05,
+				"sprint_jump": 0.2,
+				"mine": 0.005,
+				"attack": 0.1,
+				"damage": 0.1,
+				"walk": 0.0,
+				"sprint": 0.1,
+				"swim": 0.01
+			},
 			"minecraft:is_hidden_when_invisible": {},
 			"minecraft:loot": {
 				"table": "loot_tables/empty.json"

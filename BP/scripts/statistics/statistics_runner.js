@@ -8,9 +8,9 @@ world.afterEvents.entityHitEntity.subscribe(stathit => {
     if (source.typeId === 'minecraft:player' && getScore(source, 'atkCounterDelay') == 0) {
         addScore(source, 'atkCounter', 1)
         addScore(source, 'atkCounterDelay', 10)
-        source.runCommandAsync(`titleraw "${source.name}" actionbar {"rawtext":[{"text":"§aHit Entity Statistics : §e"},{"score":{"name":"*","objective":"atkCounter"}},{"text":" (+1), Mob HP : ${damagedEntity.getComponent('minecraft:health').currentValue.toFixed(0)}"}]}`)
+        source.runCommandAsync(`titleraw "${source.name}" actionbar {"rawtext":[{"text":"§aHit Entity Statistics : §e"},{"score":{"name":"*","objective":"atkCounter"}},{"text":" (+1), Mob HP : ${damagedEntity.getComponent('minecraft:health').currentValue.toFixed(2)}"}]}`)
         if (damagedEntity.typeId === 'minecraft:player') {
-            damagedEntity.runCommand(`title @s actionbar You were hit by ${source.nameTag}, ${damagedEntity.getComponent('minecraft:health').currentValue} HP Left`)
+            damagedEntity.runCommand(`title @s actionbar You were hit by ${source.nameTag}, ${damagedEntity.getComponent('minecraft:health').currentValue.toFixed(2)} HP Left`)
         }
     }
 })

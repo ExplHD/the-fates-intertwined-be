@@ -175,6 +175,11 @@ system.runInterval(() => {
                 removeScore(players, cooldownTick, -1)
             }
         }
+
+        for (const charge of charges) {
+            addScore(players, charge, 0)
+        }
+
         if (getScore(players, 'atkp_delay') > 0) {
             addScore(players, 'atkp_delay', 1)
         }
@@ -185,6 +190,5 @@ system.runInterval(() => {
         if (players.hasTag('voltra_charging') && getScore(players, 'voltra_charge') < 100) {
             addScore(players, 'voltra_charge', 1)
         }
-
     }
 }, 0)

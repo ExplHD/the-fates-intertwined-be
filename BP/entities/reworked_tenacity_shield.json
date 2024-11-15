@@ -5,7 +5,18 @@
 			"identifier": "fec:reworked_tenacity_shield",
 			"is_spawnable": false,
 			"is_summonable": true,
-			"is_experimental": false
+			"is_experimental": false,
+			"properties": {
+				"fec:shield_timer": {
+					"client_sync": false,
+					"type": "int",
+					"range": [
+						0,
+						35
+					],
+					"default": 0
+				}
+			}
 		},
 		"component_groups": {
 			"instant_despawn": {
@@ -22,9 +33,10 @@
 			},
 			"timer_to_despawn": {
 				"minecraft:timer": {
-					"time": 30,
+					"time": 1,
+					"looping": true,
 					"time_down_event": {
-						"event": "despawning",
+						"event": "refresh_inside_shield",
 						"target": "self"
 					}
 				}
@@ -73,25 +85,48 @@
 			"minecraft:knockback_resistance": {
 				"value": 100,
 				"max": 100
-			},
-			"minecraft:timer": {
-				"time": 1,
-				"looping": true,
-				"time_down_event": {
-					"event": "refresh_inside_shield",
-					"target": "self"
-				}
 			}
 		},
 		"events": {
-			"refresh_inside_shield": {
-				"queue_command": {
-					"command": [
-						"tag @a[r=10] add tenacity_shield",
-						"effect @a[r=10] resistance 2 1 true",
-						"tag @a[rm=10,r=64] remove tenacity_shield"
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"timer_to_despawn"
 					]
 				}
+			},
+			"refresh_inside_shield": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "int_property",
+							"domain": "fec:shield_timer",
+							"subject": "self",
+							"operator": "<",
+							"value": 30
+						},
+						"queue_command": {
+							"command": [
+								"tag @a[r=10] add tenacity_shield",
+								"effect @a[r=10] resistance 2 1 true",
+								"tag @a[rm=10,r=64] remove tenacity_shield"
+							]
+						},
+						"set_property": {
+							"fec:shield_timer": "query.property('fec:shield_timer') + 1"
+						}
+					},
+					{
+						"filters": {
+							"test": "int_property",
+							"domain": "fec:shield_timer",
+							"subject": "self",
+							"operator": ">=",
+							"value": 30
+						},
+						"trigger": "despawning"
+					}
+				]
 			},
 			"despawning": {
 				"add": {
@@ -99,8 +134,18 @@
 						"despawning"
 					]
 				},
+				"remove": {
+					"component_groups": [
+						"timer_to_despawn"
+					]
+				},
 				"queue_command": {
-					"command": "playanimation @s animation.reworked_tenacity_shields.despawn",
+					"command": [
+						"playanimation @s animation.reworked_tenacity_shields.despawn",
+						"tag @a[r=10] add tenacity_shield",
+						"effect @a[r=10] resistance 2 1 true",
+						"tag @a[rm=10,r=64] remove tenacity_shield"
+					],
 					"target": "self"
 				}
 			},

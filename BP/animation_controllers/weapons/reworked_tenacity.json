@@ -16,13 +16,13 @@
                             "atk_1": "v.attack_time&&!q.is_sneaking&&q.get_equipped_item_name=='reworked_tenacity'"
                         },
                         {
-                            "skill_1": "q.get_equipped_item_name=='reworked_tenacity'&&q.is_using_item&&(q.scoreboard('reworked_tenacity')==0)&&(q.scoreboard('reworked-tenacity_c1')==0)"
+                            "skill_1": "q.get_equipped_item_name=='reworked_tenacity'&&q.is_using_item&&(q.scoreboard('reworked_tenacity')==0)&&(q.scoreboard('reworked_tenacity_c1')==0)"
                         },
                         {
-                            "skill_2": "q.get_equipped_item_name=='reworked_tenacity'&&q.is_using_item&&(q.scoreboard('reworked_tenacity')==1)&&(q.scoreboard('reworked-tenacity_c2')==0)"
+                            "skill_2": "q.get_equipped_item_name=='reworked_tenacity'&&q.is_using_item&&(q.scoreboard('reworked_tenacity')==1)&&(q.scoreboard('reworked_tenacity_c2')==0)"
                         },
                         {
-                            "skill_3": "q.get_equipped_item_name=='reworked_tenacity'&&q.is_using_item&&(q.scoreboard('reworked_tenacity')==2)&&(q.scoreboard('reworked-tenacity_c3')==0)"
+                            "skill_3": "q.get_equipped_item_name=='reworked_tenacity'&&q.is_using_item&&(q.scoreboard('reworked_tenacity')==2)&&(q.scoreboard('reworked_tenacity_c3')==0)"
                         },
                         {
                             "change": "v.attack_time&&q.is_sneaking&&q.get_equipped_item_name=='reworked_tenacity'"
@@ -98,7 +98,6 @@
                         "/particle fec:reworked_tenacity_skill_1",
                         "/scoreboard players add @s reworked_tenacity_c1 15",
                         "/playsound mob.warden.sonic_boom @a[r=32]",
-                        "/execute at @e[r=16,rm=1] as @s run setblock ~~~ fire",
                         "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §bAerial Sonic Shriek\"}]}"
                     ],
                     "transitions": [
@@ -110,7 +109,6 @@
                 "skill_2": {
                     "on_entry": [
                         "/execute at @e[r=32,family=!inanimate,family=!pillars,type=!item] run particle fec:reworked_tenacity_skill_2",
-                        "/particle fec:reworked_tenacity_skill_1 ~~~",
                         "/damage @e[r=32,rm=0.1,family=!inanimate,family=!pillars,type=!item] 16 entity_attack entity @s",
                         "/effect @e[r=32,rm=0.1] slowness 5 3 true",
                         "/scoreboard players add @s reworked_tenacity_c2 45",

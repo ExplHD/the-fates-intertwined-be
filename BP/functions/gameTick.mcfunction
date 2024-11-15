@@ -46,6 +46,7 @@ scoreboard objectives add reworked_tenacity_c3 dummy
 
 ## Cooldown Tick
 scoreboard objectives add stars_and_crescent_c1 dummy
+scoreboard objectives add atkp_delay dummy
 
 ## Cooldown (Charge Type)
 scoreboard objectives add murasama_calamity_c4 dummy
@@ -91,15 +92,17 @@ scoreboard objectives add atk_cooldown dummy
 scoreboard objectives add dash_cooldown dummy
 scoreboard objectives add wind_essence dummy
 scoreboard objectives add wind_essence_up dummy
-scoreboard players remove @a[scores={cdtick=20..}] atk_cooldown 1
-scoreboard players remove @a[scores={cdtick=20..}] dash_cooldown 1
-scoreboard players remove @a[scores={cdtick=20..}] wind_essence_up 1
+scoreboard objectives add cdtick dummy
+scoreboard players add @a cdtick 1
+scoreboard players remove @a[scores={cdtick=20}] atk_cooldown 1
+scoreboard players remove @a[scores={cdtick=20}] dash_cooldown 1
 scoreboard players remove @a wind_essence 1
 scoreboard players set @a[scores={atk_cooldown=..0}] atk_cooldown 0
 scoreboard players set @a[scores={dash_cooldown=..0}] dash_cooldown 0
 scoreboard players set @a[scores={wind_essence=..0}] wind_essence 0
 scoreboard players set @a[scores={wind_essence_up=..0}] wind_essence_up 0
-effect @a[tag=speed_ranger] speed 1 1
+scoreboard players set @a[scores={cdtick=21..}] cdtick 0
+effect @a[tag=speed_ranger] speed 1 1 true
 titleraw @a[hasitem={item=fec:wind_essence,location=slot.weapon.mainhand}] actionbar {"rawtext":[{"text":"Cooldown : \nUpdraft : §e"},{"score":{"name":"*","objective":"wind_essence_up"}},{"text":"s§r\nDash Forward : §e"},{"score":{"name":"*","objective":"wind_essence"}},{"text":" Ticks"}]}
 titleraw @a[hasitem={item=feather,location=slot.weapon.mainhand},tag=speed_ranger] actionbar {"rawtext":[{"text":"Cooldown : §e"},{"score":{"name":"*","objective":"dash_cooldown"}},{"text":"s"}]}
 
