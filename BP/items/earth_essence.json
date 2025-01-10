@@ -17,7 +17,6 @@
 			"minecraft:display_name": {
 				"value": "§bEarth Essence\n§2Right-click To :\nCreate a Invincible Shield for 3 Seconds\n§9Cooldown : 30 Second"
 			},
-			"minecraft:should_despawn": false,
 			"minecraft:custom_components": [
 				"fec:essence_use"
 			]

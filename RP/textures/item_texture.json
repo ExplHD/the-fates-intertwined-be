@@ -103,22 +103,22 @@
 		"fec_glorified_water_essence": {
 			"textures": "textures/items/boss_summon/glorified_water_essence"
 		},
-		"fec_stardust_armor_helmet": {
+		"stardust_armor_helmet": {
 			"textures": [
 				"textures/items/armor/stardust_armor_helmet"
 			]
 		},
-		"fec_stardust_armor_chestplate": {
+		"stardust_armor_chestplate": {
 			"textures": [
 				"textures/items/armor/stardust_armor_chestplate"
 			]
 		},
-		"fec_stardust_armor_leggings": {
+		"stardust_armor_leggings": {
 			"textures": [
 				"textures/items/armor/stardust_armor_leggings"
 			]
 		},
-		"fec_stardust_armor_boots": {
+		"stardust_armor_boots": {
 			"textures": [
 				"textures/items/armor/stardust_armor_boots"
 			]

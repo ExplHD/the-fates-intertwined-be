@@ -40,7 +40,7 @@
 				},
 				"atk_1": {
 					"on_entry": [
-						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/damage @e[r=4.5,rm=0.1,type=!item] 10 entity_attack entity @s",
 						"/playanimation @s animation.blade_of_the_end.attack_1",
 						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.2 0.4",
 						"/scoreboard players add @s legendCounter 1"
@@ -63,7 +63,7 @@
 				"atk_2": {
 					"on_entry": [
 						"/playanimation @s animation.blade_of_the_end.attack_2",
-						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/damage @e[r=4.5,rm=0.1,type=!item] 10 entity_attack entity @s",
 						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1 0.4",
 						"/scoreboard players add @s legendCounter 1"
 					],
@@ -84,7 +84,7 @@
 				},
 				"atk_3": {
 					"on_entry": [
-						"/damage @e[r=4,rm=0.1,type=!item] 12 entity_attack entity @s",
+						"/damage @e[r=6,rm=0.1,type=!item] 12 entity_attack entity @s",
 						"/playanimation @s animation.blade_of_the_end.attack_3",
 						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 0.9 0.4",
 						"/scoreboard players add @s legendCounter 1"

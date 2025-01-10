@@ -117,7 +117,8 @@
             "animation_length": 6,
             "timeline": {
                 "0.0": [
-                    "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §6The Domain of Origin\"}]}",
+                    "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their Ultimate §6The Domain of Origin\"}]}",
+                    "/effect @s resistance 6 255 true",
                     "/particle fec:mythic_tenacity_ultimate_scythe_clock ~~~",
                     "/playsound custom_sfx.clash_3x @a[r=64]",
                     "/playanimation @s animation.mythic_tenacity.ultimate_scale",
@@ -138,6 +139,8 @@
                     "/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 100 entity_attack entity @s",
                     "/damage @e[tag=hunterTarget,type=fec:water_eidolon] 125 entity_attack entity @s",
                     "/damage @e[tag=hunterTarget,type=warden] 48 entity_attack entity @s",
+                    "/execute as @s at @s unless entity @e[tag=hunterTarget] run tp @s @e[r=32,c=1,type=!player,family=!inanimate]",
+                    "/damage @e[r=6,family=!inanimate] 35 entity_attack @s",
                     "/particle fec:mythic_tenacity_ultimate_teleport_slash ~~~"
                 ],
                 "1.28": [
@@ -148,6 +151,8 @@
                     "/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 100 entity_attack entity @s",
                     "/damage @e[tag=hunterTarget,type=fec:water_eidolon] 125 entity_attack entity @s",
                     "/damage @e[tag=hunterTarget,type=warden] 48 entity_attack entity @s",
+                    "/execute as @s at @s unless entity @e[tag=hunterTarget] run tp @s @e[r=32,c=1,type=!player,family=!inanimate]",
+                    "/damage @e[r=6,family=!inanimate] 35 entity_attack @s",
                     "/particle fec:mythic_tenacity_ultimate_teleport_slash ~~~"
                 ],
                 "3.5": [
@@ -158,6 +163,8 @@
                     "/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 100 entity_attack entity @s",
                     "/damage @e[tag=hunterTarget,type=fec:water_eidolon] 125 entity_attack entity @s",
                     "/damage @e[tag=hunterTarget,type=warden] 48 entity_attack entity @s",
+                    "/execute as @s at @s unless entity @e[tag=hunterTarget] run tp @s @e[r=32,c=1,type=!player,family=!inanimate]",
+                    "/damage @e[r=6,family=!inanimate] 35 entity_attack @s",
                     "/particle fec:mythic_tenacity_ultimate_teleport_slash ~~~"
                 ],
                 "4.5": [
@@ -226,8 +233,10 @@
             "timeline": {
                 "0.0": [
                     "/tp @s ~~~ ~ 0",
+                    "/tag @s add tenacity_invulnerable",
+                    "/camera @s set minecraft:third_person",
                     "/playanimation @s animation.mythic_tenacity.ultimate_axe",
-                    "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §b§lThe drop from the skies\"}]}",
+                    "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their Ultimate §b§lThe drop from the skies\"}]}",
                     "/tellraw @a[r=64,rm=3] {\"rawtext\":[{\"text\":\"§cWATCH OUT! There is a meteor inbound\"}]}",
                     "/effect @a[r=3] resistance 5 255 true",
                     "/playsound custom_sfx.deathzone_spawn @a[r=64] ~~~ 0.6 1 0.6",
@@ -238,6 +247,7 @@
                     "/summon fec:tenacity_sky_meteor ^^60^10 ~ 0 minecraft:entity_spawned"
                 ],
                 "3.9": [
+                    "/camera @s clear",
                     "/inputpermission set @a[r=3] movement enabled",
                     "/inputpermission set @a[r=3] camera enabled",
                     "/scoreboard players set @s tenacity_c4_axe 200"

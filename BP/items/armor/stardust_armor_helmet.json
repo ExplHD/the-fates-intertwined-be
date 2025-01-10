@@ -14,8 +14,7 @@
 				"value": 9,
 				"slot": "armor_head"
 			},
-			"minecraft:icon": "fec_stardust_armor_helmet",
-			"tag:minecraft:trimmable_armors": {},
+			"minecraft:icon": "stardust_armor_helmet",
 			"minecraft:wearable": {
 				"slot": "slot.armor.head",
 				"protection": 8
@@ -38,6 +37,12 @@
 			},
 			"minecraft:durability": {
 				"max_durability": 5050
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_armor",
+					"minecraft:trimmable_armors"
+				]
 			}
 		}
 	}

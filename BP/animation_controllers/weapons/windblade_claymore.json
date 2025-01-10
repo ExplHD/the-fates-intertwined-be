@@ -31,7 +31,7 @@
 				},
 				"atk_1": {
 					"on_entry": [
-						"/damage @e[r=4,rm=0.1,type=!item] 16 entity_attack entity @s",
+						"/damage @e[r=6,rm=0.1,type=!item] 16 entity_attack entity @s",
 						"/playanimation @s animation.windblade_claymore.attack_1",
 						"/playsound sword_slash.heavy_slash @a[r=16] ~~~ 1 1.1 0.4",
 						"/scoreboard players add @s legendCounter 1"
@@ -54,7 +54,7 @@
 				"atk_2": {
 					"on_entry": [
 						"/playanimation @s animation.windblade_claymore.attack_2",
-						"/damage @e[r=4,rm=0.1,type=!item] 15 entity_attack entity @s",
+						"/damage @e[r=6,rm=0.1,type=!item] 15 entity_attack entity @s",
 						"/playsound sword_slash.heavy_slash @a[r=16] ~~~ 1 1 0.4",
 						"/scoreboard players add @s legendCounter 1"
 					],

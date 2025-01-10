@@ -79,6 +79,18 @@
 			],
 			"category": "ui"
 		},
+		"custom_sfx.shadows_emerging": {
+			"sounds": [
+				"sounds/custom_sfx/shadows_emerging"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.zenith_flashbang": {
+			"sounds": [
+				"sounds/custom_sfx/zenith_flashbang"
+			],
+			"category": "ui"
+		},
 		"sword_slash.light_slash": {
 			"category": "ui",
 			"sounds": [

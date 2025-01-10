@@ -14,8 +14,7 @@
 				"value": 9,
 				"slot": "armor_torso"
 			},
-			"minecraft:icon": "fec_stardust_armor_chestplate",
-			"tag:minecraft:trimmable_armors": {},
+			"minecraft:icon": "stardust_armor_chestplate",
 			"minecraft:wearable": {
 				"slot": "slot.armor.chest",
 				"protection": 16
@@ -38,6 +37,12 @@
 			},
 			"minecraft:durability": {
 				"max_durability": 7240
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_armor",
+					"minecraft:trimmable_armors"
+				]
 			}
 		}
 	}

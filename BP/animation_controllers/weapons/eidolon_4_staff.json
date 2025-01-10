@@ -31,7 +31,7 @@
 				},
 				"atk_1": {
 					"on_entry": [
-						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/damage @e[r=4.5,rm=0.1,type=!item] 10 entity_attack entity @s",
 						"/playanimation @s animation.eidolon_4_staff.attack_1",
 						"/playsound sword_slash.medium_slash @a[r=16]",
 						"/scoreboard players add @s legendCounter 1"

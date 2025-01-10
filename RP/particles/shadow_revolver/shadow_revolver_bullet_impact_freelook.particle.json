@@ -1,0 +1,60 @@
+{
+    "format_version": "1.10.0",
+    "particle_effect": {
+        "description": {
+            "identifier": "fec:shadow_revolver_bullet_impact_freelook",
+            "basic_render_parameters": {
+                "material": "particles_alpha",
+                "texture": "textures/particle/sonic_explosion_grayscaled"
+            }
+        },
+        "components": {
+            "minecraft:emitter_rate_instant": {
+                "num_particles": 1
+            },
+            "minecraft:emitter_lifetime_once": {
+                "active_time": 1
+            },
+            "minecraft:emitter_shape_point": {},
+            "minecraft:particle_lifetime_expression": {
+                "max_lifetime": 0.4
+            },
+            "minecraft:particle_appearance_billboard": {
+                "size": [
+                    5,
+                    5
+                ],
+                "facing_camera_mode": "lookat_xyz",
+                "uv": {
+                    "texture_width": 32,
+                    "texture_height": 512,
+                    "flipbook": {
+                        "base_UV": [
+                            0,
+                            256
+                        ],
+                        "size_UV": [
+                            32,
+                            32
+                        ],
+                        "step_UV": [
+                            0,
+                            32
+                        ],
+                        "stretch_to_lifetime": true,
+                        "max_frame": 8
+                    }
+                }
+            },
+            "minecraft:particle_appearance_tinting": {
+                "color": {
+                    "interpolant": "v.particle_age / v.particle_lifetime",
+                    "gradient": {
+                        "0.0": "#FF8A00FF",
+                        "1.0": "#FF45006B"
+                    }
+                }
+            }
+        }
+    }
+}

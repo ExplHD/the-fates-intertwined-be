@@ -62,7 +62,7 @@
 			"minecraft:entity_spawned": {
 				"queue_command": {
 					"command": [
-						"spreadplayers ~ ~ 5.2 32 @s",
+						"spreadplayers ~ ~ 5.2 32 @s ~5",
 						"effect @s slow_falling 15 0 true",
 						"playsound mob.breeze.shoot @a[r=16]"
 					]

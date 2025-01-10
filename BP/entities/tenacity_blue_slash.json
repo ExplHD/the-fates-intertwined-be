@@ -1,5 +1,5 @@
 {
-	"format_version": "1.20.41",
+	"format_version": "1.20.40",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "fec:tenacity_blue_slash",

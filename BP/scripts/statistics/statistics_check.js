@@ -15,7 +15,7 @@ world.afterEvents.itemUse.subscribe((use) => {
         statisticSelect.body("");
         statisticSelect.button("Check Your Statistics");
         statisticSelect.button("Check Other Statistics (BETA)");
-        statisticSelect.button("Statistics Preference (BETA, Unavailable)");
+        statisticSelect.button("Statistics Preference");
         statisticSelect.show(player).then(r => {
             if (r.canceled || r.selection === undefined) { };
             if (r.selection == 0) statisticCheck(player);
@@ -33,9 +33,18 @@ world.afterEvents.itemUse.subscribe((use) => {
         let atk = getScore(player, 'atkCounter');
         let placed = getScore(player, 'placeBlockCounter');
         let destroyed = getScore(player, 'breakBlockCounter');
+        let itemInteract = getScore(player, 'itemInteractCounter');
         let kill = getScore(player, 'killCounter');
         statisticCheck.title("Your Statistics");
-        statisticCheck.body(`Death : ${death}\nJumps : ${jump}\nBlocks Traveled : ${move}\nAttack with Legendary Item : ${legendatk}\nAttack : ${atk}\nBlocks Placed : ${placed}\nBlocks Destroyed : ${destroyed}\nPlayers Killed : ${kill}`);
+        statisticCheck.body(`Death : ${death}
+Jumps : ${jump}
+Blocks Traveled : ${move}
+Attack with Legendary Item : ${legendatk}
+Attack : ${atk}
+Blocks Placed : ${placed}
+Blocks Destroyed : ${destroyed}
+Item Interaction : ${itemInteract}
+Players Killed : ${kill}`);
         statisticCheck.button("Exit")
         statisticCheck.show(player).then(r => {
             if (r.canceled) statisticSelect(player);
@@ -44,22 +53,38 @@ world.afterEvents.itemUse.subscribe((use) => {
     }
 
     function statisticPlayer() {
-        let statisticPlayer = new ActionFormData;
-        let playerDyn = world.getAllPlayers();
-        statisticPlayer.title("Select Player");
-        playerDyn.forEach((buttons) => {
-            if (player.getDynamicProperty('hide_statistic')) null;
-            else {
-                statisticPlayer.button(`${player.name}`)
-            }
-        })
-        statisticPlayer.show(player).then(({ selection, canceled }) => {
-            if (canceled) return;
-            statisticCheck(playerList[selection])
+        const form = new ModalFormData();
+        const playerNames = world.getAllPlayers().map(p => p.name)
+        form.title('Select Players');
+        form.dropdown('\nSelect The Player!', playerNames);
+        form.show(player).then(result => {
+            if (result.canceled) statisticPlayer(player);
+            const targetName = playerNames[result.formValues[0]]
+            statisticCheck(targetName.name)
         })
     }
 
     function statisticSettings() {
-        let statisticSettings = new ModalFormData();
+        const statisticSettings = new ModalFormData();
+        statisticSettings.title("Statistics Settings");
+        statisticSettings.toggle("Toggle Statistics Notification\n§7Toggle Notification being updated in actionbar", player.getDynamicProperty("fec:statistic_notification"));
+        statisticSettings.toggle("Toggle Hit Health Remaining\n§7Toggle health indicator after hitting an entity", player.getDynamicProperty("fec:statistic_health_remaining"));
+        statisticSettings.toggle("Toggle Where the Hit From\n§7Toggle where you have been hit, and your remaining HP", player.getDynamicProperty("fec:statistic_where_to_hit"));
+        statisticSettings.show(player).then(r => {
+            if (r.canceled) statisticSelect(player);
+            if (r.formValues[0] == true) {
+                player.setDynamicProperty("fec:statistic_notification", true);
+            } else {
+                player.setDynamicProperty("fec:statistic_notification", false);
+            } if (r.formValues[1] == true) {
+                player.setDynamicProperty("fec:statistic_health_remaining", true);
+            } else {
+                player.setDynamicProperty("fec:statistic_health_remaining", false);
+            } if (r.formValues[2] == true) {
+                player.setDynamicProperty("fec:statistic_where_to_hit", true);
+            } else {
+                player.setDynamicProperty("fec:statistic_where_to_hit", false);
+            }
+        })
     }
 })

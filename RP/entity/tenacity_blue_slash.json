@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "fec:tenacity_blue_slash",
 			"materials": {
-				"default": "entity_beam_additive"
+				"default": "entity_emissive_alpha"
 			},
 			"textures": {
 				"default": "textures/entity/tenacity_blue_slash"

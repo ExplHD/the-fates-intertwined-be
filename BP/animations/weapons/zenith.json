@@ -58,31 +58,31 @@
 				],
 				"0.5": [
 					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
-					"/damage @e[r=12,rm=0.1,type=!item] 7 entity_attack entity @s"
+					"/damage @e[r=12,rm=0.1,type=!item] 10 entity_attack entity @s"
 				],
 				"1.0": [
 					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
-					"/damage @e[r=12,rm=0.1,type=!item] 7 entity_attack entity @s"
+					"/damage @e[r=12,rm=0.1,type=!item] 10 entity_attack entity @s"
 				],
 				"1.5": [
 					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
-					"/damage @e[r=12,rm=0.1,type=!item] 7 entity_attack entity @s"
+					"/damage @e[r=12,rm=0.1,type=!item] 10 entity_attack entity @s"
 				],
 				"2.0": [
 					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
-					"/damage @e[r=12,rm=0.1,type=!item] 7 entity_attack entity @s"
+					"/damage @e[r=12,rm=0.1,type=!item] 10 entity_attack entity @s"
 				],
 				"2.5": [
 					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
-					"/damage @e[r=12,rm=0.1,type=!item] 7 entity_attack entity @s"
+					"/damage @e[r=12,rm=0.1,type=!item] 10 entity_attack entity @s"
 				],
 				"3.0": [
 					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
-					"/damage @e[r=12,rm=0.1,type=!item] 7 entity_attack entity @s"
+					"/damage @e[r=12,rm=0.1,type=!item] 10 entity_attack entity @s"
 				],
 				"4.0": [
 					"/playsound random.explode @a[r=55] ~~~ 2 1 2",
-					"/damage @e[r=12,rm=0.1,type=!item] 30 entity_explosion entity @s",
+					"/damage @e[r=12,rm=0.1,type=!item] 35 entity_explosion entity @s",
 					"/inputpermission set @s movement enabled"
 				],
 				"5.0": [
@@ -109,71 +109,50 @@
 					"/playanimation @s animation.zenith.skill_1",
 					"/particle fec:zenith_skill_5_sphere",
 					"/particle fec:zenith_skill_5_ambience",
-					"/particle fec:zenith_skill_5_circle",
-					"/camera @a[r=32,rm=0.1] fade time 0 0.2 0.2 color 255 0 0",
-					"/title @a[r=32,rm=0.1] title §l§cEND YOURSELF!"
+					"/particle fec:zenith_skill_5_circle"
 				],
 				"1.0": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
 					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s",
-					"/camera @a[r=32,rm=0.1] fade time 0 0.2 0.2 color 255 0 0",
-					"/title @a[r=32,rm=0.1] title §l§cEND YOURSELF!"
+					"/camera @a[r=32,rm=0.1] fade time 0 0.2 0.2 color 255 0 0"
 				],
 				"1.5": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s",
-					"/camera @a[r=32,rm=0.1] fade time 0 0.2 0.2 color 255 0 0",
-					"/title @a[r=32,rm=0.1] title §l§cEND YOURSELF!"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
 				],
 				"2.0": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s",
-					"/camera @a[r=32,rm=0.1] fade time 0 0.2 0.2 color 255 0 0",
-					"/title @a[r=32,rm=0.1] title §l§cEND YOURSELF!"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
 				],
 				"2.5": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
 					"/playanimation @s animation.zenith.skill_1",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s",
-					"/camera @a[r=32,rm=0.1] fade time 0 0.2 0.2 color 255 0 0",
-					"/title @a[r=32,rm=0.1] title §l§cEND YOURSELF!"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
 				],
 				"3.0": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s",
-					"/camera @a[r=32,rm=0.1] fade time 0 0.2 0.2 color 255 0 0",
-					"/title @a[r=32,rm=0.1] title §l§cEND YOURSELF!"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
 				],
 				"3.5": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s",
-					"/camera @a[r=32,rm=0.1] fade time 0 0.2 0.2 color 255 0 0",
-					"/title @a[r=32,rm=0.1] title §l§cEND YOURSELF!"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
 				],
 				"4.0": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s",
-					"/camera @a[r=32,rm=0.1] fade time 0 0.2 0.2 color 255 0 0",
-					"/title @a[r=32,rm=0.1] title §l§cEND YOURSELF!"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
 				],
 				"4.5": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
 					"/playanimation @s animation.zenith.skill_1",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s",
-					"/camera @a[r=32,rm=0.1] fade time 0 0.2 0.2 color 255 0 0",
-					"/title @a[r=32,rm=0.1] title §l§cEND YOURSELF!"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
 				],
 				"5.0": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s",
-					"/camera @a[r=16,rm=0.1] fade time 0 0.2 0.2 color 255 0 0",
-					"/title @a[r=32,rm=0.1] title §l§cEND YOURSELF!"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
 				],
 				"5.5": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s",
-					"/camera @a[r=32,rm=0.1] fade time 0 0 0.5 color 255 0 0",
-					"/title @a[r=32,rm=0.1] title §l§cEND YOURSELF!"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
 				],
 				"6.0": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
@@ -185,8 +164,6 @@
 					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=fec:water_eidolon] 125 lightning entity @s",
 					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=wither] 65 lightning entity @s",
 					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=warden] 60 lightning entity @s",
-					"/camera @a[r=32,rm=0.1] fade time 0 0.2 0.2 color 255 0 0",
-					"/title @a[r=32,rm=0.1] title §l§cEND YOURSELF!",
 					"/scoreboard players set @s zenith_c5 180",
 					"/inputpermission set @s movement enabled",
 					"/tag @s remove deathZone"

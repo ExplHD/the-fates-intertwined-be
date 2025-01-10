@@ -2,7 +2,7 @@ scoreboard objectives remove moveCounter
 scoreboard objectives remove jumpCounter
 scoreboard objectives remove deathCounter
 scoreboard objectives remove legendCounter
-scoreboard objectives remove moveCounterDisp
-scoreboard objectives remove jumpCounterDisp
-scoreboard objectives remove deathCounterDisp
-scoreboard objectives remove legendCounterDisp
+scoreboard objectives remove atkCounter
+scoreboard objectives remove breakBlockCounter
+scoreboard objectives remove placeBlockCounter
+scoreboard objectives remove killCounter

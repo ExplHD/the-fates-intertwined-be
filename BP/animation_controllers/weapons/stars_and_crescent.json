@@ -29,6 +29,9 @@
 							"skill_3": "query.get_equipped_item_name=='stars_and_crescent'&&query.is_using_item&&(query.scoreboard('stars_and_crescent')==2)&&(query.scoreboard('stars_and_crescent_c3')==0)"
 						},
 						{
+							"skill_4": "query.get_equipped_item_name=='stars_and_crescent'&&query.is_using_item&&(query.scoreboard('stars_and_crescent')==3)&&(query.scoreboard('stars_and_crescent_c4')==0)"
+						},
+						{
 							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='stars_and_crescent'"
 						}
 					]
@@ -43,7 +46,7 @@
 					],
 					"transitions": [
 						{
-							"default": "!q.is_sprinting&&q.get_equipped_item_name=='stars_and_crescent'"
+							"default": "!q.is_sprinting || q.get_equipped_item_name!='stars_and_crescent'"
 						},
 						{
 							"atk_1": "q.is_sprinting&&variable.attack_time&&!query.is_sneaking&&q.get_equipped_item_name=='stars_and_crescent'"
@@ -58,13 +61,16 @@
 							"skill_3": "query.get_equipped_item_name=='stars_and_crescent'&&query.is_using_item&&(query.scoreboard('stars_and_crescent')==2)&&(query.scoreboard('stars_and_crescent_c3')==0)"
 						},
 						{
+							"skill_4": "query.get_equipped_item_name=='stars_and_crescent'&&query.is_using_item&&(query.scoreboard('stars_and_crescent')==3)&&(query.scoreboard('stars_and_crescent_c4')==0)"
+						},
+						{
 							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='stars_and_crescent'"
 						}
 					]
 				},
 				"atk_1": {
 					"on_entry": [
-						"/damage @e[r=4,rm=0.1,type=!item] 11 entity_attack entity @s",
+						"/damage @e[r=4.5,rm=0.1,type=!item] 11 entity_attack entity @s",
 						"/playanimation @s animation.stars_and_crescent.attack_1",
 						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1 0.4",
 						"/scoreboard players add @s legendCounter 1"
@@ -90,7 +96,7 @@
 				"atk_2": {
 					"on_entry": [
 						"/playanimation @s animation.stars_and_crescent.attack_2",
-						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/damage @e[r=4.5,rm=0.1,type=!item] 10 entity_attack entity @s",
 						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.1 0.4",
 						"/scoreboard players add @s legendCounter 1"
 					],
@@ -114,7 +120,7 @@
 				},
 				"atk_3": {
 					"on_entry": [
-						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/damage @e[r=4.5,rm=0.1,type=!item] 10 entity_attack entity @s",
 						"/playanimation @s animation.stars_and_crescent.attack_3",
 						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.15 0.4",
 						"/scoreboard players add @s legendCounter 1"
@@ -139,7 +145,7 @@
 				},
 				"atk_4": {
 					"on_entry": [
-						"/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/damage @e[r=4.5,rm=0.1,type=!item] 10 entity_attack entity @s",
 						"/playanimation @s animation.stars_and_crescent.attack_4",
 						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.05 0.4",
 						"/scoreboard players add @s legendCounter 1"
@@ -231,6 +237,7 @@
 				"skill_3": {
 					"on_entry": [
 						"/playsound conduit.short @a[r=32]",
+						"/tag @s add stars_and_crescent_immunity",
 						"/effect @s resistance 1 255",
 						"/summon fec:crescent_pillar ~~~ 0 0",
 						"/summon fec:crescent_pillar ~~~ 90 0",
@@ -245,14 +252,30 @@
 						}
 					]
 				},
+				"skill_4": {
+					"on_entry": [
+						"/playsound random.screenshot @a[r=32]",
+						"/particle fec:stars_ping ~~0.9~",
+						"/event entity @a[r=10,rm=0.1] fec:crescent_concussion",
+						"/effect @e[r=10,type=!player] slowness 5 255",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §eCrescent Concussion\"}]}",
+						"/scoreboard players set @s stars_and_crescent_c4 30"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				},
 				"change": {
 					"on_entry": [
 						"/scoreboard players add @s stars_and_crescent 1",
-						"/scoreboard players set @s[scores={stars_and_crescent=3}] stars_and_crescent 0",
+						"/scoreboard players set @s[scores={stars_and_crescent=4}] stars_and_crescent 0",
 						"/playsound random.click @s",
 						"/tellraw @s[scores={stars_and_crescent=0}] {\"rawtext\":[{\"text\":\"§cStar Dash\"}]}",
 						"/tellraw @s[scores={stars_and_crescent=1}] {\"rawtext\":[{\"text\":\"§cStar Slash\"}]}",
-						"/tellraw @s[scores={stars_and_crescent=2}] {\"rawtext\":[{\"text\":\"§cCrescent Moon Pillar\"}]}"
+						"/tellraw @s[scores={stars_and_crescent=2}] {\"rawtext\":[{\"text\":\"§cCrescent Moon Pillar\"}]}",
+						"/tellraw @s[scores={stars_and_crescent=3}] {\"rawtext\":[{\"text\":\"§cCrescent Concussion\"}]}"
 					],
 					"transitions": [
 						{

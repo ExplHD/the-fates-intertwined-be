@@ -34,7 +34,10 @@
 			"minecraft:destructible_by_mining": false,
 			"minecraft:light_emission": 7,
 			"minecraft:light_dampening": 0,
-			"minecraft:flammable": false
+			"minecraft:flammable": false,
+			"minecraft:custom_components": [
+				"fec:zenith_fabricator_destroyed"
+			]
 		},
 		"permutations": [
 			{

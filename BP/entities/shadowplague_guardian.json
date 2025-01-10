@@ -192,7 +192,7 @@
 					"cooldown_time": 1
 				},
 				"minecraft:attack": {
-					"damage": 6,
+					"damage": 5,
 					"effect_name": "blindness",
 					"effect_duration": 1
 				},
@@ -447,20 +447,20 @@
 				"queue_command": {
 					"command": [
 						"damage @e[r=10,rm=0.1] 12 entity_attack entity @s",
-						"tp @s ^^^1 ~ 0",
-						"tp @s ^^^1 ~ 0",
+						"tp @s ^^^1 ~ 0 true ",
+						"tp @s ^^^1 ~ 0 true",
 						"particle fec:blade_of_the_end_skill_1 ~~~",
-						"tp @s ^^^1 ~ 0",
-						"tp @s ^^^1 ~ 0",
+						"tp @s ^^^1 ~ 0 true",
+						"tp @s ^^^1 ~ 0 true",
 						"particle fec:blade_of_the_end_skill_1 ~~~",
-						"tp @s ^^^1 ~ 0",
-						"tp @s ^^^1 ~ 0",
+						"tp @s ^^^1 ~ 0 true",
+						"tp @s ^^^1 ~ 0 true",
 						"particle fec:blade_of_the_end_skill_1 ~~~",
-						"tp @s ^^^1 ~ 0",
-						"tp @s ^^^1 ~ 0",
+						"tp @s ^^^1 ~ 0 true",
+						"tp @s ^^^1 ~ 0 true",
 						"particle fec:blade_of_the_end_skill_1 ~~~",
-						"tp @s ^^^1 ~ 0",
-						"tp @s ^^^1 ~ 0",
+						"tp @s ^^^1 ~ 0 true",
+						"tp @s ^^^1 ~ 0 true",
 						"particle fec:blade_of_the_end_skill_1 ~~~"
 					]
 				}
@@ -469,20 +469,20 @@
 				"queue_command": {
 					"command": [
 						"damage @e[r=10,rm=0.1] 12 entity_attack entity @s",
-						"tp @s ^^^1 ~ 0",
-						"tp @s ^^^1 ~ 0",
+						"tp @s ^^^1 ~ 0 true",
+						"tp @s ^^^1 ~ 0 true",
 						"particle fec:blade_of_the_end_skill_1 ~~~",
-						"tp @s ^^^1 ~ 0",
-						"tp @s ^^^1 ~ 0",
+						"tp @s ^^^1 ~ 0 true",
+						"tp @s ^^^1 ~ 0 true",
 						"particle fec:blade_of_the_end_skill_1 ~~~",
-						"tp @s ^^^1 ~ 0",
-						"tp @s ^^^1 ~ 0",
+						"tp @s ^^^1 ~ 0 true",
+						"tp @s ^^^1 ~ 0 true",
 						"particle fec:blade_of_the_end_skill_1 ~~~",
-						"tp @s ^^^1 ~ 0",
-						"tp @s ^^^1 ~ 0",
+						"tp @s ^^^1 ~ 0 true",
+						"tp @s ^^^1 ~ 0 true",
 						"particle fec:blade_of_the_end_skill_1 ~~~",
-						"tp @s ^^^1 ~ 0",
-						"tp @s ^^^1 ~ 0",
+						"tp @s ^^^1 ~ 0 true",
+						"tp @s ^^^1 ~ 0 true",
 						"particle fec:blade_of_the_end_skill_1 ~~~"
 					]
 				},
@@ -572,7 +572,7 @@
 								"particle fec:zenith_skill_3_1 ~~~",
 								"summon fec:shadow_slash ^^^1 ~ 0",
 								"playanimation @s animation.shadowplague_guardian.attack_1",
-								"damage @e[r=8,rm=0.1] 40 entity_attack entity @s"
+								"damage @e[r=8,rm=0.1] 75 entity_attack entity @s"
 							]
 						},
 						"add": {

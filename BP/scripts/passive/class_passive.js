@@ -8,12 +8,12 @@ world.afterEvents.entityHitEntity.subscribe((hurtEvent) => {
     if (source.hasTag('healer') && getScore(source, 'atk_cooldown') == 0) {
         source.runCommandAsync(`playsound random.orb ${source.name}`);
         source.runCommandAsync(`particle fec:winterbloom_sword_attack_4_area ~~~`);
-        source.runCommandAsync(`effect @s regeneration 3 3`)
+        source.runCommandAsync(`effect @s regeneration 3 3`);
         setScore(source, 'atk_cooldown', 8);
     }
 
-    if (source.hasTag('initiator')){
-        if (source.hasTag('initiator') && getScore(source, 'atk_cooldown') == 0){
+    if (source.hasTag('initiator')) {
+        if (source.hasTag('initiator') && getScore(source, 'atk_cooldown') == 0) {
             const initiateDmg = {
                 cause: "entity_attack",
                 damagingEntity: source,
@@ -31,7 +31,7 @@ world.afterEvents.entityHitEntity.subscribe((hurtEvent) => {
         setScore(source, 'atk_cooldown', 15)
     }
 
-    if (source.hasTag('penetrator') && getScore(source, 'atk_cooldown') == 0){
+    if (source.hasTag('penetrator') && getScore(source, 'atk_cooldown') == 0) {
         const breachDmg = {
             cause: "freezing",
             damagingEntity: source,
@@ -46,21 +46,21 @@ world.afterEvents.entityHitEntity.subscribe((hurtEvent) => {
 world.afterEvents.itemUse.subscribe((use) => {
     const player = use.source
 
-    if(player.hasTag("speed_ranger") && use.itemStack.typeId === 'minecraft:feather'){
-        if(getScore(player, 'dash_cooldown') == 0) {
-            if(player.isSneaking == true){
+    if (player.hasTag("speed_ranger") && use.itemStack.typeId === 'minecraft:feather') {
+        if (getScore(player, 'dash_cooldown') == 0) {
+            if (player.isSneaking == true) {
                 player.applyKnockback(player.getViewDirection().x, player.getViewDirection().z, -3.5, 0.4);
-                player.runCommandAsync(`playsound mob.enderdragon.flap "${player.name}"`);  
+                player.runCommandAsync(`playsound mob.enderdragon.flap "${player.name}"`);
                 player.runCommandAsync(`particle fec:dash_fx ~~~`);
                 return addScore(player, 'dash_cooldown', 14);
             } else {
                 player.applyKnockback(player.getViewDirection().x, player.getViewDirection().z, 3, 0.4);
-                player.runCommandAsync(`playsound mob.enderdragon.flap "${player.name}"`);  
+                player.runCommandAsync(`playsound mob.enderdragon.flap "${player.name}"`);
                 player.runCommandAsync(`particle fec:dash_fx ~~~`);
                 return addScore(player, 'dash_cooldown', 14);
             }
         } else {
-             const soundSettings = {
+            const soundSettings = {
                 location: player.location,
                 volume: 1,
                 pitch: 1

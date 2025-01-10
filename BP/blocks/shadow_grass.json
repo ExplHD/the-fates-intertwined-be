@@ -14,6 +14,7 @@
             }
         },
         "components": {
+            "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
                     "texture": "fec_shadow_grass_side",
@@ -28,6 +29,7 @@
                     "render_method": "opaque"
                 }
             },
+            "minecraft:light_dampening": 15,
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 1.2
             },
@@ -39,6 +41,13 @@
             {
                 "condition": "query.block_state('fec:spread_type')==0",
                 "components": {
+                    "minecraft:tick": {
+                        "interval_range": [
+                            300,
+                            1200
+                        ],
+                        "looping": true
+                    },
                     "minecraft:custom_components": [
                         "fec:spread",
                         "fec:magic_poisoning"

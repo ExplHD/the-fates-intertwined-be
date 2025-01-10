@@ -8,18 +8,12 @@
 		"sound": "metal"
 	},
 	"fec:zenith_fabricator": {
-		"sound": "metal",
-		"textures": "fec_zenith_fabricator"
+		"sound": "metal"
 	},
 	"fec:shadow_corruption": {
-		"sound": "grass",
-		"textures": {
-			"side": "fec_shadow_grass_side",
-			"up": "fec_shadow_grass_top",
-			"down": "fec_shadow_grass_bottom"
-		}
+		"sound": "grass"
 	},
 	"fec:shadow_bench": {
-		"sound": "stone"
+		"sound": "metal"
 	}
 }

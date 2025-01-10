@@ -14,8 +14,7 @@
 				"value": 9,
 				"slot": "armor_legs"
 			},
-			"minecraft:icon": "fec_stardust_armor_leggings",
-			"tag:minecraft:trimmable_armors": {},
+			"minecraft:icon": "stardust_armor_leggings",
 			"minecraft:wearable": {
 				"slot": "slot.armor.legs",
 				"protection": 12
@@ -38,6 +37,11 @@
 			},
 			"minecraft:durability": {
 				"max_durability": 3620
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_armor"
+				]
 			}
 		}
 	}

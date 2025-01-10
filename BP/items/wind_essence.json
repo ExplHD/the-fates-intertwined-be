@@ -10,10 +10,9 @@
 		"components": {
 			"minecraft:icon": "fec_wind_essence",
 			"minecraft:display_name": {
-				"value": "§bWind Essence\n§2Right-click / Tap and Hold to :\nDash Forward\nSneak and Right-click / Tap and hold to :\nFly upwards and gives Invicibility when in air\n\n§9Cooldown : 1 Second (Dash Forward),\n5 Second (Updraft)"
+				"value": "§bWind Essence\n§2Right-click / Tap and Hold to :\nDash\nSneak and Right-click / Tap and hold to :\nFly upwards and gives Invicibility when in air\n\n§9Cooldown : 1 Second (Dash Forward),\n5 Second (Updraft)"
 			},
 			"minecraft:max_stack_size": 1,
-			"minecraft:should_despawn": false,
 			"minecraft:custom_components": [
 				"fec:essence_use"
 			]

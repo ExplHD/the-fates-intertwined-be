@@ -14,8 +14,7 @@
 				"value": 9,
 				"slot": "armor_feet"
 			},
-			"minecraft:icon": "fec_stardust_armor_boots",
-			"tag:minecraft:trimmable_armors": {},
+			"minecraft:icon": "stardust_armor_boots",
 			"minecraft:wearable": {
 				"slot": "slot.armor.feet",
 				"protection": 8
@@ -38,6 +37,11 @@
 			},
 			"minecraft:durability": {
 				"max_durability": 2525
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_armor"
+				]
 			}
 		}
 	}

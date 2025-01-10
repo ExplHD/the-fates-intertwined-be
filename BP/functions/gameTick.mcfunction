@@ -29,6 +29,7 @@ scoreboard objectives add eidolon_4_staff_c2 dummy
 scoreboard objectives add eidolon_4_staff_c3 dummy
 scoreboard objectives add stars_and_crescent_c2 dummy
 scoreboard objectives add stars_and_crescent_c3 dummy
+scoreboard objectives add stars_and_crescent_c4 dummy
 scoreboard objectives add shadow_revolver_c1 dummy
 scoreboard objectives add shadow_revolver_c2 dummy
 scoreboard objectives add shadow_revolver_c3 dummy
@@ -43,6 +44,7 @@ scoreboard objectives add tenacity_c4_axe dummy
 scoreboard objectives add reworked_tenacity_c1 dummy
 scoreboard objectives add reworked_tenacity_c2 dummy
 scoreboard objectives add reworked_tenacity_c3 dummy
+scoreboard objectives add mythic_tenacity_shield dummy
 
 ## Cooldown Tick
 scoreboard objectives add stars_and_crescent_c1 dummy
@@ -103,7 +105,7 @@ scoreboard players set @a[scores={wind_essence=..0}] wind_essence 0
 scoreboard players set @a[scores={wind_essence_up=..0}] wind_essence_up 0
 scoreboard players set @a[scores={cdtick=21..}] cdtick 0
 effect @a[tag=speed_ranger] speed 1 1 true
-titleraw @a[hasitem={item=fec:wind_essence,location=slot.weapon.mainhand}] actionbar {"rawtext":[{"text":"Cooldown : \nUpdraft : §e"},{"score":{"name":"*","objective":"wind_essence_up"}},{"text":"s§r\nDash Forward : §e"},{"score":{"name":"*","objective":"wind_essence"}},{"text":" Ticks"}]}
+titleraw @a[hasitem={item=fec:wind_essence,location=slot.weapon.mainhand}] actionbar {"rawtext":[{"text":"Cooldown : \nUpdraft : §e"},{"score":{"name":"*","objective":"wind_essence_up"}},{"text":"s§r\nDash : §e"},{"score":{"name":"*","objective":"wind_essence"}},{"text":" Ticks"}]}
 titleraw @a[hasitem={item=feather,location=slot.weapon.mainhand},tag=speed_ranger] actionbar {"rawtext":[{"text":"Cooldown : §e"},{"score":{"name":"*","objective":"dash_cooldown"}},{"text":"s"}]}
 
 # Entity Runtime
@@ -111,7 +113,7 @@ execute as @e[type=fec:eidolon_4_pillar] at @s run tp @s ^^^1
 execute as @e[type=fec:eidolon_4_pillar] at @s run damage @e[type=!fec:eidolon_4_pillar,r=3,tag=!eidolon_iframe] 20 entity_attack entity @s
 execute at @e[type=fec:eidolon_4_pillar] run particle fec:eidolon_4_pillar ~~~
 execute as @e[type=fec:crescent_pillar] at @s run tp @s ^^^1 ~5 0
-execute as @e[type=fec:crescent_pillar] at @s run damage @e[type=!fec:crescent_pillar,r=3] 15 entity_attack entity @s
+execute as @e[type=fec:crescent_pillar] at @s run damage @e[type=!fec:crescent_pillar,r=3,tag=!stars_and_crescent_immunity] 15 entity_attack entity @s
 execute at @e[type=fec:crescent_pillar] run particle fec:crescent_pillar ~~~
 execute as @e[type=fec:zenith_base] at @s run tp @s ^^^ ~5 0
 execute as @e[type=fec:shadow_slash] at @s run particle fec:shadow_slash ^^1.5^
@@ -119,14 +121,13 @@ execute as @e[type=fec:shadow_slash] at @s run tp @s ^^^1
 execute as @e[type=fec:shadow_slash] at @s run damage @e[type=!fec:shadow_slash,r=6] 12 entity_attack entity @s
 execute as @e[type=fec:tenacity_orange_slash] at @s run particle fec:tenacity_orange_emitter ^^1.5^
 execute as @e[type=fec:tenacity_orange_slash] at @s run tp @s ^^^1
-execute as @e[type=fec:tenacity_orange_slash] at @s run damage @e[type=!fec:tenacity_orange_slash,r=6] 24 entity_attack entity @s
+execute as @e[type=fec:tenacity_orange_slash] at @s run damage @e[type=!fec:tenacity_orange_slash,r=6] 12 entity_attack entity @s
 execute as @e[type=fec:tenacity_blue_slash] at @s run particle fec:tenacity_blue_emitter ^^1.5^
 execute as @e[type=fec:tenacity_blue_slash] at @s run tp @s ^^^1
-execute as @e[type=fec:tenacity_blue_slash] at @s run damage @e[type=!fec:tenacity_blue_slash,r=6] 32 entity_attack entity @s
+execute as @e[type=fec:tenacity_blue_slash] at @s run damage @e[type=!fec:tenacity_blue_slash,r=6] 24 entity_attack entity @s
 execute as @e[type=fec:corruption_expands_beam] at @s run particle fec:shadow_revolver_corruption_expands_beam ~~~
-execute as @e[type=fec:corruption_expands_beam] at @s run fill ~-10~-3~-10~10~3~10 fec:shadow_corruption ["fec:spread_type"=1] replace grass_block
-execute as @e[type=fec:corruption_expands_beam] at @s run tp @s ^^^0.3
-execute as @e[type=fec:corruption_expands_beam] at @s run damage @e[type=!fec:corruption_expands_beam,r=10,tag=!corruption_immunity] 6 entity_attack entity @s
+execute as @e[type=fec:corruption_expands_beam] at @s run damage @e[type=!fec:corruption_expands_beam,r=14,tag=!corruption_immunity] 10 entity_attack entity @s
+execute as @e[type=fec:dark_cover_smoke] at @s run effect @a[r=3] invisibility 1 0 true
 
 # Auto enchant Mending
 enchant @a[hasitem={item=fec:stardust_armor_helmet,location=slot.weapon.mainhand}] mending
@@ -145,11 +146,3 @@ execute as @e[type=fec:shadowplague_guardian] at @s run gamemode 2 @a[m=d,r=80]
 execute as @e[type=fec:elemental_legionnaire] at @s unless entity @a[r=80,m=2] run event entity @s despawn
 execute as @e[type=fec:water_eidolon] at @s unless entity @a[r=64,m=2] run event entity @s despawn
 execute as @e[type=fec:shadowplague_guardian] at @s unless entity @a[r=80,m=2] run event entity @s despawn
-
-# Player Join Event
-tellraw @a[tag=!joined] {"rawtext":[{"text": "Recommended Settings to Run This Pack :"}]}
-tellraw @a[tag=!joined] {"rawtext":[{"text": "Simulation Distance : §e8"}]}
-tellraw @a[tag=!joined] {"rawtext":[{"text": "Mob Grief : §cOFF"}]}
-give @a[tag=!joined] compass
-tellraw @a[tag=!joined] {"rawtext":[{"translate": "text.the_fates.welcome"}]}
-tag @a[tag=!joined] add joined

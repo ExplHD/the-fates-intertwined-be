@@ -1,4 +1,4 @@
-{
+	{
 	"format_version": "1.20.80",
 	"minecraft:entity": {
 		"description": {
@@ -43,9 +43,11 @@
 				"stars_and_crescent_atk_5": "animation.stars_and_crescent.attack_5",
 				"shadow_revolver": "controller.animation.shadow_revolver",
 				"shadow_revolver_fire": "animation.shadow_revolver.fire",
+				"shadow_revolver_hip_fire": "animation.shadow_revolver.hip_fire",
 				"shadow_revolver_reload": "animation.shadow_revolver.reload",
 				"shadow_revolver_atk_1": "animation.shadow_revolver.attack_1",
 				"shadow_revolver_atk_2": "animation.shadow_revolver.attack_2",
+				"shadow_revolver_skill_3": "animation.shadow_revolver.skill_3",
 				"mythic_tenacity": "controller.animation.mythic_tenacity",
 				"mythic_tenacity_axe": "animation.mythic_tenacity.tenacity_axe",
 				"mythic_tenacity_scythe": "animation.mythic_tenacity.tenacity_scythe",
@@ -144,6 +146,28 @@
 					}
 				}
 			},
+			"fec:shadow_revolver_bullet_hipfire": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"num_to_spawn": 1,
+							"single_use": true,
+							"spawn_entity": "fec:shadow_revolver_bullet",
+							"spawn_event": "fec:shadow_revolver_bullet_hipfire"
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": 0.1,
+					"looping": false,
+					"time_down_event": {
+						"event": "fec:remove_all_shooter",
+						"target": "self"
+					}
+				}
+			},
 			"fec:shadow_revolver_bullet_base_atk": {
 				"minecraft:spawn_entity": {
 					"entities": [
@@ -184,6 +208,18 @@
 					"looping": false,
 					"time_down_event": {
 						"event": "fec:remove_all_shooter",
+						"target": "self"
+					}
+				}
+			},
+			"fec:concussed": {
+				"minecraft:timer": {
+					"time": [
+						4,
+						6
+					],
+					"time_down_event": {
+						"event": "fec:clear_concusss",
 						"target": "self"
 					}
 				}
@@ -375,6 +411,13 @@
 					]
 				}
 			},
+			"fec:shadow_revolver_bullet_hipfire": {
+				"add": {
+					"component_groups": [
+						"fec:shadow_revolver_bullet_hipfire"
+					]
+				}
+			},
 			"fec:shadow_revolver_bullet_base_atk": {
 				"add": {
 					"component_groups": [
@@ -397,6 +440,36 @@
 			"fec:set_ultimate_state_to_0": {
 				"set_property": {
 					"fec:shadow_revolver_state": 0
+				}
+			},
+			"fec:crescent_concussion": {
+				"queue_command": {
+					"command": [
+						"inputpermission set @s jump disabled",
+						"inputpermission set @s sneak disabled",
+						"effect @s slowness 4 3 true",
+						"camera @s fade time 0 0.5 5 color 255 255 255",
+						"title @s title §a",
+						"title @s subtitle §cConcussed by Silent Crescent Concussion"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"fec:concussed"
+					]
+				}
+			},
+			"fec:clear_concusss": {
+				"remove": {
+					"component_groups": [
+						"fec:concussed"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"inputpermission set @s jump enabled",
+						"inputpermission set @s sneak enabled"
+					]
 				}
 			}
 		}

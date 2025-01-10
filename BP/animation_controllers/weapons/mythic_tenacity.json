@@ -1,20 +1,6 @@
 {
     "format_version": "1.21.10",
     "animation_controllers": {
-        /*
-         New Mythic Weapons :
-            Tenacity (subjects may to changed later if released) : 
-            Sebuah senjata mythical yang terkuat, sangat sulit untuk didapatkan, memiliki keunggulan untuk merusak pemain dan boss dengan cepat
-            Senjata ini memiliki 4 Skills dan 2 mode :
-            S1. Flaming Sonic Blast > Done <
-            S2. Tempered Strike > Done < / Wrath of Tenacity > Done <
-            S3. Curtain of Hellfire > Done < / Fenomenal Slayer > Done <
-            S4. The Domain of Origin > Done < / The drop from the skies > Done <
-            
-            Seperti senjata mythic biasanya, memiliki hal khusus seperti berikut :
-            1. Animasi khusus > NO IDEA <
-            2. Dual Mode (> Scythe < / > Axe <)
-        */
         "controller.animation.mythic_tenacity": {
             "initial_state": "default",
             "states": {
@@ -72,7 +58,7 @@
                 },
                 "atk_1_scythe": {
                     "on_entry": [
-                        "/damage @e[r=4,rm=0.1,type=!item] 12 entity_attack entity @s",
+                        "/damage @e[r=5,rm=0.1,type=!item] 12 entity_attack entity @s",
                         "/playanimation @s animation.mythic_tenacity.attack_1_scythe",
                         "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 1.15 0.4",
                         "/scoreboard players add @s legendCounter 1"
@@ -94,7 +80,7 @@
                 },
                 "atk_2_scythe": {
                     "on_entry": [
-                        "/damage @e[r=4,rm=0.1,type=!item] 14 entity_attack entity @s",
+                        "/damage @e[r=5,rm=0.1,type=!item] 14 entity_attack entity @s",
                         "/playanimation @s animation.mythic_tenacity.attack_2_scythe",
                         "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 0.9 0.4",
                         "/scoreboard players add @s legendCounter 1"
@@ -116,7 +102,7 @@
                 },
                 "atk_3_scythe": {
                     "on_entry": [
-                        "/damage @e[r=4,rm=0.1,type=!item] 12 entity_attack entity @s",
+                        "/damage @e[r=5,rm=0.1,type=!item] 12 entity_attack entity @s",
                         "/playanimation @s animation.mythic_tenacity.attack_3_scythe",
                         "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 1 0.4",
                         "/scoreboard players add @s legendCounter 1"
@@ -148,7 +134,7 @@
                 },
                 "atk_1_axe": {
                     "on_entry": [
-                        "/damage @e[r=4,rm=0.1,type=!item] 16 entity_attack entity @s",
+                        "/damage @e[r=5,rm=0.1,type=!item] 16 entity_attack entity @s",
                         "/playanimation @s animation.mythic_tenacity.attack_3_scythe",
                         "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 1.15 0.4",
                         "/scoreboard players add @s legendCounter 1",
@@ -172,7 +158,7 @@
                 },
                 "atk_2_axe": {
                     "on_entry": [
-                        "/damage @e[r=4,rm=0.1,type=!item] 16 entity_attack entity @s",
+                        "/damage @e[r=5,rm=0.1,type=!item] 16 entity_attack entity @s",
                         "/playanimation @s animation.mythic_tenacity.attack_1_scythe",
                         "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 0.9 0.4",
                         "/scoreboard players add @s legendCounter 1",
@@ -223,7 +209,6 @@
                         "/particle fec:mythic_tenacity_skill_1 ~~~",
                         "/scoreboard players add @s tenacity_c1 15",
                         "/playsound random.explode @a[r=32]",
-                        "/execute at @e[r=16,rm=1] as @s run setblock ~~~ fire",
                         "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §6Flaming Sonic Blast\"}]}"
                     ],
                     "transitions": [
@@ -279,7 +264,19 @@
                         "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~5~~3 0 0 fec:tenacity_fire_pillar",
                         "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~5~~-3 0 0 fec:tenacity_fire_pillar",
                         "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~-5~~3 0 0 fec:tenacity_fire_pillar",
-                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~-5~~-3 0 0 fec:tenacity_fire_pillar"
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~-5~~-3 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~~~7 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~~~-7 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~7~~ 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~-7~~ 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~5~~7 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~-5~~7 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~5~~-7 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~-5~~-7 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~7~~5 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~7~~-5 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~-7~~5 0 0 fec:tenacity_fire_pillar",
+                        "/execute at @e[r=24,rm=5,family=!inanimate,c=3,type=!fec:fire_pillar_remastered] as @s run summon fec:fire_pillar_remastered ~-7~~-5 0 0 fec:tenacity_fire_pillar"
                     ],
                     "transitions": [
                         {
@@ -298,7 +295,7 @@
                     ],
                     "on_exit": [
                         "/scoreboard players add @s tenacity_c3_axe 60",
-                        "/tellraw @a[r=64] {\"rawtext\":[{\"text\":\"§6Your normal attacks for axe mode is improved for 12 attacks\"}]}"
+                        "/tellraw @s {\"rawtext\":[{\"text\":\"§6Your normal attacks for axe mode is improved for 12 attacks\"}]}"
                     ],
                     "transitions": [
                         {

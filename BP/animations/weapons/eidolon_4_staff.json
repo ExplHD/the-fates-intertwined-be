@@ -242,7 +242,7 @@
 					"/playsound mob.zombie.woodbreak @a[r=24]"
 				],
 				"0.75": [
-					"/title @s actionbar §cDo not use/change other items, or it'll be destroyed!"
+					"/tellraw @s {\"rawtext\":[{\"text\":\"§cDo not use/change to other items, or it'll be destroyed!\"}]}"
 				],
 				"3.0": [
 					"/summon fec:eidolon_4_pillar ~~~ ~ 0",

@@ -25,6 +25,14 @@
 				"minecraft:physics": {
 					"has_gravity": true,
 					"has_collision": true
+				},
+				"minecraft:timer": {
+					"time": 5,
+					"looping": false,
+					"time_down_event": {
+						"event": "player_invulnerable",
+						"target": "self"
+					}
 				}
 			},
 			"despawning": {
@@ -94,13 +102,14 @@
 				"queue_command": {
 					"command": [
 						"particle fec:mythic_tenacity_ultimate_axe_meteor_explosion ~~2~",
-						"damage @e[r=32,rm=0.01,family=!boss,type=!wither,type=!warden] 48 entity_explosion entity @s",
+						"damage @e[r=32,rm=0.01,family=!boss,type=!wither,type=!warden] 40 entity_explosion entity @s",
 						"playanimation @s animation.tenacity_sky_meteor.despawn",
 						"camerashake add @a[r=64] 1.6 3 positional",
 						"playsound random.explode @a[r=64]",
 						"damage @e[r=32,rm=0.01,type=wither] 95 entity_explosion entity @s",
-						"damage @e[r=32,rm=0.01,type=warden] 190 entity_explosion entity @s",
-						"damage @e[r=32,rm=0.01,family=boss] 245 entity_explosion entity @s"
+						"damage @e[r=32,rm=0.01,type=warden] 500 entity_explosion entity @s",
+						"damage @e[r=32,rm=0.01,family=boss] 245 entity_explosion entity @s",
+						"tag @a[tag=tenacity_invulnerble] remove tenacity_invulnerable"
 					],
 					"target": "self"
 				},
@@ -112,6 +121,14 @@
 				"remove": {
 					"component_groups": [
 						"normal"
+					]
+				}
+			},
+			"player_invulnerable": {
+				"queue_command": {
+					"command": [
+						"scoreboard players set @a[tag=tenacity_invulnerable] mythic_tenacity_shield 5",
+						"event entity @s despawn"
 					]
 				}
 			},

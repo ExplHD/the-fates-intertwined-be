@@ -30,31 +30,42 @@ world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
                 })
             }
 
-            if (states == 2 && equippedItem.typeId === 'fec:winterbloom_sword') {
-                block.setPermutation(block.permutation.withState('fec:zenith_fabricator', 3))
-                player.runCommand('clear @s fec:winterbloom_sword 0 1')
-                block.dimension.playSound('random.orb', block.center())
+            if (states == 2) {
+                if (player.isSneaking === true) {
+                    block.setPermutation(block.permutation.withState('fec:zenith_fabricator', 0))
+                    player.sendMessage('The Crafting process is cancelled...')
+                    block.dimension.playSound('random.break', block.center())
+                    entity.forEach(entity => {
+                        entity.triggerEvent('despawn')
+                    })
+                }
+
+                if (player.isSneaking === false && equippedItem?.typeId === 'fec:winterbloom_sword') {
+                    block.setPermutation(block.permutation.withState('fec:zenith_fabricator', 3))
+                    player.runCommand('clear @s fec:winterbloom_sword 0 1')
+                    block.dimension.playSound('random.orb', block.center())
+                }
             }
 
-            if (states == 3 && equippedItem.typeId === 'fec:murasama_calamity') {
+            if (states == 3 && equippedItem?.typeId === 'fec:murasama_calamity') {
                 block.setPermutation(block.permutation.withState('fec:zenith_fabricator', 4))
                 player.runCommand('clear @s fec:murasama_calamity 0 1')
                 block.dimension.playSound('random.orb', block.center())
             }
 
-            if (states == 4 && equippedItem.typeId === 'fec:windblade_claymore') {
+            if (states == 4 && equippedItem?.typeId === 'fec:windblade_claymore') {
                 block.setPermutation(block.permutation.withState('fec:zenith_fabricator', 5))
                 player.runCommand('clear @s fec:windblade_claymore 0 1')
                 block.dimension.playSound('random.orb', block.center())
             }
 
-            if (states == 5 && equippedItem.typeId === 'fec:blade_of_the_end') {
+            if (states == 5 && equippedItem?.typeId === 'fec:blade_of_the_end') {
                 block.setPermutation(block.permutation.withState('fec:zenith_fabricator', 6))
                 player.runCommand('clear @s fec:blade_of_the_end 0 1')
                 block.dimension.playSound('random.orb', block.center())
             }
 
-            if (states == 6 && equippedItem.typeId === 'minecraft:nether_star') {
+            if (states == 6 && equippedItem?.typeId === 'minecraft:nether_star') {
                 block.setPermutation(block.permutation.withState('fec:zenith_fabricator', 7))
                 player.sendMessage(`Now wait for the crafting process, this takes about 45 to 60 seconds`)
                 entity.forEach(entity => {
@@ -109,6 +120,19 @@ world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
             if (states == 9) {
                 block.setPermutation(block.permutation.withState('fec:zenith_fabricator', 0))
             }
+        }
+    })
+
+    blockComponentRegistry.registerCustomComponent("fec:zenith_fabricator_destroyed", {
+        onPlayerDestroy(e) {
+            const block = e.block
+            const dimension = e.dimension
+            const entity = dimension.getEntities({
+                type: 'fec:zenith_base'
+            })
+            entity.forEach(entity => {
+                entity.triggerEvent('despawn')
+            })
         }
     })
 })

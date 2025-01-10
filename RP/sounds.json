@@ -1,8 +1,69 @@
 {
-    "individual_event_sounds": {
-        "events": {
-            "boss.ender_dragon": {
-                "sound": "music.boss.ender_dragon"
+    "entity_sounds": {
+        "entities": {
+            "fec:wind_creeper": {
+                "events": {
+                    "death": "mob.creeper.death",
+                    "fuse": {
+                        "pitch": 0.50,
+                        "sound": "random.fuse",
+                        "volume": 1.0
+                    },
+                    "hurt": "mob.creeper.say"
+                },
+                "pitch": [
+                    0.80,
+                    1.20
+                ],
+                "volume": 1.0
+            },
+            "fec:earth_creeper": {
+                "events": {
+                    "death": "mob.creeper.death",
+                    "fuse": {
+                        "pitch": 0.50,
+                        "sound": "random.fuse",
+                        "volume": 1.0
+                    },
+                    "hurt": "mob.creeper.say"
+                },
+                "pitch": [
+                    0.80,
+                    1.20
+                ],
+                "volume": 1.0
+            },
+            "fec:fire_creeper": {
+                "events": {
+                    "death": "mob.creeper.death",
+                    "fuse": {
+                        "pitch": 0.50,
+                        "sound": "random.fuse",
+                        "volume": 1.0
+                    },
+                    "hurt": "mob.creeper.say"
+                },
+                "pitch": [
+                    0.80,
+                    1.20
+                ],
+                "volume": 1.0
+            },
+            "fec:water_creeper": {
+                "events": {
+                    "death": "mob.creeper.death",
+                    "fuse": {
+                        "pitch": 0.50,
+                        "sound": "random.fuse",
+                        "volume": 1.0
+                    },
+                    "hurt": "mob.creeper.say"
+                },
+                "pitch": [
+                    0.80,
+                    1.20
+                ],
+                "volume": 1.0
             }
         }
     }

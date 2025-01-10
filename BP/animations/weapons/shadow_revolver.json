@@ -9,13 +9,15 @@
                 ],
                 "0.33": [
                     "/playsound shadow_revolver.shot_normal @a[r=16] ~~~ 1 1 1",
-                    "/tp @s ~~~ ~ 0",
+                    "/camerashake add @s 0.1 0.15 rotational",
+                    "/camerashake add @s 0.04 0.45 rotational",
                     "/scoreboard players remove @s shadow_revolver_rounds 1",
                     "@s fec:shadow_revolver_bullet_base_atk"
                 ],
                 "0.54": [
                     "/playsound shadow_revolver.shot_normal @a[r=16] ~~~ 1 1 1",
-                    "/tp @s ~~~ ~ 0",
+                    "/camerashake add @s 0.1 0.15 rotational",
+                    "/camerashake add @s 0.04 0.45 rotational",
                     "/scoreboard players remove @s shadow_revolver_rounds 1",
                     "@s fec:shadow_revolver_bullet_base_atk"
                 ]
@@ -26,11 +28,14 @@
             "timeline": {
                 "0.0": [
                     "/playanimation @s animation.shadow_revolver.attack_2",
-                    "/tp @s ~~~ ~ 0"
+                    "/camerashake add @s 0.1 0.15 rotational",
+                    "/camerashake add @s 0.04 0.45 rotational",
+                    "/scoreboard players remove @s shadow_revolver_rounds 1"
                 ],
                 "0.79": [
                     "/playsound shadow_revolver.shot_normal @a[r=16] ~~~ 1 1 1",
-                    "/tp @s ~~~ ~ 0",
+                    "/camerashake add @s 0.1 0.15 rotational",
+                    "/camerashake add @s 0.04 0.45 rotational",
                     "@s fec:shadow_revolver_bullet_base_atk"
                 ]
             }
@@ -45,11 +50,33 @@
                     "/stopsound @a[r=64] shadow_revolver.shot_normal",
                     "/scoreboard players remove @s shadow_revolver_rounds 1",
                     "/scoreboard players add @s atkp_delay 1",
-                    "/scoreboard players add @s legendCounter 1"
+                    "/scoreboard players add @s legendCounter 1",
+                    "/titleraw @a[hasitem={item=fec:shadow_revolver,location=slot.weapon.mainhand}] actionbar {\"rawtext\":[{\"text\":\"§r : §e\"},{\"score\":{\"name\":\"*\",\"objective\":\"shadow_revolver_rounds\"}},{\"text\":\"/8, §r : §e\"},{\"score\":{\"name\":\"*\",\"objective\":\"shadow_revolver_c1\"}},{\"text\":\"s, §r : §e\"},{\"score\":{\"name\":\"*\",\"objective\":\"shadow_revolver_c2\"}},{\"text\":\"s, §r : §e\"},{\"score\":{\"name\":\"*\",\"objective\":\"shadow_revolver_c3\"}},{\"text\":\"s, §r : §e\"},{\"score\":{\"name\":\"*\",\"objective\":\"shadow_revolver_c4\"}},{\"text\":\"s\"}]}"
                 ],
                 "0.05": [
-                    "/tp @s ^^^ ~ ~-2",
-                    "/playsound shadow_revolver.shot_normal @a[r=64]"
+                    "/camerashake add @s 0.1 0.15 rotational",
+                    "/camerashake add @s 0.04 0.45 rotational",
+                    "/playsound shadow_revolver.shot_normal @a[r=64] ~~~ 1 1 0.3"
+                ]
+            }
+        },
+        "animation.shadow_revolver.hip_fire": {
+            "animation_length": 0.5,
+            "loop": false,
+            "timeline": {
+                "0.0": [
+                    "@s fec:shadow_revolver_bullet_hipfire",
+                    "/playanimation @s animation.shadow_revolver.fire",
+                    "/stopsound @a[r=64] shadow_revolver.shot_normal",
+                    "/scoreboard players remove @s shadow_revolver_rounds 1",
+                    "/scoreboard players add @s atkp_delay 1",
+                    "/scoreboard players add @s legendCounter 1",
+                    "/titleraw @a[hasitem={item=fec:shadow_revolver,location=slot.weapon.mainhand}] actionbar {\"rawtext\":[{\"text\":\"§r : §e\"},{\"score\":{\"name\":\"*\",\"objective\":\"shadow_revolver_rounds\"}},{\"text\":\"/8, §r : §e\"},{\"score\":{\"name\":\"*\",\"objective\":\"shadow_revolver_c1\"}},{\"text\":\"s, §r : §e\"},{\"score\":{\"name\":\"*\",\"objective\":\"shadow_revolver_c2\"}},{\"text\":\"s, §r : §e\"},{\"score\":{\"name\":\"*\",\"objective\":\"shadow_revolver_c3\"}},{\"text\":\"s, §r : §e\"},{\"score\":{\"name\":\"*\",\"objective\":\"shadow_revolver_c4\"}},{\"text\":\"s\"}]}"
+                ],
+                "0.05": [
+                    "/camerashake add @s 0.1 0.15 rotational",
+                    "/camerashake add @s 0.04 0.45 rotational",
+                    "/playsound shadow_revolver.shot_normal @a[r=64]  ~~~ 1 1 0.3"
                 ]
             }
         },
@@ -70,6 +97,37 @@
                 ],
                 "2.33": [
                     "/title @s actionbar §6RELOADED"
+                ]
+            }
+        },
+        "animation.shadow_revolver.skill_3": {
+            "animation_length": 3.5,
+            "timeline": {
+                "0.1": [
+                    "/particle fec:shadow_revolver_entity_kill_fx ~~~",
+                    "/particle fec:shadow_revolver_player_kill_fx ~~~",
+                    "/tag @e[type=fec:dark_cover_smoke,c=-1] add shadows_teleport",
+                    "/fog @s push fec:shadow_revolver_teleport shadow_fog",
+                    "/inputpermission set @s movement disabled"
+                ],
+                "0.5": [
+                    "/playsound custom_sfx.shadows_emerging @a[r=32]"
+                ],
+                "1.5": [
+                    "/tp @s @e[tag=shadows_teleport]"
+                ],
+                "1.6": [
+                    "/particle fec:shadow_revolver_entity_kill_fx ~~~",
+                    "/particle fec:shadow_revolver_player_kill_fx ~~~"
+                ],
+                "2.5": [
+                    "/particle fec:paranoia ~~~",
+                    "/playsound portal.travel @a[r=8]",
+                    "/title @s title §a",
+                    "/title @s subtitle §5-= Teleport Successful =-",
+                    "/inputpermission set @s movement enabled",
+                    "/event entity @e[type=fec:dark_cover_smoke] despawning",
+                    "/fog @s pop shadow_fog"
                 ]
             }
         }

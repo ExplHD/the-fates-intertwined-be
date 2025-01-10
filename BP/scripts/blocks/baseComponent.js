@@ -5,7 +5,7 @@ let availableBlockList = ['grass_block', 'dirt', 'podzol', 'stone', 'cobblestone
 
 world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent('fec:spread', {
-        onRandomTick(event) {
+        onTick(event) {
             let { x, y, z } = event.block.location
             event.dimension.runCommandAsync(`fill ${x - 1} ${y - 1} ${z - 1} ${x + 1} ${y + 1} ${z + 1} ${spreadableBlocks[0]} replace ${availableBlockList[0]}`)
         }
@@ -16,17 +16,10 @@ world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
             const entity = event.entity
             let { x, y, z } = event.block.location
             const states = event.block.permutation.getState("fec:spread_type")
-            if (!entity.hasTag('corruption_immunity')) {
+            if (!entity.hasTag('corruption_immunity') || entity.typeId != "minecraft:item") {
                 system.run(() => {
                     entity.addEffect('blindness', 40)
                     entity.applyDamage(2)
-                })
-            }
-
-            if (entity.typeId === 'minecraft:item' && states === 0) {
-                system.run(() => {
-                    entity.runCommand(`particle fec:shadow_revolver_corruption_expands_beam ${x} ${y} ${z}`)
-                    entity.kill()
                 })
             }
         }

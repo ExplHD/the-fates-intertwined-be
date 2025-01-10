@@ -71,7 +71,7 @@
                 },
                 "hip_fire": {
                     "animations": [
-                        "shadow_revolver_fire"
+                        "shadow_revolver_hip_fire"
                     ],
                     "transitions": [
                         {
@@ -119,22 +119,19 @@
                 },
                 "skill_3": {
                     "on_entry": [
-                        "/tag @s add corruption_immunity",
-                        "/summon fec:corruption_expands_beam ~10~~ 90 0",
-                        "/summon fec:corruption_expands_beam ~-10~~ 270 0",
-                        "/summon fec:corruption_expands_beam ~~~10 0 0",
-                        "/summon fec:corruption_expands_beam ~~~=10 180 0",
-                        "/summon fec:corruption_expands_beam ~-10~~-10 135 0",
-                        "/summon fec:corruption_expands_beam ~10~~-10 135 0",
-                        "/summon fec:corruption_expands_beam ~-10~~10 45 0",
-                        "/summon fec:corruption_expands_beam ~10~~10 225 0",
-                        "/scoreboard players add @s shadow_revolver_c3 70",
-                        "/playsound mob.wither.spawn @a[r=24]",
-                        "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §5§lCorruption §kEXPANDS\"}]}"
+                        "/summon fec:dark_cover_smoke ~~~",
+                        "/summon fec:dark_cover_smoke ~~~",
+                        "/summon fec:dark_cover_smoke ~~~",
+                        "/scoreboard players add @s shadow_revolver_c3 60",
+                        "/playsound mob.breeeze.charge @a[r=24]",
+                        "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §5§lShadow's Silentstep\"}]}"
+                    ],
+                    "animations": [
+                        "shadow_revolver_skill_3"
                     ],
                     "transitions": [
                         {
-                            "default": "!q.is_using_item"
+                            "default": "query.all_animations_finished"
                         }
                     ]
                 },
@@ -144,7 +141,7 @@
                         "/scoreboard players add @s shadow_revolver_c4 140",
                         "/playsound custom_sfx.siren @a[r=128]",
                         "@s fec:set_ultimate_state_to_1",
-                        "/tellraw @a[r=128] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §5§lProtocol Impact : 0078\"}]}",
+                        "/tellraw @a[r=128] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their Ultimate §5§lProtocol Impact : 0078\"}]}",
                         "/tellraw @s {\"rawtext\":[{\"text\":\"Now you have one extra bullets that acts like nuke, shoot them on the ground to make the nuke triggered, If you shot it right at entity, the bullet deals 250 Damages\"}]}"
                     ],
                     "transitions": [
@@ -177,6 +174,7 @@
                         "/effect @s slowness 0 255 true",
                         "/effect @s resistance 0 255 true",
                         "/playsound shadow_revolver.shot_protocol_impact_0078 @a[r=128]",
+                        "/scriptevent fec:shadow_revolver_ultimate_knockback",
                         "@s fec:shadow_revolver_protocol_impact_0078",
                         "@s fec:set_ultimate_state_to_0"
                     ],
@@ -203,7 +201,7 @@
                     ],
                     "transitions": [
                         {
-                            "default": "!q.is_sneaking && q.all_animations_finished"
+                            "default": "!q.is_sneaking && q.all_animations_finished || q.get_equipped_item_name != 'shadow_revolver'"
                         },
                         {
                             "aim": "q.is_sneaking && q.all_animations_finished"
@@ -231,7 +229,7 @@
                         "/tellraw @s[scores={shadow_revolver=0}] {\"rawtext\":[{\"text\": \"§bPASSIVE : HIP FIRE\"}]}",
                         "/tellraw @s[scores={shadow_revolver=1}] {\"rawtext\":[{\"text\": \"§cShadow Turbulence\"}]}",
                         "/tellraw @s[scores={shadow_revolver=2}] {\"rawtext\":[{\"text\": \"§cDark Cover\"}]}",
-                        "/tellraw @s[scores={shadow_revolver=3}] {\"rawtext\":[{\"text\": \"§cCorruption Expands\"}]}",
+                        "/tellraw @s[scores={shadow_revolver=3}] {\"rawtext\":[{\"text\": \"§cShadow's Silentstep\"}]}",
                         "/tellraw @s[scores={shadow_revolver=4}] {\"rawtext\":[{\"text\": \"§cProtocol Impact : 0078\"}]}"
                     ],
                     "transitions": [

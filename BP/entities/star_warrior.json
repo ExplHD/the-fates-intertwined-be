@@ -1,0 +1,322 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:star_warrior",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"spawn_timeout": {
+				"minecraft:timer": {
+					"time": 2,
+					"time_down_event": {
+						"event": "spawn_timeout_done",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0
+				}
+			},
+			"pattern_randomizer": {
+				"minecraft:timer": {
+					"time": 8,
+					"time_down_event": {
+						"event": "randomize_pattern"
+					}
+				}
+			},
+			"shooting_star": {
+				"minecraft:behavior.ranged_attack": {
+					"attack_radius": 64,
+					"attack_radius_min": 5,
+					"attack_interval": 0.1,
+					"priority": 0,
+					"ranged_fov": 90,
+					"speed_multiplier": 0.6,
+					"burst_shots": 32,
+					"burst_interval": 0.5
+				},
+				"minecraft:shooter": {
+					"def": "minecraft:small_fireball"
+				},
+				"minecraft:timer": {
+					"time": 5,
+					"looping": false,
+					"time_down_event": {
+						"event": "start_randomize"
+					}
+				}
+			},
+			"light_blast": {
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.1,
+					"duration": 1,
+					"knockback_vertical_strength": 6,
+					"knockback_horizontal_strength": 6,
+					"knockback_range": 9,
+					"on_roar_end": {
+						"event": "start_randomize",
+						"target": "self"
+					}
+				}
+			},
+			"timer_to_ultimate_strike": {
+				"minecraft:timer": {
+					"time": 3,
+					"time_down_event": {
+						"event": "ultimate_strike",
+						"target": "self"
+					}
+				}
+			},
+			"ultimate_strike": {
+				"minecraft:timer": {
+					"time": [
+						4,
+						5
+					],
+					"time_down_event": {
+						"event": "start_randomize",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"max": 500,
+				"value": 500
+			},
+			"minecraft:boss": {
+				"name": "§2§7§rStar Warrior",
+				"hud_range": 128,
+				"should_darken_sky": false
+			},
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 1
+			},
+			"minecraft:experience_reward": {
+				"on_death": 100
+			},
+			"minecraft:movement": {
+				"value": 1.0
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false,
+						"on_damage": {
+							"event": "flashes_player",
+							"target": "self"
+						}
+					},
+					{
+						"cause": "all",
+						"deals_damage": true,
+						"on_damage": {
+							"event": "hurt_animation",
+							"target": "self"
+						}
+					}
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1,
+				"max": 1
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:fire_immune": {},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.charge_attack": {
+				"priority": 4,
+				"speed_multiplier": 1.3
+			},
+			"minecraft:combat_regeneration": {
+				"apply_to_family": true,
+				"apply_to_self": true,
+				"regeneration_duration": 40
+			},
+			"minecraft:attack_damage": {
+				"value": 16
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 3,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								}
+							]
+						}
+					}
+				],
+				"must_see": true
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 9,
+				"look_distance": 6.0,
+				"probability": 0.5
+			},
+			"minecraft:behavior.look_at_entity": {
+				"priority": 9,
+				"look_distance": 6.0,
+				"probability": 0.5,
+				"filters": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "mob"
+				}
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:game_event_movement_tracking": {
+				"emit_move": false,
+				"emit_swim": false
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"spawn_timeout"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"particle fec:crescent_pillar ~~~"
+					]
+				}
+			},
+			"spawn_timeout_done": {
+				"remove": {
+					"component_groups": [
+						"spawn_timeout"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"pattern_randomizer"
+					]
+				}
+			},
+			"flashes_player": {
+				"queue_command": {
+					"command": [
+						"camera @a[r=3] fade time 0 0.2 0.5 color 255 0 255"
+					]
+				}
+			},
+			"hurt_animation": {
+				"queue_command": {
+					"command": "playanimation @s animation.star_warrior.hurt"
+				}
+			},
+			"start_randomize": {
+				"add": {
+					"component_groups": [
+						"pattern_randomizer"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"light_blast",
+						"shooting_star"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"tag @s remove stars_ultimate_strike"
+					]
+				}
+			},
+			"randomize_pattern": {
+				"randomize": [
+					{
+						"weight": 33.4,
+						"add": {
+							"component_groups": [
+								"light_blast"
+							]
+						},
+						"queue_command": {
+							"command": "particle fec:light_blast ~~~"
+						}
+					},
+					{
+						"weight": 33.3,
+						"add": {
+							"component_groups": [
+								"shooting_star"
+							]
+						}
+					},
+					{
+						"weight": 33.3,
+						"add": {
+							"component_groups": [
+								"timer_to_ultimate_strike"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"tag @s add stars_ultimate_warning"
+							],
+							"target": "self"
+						}
+					}
+				],
+				"remove": {
+					"component_groups": [
+						"pattern_randomizer"
+					]
+				}
+			},
+			"ultimate_strike": {
+				"queue_command": {
+					"command": [
+						"tag @s add stars_ultimate_strike",
+						"tag @s remove stars_ultimate_warning",
+						"particle fec:star_warrior_ultimate"
+					],
+					"target": "self"
+				},
+				"add": {
+					"component_groups": [
+						"ultimate_strike"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"timer_to_ultimate_strike"
+					]
+				}
+			}
+		}
+	}
+}

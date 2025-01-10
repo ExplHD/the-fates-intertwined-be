@@ -17,14 +17,27 @@
 			"minecraft:display_name": {
 				"value": "§bLightning Essence\n§2Right-click / Tap and Hold to :\nCast Lightning Teleport\n\n§9Cooldown : 15 Seconds"
 			},
-			"minecraft:should_despawn": false,
 			"minecraft:projectile": {
-				"projectile_entity": "fec:thrown_lightning_essence"
+				"projectile_entity": "fec:lightning_essence"
 			},
-			"minecraft:throwable": {
-				"do_swing_animation": true,
-				"launch_power_scale": 2
-			}
+			"minecraft:shooter": {
+				"ammunition": [
+					{
+						"item": "minecraft:arrow",
+						"search_inventory": true,
+						"use_in_creative": false,
+						"use_offhand": false
+					}
+				],
+				"charge_on_draw": true,
+				"max_draw_duration": 2,
+				"launch_power_scale": 1.2,
+				"max_launch_power": 5,
+				"scale_power_by_draw_duration": true
+			},
+			"minecraft:custom_components": [
+				"fec:essence_use"
+			]
 		}
 	}
 }

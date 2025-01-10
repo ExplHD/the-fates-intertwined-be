@@ -4,7 +4,7 @@
     "description": {
       "identifier": "fec:shadow_slash",
       "materials": {
-        "default": "entity_beam_additive"
+        "default": "entity_emissive_alpha"
       },
       "textures": {
         "default": "textures/entity/shadow_slash"

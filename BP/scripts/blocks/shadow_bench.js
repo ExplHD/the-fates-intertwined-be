@@ -17,24 +17,28 @@ world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
             if (player.isSneaking === true && processState == 0) {
                 if (itemState == 1) {
                     block.setPermutation(block.permutation.withState('fec:shadow_bench_item', 0))
-                    block.dimension.playSound('tile.piston.in', block.center())
+                    block.dimension.playSound('tile.piston.out', block.center())
+                    player.sendMessage(`Switched mode to : Mythic Crafting`)
 
                 } else {
                     block.setPermutation(block.permutation.withState('fec:shadow_bench_item', itemState + 1))
                     block.dimension.playSound('tile.piston.in', block.center())
+                    player.sendMessage(`Switched mode to : Shadow Conversion`)
                 }
             }
 
             if (itemState == 1 && player.isSneaking === false) {
-                if (equippedItem.typeId === 'fec:shadow_corruption') {
-                    player.runCommand(`give @s grass_block 1`)
-                    player.runCommand(`clear @s fec:shadow_corruption 0 1`)
-                    block.dimension.spawnParticle('fec:shadow_slash', block.center())
+                if (equippedItem?.typeId === 'fec:shadow_corruption') {
+                    const amount = equippedItem.amount
+                    player.runCommand(`give @s grass_block ${amount}`)
+                    player.runCommand(`clear @s fec:shadow_corruption 0 ${amount}`)
+                    block.dimension.spawnParticle('fec:shadow_bench_conversion_green', block.center())
                 }
-                if (equippedItem.typeId === 'minecraft:grass_block') {
-                    player.runCommand(`give @s fec:shadow_corruption 1`)
-                    player.runCommand(`clear @s grass_block 0 1`)
-                    block.dimension.spawnParticle('fec:spear_of_heart_attack_4', block.center())
+                if (equippedItem?.typeId === 'minecraft:grass_block') {
+                    const amount = equippedItem.amount
+                    player.runCommand(`give @s fec:shadow_corruption ${amount}`)
+                    player.runCommand(`clear @s grass_block 0 ${amount}`)
+                    block.dimension.spawnParticle('fec:shadow_bench_conversion_purple', block.center())
                 }
             }
 
@@ -62,21 +66,21 @@ world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
                 block.dimension.spawnParticle('fec:paranoia', block.center())
             }
 
-            if (processState == 1 && player.isSneaking === false && equippedItem.typeId === 'fec:reworked_tenacity') {
+            if (processState == 1 && player.isSneaking === false && equippedItem?.typeId === 'fec:reworked_tenacity') {
                 block.setPermutation(block.permutation.withState('fec:shadow_revolver_process', 2))
                 player.runCommand(`clear @s fec:reworked_tenacity 0 1`)
                 block.dimension.playSound('random.orb', block.center())
                 block.dimension.spawnParticle('fec:shadow_slash', block.center())
             }
 
-            if (processState >= 2 && processState < 8 && equippedItem.typeId === 'fec:shadowcore') {
+            if (processState >= 2 && processState < 8 && equippedItem?.typeId === 'fec:shadowcore') {
                 block.setPermutation(block.permutation.withState('fec:shadow_revolver_process', processState + 1))
                 player.runCommand(`clear @s fec:shadowcore 0 1`)
                 block.dimension.playSound('random.orb', block.center())
                 block.dimension.spawnParticle('fec:shadow_slash', block.center())
             }
 
-            if (processState == 8 && equippedItem.typeId === 'minecraft:nether_star') {
+            if (processState == 8 && equippedItem?.typeId === 'minecraft:nether_star') {
                 block.setPermutation(block.permutation.withState('fec:shadow_revolver_process', 9))
                 block.dimension.playSound('random.levelup', block.center())
                 player.sendMessage(`§5Wait for the process, this will not take long time...`)

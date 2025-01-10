@@ -43,6 +43,7 @@ let cooldownList = [
     "eidolon_4_staff_c3",
     "stars_and_crescent_c2",
     "stars_and_crescent_c3",
+    "stars_and_crescent_c4",
     "shadow_revolver_c1",
     "shadow_revolver_c2",
     "shadow_revolver_c3",
@@ -57,6 +58,7 @@ let cooldownList = [
     "reworked_tenacity_c1",
     "reworked_tenacity_c2",
     "reworked_tenacity_c3",
+    "mythic_tenacity_shield",
     "wind_essence_up"
 ]
 
@@ -136,6 +138,11 @@ system.runInterval(() => {
             players.spawnParticle("fec:shadow_revolver_ultimate_burst_ring", players.location)
         }
 
+        if (players.hasTag('tenacity_invulnerable') && getScore(players, 'mythic_tenacity_shield') > 0) {
+            players.onScreenDisplay.setTitle(" ")
+            players.runCommand(`titleraw @a[scores={mythic_tenacity_shield=1..}] subtitle {"rawtext":[{"text":"§b-= Invincibility : "},{"score":{"name":"*","objective":"mythic_tenacity_shield"}},{"text":" =-"}]}`)
+        }
+
         // Archived Commands, DO NOT ENABLE IT OR YOU'LL GET ERROR SPAM MESSAGES
 
         /*
@@ -158,7 +165,7 @@ system.runInterval(() => {
         players.runCommand(`titleraw @a[hasitem={item=fec:spear_of_heart,location=slot.weapon.mainhand}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"spear_of_heart_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"spear_of_heart_c2"}},{"text":"s, §r §e"},{"score":{"name":"*","objective":"spear_of_heart_c3"}},{"text":"s"}]}`)
         players.runCommand(`titleraw @a[hasitem={item=fec:zenith,location=slot.weapon.mainhand}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"zenith_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c4"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c5"}},{"text":"s"}]}`)
         players.runCommand(`titleraw @a[hasitem={item=fec:eidolon_4_staff,location=slot.weapon.mainhand}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"eidolon_4_staff_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"eidolon_4_staff_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"eidolon_4_staff_c3"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:stars_and_crescent,location=slot.weapon.mainhand}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c1"}},{"text":" Ticks, §r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c3"}},{"text":"s"}]}`)
+        players.runCommand(`titleraw @a[hasitem={item=fec:stars_and_crescent,location=slot.weapon.mainhand}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c1"}},{"text":" Ticks, §r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c3"}},{"text":"s §r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c4"}},{"text":"s"}]}`)
         players.runCommand(`titleraw @a[hasitem={item=fec:shadow_revolver,location=slot.weapon.mainhand}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"shadow_revolver_rounds"}},{"text":"/8, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c4"}},{"text":"s"}]}`)
         players.runCommand(`titleraw @a[hasitem={item=fec:tenacity,location=slot.weapon.mainhand}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"tenacity_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c4"}},{"text":"s"}]}`)
         players.runCommand(`titleraw @a[hasitem={item=fec:tenacity_axe,location=slot.weapon.mainhand}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"tenacity_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c2_axe"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c3_axe"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c4_axe"}},{"text":"s"}]}`)
@@ -187,8 +194,107 @@ system.runInterval(() => {
             removeScore(players, 'voltra_charge', -1)
         }
 
+        if (players.hasTag('tenacity_invulnerable') && getScore(players, 'mythic_tenacity_shield') > 0) {
+            players.addEffect("resistance", 5, {
+                amplifier: 255,
+                showParticles: false
+            });
+            players.spawnParticle("fec:mythic_tenacity_shield", players.location);
+        }
+
         if (players.hasTag('voltra_charging') && getScore(players, 'voltra_charge') < 100) {
             addScore(players, 'voltra_charge', 1)
         }
     }
 }, 0)
+
+// Weapons Kill Effect
+world.afterEvents.entityDie.subscribe((fx) => {
+    const killer = fx.damageSource.damagingEntity
+    const killed = fx.deadEntity
+
+    if (killer?.typeId === "minecraft:player") {
+        const itemEquipped = killer.getComponent("minecraft:equippable").getEquipment('Mainhand')
+        if (killed?.typeId === "minecraft:player") {
+            if (itemEquipped?.typeId === "fec:tenacity" || itemEquipped?.typeId === "fec:tenacity_axe") {
+                killed.runCommand(`particle fec:tenacity_player_kill_fx ~~0.5~`)
+                killed.runCommand(`particle fec:tenacity_player_kill_flash ~~0.5~`)
+            }
+            if (itemEquipped?.typeId === "fec:stars_and_crescent") {
+                killed.runCommand(`particle fec:stars_and_crescent_player_kill_fx ~~1~`)
+                killed.runCommand(`particle fec:stars_and_crescent_player_ping ~~1~`)
+            }
+            if (itemEquipped?.typeId === "fec:zenith") {
+                killed.runCommand(`particle fec:zenith_entity_kill_fx ~~1~`)
+                killed.runCommand(`particle fec:zenith_entity_kill_fx_vertical_x ~~1~`)
+                killed.runCommand(`particle fec:zenith_entity_kill_fx_vertical_z ~~1~`)
+                killed.runCommand(`particle fec:zenith_kill_flash ~~1~`)
+            }
+            if (itemEquipped?.typeId === "fec:shadow_revolver") {
+                killed.runCommand(`particle fec:shadow_revolver_player_kill_fx ~~~`)
+                killed.runCommand(`particle fec:shadow_revolver_entity_kill_fx ~~~`)
+            }
+        } else {
+            if (itemEquipped?.typeId === "fec:tenacity" || itemEquipped?.typeId === "fec:tenacity_axe") {
+                killed.runCommand(`particle fec:tenacity_entity_kill_fx ~~0.5~`)
+                killed.runCommand(`particle fec:tenacity_entity_kill_flash ~~0.5~`)
+            }
+            if (itemEquipped?.typeId === "fec:stars_and_crescent") {
+                killed.runCommand(`particle fec:stars_and_crescent_entity_kill_fx ~~1~`)
+                killed.runCommand(`particle fec:stars_and_crescent_kill_flash ~~1~`)
+            }
+            if (itemEquipped?.typeId === "fec:zenith") {
+                killed.runCommand(`particle fec:zenith_entity_kill_fx ~~1~`)
+                killed.runCommand(`particle fec:zenith_kill_flash ~~1~`)
+            }
+            if (itemEquipped?.typeId === "fec:shadow_revolver") {
+                killed.runCommand(`particle fec:shadow_revolver_entity_kill_fx ~~~`)
+                killed.runCommand(`particle fec:shadow_revolver_muzzle_flash ~~~`)
+            }
+        }
+    }
+
+    // Other Entities Related to Weapon Kill Effect 
+    if (killer?.typeId === "fec:shadow_revolver_bullet") {
+        if (killed?.typeId === "minecraft:player" && killed.typeId != "fec:shadow_revolver_bullet") {
+            killed.runCommand(`particle fec:shadow_revolver_player_kill_fx ~~~`)
+            killed.runCommand(`particle fec:shadow_revolver_entity_kill_fx ~~~`)
+        }
+        if (killed.typeId != "fec:shadow_revolver_bullet") {
+            killed.runCommand(`particle fec:shadow_revolver_entity_kill_fx ~~~`)
+            killed.runCommand(`particle fec:shadow_revolver_muzzle_flash ~~~`)
+        }
+    }
+
+    if (killer?.typeId === "fec:tenacity_blue_slash" || killer?.typeId === "fec:tenacity_orange_slash" || killer?.typeId === "fec:tenacity_sky_meteor") {
+        if (killed?.typeId === "minecraft:player") {
+            killed.runCommand(`particle fec:tenacity_player_kill_fx ~~0.5~`)
+            killed.runCommand(`particle fec:tenacity_player_kill_flash ~~0.5~`)
+        } else {
+            killed.runCommand(`particle fec:tenacity_entity_kill_fx ~~0.5~`)
+            killed.runCommand(`particle fec:tenacity_entity_kill_flash ~~0.5~`)
+        }
+    }
+
+    if (killer?.typeId === "fec:crescent_pillar") {
+        if (killed?.typeId === "minecrft:player") {
+            killed.runCommand(`particle fec:stars_and_crescent_player_kill_fx ~~1~`)
+            killed.runCommand(`particle fec:stars_and_crescent_player_ping ~~1~`)
+        } else {
+            killed.runCommand(`particle fec:stars_and_crescent_entity_kill_fx ~~1~`)
+            killed.runCommand(`particle fec:stars_and_crescent_kill_flash ~~1~`)
+        }
+    }
+})
+
+system.afterEvents.scriptEventReceive.subscribe((weaponEvent) => {
+    const {
+        id,
+        player = weaponEvent.sourceEntity
+    } = weaponEvent;
+
+    if (id == 'fec:shadow_revolver_ultimate_knockback') {
+        player.applyKnockback(player.getViewDirection().x, player.getViewDirection().z, -2.0, 1)
+        player.runCommand(`particle fec:paranoia ~~~`)
+    }
+})

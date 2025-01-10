@@ -44,7 +44,7 @@
 			},
 			"minecraft:particle_motion_collision": {
 				"collision_drag": 0.1,
-				"collision_radius": 0.5
+				"collision_radius": 1
 			},
 			"minecraft:particle_appearance_tinting": {
 				"color": {

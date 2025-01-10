@@ -1,0 +1,59 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.star_warrior": {
+			"states": {
+				"default": {
+					"animations": [
+						"idle",
+						"look_at_target"
+					],
+					"transitions": [
+						{
+							"fly": "query.is_charging"
+						},
+						{
+							"attack": "v.attack_time"
+						},
+						{
+							"shooting_star": "query.has_target && !query.facing_target_to_range_attack"
+						}
+					]
+				},
+				"fly": {
+					"animations": [
+						"walk"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_charging"
+						},
+						{
+							"attack": "variable.attack_time"
+						}
+					]
+				},
+				"attack": {
+					"animations": [
+						"attack"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target && !v.attack_time"
+						}
+					]
+				},
+				"shooting_star": {
+					"animations": [
+						"shoot"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target || query.facing_target_to_range_attack"
+						}
+					]
+				}
+			}
+		}
+	}
+}

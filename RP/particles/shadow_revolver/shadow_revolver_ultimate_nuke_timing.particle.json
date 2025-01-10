@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "fec:shadow_revolver_ultimate_nuke_timing",
 			"basic_render_parameters": {
-				"material": "particles_add",
+				"material": "particles_alpha",
 				"texture": "textures/particle/particles"
 			}
 		},
@@ -53,15 +53,27 @@
 				"linear_drag_coefficient": 0.3
 			},
 			"minecraft:particle_appearance_billboard": {
-				"size": [0.2, 0.2],
+				"size": [
+					0.2,
+					0.2
+				],
 				"facing_camera_mode": "rotate_xyz",
 				"uv": {
 					"texture_width": 128,
 					"texture_height": 128,
 					"flipbook": {
-						"base_UV": [56, 88],
-						"size_UV": [8, 8],
-						"step_UV": [-8, 0],
+						"base_UV": [
+							56,
+							88
+						],
+						"size_UV": [
+							8,
+							8
+						],
+						"step_UV": [
+							-8,
+							0
+						],
 						"frames_per_second": 8,
 						"max_frame": 8
 					}
