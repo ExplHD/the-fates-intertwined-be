@@ -1,5 +1,6 @@
-import { world } from '@minecraft/server'
+import { world, ItemStack } from '@minecraft/server'
 import { addScore, removeScore, setScore, getScore } from 'main.js'
+import { shoot } from './custom_function.js'
 
 world.beforeEvents.worldInitialize.subscribe((initEvent) => {
     initEvent.itemComponentRegistry.registerCustomComponent("fec:essence_use", {
@@ -7,7 +8,7 @@ world.beforeEvents.worldInitialize.subscribe((initEvent) => {
             const player = event.source
             const itemStack = event.itemStack
 
-            if (itemStack?.typeId === 'fec:water_essence') {
+            if (itemStack.typeId === 'fec:water_essence') {
                 if (player.isSneaking == true) {
                     player.runCommandAsync('tag @p[r=16,rm=0.1] add healed')
                     player.runCommandAsync('effect @a[tag=healed] regeneration 3 4')
@@ -22,26 +23,31 @@ world.beforeEvents.worldInitialize.subscribe((initEvent) => {
                 }
             }
 
-            if (itemStack?.typeId === 'fec:earth_essence') {
+            if (itemStack.typeId === 'fec:earth_essence') {
                 player.runCommandAsync('tag @s add earth_iframe')
                 player.runCommandAsync('effect @s resistance 3 255 true')
                 player.runCommandAsync('playsound mob.zombie.remedy @a[r=16]')
                 player.startItemCooldown("earth_essence", 600)
             }
 
-            if (itemStack?.typeId === 'fec:lightning_essence') {
-                player.startItemCooldown("lightning_essence", 300)
-                player.getComponent("minecraft:equippable").setEquipment("mainhand", "fec:lightning_essence")
+            if (itemStack.typeId === 'fec:lightning_essence') {
+                player.startItemCooldown("lightning_essence", 100)
+                const launchVel = 5;
+                const velocity = player.getViewDirection();
+                let headLoc = player.getHeadLocation();
+                const arrow = player.dimension.spawnEntity(`fec:thrown_lightning_essence`, { x: headLoc.x + velocity.x, y: headLoc.y + velocity.y, z: headLoc.z + velocity.z });
+                const projectileComp = arrow.getComponent('minecraft:projectile');
+                projectileComp?.shoot({ x: velocity.x * launchVel, y: velocity.y * launchVel, z: velocity.z * launchVel });
             }
 
-            if (itemStack?.typeId === 'fec:fire_essence') {
+            if (itemStack.typeId === 'fec:fire_essence') {
                 player.runCommandAsync('fill ~-5~-2~-5~5~5~5 fire replace air')
                 player.runCommandAsync('effect @s fire_resistance 5 0 true')
                 player.runCommandAsync('damage @e[r=6,rm=0.1] 4 magic entity @s')
                 player.startItemCooldown("fire_essence", 400)
             }
 
-            if (itemStack?.typeId === 'fec:wind_essence') {
+            if (itemStack.typeId === 'fec:wind_essence') {
                 if (player.isSneaking == true && getScore(player, "wind_essence_up") == 0) {
                     const IframeOptions = {
                         amplifier: 255,
@@ -64,7 +70,7 @@ world.beforeEvents.worldInitialize.subscribe((initEvent) => {
                 }
             }
 
-            if (itemStack?.typeId === 'fec:shadowcore') {
+            if (itemStack.typeId === 'fec:shadowcore') {
                 player.addEffect('resistance', 100, {
                     amplifier: 255
                 })

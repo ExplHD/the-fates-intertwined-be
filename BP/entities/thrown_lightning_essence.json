@@ -8,41 +8,60 @@
 			"is_experimental": false,
 			"runtime_identifier": "minecraft:snowball"
 		},
+		"component_groups": {
+			"fec:lightning_essence_no_hit": {
+				"minecraft:projectile": {
+					"anchor": 1,
+					"power": 3,
+					"gravity": 0.04,
+					"angle_offset": 0,
+					"offset": [
+						0,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 0.1,
+					"time_down_event": {
+						"event": "activate_hit",
+						"target": "self"
+					}
+				}
+			},
+			"fec:lightning_essence_hit": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"filter": "blaze",
+							"damage": 21,
+							"knockback": true
+						},
+						"remove_on_hit": {},
+						"particle_on_hit": {
+							"particle_type": "mobspellambient",
+							"num_particles": 50,
+							"on_entity_hit": true,
+							"on_other_hit": true
+						}
+					},
+					"anchor": 1,
+					"power": 3,
+					"gravity": 0.04,
+					"angle_offset": 0,
+					"offset": [
+						0,
+						-0.1,
+						0
+					]
+				}
+			}
+		},
 		"components": {
 			"minecraft:collision_box": {
 				"width": 0.25,
 				"height": 0.25
-			},
-			"minecraft:projectile": {
-				"on_hit": {
-					"impact_damage": {
-						"filter": "blaze",
-						"damage": 7,
-						"knockback": true
-					},
-					"teleport_owner": {},
-					"definition_event": {
-						"event_trigger": {
-							"event": "lightning_essence"
-						}
-					},
-					"remove_on_hit": {},
-					"particle_on_hit": {
-						"particle_type": "mobspellambient",
-						"num_particles": 50,
-						"on_entity_hit": true,
-						"on_other_hit": true
-					}
-				},
-				"anchor": 1,
-				"power": 3,
-				"gravity": 0.04,
-				"angle_offset": 0,
-				"offset": [
-					0,
-					-0.1,
-					0
-				]
 			},
 			"minecraft:physics": {},
 			"minecraft:pushable": {
@@ -51,11 +70,22 @@
 			}
 		},
 		"events": {
-			"lightning_essence": {
-				"queue_command": {
-					"command": [
-						"summon lightning_bolt",
-						"damage @e[r=7,rm=0.1] 4 lightning"
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"fec:lightning_essence_no_hit"
+					]
+				}
+			},
+			"activate_hit": {
+				"add": {
+					"component_groups": [
+						"fec:lightning_essence_hit"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"fec:lightning_essence_no_hit"
 					]
 				}
 			}

@@ -39,7 +39,7 @@
 			"minecraft:destructible_by_mining": {
 				"seconds_to_destroy": 5
 			},
-			"minecraft:display_name": "§dShadow bench\n§8A Blocks that used for crafting many items that contains\nShadow Corruption, mainly used for craft Shadow Revolver",
+			"minecraft:display_name": "§dShadow Bench\n§8A Blocks that used for crafting many items that contains\nShadow Corruption, mainly used for craft Shadow Revolver\n\n§7Sneak + Interact to :\nChange Crafting Mode",
 			"minecraft:destructible_by_explosion": false,
 			"minecraft:tick": {
 				"interval_range": [

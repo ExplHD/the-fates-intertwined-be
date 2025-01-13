@@ -12,29 +12,12 @@
 			"minecraft:icon": "fec_lightning_essence",
 			"minecraft:cooldown": {
 				"category": "lightning_essence",
-				"duration": 15
+				"duration": 5
 			},
 			"minecraft:display_name": {
-				"value": "§bLightning Essence\n§2Right-click / Tap and Hold to :\nCast Lightning Teleport\n\n§9Cooldown : 15 Seconds"
+				"value": "§bLightning Essence\n§2Right-click / Tap and Hold to :\nCast Lightning Strike\n\n§9Cooldown : 5 Seconds"
 			},
-			"minecraft:projectile": {
-				"projectile_entity": "fec:lightning_essence"
-			},
-			"minecraft:shooter": {
-				"ammunition": [
-					{
-						"item": "minecraft:arrow",
-						"search_inventory": true,
-						"use_in_creative": false,
-						"use_offhand": false
-					}
-				],
-				"charge_on_draw": true,
-				"max_draw_duration": 2,
-				"launch_power_scale": 1.2,
-				"max_launch_power": 5,
-				"scale_power_by_draw_duration": true
-			},
+			"minecraft:interact_button": true,
 			"minecraft:custom_components": [
 				"fec:essence_use"
 			]
