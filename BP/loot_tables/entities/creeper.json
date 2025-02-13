@@ -102,7 +102,7 @@
         {
           "condition": "random_difficulty_chance",
           "default_chance": 0.3,
-          "peaceful": 0.1,
+          "peaceful": 0,
           "hard": 0.45
         }
       ],
@@ -116,7 +116,7 @@
               "function": "set_count",
               "count": {
                 "min": 2,
-                "max": 4
+                "max": 7
               }
             }
           ]

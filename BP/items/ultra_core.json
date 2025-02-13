@@ -1,0 +1,20 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:ultra_core",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_ultra_core",
+			"minecraft:max_stack_size": 1,
+			"minecraft:allow_off_hand": true,
+			"minecraft:interact_button": true,
+			"minecraft:display_name": {
+				"value": "§eUltra Core\n\n§2Offhand Slot :\nEnhanced Hit Effect, 25% chance every hit\nadd 2 health"
+			}
+		}
+	}
+}

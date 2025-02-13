@@ -1,11 +1,11 @@
-{
+	{
 	"format_version": "1.21.10",
 	"minecraft:attachable": {
 		"description": {
 			"identifier": "fec:rage_of_sakura",
 			"materials": {
-				"default": "enderman",
-				"enchanted": "enderman"
+				"default": "entity_alphatest",
+				"enchanted": "entity_alphatest_glint"
 			},
 			"textures": {
 				"default": "textures/weapons/rage_of_sakura",

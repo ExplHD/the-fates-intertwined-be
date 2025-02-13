@@ -4,8 +4,8 @@
 		"description": {
 			"identifier": "fec:windblade_claymore",
 			"materials": {
-				"default": "phantom",
-				"enchanted": "phantom"
+				"default": "entity_emissive_alpha",
+				"enchanted": "entity_emissive_alpha"
 			},
 			"textures": {
 				"default": "textures/weapons/windblade_claymore",
@@ -23,7 +23,6 @@
 			},
 			"scripts": {
 				"animate": [
-					
 					{
 						"hold": "c.is_first_person"
 					}

@@ -4,8 +4,8 @@
         "description": {
             "identifier": "fec:reworked_tenacity",
             "materials": {
-                "default": "phantom",
-                "enchanted": "phantom"
+                "default": "entity_alphatest",
+                "enchanted": "entity_alphatest_glint"
             },
             "textures": {
                 "default": "textures/weapons/revamped_tenacity",

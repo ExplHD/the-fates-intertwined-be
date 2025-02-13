@@ -4,8 +4,8 @@
 		"description": {
 			"identifier": "fec:zenith",
 			"materials": {
-				"default": "glow_squid",
-				"enchanted": "glow_squid"
+				"default": "entity_alphatest",
+				"enchanted": "entity_alphatest_glint"
 			},
 			"textures": {
 				"default": "textures/weapons/zenith",
@@ -23,7 +23,6 @@
 			},
 			"scripts": {
 				"animate": [
-					
 					{
 						"hold": "c.is_first_person"
 					}

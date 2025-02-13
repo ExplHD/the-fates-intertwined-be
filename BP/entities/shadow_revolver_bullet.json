@@ -169,6 +169,13 @@
 				},
 				"minecraft:variant": {
 					"value": 1
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 8,
+					"time_down_event": {
+						"event": "fec:shadow_revolver_bullet_protocol_impact_0078_expired"
+					}
 				}
 			},
 			"fec:timer_to_nuke": {
@@ -243,7 +250,17 @@
 						"particle fec:shadow_revolver_bullet_impact ~~0.75~",
 						"particle fec:shadow_revolver_bullet_impact_freelook ~~0.75~",
 						"particle fec:shadow_revolver_muzzle_flash ~~0.75~",
-						"damage @e[r=6] 8 entity_attack entity @s"
+						"damage @e[r=6] 12 entity_attack entity @s"
+					]
+				},
+				"trigger": "despawn"
+			},
+			"fec:shadow_revolver_bullet_protocol_impact_0078_expired": {
+				"queue_command": {
+					"command": [
+						"particle fec:shadow_revolver_ultimate_explode ~~~",
+						"playsound random.explode @a[r=128] 1 1 0.125",
+						"damage @e[r=32] 30 entity_attack entity @s"
 					]
 				},
 				"trigger": "despawn"

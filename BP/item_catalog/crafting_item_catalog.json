@@ -1,0 +1,93 @@
+{
+   "format_version": "1.21.60",
+   "minecraft:crafting_items_catalog": {
+      "categories": [
+         {
+            // Valid values are construction, equipment, nature, and items
+            "category_name": "equipment",
+            "groups": [
+               {
+                  // This will create a new group
+                  "group_identifier": {
+                     "icon": "fec:frag_grenade",
+                     // This is the name of your group which doubles as
+                     // the localization string. The namespace is required
+                     "name": "fec:grenades"
+                  },
+                  "items": [
+                     "fec:frag_grenade",
+                     "fec:frag_grenade_unexplosive",
+                     "fec:frag_grenade_flame",
+                     "fec:bedrock_breaker"
+                  ]
+               }
+            ]
+         },
+         {
+            "category_name": "items",
+            "groups": [
+               {
+                  "group_identifier": {
+                     "icon": "fec:wind_shard",
+                     "name": "fec:elemental_shards"
+                  },
+                  "items": [
+                     "fec:wind_shard",
+                     "fec:earth_shard",
+                     "fec:lightning_shard",
+                     "fec:fire_shard",
+                     "fec:water_shard"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "fec:wind_essence",
+                     "name": "fec:elemental_essences"
+                  },
+                  "items": [
+                     "fec:wind_essence",
+                     "fec:earth_essence",
+                     "fec:lightning_essence",
+                     "fec:fire_essence",
+                     "fec:water_essence"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "fec:winterbloom_medal",
+                     "name": "fec:medals"
+                  },
+                  "items": [
+                     "fec:winterbloom_medal",
+                     "fec:winterbloom_medal_wireframe",
+                     "fec:loving_sakura_medal",
+                     "fec:loving_sakura_medal_wireframe",
+                     "fec:murasama_medal",
+                     "fec:lightning_phoenix_medal_wireframe",
+                     "fec:land_of_peace_medal",
+                     "fec:land_of_peace_medal_wireframe"
+                  ]
+               }
+            ]
+         },
+         {
+            "category_name": "nature",
+            "groups": [
+               {
+                  "group_identifier": {
+                     "icon": "minecraft:chicken_spawn_egg",
+                     "name": "minecraft:itemGroup.name.mobEgg"
+                  },
+                  "items": [
+                     "fec:wind_creeper_spawn_egg",
+                     "fec:earth_creeper_spawn_egg",
+                     "fec:fire_creeper_spawn_egg",
+                     "fec:water_creeper_spawn_egg",
+                     "fec:corrupted_creeper_spawn_egg"
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+}

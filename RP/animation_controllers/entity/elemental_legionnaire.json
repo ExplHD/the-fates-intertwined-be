@@ -9,29 +9,16 @@
 						"idle",
 						"look_at_target"
 					],
+					"blend_transition": 0.333,
 					"transitions": [
 						{
-							"fly": "query.is_moving"
+							"fly": "query.modified_move_speed >= 0.5"
 						},
 						{
 							"left_attack": "query.is_casting"
 						},
 						{
 							"down_attack": "query.has_target&&!query.facing_target_to_range_attack"
-						},
-						{
-							"attack": "variable.attack_time >= 0.0"
-						}
-					],
-					"blend_transition": 0.333
-				},
-				"attack": {
-					"animations": [
-						"attack"
-					],
-					"transitions": [
-						{
-							"default": "variable.attack_time < 0.0"
 						}
 					]
 				},
@@ -39,27 +26,27 @@
 					"animations": [
 						"fly"
 					],
+					"blend_transition": 0.333,
 					"transitions": [
 						{
-							"default": "!query.is_moving"
+							"default": "query.modified_move_speed <= 0.1"
 						}
-					],
-					"blend_transition": 0.333
+					]
 				},
 				"left_attack": {
 					"animations": [
 						"left_attack",
 						"look_at_target"
 					],
+					"blend_transition": 0.333,
 					"transitions": [
 						{
 							"default": "!query.is_casting"
 						},
 						{
-							"fly": "query.is_moving"
+							"fly": "query.modified_move_speed >= 0.5"
 						}
-					],
-					"blend_transition": 0.333
+					]
 				},
 				"down_attack": {
 					"animations": [
@@ -72,15 +59,15 @@
 							"locator": "left_hand"
 						}
 					],
+					"blend_transition": 0.333,
 					"transitions": [
 						{
 							"default": "!query.has_target||query.facing_target_to_range_attack"
 						},
 						{
-							"fly": "query.is_moving"
+							"fly": "query.modified_move_speed >= 0.5"
 						}
-					],
-					"blend_transition": 0.333
+					]
 				}
 			}
 		}

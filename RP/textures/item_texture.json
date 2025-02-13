@@ -178,6 +178,24 @@
 		},
 		"fec_weapon_billet": {
 			"textures": "textures/items/weapon_billet"
+		},
+		"fec_boots_of_escalation": {
+			"textures": "textures/items/armor/boots_of_escalation"
+		},
+		"fec_capsule_of_life_extender": {
+			"textures": "textures/items/capsule_of_life_extender"
+		},
+		"fec_ultra_core": {
+			"textures": "textures/items/ultra_core"
+		},
+		"fec_curium_corruption_purifier": {
+			"textures": "textures/items/armor/curium_corruption_purifier"
+		},
+		"fec_curium": {
+			"textures": "textures/items/curium"
+		},
+		"fec_curium_ingot": {
+			"textures": "textures/items/curium_ingot"
 		}
 	},
 	"texture_name": "atlas.items"

@@ -37,7 +37,19 @@
 			"minecraft:flammable": false,
 			"minecraft:custom_components": [
 				"fec:zenith_fabricator_destroyed"
-			]
+			],
+			"minecraft:placement_filter": {
+				"conditions": [
+					{
+						"block_filter": [
+							"acacia_planks"
+						],
+						"allowed_faces": [
+							"up"
+						]
+					}
+				]
+			}
 		},
 		"permutations": [
 			{

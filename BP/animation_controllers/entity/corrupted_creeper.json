@@ -1,0 +1,22 @@
+{
+	"format_version": "1.8.0",
+	"animation_controllers": {
+		"controller.animation.corrupted_creeper": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"activate": "query.is_baby"
+						}
+					]
+				},
+				"activate": {
+					"on_entry": [
+						"/fill ~-10~-5~-10 ~10~5~10 fec:shadow_corruption [] replace grass_block",
+						"/particle fec:shadow_revolver_ultimate_explode ~~~"
+					]
+				}
+			}
+		}
+	}
+}

@@ -23,10 +23,32 @@
 				"use_duration": 999999,
 				"movement_modifier": 1
 			},
+			"minecraft:enchantable": {
+				"slot": "sword",
+				"value": 16
+			},
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": "minecraft:web",
+						"speed": 15
+					},
+					{
+						"block": "minecraft:bamboo",
+						"speed": 60
+					}
+				]
+			},
 			"minecraft:use_animation": "none",
 			"minecraft:max_stack_size": 1,
 			"minecraft:hand_equipped": true,
-			"tag:minecraft:is_sword": {}
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_sword",
+					"minecraft:is_tool"
+				]
+			}
 		}
 	}
 }

@@ -15,6 +15,17 @@
 			"minecraft:damage": {
 				"value": 16
 			},
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": {
+							"tags": "query.any_tag('log', 'minecraft:is_axe_item_destructible')"
+						},
+						"speed": 13
+					}
+				]
+			},
 			"minecraft:display_name": {
 				"value": "§4Tenacity (Axe)\n§7A Axe made from the unknown Ascended,\nThe True End, above The End\nthe nether. This is the true\nabomination weapons\n\n§2Right-click / Tap and Hold to :\ncast the selected skill\nSneak + Left Click / tap to :\nchange selected skill"
 			},
@@ -31,7 +42,9 @@
 			"minecraft:hand_equipped": true,
 			"minecraft:tags": {
 				"tags": [
-					"minecraft:is_sword"
+					"minecraft:is_sword",
+					"minecraft:is_axe",
+					"minecraft:netherite_tier"
 				]
 			}
 		}

@@ -4,8 +4,8 @@
 		"description": {
 			"identifier": "fec:shadow_revolver",
 			"materials": {
-				"default": "enderman",
-				"enchanted": "enderman"
+				"default": "entity_emissive_alpha",
+				"enchanted": "entity_emissive_alpha"
 			},
 			"textures": {
 				"default": "textures/weapons/shadow_revolver",
@@ -23,7 +23,6 @@
 			},
 			"scripts": {
 				"animate": [
-					
 					{
 						"hold": "c.is_first_person"
 					}

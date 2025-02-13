@@ -25,7 +25,7 @@
 			},
 			"minecraft:tags": {
 				"tags": [
-					"minecraft:is_sword",
+					"fec:firearms",
 					"minecraft:is_tool"
 				]
 			},

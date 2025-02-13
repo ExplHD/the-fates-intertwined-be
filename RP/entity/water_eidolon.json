@@ -16,12 +16,12 @@
 				"controller.render.water_eidolon"
 			],
 			"animations": {
-				"water_eidolon_controller": "controller.animation.water_eidolon",
 				"look_at_target": "animation.common.look_at_target",
 				"idle": "animation.water_eidolon.idle",
 				"move": "animation.water_eidolon.move",
 				"smash": "animation.water_eidolon.smash",
-				"attack": "animation.water_eidolon.water_pillar"
+				"attack": "animation.water_eidolon.water_pillar",
+				"root": "controller.animation.water_eidolon"
 			},
 			"particle_effects": {
 				"water_ball": "fec:water_ball",
@@ -30,7 +30,7 @@
 			},
 			"scripts": {
 				"animate": [
-					"water_eidolon_controller"
+					"root"
 				]
 			},
 			"spawn_egg": {

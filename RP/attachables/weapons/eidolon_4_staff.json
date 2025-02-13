@@ -1,11 +1,11 @@
-{
+	{
 	"format_version": "1.21.10",
 	"minecraft:attachable": {
 		"description": {
 			"identifier": "fec:eidolon_4_staff",
 			"materials": {
-				"default": "enderman",
-				"enchanted": "enderman"
+				"default": "entity_alphatest",
+				"enchanted": "entity_alphatest_glint"
 			},
 			"textures": {
 				"default": "textures/weapons/eidolon_4_staff",

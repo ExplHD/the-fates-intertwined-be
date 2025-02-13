@@ -35,6 +35,10 @@
 			"minecraft:display_name": {
 				"value": "§6Reworked Tenacity\n§7A Scythe that remade from old weapons,\nbillet, capable of doing sonic shriek\nand strike\n\n§2Right-click / Tap and Hold to :\ncast the selected skill\nSneak + Left Click / tap to :\nchange selected skill"
 			},
+			"minecraft:enchantable": {
+				"slot": "sword",
+				"value": 16
+			},
 			"minecraft:use_animation": "none",
 			"minecraft:icon": "fec_reworked_tenacity",
 			"minecraft:max_stack_size": 1,

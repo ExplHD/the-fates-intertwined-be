@@ -1,4 +1,4 @@
-	{
+{
 	"format_version": "1.20.80",
 	"minecraft:entity": {
 		"description": {
@@ -85,6 +85,15 @@
 					"range": [
 						0,
 						1
+					]
+				},
+				"fec:player_health_level": {
+					"type": "int",
+					"client_sync": false,
+					"default": 1,
+					"range": [
+						1,
+						5
 					]
 				}
 			}
@@ -223,6 +232,36 @@
 						"target": "self"
 					}
 				}
+			},
+			"fec:player_health_level_1": {
+				"minecraft:health": {
+					"value": 20,
+					"max": 20
+				}
+			},
+			"fec:player_health_level_2": {
+				"minecraft:health": {
+					"value": 30,
+					"max": 30
+				}
+			},
+			"fec:player_health_level_3": {
+				"minecraft:health": {
+					"value": 40,
+					"max": 40
+				}
+			},
+			"fec:player_health_level_4": {
+				"minecraft:health": {
+					"value": 50,
+					"max": 50
+				}
+			},
+			"fec:player_health_level_5": {
+				"minecraft:health": {
+					"value": 60,
+					"max": 60
+				}
 			}
 		},
 		"components": {
@@ -358,7 +397,7 @@
 							}
 						]
 					},
-					"event": "minecraft:trigger_raid"
+					"event": "minecraft:gain_raid_omen"
 				}
 			}
 		},
@@ -471,6 +510,111 @@
 						"inputpermission set @s sneak enabled"
 					]
 				}
+			},
+			"fec:reset_health_level_to_1": {
+				"remove": {
+					"component_groups": [
+						"fec:player_health_level_2",
+						"fec:player_health_level_3",
+						"fec:player_health_level_4",
+						"fec:player_health_level_5"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"fec:player_health_level_1"
+					]
+				},
+				"set_property": {
+					"fec:player_health_level": 1
+				}
+			},
+			"fec:capsule_of_life_used": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "int_property",
+							"subject": "self",
+							"domain": "fec:player_health_level",
+							"operator": "==",
+							"value": 1
+						},
+						"add": {
+							"component_groups": [
+								"fec:player_health_level_2"
+							]
+						},
+						"set_property": {
+							"fec:player_health_level": 2
+						}
+					},
+					{
+						"filters": {
+							"test": "int_property",
+							"subject": "self",
+							"domain": "fec:player_health_level",
+							"operator": "==",
+							"value": 2
+						},
+						"add": {
+							"component_groups": [
+								"fec:player_health_level_3"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"fec:player_health_level_2"
+							]
+						},
+						"set_property": {
+							"fec:player_health_level": 3
+						}
+					},
+					{
+						"filters": {
+							"test": "int_property",
+							"subject": "self",
+							"domain": "fec:player_health_level",
+							"operator": "==",
+							"value": 3
+						},
+						"add": {
+							"component_groups": [
+								"fec:player_health_level_4"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"fec:player_health_level_3"
+							]
+						},
+						"set_property": {
+							"fec:player_health_level": 4
+						}
+					},
+					{
+						"filters": {
+							"test": "int_property",
+							"subject": "self",
+							"domain": "fec:player_health_level",
+							"operator": "==",
+							"value": 4
+						},
+						"add": {
+							"component_groups": [
+								"fec:player_health_level_5"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"fec:player_health_level_4"
+							]
+						},
+						"set_property": {
+							"fec:player_health_level": 5
+						}
+					}
+				]
 			}
 		}
 	}

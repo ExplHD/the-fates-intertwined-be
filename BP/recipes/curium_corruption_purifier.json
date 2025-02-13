@@ -1,0 +1,35 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:curium_corruption_purifier"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"I": {
+				"item": "minecraft:iron_ingot"
+			},
+			"C": {
+				"item": "fec:curium_ingot"
+			},
+			"O": {
+				"item": "fec:ultra_core"
+			}
+		},
+		"pattern": [
+			"I I",
+			"COC",
+			"ICI"
+		],
+		"unlock": [
+			{
+				"item": "fec:curium_ingot"
+			}
+		],
+		"result": {
+			"item": "fec:curium_corruption_purifier"
+		}
+	}
+}

@@ -1,4 +1,4 @@
-	{
+{
     "format_version": "1.16.0",
     "animation_controllers": {
         "controller.animation.shadowplague_guardian": {
@@ -11,7 +11,7 @@
                     "blend_transition": 0.2,
                     "transitions": [
                         {
-                            "attack": "variable.attack_time > 0.0f"
+                            "attack": "variable.attack_time > 0.0"
                         },
                         {
                             "move": "query.modified_move_speed >= 0.5"
@@ -25,7 +25,7 @@
                     "blend_transition": 0.2,
                     "transitions": [
                         {
-                            "default": "variable.attack_time <= 0.0f"
+                            "default": "variable.attack_time <= 0.0"
                         }
                     ]
                 },

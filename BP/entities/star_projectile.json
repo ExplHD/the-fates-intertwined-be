@@ -1,0 +1,49 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:star_projectile",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:timer": {
+				"time": 2,
+				"time_down_event": {
+					"event": "start_move",
+					"target": "self"
+				}
+			},
+			"minecraft:health": {
+				"value": 10,
+				"max": 10
+			},
+			"minecraft:collision_box": {
+				"height": 0.5,
+				"width": 0.5
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"on_damage": {
+							"event": "explode",
+							"target": "self"
+						}
+					}
+				]
+			}
+		},
+		"events": {
+			"start_move": {
+				"queue_command": {
+					"command": [
+						"tag @s remove locating_target"
+					]
+				}
+			}
+		}
+	}
+}

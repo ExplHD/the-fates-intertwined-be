@@ -285,4 +285,17 @@
             }
         ]
     }
+    /* "root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "elemental_legionnaire_ultimate_warning@title_ui.elemental_legionnaire_alert_ultimate": {}
+                    }
+                ]
+            }
+        ]
+    } */
 }

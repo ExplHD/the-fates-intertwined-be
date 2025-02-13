@@ -1,0 +1,41 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:elemental_legionnaire",
+			"materials": {
+				"default": "enderman"
+			},
+			"textures": {
+				"default": "textures/entity/elemental_legionnaire"
+			},
+			"geometry": {
+				"default": "geometry.elemental_legionnaire"
+			},
+			"animations": {
+				"look_at_target": "animation.common.look_at_target",
+				"idle": "animation.elemental_legionnaire.idle",
+				"fly": "animation.elemental_legionnaire.fly",
+				"left_attack": "animation.elemental_legionnaire.left_attack",
+				"right_attack": "animation.elemental_legionnaire.right_attack",
+				"down_attack": "animation.elemental_legionnaire.down_attack",
+				"up_attack": "animation.elemental_legionnaire.up_attack",
+				"root": "controller.animation.elemental_legionnaire"
+			},
+			"scripts": {
+				"animate": [
+					"root"
+				]
+			},
+			"particle_effects": {
+				"wind_marker": "fec:wind_marker",
+				"windblade_claymore_attack_1": "fec:windblade_claymore_attack_1",
+				"spell": "fec:wind_marker"
+			},
+			"render_controllers": [
+				"controller.render.elemental_legionnaire"
+			],
+			"enable_attachables": true
+		}
+	}
+}

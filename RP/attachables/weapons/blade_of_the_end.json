@@ -4,8 +4,8 @@
 		"description": {
 			"identifier": "fec:blade_of_the_end",
 			"materials": {
-				"default": "enderman",
-				"enchanted": "item_in_hand_glint"
+				"default": "entity_alphatest",
+				"enchanted": "entity_alphatest_glint"
 			},
 			"textures": {
 				"default": "textures/weapons/blade_of_the_end",
@@ -23,7 +23,6 @@
 			},
 			"scripts": {
 				"animate": [
-					
 					{
 						"hold": "c.is_first_person"
 					}

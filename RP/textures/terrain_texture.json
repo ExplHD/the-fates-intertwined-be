@@ -66,6 +66,12 @@
 		},
 		"fec_shadow_bench_shadowcore_2": {
 			"textures": "textures/blocks/shadow_bench/shadow_bench_shadowcore_2"
+		},
+		"fec_shadow_bench_reducer": {
+			"textures": "textures/blocks/shadow_bench/shadow_bench_reducer"
+		},
+		"fec_curium_block": {
+			"textures": "textures/blocks/curium_block"
 		}
 	}
 }

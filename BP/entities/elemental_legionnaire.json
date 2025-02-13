@@ -190,6 +190,25 @@
 					"time_down_event": {
 						"event": "lightning_cast"
 					}
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 1,
+					"require_complete_path": true,
+					"track_target": true,
+					"cooldown_time": 2,
+					"on_attack": {
+						"event": "attack_successful",
+						"target": "self"
+					}
+				},
+				"minecraft:attack": {
+					"damage": 0
+				},
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_time": [
+						1.5,
+						2
+					]
 				}
 			},
 			"down_attack": {
@@ -197,7 +216,7 @@
 					"attack_radius": 64,
 					"attack_radius_min": 3,
 					"attack_interval": 0.1,
-					"priority": 0,
+					"priority": 1,
 					"ranged_fov": 90,
 					"speed_multiplier": 0.6,
 					"burst_shots": 32,
@@ -491,6 +510,9 @@
 									"component_groups": [
 										"left_attack"
 									]
+								},
+								"queue_command": {
+									"command": "say Left Attack"
 								}
 							},
 							{
@@ -501,7 +523,7 @@
 										"effect @s resistance 3 255",
 										"effect @s slowness 3 255 true",
 										"particle fec:charge_up ~~2~",
-										"title @a[r=64] title ! ELEMENTAL WIND GUST !",
+										"title @a[r=64] title fec:elemental_legionnaire_warning_ultimate",
 										"titleraw @a[r=64] subtitle {\"rawtext\":[{\"text\":\"! USE SHIELD OR UPDRAFT TO AVOID THE ATTACKS !\n! LETHAL ATTACK !\"}]}"
 									]
 								},
@@ -515,7 +537,7 @@
 								"weight": 32,
 								"queue_command": {
 									"command": [
-										"playanimation @s animation.elemental_legionnaire.down_attack",
+										"playanimation @s animation.elemental_legionnaire.up_attack",
 										"title @a[r=64] title ! LIGHTNING STRIKE IS COMING !",
 										"titleraw @a[r=64] subtitle {\"rawtext\":[{\"text\":\"! DODGE TO AVOID THIS ATTACK !\"}]}"
 									]
@@ -532,6 +554,9 @@
 									"component_groups": [
 										"down_attack"
 									]
+								},
+								"queue_command": {
+									"command": "say Down Attack"
 								}
 							}
 						]

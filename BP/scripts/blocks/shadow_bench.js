@@ -15,15 +15,35 @@ world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
             const itemState = block.permutation.getState('fec:shadow_bench_item')
 
             if (player.isSneaking === true && processState == 0) {
-                if (itemState == 1) {
-                    block.setPermutation(block.permutation.withState('fec:shadow_bench_item', 0))
-                    block.dimension.playSound('tile.piston.out', block.center())
-                    player.sendMessage(`Switched mode to : Mythic Crafting`)
+                switch (itemState) {
+                    case 0:
+                        block.setPermutation(block.permutation.withState('fec:shadow_bench_item', itemState + 1))
+                        block.dimension.playSound('tile.piston.in', block.center())
+                        player.sendMessage(`Switched mode to : Shadow Conversion`)
+                        break;
+                    case 1:
+                        block.setPermutation(block.permutation.withState('fec:shadow_bench_item', itemState + 1))
+                        block.dimension.playSound('tile.piston.in', block.center())
+                        player.sendMessage(`Switched mode to : Material Reducer`)
+                        break;
+                    case 2:
+                        block.setPermutation(block.permutation.withState('fec:shadow_bench_item', 0))
+                        block.dimension.playSound('tile.piston.out', block.center())
+                        player.sendMessage(`Switched mode to : Mythic Crafting`)
+                        break;
+                    default: break;
+                }
+            }
 
-                } else {
-                    block.setPermutation(block.permutation.withState('fec:shadow_bench_item', itemState + 1))
-                    block.dimension.playSound('tile.piston.in', block.center())
-                    player.sendMessage(`Switched mode to : Shadow Conversion`)
+            if (itemState == 2 && player.isSneaking === false) {
+                switch (equippedItem?.typeId) {
+                    case 'fec:shadow_corruption':
+                        const amount = equippedItem.amount
+                        block.dimension.spawnItem(new ItemStack('fec:curium', amount), block.location)
+                        player.runCommand(`clear @s fec:shadow_corruption 0 ${amount}`)
+                        block.dimension.spawnParticle('fec:shadow_bench_conversion_green', block.center())
+                        break;
+                    default: break;
                 }
             }
 

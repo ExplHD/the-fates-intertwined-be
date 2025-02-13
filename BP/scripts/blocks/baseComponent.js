@@ -5,9 +5,12 @@ let availableBlockList = ['grass_block', 'dirt', 'podzol', 'stone', 'cobblestone
 
 world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent('fec:spread', {
-        onTick(event) {
+        onRandomTick(event) {
             let { x, y, z } = event.block.location
-            event.dimension.runCommandAsync(`fill ${x - 1} ${y - 1} ${z - 1} ${x + 1} ${y + 1} ${z + 1} ${spreadableBlocks[0]} replace ${availableBlockList[0]}`)
+            let randomVal = Math.floor(Math.random() * 1)
+            if (randomVal == 0) {
+                event.dimension.runCommandAsync(`fill ${x - 1} ${y - 1} ${z - 1} ${x + 1} ${y + 1} ${z + 1} ${spreadableBlocks[0]} replace ${availableBlockList[0]}`)
+            }
         }
     })
 
@@ -16,7 +19,8 @@ world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
             const entity = event.entity
             let { x, y, z } = event.block.location
             const states = event.block.permutation.getState("fec:spread_type")
-            if (!entity.hasTag('corruption_immunity') || entity.typeId != "minecraft:item") {
+            const equippedChestplate = entity.getComponent("minecraft:equippable")?.getEquipment("Chest")
+            if (!entity.hasTag('corruption_immunity') && entity.typeId != "minecraft:item" && entity.typeId != "fec:corrupted_creeper" && equippedChestplate?.typeId != 'fec:curium_corruption_purifier') {
                 system.run(() => {
                     entity.addEffect('blindness', 40)
                     entity.applyDamage(2)

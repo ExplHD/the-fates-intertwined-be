@@ -34,20 +34,54 @@
                 "explosion_resistance": 1.2
             },
             "minecraft:destructible_by_mining": {
-                "seconds_to_destroy": 1.0
-            }
+                "seconds_to_destroy": 1.0,
+                "item_specific_speeds": [
+                    {
+                        "item": {
+                            "tags": "query.all_tags('minecraft:is_shovel', 'minecraft:wooden_tier')"
+                        },
+                        "destroy_speed": 0.7
+                    },
+                    {
+                        "item": {
+                            "tags": "query.all_tags('minecraft:is_shovel', 'minecraft:stone_tier')"
+                        },
+                        "destroy_speed": 0.56
+                    },
+                    {
+                        "item": {
+                            "tags": "query.all_tags('minecraft:is_shovel', 'minecraft:iron_tier')"
+                        },
+                        "destroy_speed": 0.4
+                    },
+                    {
+                        "item": {
+                            "tags": "query.all_tags('minecraft:is_shovel', 'minecraft:golden_tier')"
+                        },
+                        "destroy_speed": 0.05
+                    },
+                    {
+                        "item": {
+                            "tags": "query.all_tags('minecraft:is_shovel', 'minecraft:diamond_tier')"
+                        },
+                        "destroy_speed": 0.22
+                    },
+                    {
+                        "item": {
+                            "tags": "query.all_tags('minecraft:is_shovel', 'minecraft:netherite_tier')"
+                        },
+                        "destroy_speed": 0.125
+                    }
+                ]
+            },
+            "tag:grass": {},
+            "tag:dirt": {},
+            "tag:minecraft:is_shovel_item_destructible": {}
         },
         "permutations": [
             {
                 "condition": "query.block_state('fec:spread_type')==0",
                 "components": {
-                    "minecraft:tick": {
-                        "interval_range": [
-                            300,
-                            1200
-                        ],
-                        "looping": true
-                    },
                     "minecraft:custom_components": [
                         "fec:spread",
                         "fec:magic_poisoning"

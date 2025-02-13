@@ -1,0 +1,49 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:boots_of_escalation",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.boots"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_boots_of_escalation",
+			"minecraft:max_stack_size": 1,
+			"minecraft:durability": {
+				"max_durability": 320,
+				"damage_chance": {
+					"min": 1,
+					"max": 6
+				}
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"emerald"
+						],
+						"repair_amount": 100
+					}
+				]
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_armor"
+				]
+			},
+			"minecraft:display_name": {
+				"value": "§eEscalation Boots\n§8A boots that is very useful to\nclimb the mountain, or escaping problems\n\n§2Start Sneak to :\nCharge the boots power\nRelease Sneak to :\nGain Temporary speed boost depends of\nthe charge power\nJump while Sneaking to :\nGain vertical momentum depends of\nthe charge power\n\n§9Charge Time : 3 Seconds\n+3 Protection"
+			},
+			"minecraft:enchantable": {
+				"slot": "armor_feet",
+				"value": 17
+			},
+			"minecraft:wearable": {
+				"protection": 3,
+				"slot": "slot.armor.feet"
+			}
+		}
+	}
+}

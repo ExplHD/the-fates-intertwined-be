@@ -4,8 +4,8 @@
 		"description": {
 			"identifier": "fec:winterbloom_sword",
 			"materials": {
-				"default": "enderman",
-				"enchanted": "enderman"
+				"default": "entity_alphatest",
+				"enchanted": "entity_alphatest_glint"
 			},
 			"textures": {
 				"default": "textures/weapons/winterbloom_sword",

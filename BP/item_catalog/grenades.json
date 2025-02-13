@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:crafting_items_catalog": {
+        "categories": [
+            {
+                // Valid values are construction, equipment, nature, and items
+                "category_name": "equipment",
+                "groups": [
+                    {
+                        // This will create a new group
+                        "group_identifier": {
+                            "icon": "fec:frag_grenade",
+                            // This is the name of your group which doubles as
+                            // the localization string. The namespace is required
+                            "name": "fec:grenades"
+                        },
+                        "items": [
+                            "fec:frag_grenade",
+                            "fec:frag_grenade_unexplosive",
+                            "fec:frag_grenade_flame",
+                            "fec:bedrock_breaker"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

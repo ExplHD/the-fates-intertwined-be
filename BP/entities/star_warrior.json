@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "fec:star_warrior",
 			"is_spawnable": false,
-			"is_summonable": true,
+			"is_summonable": false,
 			"is_experimental": false
 		},
 		"component_groups": {
@@ -110,11 +110,7 @@
 				"triggers": [
 					{
 						"cause": "fall",
-						"deals_damage": false,
-						"on_damage": {
-							"event": "flashes_player",
-							"target": "self"
-						}
+						"deals_damage": false
 					},
 					{
 						"cause": "all",
@@ -265,8 +261,11 @@
 							]
 						},
 						"queue_command": {
-							"command": "particle fec:light_blast ~~~"
-						}
+							"command": [
+								"particle fec:light_blast ~~~"
+							]
+						},
+						"trigger": "flashes_player"
 					},
 					{
 						"weight": 33.3,

@@ -1,0 +1,23 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "fec:stars_and_crescent",
+                    "functions": [],
+                    "pools": [
+                        {
+                            "conditions": [
+                                {
+                                    "condition": "killed_by_player_or_pets"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

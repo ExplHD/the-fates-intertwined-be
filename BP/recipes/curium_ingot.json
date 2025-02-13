@@ -1,0 +1,18 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "fec:curium_ingot"
+		},
+		"tags": [
+			"furnace"
+		],
+		"input": "fec:curium",
+		"unlock": [
+			{
+				"item": "fec:curium"
+			}
+		],
+		"output": "fec:curium_ingot"
+	}
+}

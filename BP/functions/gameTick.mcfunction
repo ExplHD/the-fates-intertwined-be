@@ -71,6 +71,9 @@ scoreboard objectives add shadow_revolver dummy
 scoreboard objectives add mythic_tenacity dummy
 scoreboard objectives add reworked_tenacity dummy
 
+## Armor Properties
+scoreboard objectives add boots_of_escalation_charge dummy
+
 # Additional Projectile Trails
 execute at @e[type=fec:dragon_fireball_gravitational] run particle minecraft:dragon_breath_trail ~~~
 execute at @e[type=arrow] run particle minecraft:balloon_gas_particle ~~~
@@ -105,6 +108,7 @@ scoreboard players set @a[scores={wind_essence=..0}] wind_essence 0
 scoreboard players set @a[scores={wind_essence_up=..0}] wind_essence_up 0
 scoreboard players set @a[scores={cdtick=21..}] cdtick 0
 effect @a[tag=speed_ranger] speed 1 1 true
+scoreboard players add @e[type=fec:elemental_legionnaire,scores={atkp_delay=1..}] atkp_delay 1
 titleraw @a[hasitem={item=fec:wind_essence,location=slot.weapon.mainhand}] actionbar {"rawtext":[{"text":"Cooldown : \nUpdraft : §e"},{"score":{"name":"*","objective":"wind_essence_up"}},{"text":"s§r\nDash : §e"},{"score":{"name":"*","objective":"wind_essence"}},{"text":" Ticks"}]}
 titleraw @a[hasitem={item=feather,location=slot.weapon.mainhand},tag=speed_ranger] actionbar {"rawtext":[{"text":"Cooldown : §e"},{"score":{"name":"*","objective":"dash_cooldown"}},{"text":"s"}]}
 
@@ -146,3 +150,4 @@ execute as @e[type=fec:shadowplague_guardian] at @s run gamemode 2 @a[m=d,r=80]
 execute as @e[type=fec:elemental_legionnaire] at @s unless entity @a[r=80,m=2] run event entity @s despawn
 execute as @e[type=fec:water_eidolon] at @s unless entity @a[r=64,m=2] run event entity @s despawn
 execute as @e[type=fec:shadowplague_guardian] at @s unless entity @a[r=80,m=2] run event entity @s despawn
+

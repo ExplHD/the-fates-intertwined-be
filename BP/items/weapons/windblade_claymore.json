@@ -1,4 +1,4 @@
-	{
+{
 	"format_version": "1.21.10",
 	"minecraft:item": {
 		"description": {
@@ -13,7 +13,7 @@
 			"minecraft:damage": 15,
 			"minecraft:enchantable": {
 				"slot": "sword",
-				"value": 14
+				"value": 16
 			},
 			"minecraft:display_name": {
 				"value": "§6Windblade Claymore\n§7A Claymore that imbued with a powerful\nwind power to destroy your opponent\n\n§2Right-click / Tap and Hold to :\nCast the selected skill\nSneak + Left Click / tap to :\nChange selected skill"
@@ -42,7 +42,12 @@
 			"minecraft:hand_equipped": true,
 			"minecraft:icon": "fec_windblade_claymore",
 			"minecraft:max_stack_size": 1,
-			"tag:minecraft:is_sword": {}
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_sword",
+					"minecraft:is_tool"
+				]
+			}
 		}
 	}
 }

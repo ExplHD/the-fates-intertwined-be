@@ -1,0 +1,71 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "fec:curium_block",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"minecraft:friction": 0.4,
+			"minecraft:flammable": false,
+			"minecraft:light_dampening": 0,
+			"minecraft:light_emission": 15,
+			"minecraft:map_color": "#00FF73",
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 12
+			},
+			"minecraft:geometry": "minecraft:geometry.full_block",
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 30,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 15
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 10
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 3.5
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 10
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 2
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 1.5
+					}
+				]
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "opaque",
+					"texture": "fec_curium_block"
+				}
+			},
+			"tag:metal": {},
+			"tag:minecraft:is_pickaxe_item_destructible": {}
+		}
+	}
+}

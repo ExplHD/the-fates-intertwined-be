@@ -22,7 +22,8 @@
 				],
 				"fec:shadow_bench_item": [
 					0, // Shadow Revolver
-					1 // Grass Conversion
+					1, // Grass Conversion
+					2 // Material Reducer
 				]
 			}
 		},
@@ -59,6 +60,17 @@
 					"minecraft:material_instances": {
 						"*": {
 							"texture": "fec_shadow_bench_convert",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('fec:shadow_bench_item') == 2",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_shadow_bench_reducer",
 							"render_method": "alpha_test"
 						}
 					}

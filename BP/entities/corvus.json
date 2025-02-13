@@ -1,0 +1,634 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:corvus",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false,
+			"properties": {
+				"fec:flow_sequence_state": {
+					"type": "int",
+					"client_sync": true,
+					"default": 0,
+					"range": [
+						0,
+						9
+					]
+				},
+				"fec:pattern_used": {
+					"type": "int",
+					"client_sync": true,
+					"default": 0,
+					"range": [
+						0,
+						1
+					]
+				},
+				"fec:dash_times": {
+					"type": "int",
+					"client_sync": false,
+					"default": 0,
+					"range": [
+						0,
+						2
+					]
+				}
+			}
+		},
+		"component_groups": {
+			"spawn_timeout": {
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"test": "has_tag",
+								"subject": "self",
+								"operator": "!=",
+								"value": "corvus_timeout"
+							},
+							"event": "timeout_clear_and_start_dash",
+							"target": "self"
+						}
+					]
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"deals_damage": false
+						}
+					]
+				},
+				"minecraft:movement": {
+					"value": 0
+				},
+				"minecraft:behavior.look_at_target": {}
+			},
+			"timer_to_dash": {
+				"minecraft:timer": {
+					"time": 1,
+					"looping": false,
+					"time_down_event": {
+						"event": "dash",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0
+				}
+			},
+			"dash_1": {
+				"minecraft:timer": {
+					"time": 0.3,
+					"looping": false,
+					"time_down_event": {
+						"event": "dash",
+						"target": "self"
+					}
+				}
+			},
+			"dash_2": {
+				"minecraft:timer": {
+					"time": 0.3,
+					"looping": false,
+					"time_down_event": {
+						"event": "dash",
+						"target": "self"
+					}
+				}
+			},
+			"dash_3": {
+				"minecraft:timer": {
+					"time": 0.3,
+					"looping": false,
+					"time_down_event": {
+						"event": "dash",
+						"target": "self"
+					}
+				}
+			},
+			"run_and_attack": {
+				"minecraft:behavior.melee_box_attack": {
+					"horizontal_reach": 0.3,
+					"priority": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"within_radius": 48,
+					"scan_interval": 10,
+					"target_invisible_multiplier": 0.3,
+					"target_sneak_visibility_multiplier": 0.8,
+					"priority": 0,
+					"must_see": false,
+					"entity_types": [
+						{
+							"max_dist": 64,
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "stars_creature"
+							}
+						}
+					]
+				},
+				"minecraft:movement": {
+					"value": 0.45
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 15,
+					"time_down_event": {
+						"event": "run_and_attack_end",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 4500,
+				"max": 4500
+			},
+			"minecraft:boss": {
+				"name": "Corvus : Ruler of Bright Stars",
+				"hud_range": 128
+			},
+			"minecraft:collision_box": {
+				"height": 3,
+				"width": 1
+			},
+			"minecraft:scale": {
+				"value": 2.4
+			},
+			"minecraft:attack": {
+				"damage": 10
+			},
+			"minecraft:movement": {
+				"value": 0.4
+			},
+			"minecraft:behavior.look_at_target": {
+				"priority": 0
+			},
+			"minecraft:equipment": {
+				"table": "loot_tables/equipment/boss/corvus.json",
+				"slot_drop_chance": [
+					{
+						"drop_chance": 100,
+						"slot": "slot.weapon.mainhand"
+					}
+				]
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 1,
+				"interval": 120,
+				"speed_multiplier": 1.1
+			},
+			"minecraft:follow_range": {
+				"value": 64,
+				"max": 64
+			},
+			"minecraft:type_family": {
+				"family": [
+					"stars_creature",
+					"corvus",
+					"boss"
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 100,
+				"max": 100
+			},
+			"minecraft:persistent": {},
+			"minecraft:physics": {},
+			"minecraft:behavior.melee_box_attack": {
+				"attack_once": false,
+				"cooldown_time": 1,
+				"melee_fov": 90,
+				"horizontal_reach": 0.3,
+				"require_complete_path": false,
+				"priority": 3
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"spawn_timeout"
+					]
+				}
+			},
+			"timeout_clear_and_start_dash": {
+				"remove": {
+					"component_groups": [
+						"spawn_timeout"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"timer_to_dash"
+					]
+				},
+				"set_property": {
+					"fec:flow_sequence_state": 1
+				}
+			},
+			// MULTI USE
+			"dash": {
+				"sequence": [
+					// Triggers after RESTING
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "int_property",
+									"domain": "fec:flow_sequence_state",
+									"subject": "self",
+									"operator": "==",
+									"value": 1
+								},
+								{
+									"test": "int_property",
+									"domain": "fec:dash_times",
+									"subject": "self",
+									"operator": "==",
+									"value": 0
+								}
+							]
+						},
+						"queue_command": {
+							"command": [
+								"damage @e[r=8,rm=0.01] 6 entity_attack entity @s",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"particle fec:light_blast ~~~",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"playsound item.trident.hit"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"dash_1"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"timer_to_dash"
+							]
+						},
+						"set_property": {
+							"fec:dash_times": "query.has_property('fec:dash_times') + 1"
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "int_property",
+									"domain": "fec:flow_sequence_state",
+									"subject": "self",
+									"operator": "==",
+									"value": 1
+								},
+								{
+									"test": "int_property",
+									"domain": "fec:dash_times",
+									"subject": "self",
+									"operator": "==",
+									"value": 1
+								}
+							]
+						},
+						"queue_command": {
+							"command": [
+								"damage @e[r=8,rm=0.01] 6 entity_attack entity @s",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"particle fec:light_blast ~~~",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"playsound item.trident.hit"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"dash_2"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"dash_1"
+							]
+						},
+						"set_property": {
+							"fec:dash_times": "query.has_property('fec:dash_times') + 1"
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "int_property",
+									"domain": "fec:flow_sequence_state",
+									"subject": "self",
+									"operator": "==",
+									"value": 1
+								},
+								{
+									"test": "int_property",
+									"domain": "fec:dash_times",
+									"subject": "self",
+									"operator": "==",
+									"value": 2
+								}
+							]
+						},
+						"queue_command": {
+							"command": [
+								"damage @e[r=8,rm=0.01] 6 entity_attack entity @s",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"particle fec:light_blast ~~~",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"playsound item.trident.hit"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"dash_2"
+							]
+						},
+						"set_property": {
+							"fec:dash_times": 0,
+							"fec:flow_sequence_state": 2
+						},
+						"randomize": [
+							{
+								"weight": 1,
+								"set_property": {
+									"fec:pattern_used": 0
+								},
+								"add": {
+									"component_groups": [
+										"run_and_attack"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"set_property": {
+									"fec:pattern_used": 1
+								},
+								"queue_command": {
+									"command": [
+										"particle fec:stars_ping ~~~"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"run_and_attack"
+									]
+								}
+							}
+						]
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "int_property",
+									"domain": "fec:flow_sequence_state",
+									"subject": "self",
+									"operator": "==",
+									"value": 2
+								},
+								{
+									"test": "int_property",
+									"domain": "fec:pattern_used",
+									"subject": "self",
+									"operator": "==",
+									"value": 0
+								},
+								{
+									"test": "int_property",
+									"domain": "fec:dash_times",
+									"subject": "self",
+									"operator": "==",
+									"value": 0
+								}
+							]
+						},
+						"queue_command": {
+							"command": [
+								"damage @e[r=8,rm=0.01] 6 entity_attack entity @s",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"particle fec:light_blast ~~~",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"playsound item.trident.hit"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"dash_1"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"timer_to_dash"
+							]
+						},
+						"set_property": {
+							"fec:dash_times": "query.has_property('fec:dash_times') + 1"
+						}
+					},
+					// Triggers at Flow Pattern : 2 and Pattern Used : 0
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "int_property",
+									"domain": "fec:flow_sequence_state",
+									"subject": "self",
+									"operator": "==",
+									"value": 2
+								},
+								{
+									"test": "int_property",
+									"domain": "fec:pattern_used",
+									"subject": "self",
+									"operator": "==",
+									"value": 0
+								},
+								{
+									"test": "int_property",
+									"domain": "fec:dash_times",
+									"subject": "self",
+									"operator": "==",
+									"value": 1
+								}
+							]
+						},
+						"queue_command": {
+							"command": [
+								"damage @e[r=8,rm=0.01] 6 entity_attack entity @s",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"particle fec:light_blast ~~~",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"playsound item.trident.hit"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"dash_2"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"dash_1"
+							]
+						},
+						"set_property": {
+							"fec:dash_times": "query.has_property('fec:dash_times') + 1"
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "int_property",
+									"domain": "fec:flow_sequence_state",
+									"subject": "self",
+									"operator": "==",
+									"value": 2
+								},
+								{
+									"test": "int_property",
+									"domain": "fec:pattern_used",
+									"subject": "self",
+									"operator": "==",
+									"value": 0
+								},
+								{
+									"test": "int_property",
+									"domain": "fec:dash_times",
+									"subject": "self",
+									"operator": "==",
+									"value": 2
+								}
+							]
+						},
+						"queue_command": {
+							"command": [
+								"damage @e[r=8,rm=0.01] 6 entity_attack entity @s",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"particle fec:light_blast ~~~",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"tp @s ^^^1 true",
+								"playsound item.trident.hit"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"dash_2"
+							]
+						},
+						"set_property": {
+							"fec:dash_times": 0,
+							"fec:flow_sequence_state": 3
+						},
+						"randomize": [
+							{
+								"weight": 1,
+								"set_property": {
+									"fec:pattern_used": 0
+								},
+								"add": {
+									"component_groups": [
+										"run_and_attack"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"set_property": {
+									"fec:pattern_used": 1
+								},
+								"queue_command": {
+									"command": [
+										"particle fec:stars_ping ~~~"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"run_and_attack"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"run_and_attack_end": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "int_property",
+									"domain": "fec:flow_sequence_state",
+									"subject": "self",
+									"operator": "==",
+									"value": 2
+								},
+								{
+									"test": "int_property",
+									"domain": "fec:pattern_used",
+									"subject": "self",
+									"operator": "==",
+									"value": 0
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"timer_to_dash"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

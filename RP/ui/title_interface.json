@@ -1,21 +1,5 @@
 {
     "namespace": "title_ui",
-    "title_alert_ui": {
-        "type": "panel",
-        "size": [
-            241, 60
-        ],
-        "anchor_from": "center",
-        "anchor_to": "center",
-        "bindings": [
-            {
-                "binding_name": "(#text = $text)",
-                "binding_type": "global",
-                "binding_name_override": "#visible"
-            }
-        ]
-    },
-    
     "judgement_slash_alert@title_alert_ui": {
         "controls": [
             {
@@ -30,9 +14,72 @@
             }
         ]
     },
-
-    "orange_vignette":{
+    "orange_vignette": {
         "type": "image",
-        "texture": "textures/ui/alert_vignette"
+        "texture": "textures/ui/alert_vignette",
+        "size": [
+            128,
+            128
+        ]
+    },
+    "elemental_legionnaire_alert_ultimate": {
+        "type": "panel",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "$update_string": "_bossAlert.elemental_legionnaire_ultimate",
+        "controls": [
+            {
+                "data_control": {
+                    "type": "panel",
+                    "size": [
+                        0,
+                        0
+                    ],
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string"
+                        },
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#preserved_text",
+                            "binding_condition": "visibility_changed"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not (#hud_title_text_string = #preserved_text) and not ((#hud_title_text_string - $update_string) = #hud_title_text_string))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "alert_vignette": {
+                    "type": "panel",
+                    "controls": [
+                        {
+                            "orange_vignette@title_ui.orange_vignette": {
+                                "size": [
+                                    128,
+                                    128
+                                ],
+                                "alpha": 0.7
+                            }
+                        },
+                        {
+                            "text": {
+                                "type": "label",
+                                "font_size": "large",
+                                "text": "! Elemental Wind Gust !",
+                                "font_type": "MinecraftTen"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
     }
 }

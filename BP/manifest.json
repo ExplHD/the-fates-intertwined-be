@@ -1,32 +1,32 @@
 {
 	"format_version": 2,
 	"header": {
-		"name": "The Fates Interwined 2025.1.1 (SCRIPT + BP)",
+		"name": "The Fates Interwined 2025.2.1 (DEV)",
 		"description": "A Minecraft addons that adds a lot of content that will be updated every 2-3 months",
 		"min_engine_version": [
 			1,
 			21,
-			20
+			50
 		],
-		"uuid": "c27c7fd9-0e8a-4951-8320-b9e8ce487206",
+		"uuid": "08e421a6-9c86-4a93-9704-2affcb0265df",
 		"version": [
-			2025,
-			1,
+			2,
+			0,
 			1
 		]
 	},
 	"modules": [
 		{
 			"type": "data",
-			"uuid": "17a4fdb0-92e4-4d1d-8358-ac503d5c3f0d",
+			"uuid": "01c9200b-d1e3-4db5-828e-f5e189b68371",
 			"version": [
-				2025,
-				1,
+				2,
+				0,
 				1
 			]
 		},
 		{
-			"uuid": "ce53419c-72ca-48e2-8507-18151c508013",
+			"uuid": "a5a9b728-05d8-40f4-93bf-2233794cda97",
 			"type": "script",
 			"language": "javascript",
 			"entry": "scripts/main.js",
@@ -44,26 +44,18 @@
 	"dependencies": [
 		{
 			"module_name": "@minecraft/server",
-			"version": "1.17.0-beta"
+			"version": "1.18.0-beta"
 		},
 		{
 			"module_name": "@minecraft/server-ui",
 			"version": "1.3.0"
 		},
 		{
-			"uuid": "dac8816e-f011-4ad7-a8bc-afb19fb7d9d9",
+			"uuid": "dbee144b-14b8-4f35-a3ad-ddadb58b487e",
 			"version": [
-				2025,
-				1,
-				1
-			]
-		},
-		{
-			"uuid": "dec5c848-fee6-420d-8a7a-0cc8f878bd7e",
-			"version": [
-				1,
+				2,
 				0,
-				0
+				1
 			]
 		}
 	],

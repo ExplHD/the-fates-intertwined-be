@@ -52,12 +52,12 @@ world.afterEvents.itemUse.subscribe((use) => {
                 player.applyKnockback(player.getViewDirection().x, player.getViewDirection().z, -3.5, 0.4);
                 player.runCommandAsync(`playsound mob.enderdragon.flap "${player.name}"`);
                 player.runCommandAsync(`particle fec:dash_fx ~~~`);
-                return addScore(player, 'dash_cooldown', 14);
+                return addScore(player, 'dash_cooldown', 5);
             } else {
                 player.applyKnockback(player.getViewDirection().x, player.getViewDirection().z, 3, 0.4);
                 player.runCommandAsync(`playsound mob.enderdragon.flap "${player.name}"`);
                 player.runCommandAsync(`particle fec:dash_fx ~~~`);
-                return addScore(player, 'dash_cooldown', 14);
+                return addScore(player, 'dash_cooldown', 5);
             }
         } else {
             const soundSettings = {

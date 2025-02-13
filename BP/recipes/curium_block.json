@@ -1,0 +1,29 @@
+	{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:curium_block"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "fec:curium_ingot"
+			}
+		},
+		"pattern": [
+			"###",
+			"###",
+			"###"
+		],
+		"unlock": [
+			{
+				"item": "fec:curium"
+			}
+		],
+		"result": {
+			"item": "fec:curium_block"
+		}
+	}
+}

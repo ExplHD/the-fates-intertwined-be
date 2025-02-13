@@ -1,5 +1,137 @@
 entity.ender_dragon.name=§2§1§rNaga Ender
 entity.wither.name=§2§3§rWither
 raid.name=§1§1§1§2§2§rSerbuan
- 
+
+## ------------------------------------------------------
+## ENTITIES
+## ------------------------------------------------------
+
+entity.fec:murasama_expansion.name=Ekspansi Murasama
+entity.fec:thrown_frag_grenade.name=Grenade Frag (Peledak)
+entity.fec:elemental_legionnaire.name=§6Elemental Legionnaire
+entity.fec:thrown_frag_grenade_flame.name=Grenade Frag (Ledakan Api)
+entity.fec:thrown_frag_grenade_unexplosive.name=Grenade Frag (Tidak Meledak)
+entity.fec:thrown_bedrock_breaker.name=§dBedrock Breaker
+entity.fec:thrown_lightning_essence.name=Esensi Petir yang Dilempar
+entity.fec:water_eidolon.name=§6Sisa Eidolon: Air Sakura
+entity.fec:water_core.name=Air Inti
+entity.fec:zenith_base.name=Tampilan Senjata Zenith
+entity.fec:shadowplague_guardian.name=Shadowplague Guardian
+entity.fec:shadow_revolver_bullet.name=Peluru Shadow Revolver
+entity.fec:tenacity_orange_slash.name=Tebasan Api Neraka
+entity.fec:tenacity_blue_slash.name=Tebasan Sky Ripper
+entity.fec:spear_of_heart_plunge.name=Tombak Hati
+entity.fec:tenacity_sky_meteor.name=Meteor Langit Tenacity
+entity.fec:dark_cover_smoke.name=Penutup Gelap
+entity.fec:shadow_slash.name=Bayangan Slash
+entity.fec:crescent_pillar.name=Pilar Bulan Sabit
+entity.fec:eidolon_4_pillar.name=Pilar Air Sakura
+entity.fec:corruption_expands_beam.name=Serangan Orbital COrruption Expands
+entity.fec:reworked_tenacity_shield.name=Perisai Keuletan yang Diubah
+entity.fec:star_warrior.name=Pelayan Corvus : Prajurit Bintang
+entity.fec:wind_creeper.name=Creeper Angin
+entity.fec:fire_creeper.name=Creeper Api
+entity.fec:earth_creeper.name=Creeper Tanah
+entity.fec:water_creeper.name=Creeper Air
+entity.fec:corvus.name=Penguasa Bintang : Corvus
+entity.fec:star_projectile.name=Bola Bintang
+entity.fec:corrupted_creeper.name=Corrupted Creeper
+entity.fec:fire_pillar_remastered.name=Pilar Api
+
+## ------------------------------------------------------
+## ITEMS
+## ------------------------------------------------------
+
+item.fec:winterbloom_medal=§dMedali Winterbloom
+item.fec:loving_sakura_medal=§dMedali Loving Sakura
+item.fec:murasama_medal=§dMedali Lightning Tajador
+item.fec:land_of_peace_medal=§dMedali Land Of Peace
+item.fec:frag_grenade=Grenade Frag (Peledak)
+item.spawn_egg.entity.fec:elemental_legionnaire.name=§6Telur Pemijahan Elemental Legionnaire
+item.fec:blade_of_the_end=Pedang Akhir
+item.fec:frag_grenade_flame=Grenade Frag (Ledakan Api)
+item.fec:frag_grenade_unexplosive=Grenade Frag (Tidak mudah meledak)
+item.fec:bedrock_breaker=Pemecah Batuan Dasar
+item.fec:lightning_shard=Pecahan Petir
+item.fec:wind_shard=Pecahan Angin
+item.fec:fire_shard=Pecahan Api
+item.fec:earth_shard=Pecahan Bumi
+item.fec:lightning_essence=§bEsensi Petir
+item.fec:wind_essence=§bEsensi Angin
+item.fec:fire_essence=§bEsensi Api
+item.fec:earth_essence=§bEsensi Bumi
+item.fec:water_shard=Pecahan Air
+item.fec:water_essence=§bEsensi Air
+item.fec:zenith=Zenith
+item.fec:eidolon_4_staff=Tongkat Eidolon: Air Sakura
+item.fec:stars_and_crescent=Bintang dan Bulan Sabit
+item.spawn_egg.entity.fec:water_eidolon.name=§6Spawn Eidolon Remnant: Sakura Air
+item.fec:iron_stick=Tongkat Besi
+item.fec:winterbloom_medal_wireframe=Rangka Kawat Medali Winterbloom
+item.fec:loving_sakura_medal_wireframe=Rangka Kawat Medali Sakura yang Penuh Kasih
+item.fec:lightning_phoenix_medal_wireframe=Rangka Kawat Medali Phoenix Petir
+item.fec:land_of_peace_medal_wireframe=Rangka Kawat Medali Tanah Perdamaian
+item.fec:legionnaire_medalion=§6Medali Legionnaire
+item.fec:glorified_water_essence=§6Air yang Dimuliakan Esensi
+item.spawn_egg.entity.fec:water_core.name=Spawn Water Core
+tile.fec:legendary_fabricator.name=Legendary Fabricator
+item.fec:stardust_armor_helmet=§6Stardust Helmet
+item.fec:stardust_armor_chestplate=§6Stardust Chestplate
+item.fec:stardust_armor_leggings=§6Stardust Leggings
+item.fec:stardust_armor_boots=§6Stardust Boots
+item.fec:stardust_upgrade_smithing_template=§dStardust Upgrade Smithing Template
+item.fec:corner_medal_line=Tongkat Besi Berbentuk Sudut
+item.fec:circle_medal_line=Tongkat Besi Bengkok Lingkaran
+item.fec:heart_medal_line=Besi Berbentuk Hati Tongkat
+item.fec:bird_head_medal_line=Tongkat Besi Berbentuk Kepala Burung
+tile.fec:zenith_fabricator.name=Zenith Fabricator
+item.spawn_egg.entity.fec:zenith_base.name=Spawn Zenith Weapon Display
+item.fec:stardust_clear_helmet=§6Helm Bening Stardust
+item.fec:stardust_clear_chestplate=§6Pelindung Dada Stardust Bening
+item.fec:stardust_clear_leggings=§6Legging Bening Stardust
+item.fec:stardust_clear_boots=§6Sepatu Bot Bening Stardust
+item.spawn_egg.entity.fec:shadowplague_guardian.name=Spawn Shadowplague Guardian
+item.spawn_egg.entity.fec:shadow_revolver_bullet.name=Spawn Peluru Shadow Revolver
+item.spawn_egg.entity.fec:fire_pillar_remastered.name=Spawn Fire Pillar
+item.spawn_egg.entity.fec:tenacity_orange_slash.name=Spawn Hellfire Slash
+item.spawn_egg.entity.fec:tenacity_blue_slash.name=Spawn Sky Ripper Slash
+item.spawn_egg.entity.fec:spear_of_heart_plunge.name=Spawn Spear of Heart
+item.spawn_egg.entity.fec:tenacity_sky_meteor.name=Spawn Tenacity Sky Meteor
+item.spawn_egg.entity.fec:dark_cover_smoke.name=Spawn Dark Cover
+item.spawn_egg.entity.fec:corruption_expands_beam.name=Spawn Serangan Orbital Corruption Expands
+item.fec:reworked_tenacity=Keuletan yang Diperbaiki
+item.fec:weapon_billet=Billet Senjata
+item.spawn_egg.entity.fec:reworked_tenacity_shield.name=Spawn Perisai Tenacity yang Diperbaiki
+item.spawn_egg.entity.fec:star_warrior.name=Spawn Pelayan Corvus: Prajurit Bintang
+item.spawn_egg.entity.fec:wind_creeper.name=Spawn Creeper Angin
+item.spawn_egg.entity.fec:fire_creeper.name=Spawn Creeper Api
+item.spawn_egg.entity.fec:earth_creeper.name=Spawn Creeper Tanah
+item.spawn_egg.entity.fec:water_creeper.name=Spawn Creeper Air
+item.spawn_egg.entity.fec:corvus.name=Spawn Star Ruler : Corvus
+item.spawn_egg.entity.fec:star_projectile.name=Spawn Bola Bintang
+item.fec:boots_of_escalation=Sepatu Eskalasi
+item.fec:capsule_of_life_extender=Kapsul Pemanjang Kehidupan
+item.fec:ultra_core=Ultra Core
+item.fec:curium_corruption_purifier=Pemurni Corruption Curium
+item.fec:curium=Curium
+item.fec:curium_ingot=Curium Batangan
+item.spawn_egg.entity.fec:corrupted_creeper.name=Spawn Corrupted Creeper
+
+## ------------------------------------------------------
+## BLOCKS
+## ------------------------------------------------------
+
+tile.fec:shadow_corruption.name=Korupsi Bayangan
+tile.fec:curium_block.name=Blok Curium
+
+## ------------------------------------------------------
+## CATEGORIES
+## ------------------------------------------------------
+
+fec:grenades=Granat
+fec:elemental_shards=Pecahan Elemen
+fec:elemental_essences=Esensi Elemen
+fec:medals=Medali
+
+## Sudah tidak berlaku lagi 
 text.the_fates.welcome=Salam pemain, selamat datang di dunia minecraft. silakan pilih kelas Anda dengan berinteraksi dengan kompas untuk membuat perjalanan Anda sedikit lebih mudah

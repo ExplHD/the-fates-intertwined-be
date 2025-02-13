@@ -228,7 +228,7 @@
 		},
 		"animation.water_eidolon.smash": {
 			"animation_length": 1.25,
-			"override_previous_animation": true,
+			"override_previous_animation": false,
 			"bones": {
 				"body": {
 					"rotation": {

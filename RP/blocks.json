@@ -15,5 +15,8 @@
 	},
 	"fec:shadow_bench": {
 		"sound": "metal"
+	},
+	"fec:curium_block": {
+		"sound": "metal"
 	}
 }

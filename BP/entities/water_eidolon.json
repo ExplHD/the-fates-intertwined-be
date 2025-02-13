@@ -37,7 +37,7 @@
 			"phase_1_timer": {
 				"minecraft:timer": {
 					"looping": false,
-					"time": 12,
+					"time": 5,
 					"time_down_event": {
 						"event": "random_phase_1"
 					}
@@ -56,7 +56,7 @@
 			"phase_2_timer": {
 				"minecraft:timer": {
 					"looping": false,
-					"time": 8.5,
+					"time": 4,
 					"time_down_event": {
 						"event": "random_phase_2"
 					}
@@ -70,12 +70,20 @@
 				"minecraft:movement": {
 					"value": 0.15,
 					"max": 0.15
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "projectile",
+							"deals_damage": false
+						}
+					]
 				}
 			},
 			"phase_3_timer": {
 				"minecraft:timer": {
 					"looping": false,
-					"time": 5,
+					"time": 2,
 					"time_down_event": {
 						"event": "random_phase_3"
 					}
@@ -182,7 +190,7 @@
 				},
 				"minecraft:timer": {
 					"looping": false,
-					"time": 20,
+					"time": 10,
 					"time_down_event": {
 						"event": "rest_end"
 					}

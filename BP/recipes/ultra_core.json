@@ -1,0 +1,33 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:ultra_core"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"Q": {
+				"item": "fec:curium_block"
+			},
+			"O": {
+				"item": "fec:circle_medal_line"
+			}
+		},
+		"pattern": [
+			" O ",
+			" Q ",
+			"O O"
+		],
+		"unlock": [
+			{
+				"item": "fec:curium"
+			}
+		],
+		"result": {
+			"item": "fec:ultra_core",
+			"count": 1
+		}
+	}
+}
