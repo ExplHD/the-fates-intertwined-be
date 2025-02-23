@@ -1,0 +1,34 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:curium_corruption_purifier",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.chestplate"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_curium_corruption_purifier",
+			"minecraft:wearable": {
+				"protection": 6,
+				"slot": "slot.armor.chest"
+			},
+			"minecraft:durability": {
+				"max_durability": 550
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_armor"
+				]
+			},
+			"minecraft:display_name": {
+				"value": "§eCurium Corruption Purifier\n§8A chestplate that is very useful to\nexploring the shadow corruption\n\n§2Have faster health regeneration\n\n§9+6 Protection"
+			},
+			"minecraft:enchantable": {
+				"slot": "armor_feet",
+				"value": 17
+			}
+		}
+	}
+}

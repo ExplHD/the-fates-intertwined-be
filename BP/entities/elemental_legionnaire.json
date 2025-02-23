@@ -52,12 +52,12 @@
 					}
 				},
 				"minecraft:attack": {
-					"damage": 0
+					"damage": 16
 				},
 				"minecraft:attack_cooldown": {
 					"attack_cooldown_time": [
-						1.5,
-						2
+						1,
+						1
 					]
 				}
 			},
@@ -202,12 +202,12 @@
 					}
 				},
 				"minecraft:attack": {
-					"damage": 0
+					"damage": 16
 				},
 				"minecraft:attack_cooldown": {
 					"attack_cooldown_time": [
-						1.5,
-						2
+						1,
+						1
 					]
 				}
 			},
@@ -355,7 +355,7 @@
 						"music play music.boss.unfiltered_calamity 1 1 loop",
 						"gamemode 2 @a[r=64,m=d]",
 						"title @a[r=64] title Elemental Legionnaire",
-						"title @a[r=64] subtitle Master of Elemental"
+						"title @a[r=64] subtitle The Champions"
 					]
 				}
 			},
@@ -510,9 +510,6 @@
 									"component_groups": [
 										"left_attack"
 									]
-								},
-								"queue_command": {
-									"command": "say Left Attack"
 								}
 							},
 							{
@@ -523,7 +520,7 @@
 										"effect @s resistance 3 255",
 										"effect @s slowness 3 255 true",
 										"particle fec:charge_up ~~2~",
-										"title @a[r=64] title fec:elemental_legionnaire_warning_ultimate",
+										"title @a[r=64] title ! ELEMENTAL WIND GUST !",
 										"titleraw @a[r=64] subtitle {\"rawtext\":[{\"text\":\"! USE SHIELD OR UPDRAFT TO AVOID THE ATTACKS !\n! LETHAL ATTACK !\"}]}"
 									]
 								},
@@ -554,9 +551,6 @@
 									"component_groups": [
 										"down_attack"
 									]
-								},
-								"queue_command": {
-									"command": "say Down Attack"
 								}
 							}
 						]

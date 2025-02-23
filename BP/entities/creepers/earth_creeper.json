@@ -226,7 +226,7 @@
 				"queue_command": {
 					"command": [
 						"tag @s add earth_iframe",
-						"effect @s resistance 3 255 true",
+						"effect @s resistance 3 3 true",
 						"effect @s slowness 2 254 true"
 					]
 				}

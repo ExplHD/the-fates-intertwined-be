@@ -103,9 +103,17 @@
                 "0.6": [
                     "/inputpermission set @s movement disabled",
                     "/title @s actionbar §6> ATTACK INITIATED! <",
-                    "/damage @e[r=12,rm=0.1] 26 entity_attack entity @s",
+                    "/damage @e[r=12,rm=0.1] 36 entity_attack entity @s",
                     "/particle fec:mythic_tenacity_attack_5 ~~~",
                     "/playsound sword_slash.heavy_slash @a[r=16]",
+                    "/summon fec:tenacity_orange_slash ^^^7 ~ 0",
+                    "/summon fec:tenacity_orange_slash ^-7^^ ~90 0",
+                    "/summon fec:tenacity_orange_slash ^^^-7 ~180 0",
+                    "/summon fec:tenacity_orange_slash ^7^^ ~270 0",
+                    "/summon fec:tenacity_blue_slash ^-5.5^^5.5 ~45 0",
+                    "/summon fec:tenacity_blue_slash ^-5.5^^-5.5 ~135 0",
+                    "/summon fec:tenacity_blue_slash ^5.5^^-5.5 ~225 0",
+                    "/summon fec:tenacity_blue_slash ^5.5^^5.5 ~315 0",
                     "/effect @s clear"
                 ],
                 "0.7": [

@@ -1,4 +1,4 @@
-{
+	{
 	"format_version": "1.21.10",
 	"animations": {
 		"animation.murasama_calamity.skill_2": {
@@ -53,7 +53,8 @@
 			"animation_length": 3.1,
 			"timeline": {
 				"0.0": [
-					"/tag @a[r=32,c=2] add murasama_expansion",
+					"/tag @a[r=32,c=2,m=d] add murasama_expansion",
+					"/tag @a[r=32,c=2,m=s] add murasama_expansion",
 					"/playsound custom_sfx.domain_expansion @a[r=128]"
 				],
 				"0.4": [

@@ -35,6 +35,30 @@
 					"render_method": "alpha_test"
 				}
 			},
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					15,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					15,
+					16
+				]
+			},
 			"minecraft:light_emission": 0,
 			"minecraft:light_dampening": 1,
 			"minecraft:destructible_by_mining": {

@@ -12,11 +12,7 @@
 			"minecraft:icon": "fec_boots_of_escalation",
 			"minecraft:max_stack_size": 1,
 			"minecraft:durability": {
-				"max_durability": 320,
-				"damage_chance": {
-					"min": 1,
-					"max": 6
-				}
+				"max_durability": 320
 			},
 			"minecraft:repairable": {
 				"repair_items": [

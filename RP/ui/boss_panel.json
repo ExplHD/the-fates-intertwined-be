@@ -1,10 +1,13 @@
-{
+	{
     "namespace": "boss_panel",
     "boss_health_template": {
         "type": "panel",
         "anchor_from": "top_middle",
         "anchor_to": "top_middle",
-        "size": [240, 61],
+        "size": [
+            240,
+            61
+        ],
         "bindings": [
             {
                 "binding_name": "(#bossName = $boss_name)",
@@ -14,16 +17,17 @@
             }
         ]
     },
-
     "full_boss_health": {},
-
     "wither_bossbar@boss_health_template": {
         "controls": [
             {
                 "wither_bossbar_text": {
                     "type": "label",
                     "text": "Wither",
-                    "offset": [ 0, -13 ],
+                    "offset": [
+                        0,
+                        -13
+                    ],
                     "font_size": "normal",
                     "font_type": "MinecraftTen"
                 }
@@ -31,22 +35,34 @@
             {
                 "wither_bossbar_empty@wither_bar_empty": {
                     "layer": 1,
-                    "size": [173, 7],
+                    "size": [
+                        173,
+                        7
+                    ],
                     "keep_ratio": false
                 }
             },
-            {   
+            {
                 "wither_bossbar_full@wither_bar_full": {
                     "layer": 2,
-                    "size": [173, 7],
+                    "size": [
+                        173,
+                        7
+                    ],
                     "keep_ratio": false
                 }
             },
             {
                 "wither_bossbar_overlay@wither_bar_overlay": {
                     "layer": 3,
-                    "size": [190, 55],
-                    "offset": [0, 9],
+                    "size": [
+                        190,
+                        55
+                    ],
+                    "offset": [
+                        0,
+                        9
+                    ],
                     "keep_ratio": false
                 }
             }
@@ -57,8 +73,11 @@
             {
                 "ender_dragon_bossbar_text": {
                     "type": "label",
-                    "text": "Ender Dragon : Ruler Of The Unknown",
-                    "offset": [ 0, -9 ],
+                    "text": "Ender Dragon : God of Stars",
+                    "offset": [
+                        0,
+                        -9
+                    ],
                     "font_size": "normal",
                     "font_type": "MinecraftTen"
                 }
@@ -66,22 +85,34 @@
             {
                 "ender_dragon_bossbar_empty@ender_dragon_bar_empty": {
                     "layer": 1,
-                    "size": [173, 7],
+                    "size": [
+                        173,
+                        7
+                    ],
                     "keep_ratio": false
                 }
             },
-            {   
+            {
                 "ender_dragon_bossbar_full@ender_dragon_bar_full": {
                     "layer": 2,
-                    "size": [173, 7],
+                    "size": [
+                        173,
+                        7
+                    ],
                     "keep_ratio": false
                 }
             },
             {
                 "ender_dragon_bossbar_overlay@ender_dragon_bar_overlay": {
                     "layer": 3,
-                    "size": [190, 55],
-                    "offset": [0, 9],
+                    "size": [
+                        190,
+                        55
+                    ],
+                    "offset": [
+                        0,
+                        9
+                    ],
                     "keep_ratio": false
                 }
             }
@@ -92,8 +123,11 @@
             {
                 "elemental_legionnaire_bossbar_text": {
                     "type": "label",
-                    "text": "Elemental Legionnaire : The Elemental Masters",
-                    "offset": [ 0, -13 ],
+                    "text": "Elemental Legionnaire : The Champions",
+                    "offset": [
+                        0,
+                        -13
+                    ],
                     "font_size": "normal",
                     "font_type": "MinecraftTen"
                 }
@@ -101,35 +135,49 @@
             {
                 "elemental_legionnaire_bossbar_empty@elemental_legionnaire_bar_empty": {
                     "layer": 1,
-                    "size": [173, 7],
+                    "size": [
+                        173,
+                        7
+                    ],
                     "keep_ratio": false
                 }
             },
-            {   
+            {
                 "elemental_legionnaire_bossbar_full@elemental_legionnaire_bar_full": {
                     "layer": 2,
-                    "size": [173, 7],
+                    "size": [
+                        173,
+                        7
+                    ],
                     "keep_ratio": false
                 }
             },
             {
                 "elemental_legionnaire_bossbar_overlay@elemental_legionnaire_bar_overlay": {
                     "layer": 3,
-                    "size": [190, 55],
-                    "offset": [0, 9],
+                    "size": [
+                        190,
+                        55
+                    ],
+                    "offset": [
+                        0,
+                        9
+                    ],
                     "keep_ratio": false
                 }
             }
         ]
     },
-
     "water_eidolon_bossbar@boss_health_template": {
         "controls": [
             {
                 "water_eidolon_bossbar_text": {
                     "type": "label",
                     "text": "Eidolon Remnant : Water Blooms",
-                    "offset": [ 0, -13 ],
+                    "offset": [
+                        0,
+                        -13
+                    ],
                     "font_size": "normal",
                     "font_type": "MinecraftTen"
                 }
@@ -137,35 +185,49 @@
             {
                 "water_eidolon_bossbar_empty@water_eidolon_bar_empty": {
                     "layer": 1,
-                    "size": [173, 7],
+                    "size": [
+                        173,
+                        7
+                    ],
                     "keep_ratio": false
                 }
             },
-            {   
+            {
                 "water_eidolon_bossbar_full@water_eidolon_bar_full": {
                     "layer": 2,
-                    "size": [173, 7],
+                    "size": [
+                        173,
+                        7
+                    ],
                     "keep_ratio": false
                 }
             },
             {
                 "water_eidolon_bossbar_overlay@water_eidolon_bar_overlay": {
                     "layer": 3,
-                    "size": [190, 55],
-                    "offset": [0, 9],
+                    "size": [
+                        190,
+                        55
+                    ],
+                    "offset": [
+                        0,
+                        9
+                    ],
                     "keep_ratio": false
                 }
             }
         ]
     },
-
     "shadowplague_guardian_bossbar@boss_health_template": {
         "controls": [
             {
                 "shadowplague_guardian_bossbar_text": {
                     "type": "label",
                     "text": "Shadowplague Guardian : Guardian of The Shadow Plague",
-                    "offset": [ 0, -13 ],
+                    "offset": [
+                        0,
+                        -13
+                    ],
                     "font_size": "normal",
                     "font_type": "MinecraftTen"
                 }
@@ -173,29 +235,39 @@
             {
                 "shadowplague_guardian_bossbar_empty@shadowplague_guardian_bar_empty": {
                     "layer": 1,
-                    "size": [173, 7],
+                    "size": [
+                        173,
+                        7
+                    ],
                     "keep_ratio": false
                 }
             },
-            {   
+            {
                 "shadowplague_guardian_bossbar_full@shadowplague_guardian_bar_full": {
                     "layer": 2,
-                    "size": [173, 7],
+                    "size": [
+                        173,
+                        7
+                    ],
                     "keep_ratio": false
                 }
             },
             {
                 "shadowplague_guardian_bossbar_overlay@shadowplague_guardian_bar_overlay": {
                     "layer": 3,
-                    "size": [190, 55],
-                    "offset": [0, 9],
+                    "size": [
+                        190,
+                        55
+                    ],
+                    "offset": [
+                        0,
+                        9
+                    ],
                     "keep_ratio": false
                 }
             }
         ]
     },
-
-
     "wither_bar_full": {
         "type": "image",
         "texture": "textures/ui/bossbar/wither/wither_bar_full",
@@ -218,7 +290,6 @@
         "type": "image",
         "texture": "textures/ui/bossbar/wither/wither_bar_overlay"
     },
-
     "ender_dragon_bar_full": {
         "type": "image",
         "texture": "textures/ui/bossbar/ender_dragon/ender_dragon_bar_full",
@@ -241,7 +312,6 @@
         "type": "image",
         "texture": "textures/ui/bossbar/ender_dragon/ender_dragon_bar_overlay"
     },
-
     "elemental_legionnaire_bar_full": {
         "type": "image",
         "texture": "textures/ui/bossbar/elemental_legionnaire/elemental_legionnaire_bar_full",
@@ -264,7 +334,6 @@
         "type": "image",
         "texture": "textures/ui/bossbar/elemental_legionnaire/elemental_legionnaire_bar_overlay"
     },
-
     "water_eidolon_bar_full": {
         "type": "image",
         "texture": "textures/ui/bossbar/water_eidolon/water_eidolon_bar_full",
@@ -287,7 +356,6 @@
         "type": "image",
         "texture": "textures/ui/bossbar/water_eidolon/water_eidolon_bar_overlay"
     },
-
     "shadowplague_guardian_bar_full": {
         "type": "image",
         "texture": "textures/ui/bossbar/shadowplague_guardian/shadowplague_guardian_bar_full",

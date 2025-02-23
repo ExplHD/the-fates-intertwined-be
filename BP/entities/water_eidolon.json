@@ -36,7 +36,7 @@
 			},
 			"phase_1_timer": {
 				"minecraft:timer": {
-					"looping": false,
+					"looping": true,
 					"time": 5,
 					"time_down_event": {
 						"event": "random_phase_1"
@@ -44,8 +44,8 @@
 				},
 				"minecraft:attack_cooldown": {
 					"attack_cooldown_time": [
-						2,
-						2
+						3,
+						3
 					]
 				},
 				"minecraft:movement": {
@@ -55,7 +55,7 @@
 			},
 			"phase_2_timer": {
 				"minecraft:timer": {
-					"looping": false,
+					"looping": true,
 					"time": 4,
 					"time_down_event": {
 						"event": "random_phase_2"
@@ -63,7 +63,7 @@
 				},
 				"minecraft:attack_cooldown": {
 					"attack_cooldown_time": [
-						2,
+						1.5,
 						2
 					]
 				},
@@ -82,7 +82,7 @@
 			},
 			"phase_3_timer": {
 				"minecraft:timer": {
-					"looping": false,
+					"looping": true,
 					"time": 2,
 					"time_down_event": {
 						"event": "random_phase_3"
@@ -90,8 +90,8 @@
 				},
 				"minecraft:attack_cooldown": {
 					"attack_cooldown_time": [
-						2,
-						2
+						0.5,
+						1
 					]
 				},
 				"minecraft:movement": {
@@ -307,7 +307,7 @@
 				"reach_multiplier": 1.2
 			},
 			"minecraft:attack": {
-				"damage": 20
+				"damage": 33
 			},
 			"minecraft:type_family": {
 				"family": [
@@ -517,7 +517,8 @@
 						},
 						"queue_command": {
 							"command": [
-								"playanimation @s animation.water_eidolon.smash"
+								"playanimation @s animation.water_eidolon.smash",
+								"particle fec:water_eidolon_ping"
 							]
 						}
 					},
@@ -591,12 +592,13 @@
 						},
 						"queue_command": {
 							"command": [
-								"playanimation @s animation.water_eidolon.smash"
+								"playanimation @s animation.water_eidolon.water_pillar",
+								"summon fec:eidolon_4_pillar ^^^2 ~ 0"
 							]
 						}
 					},
 					{
-						"weight": 1,
+						"weight": 0.7,
 						"add": {
 							"component_groups": [
 								"start_rest"
@@ -686,12 +688,13 @@
 						},
 						"queue_command": {
 							"command": [
-								"playanimation @s animation.water_eidolon.smash"
+								"playanimation @s animation.water_eidolon.water_pillar",
+								"summon fec:eidolon_4_pillar ^^^2 ~ 0"
 							]
 						}
 					},
 					{
-						"weight": 1,
+						"weight": 0.4,
 						"add": {
 							"component_groups": [
 								"start_rest"
@@ -712,7 +715,7 @@
 						}
 					},
 					{
-						"weight": 1,
+						"weight": 0.7,
 						"add": {
 							"component_groups": [
 								"water_border"

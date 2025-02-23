@@ -1,8 +1,9 @@
 {
-	"format_version": "1.20.80",
+	"format_version": "1.21.0",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "minecraft:player",
+			"spawn_category": "creature",
 			"is_spawnable": false,
 			"is_summonable": false,
 			"is_experimental": false,
@@ -266,7 +267,7 @@
 		},
 		"components": {
 			"minecraft:experience_reward": {
-				"on_death": "math.min(query.player_level*7,100)"
+				"on_death": "Math.Min(query.player_level * 7, 100)"
 			},
 			"minecraft:type_family": {
 				"family": [
@@ -318,7 +319,7 @@
 			},
 			"minecraft:player.exhaustion": {
 				"value": 0,
-				"max": 4
+				"max": 20
 			},
 			"minecraft:player.level": {
 				"value": 0,

@@ -29,6 +29,30 @@
 					"render_method": "alpha_test"
 				}
 			},
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					15,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					15,
+					16
+				]
+			},
 			"minecraft:display_name": "§dZenith Fabricator\n§8A Blocks that used for crafting Mythical Zenith, this block is §cUNOBTAINABLE",
 			"minecraft:destructible_by_explosion": false,
 			"minecraft:destructible_by_mining": false,
@@ -37,19 +61,7 @@
 			"minecraft:flammable": false,
 			"minecraft:custom_components": [
 				"fec:zenith_fabricator_destroyed"
-			],
-			"minecraft:placement_filter": {
-				"conditions": [
-					{
-						"block_filter": [
-							"acacia_planks"
-						],
-						"allowed_faces": [
-							"up"
-						]
-					}
-				]
-			}
+			]
 		},
 		"permutations": [
 			{
