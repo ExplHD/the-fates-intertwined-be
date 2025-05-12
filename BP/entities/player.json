@@ -57,7 +57,14 @@
 				"mythic_tenacity_ultimate_scythe": "animation.mythic_tenacity.ultimate_scythe",
 				"mythic_tenacity_skill_2_axe": "animation.mythic_tenacity.skill_2_axe",
 				"mythic_tenacity_ultimate_axe": "animation.mythic_tenacity.ultimate_axe",
-				"reworked_tenacity": "controller.animation.reworked_tenacity"
+				"reworked_tenacity": "controller.animation.reworked_tenacity",
+				"the_enigma": "controller.animation.the_enigma",
+				"the_enigma_skill_1": "animation.the_enigma.skill_1",
+				"the_enigma_skill_2": "animation.the_enigma.skill_2",
+				"the_enigma_skill_3": "animation.the_enigma.skill_3",
+				"the_enigma_skill_4": "animation.the_enigma.skill_4",
+				"yamato": "controller.animation.yamato",
+				"yamato_ultimate": "animation.yamato.skill_3"
 			},
 			"scripts": {
 				"animate": [
@@ -75,7 +82,9 @@
 					"stars_and_crescent",
 					"shadow_revolver",
 					"mythic_tenacity",
-					"reworked_tenacity"
+					"reworked_tenacity",
+					"the_enigma",
+					"yamato"
 				]
 			},
 			"properties": {
@@ -95,6 +104,16 @@
 					"range": [
 						1,
 						5
+					]
+				},
+				"fec:the_enigma_ranged_status": {
+					"type": "enum",
+					"client_sync": true,
+					"default": "normal",
+					"values": [
+						"normal",
+						"scoped",
+						"ultimate"
 					]
 				}
 			}
@@ -210,6 +229,72 @@
 							"single_use": true,
 							"spawn_entity": "fec:shadow_revolver_bullet",
 							"spawn_event": "fec:shadow_revolver_bullet_protocol_impact_0078"
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": 0.1,
+					"looping": false,
+					"time_down_event": {
+						"event": "fec:remove_all_shooter",
+						"target": "self"
+					}
+				}
+			},
+			"fec:the_enigma_bullet_flash": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"num_to_spawn": 1,
+							"single_use": true,
+							"spawn_entity": "fec:the_enigma_bullet",
+							"spawn_event": "fec:the_enigma_bullet_flash"
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": 0.1,
+					"looping": false,
+					"time_down_event": {
+						"event": "fec:remove_all_shooter",
+						"target": "self"
+					}
+				}
+			},
+			"fec:the_enigma_bullet_ultimate": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"num_to_spawn": 1,
+							"single_use": true,
+							"spawn_entity": "fec:the_enigma_bullet",
+							"spawn_event": "fec:the_enigma_bullet_ultimate"
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": 0.1,
+					"looping": false,
+					"time_down_event": {
+						"event": "fec:remove_all_shooter",
+						"target": "self"
+					}
+				}
+			},
+			"fec:yamato_skill_1": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"num_to_spawn": 1,
+							"single_use": true,
+							"spawn_entity": "fec:yamato_skill_1",
+							"spawn_event": "fec:yamato_skill_1"
 						}
 					]
 				},
@@ -440,7 +525,11 @@
 				"remove": {
 					"component_groups": [
 						"fec:shadow_revolver_bullet",
-						"fec:shadow_revolver_bullet_base_atk"
+						"fec:shadow_revolver_bullet_base_atk",
+						"fec:shadow_revolver_protocol_impact_0078",
+						"fec:the_enigma_bullet_flash",
+						"fec:the_enigma_bullet_ultimate",
+						"fec:yamato_skill_1"
 					]
 				}
 			},
@@ -472,6 +561,27 @@
 					]
 				}
 			},
+			"fec:the_enigma_bullet_flash": {
+				"add": {
+					"component_groups": [
+						"fec:the_enigma_bullet_flash"
+					]
+				}
+			},
+			"fec:the_enigma_bullet_ultimate": {
+				"add": {
+					"component_groups": [
+						"fec:the_enigma_bullet_ultimate"
+					]
+				}
+			},
+			"fec:yamato_skill_1": {
+				"add": {
+					"component_groups": [
+						"fec:yamato_skill_1"
+					]
+				}
+			},
 			"fec:set_ultimate_state_to_1": {
 				"set_property": {
 					"fec:shadow_revolver_state": 1
@@ -480,6 +590,21 @@
 			"fec:set_ultimate_state_to_0": {
 				"set_property": {
 					"fec:shadow_revolver_state": 0
+				}
+			},
+			"fec:the_enigma_scoped": {
+				"set_property": {
+					"fec:the_enigma_ranged_status": "scoped"
+				}
+			},
+			"fec:the_enigma_ultimate": {
+				"set_property": {
+					"fec:the_enigma_ranged_status": "ultimate"
+				}
+			},
+			"fec:the_enigma_default": {
+				"set_property": {
+					"fec:the_enigma_ranged_status": "normal"
 				}
 			},
 			"fec:crescent_concussion": {

@@ -1,0 +1,37 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:weapon_billet_ender"
+		},
+		"tags": [
+			"crafting_table",
+			"legendary_fabricator"
+		],
+		"key": {
+			"D": {
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			"F": {
+				"item": "minecraft:chorus_flower"
+			},
+			"W": {
+				"item": "fec:weapon_billet_ender"
+			}
+		},
+		"pattern": [
+			"DFD",
+			"FWF",
+			"DFD"
+		],
+		"unlock": [
+			{
+				"item": "fec:weapon_billet_ender"
+			}
+		],
+		"result": {
+			"item": "fec:weapon_billet_ender",
+			"count": 3
+		}
+	}
+}

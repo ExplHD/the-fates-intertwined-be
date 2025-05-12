@@ -92,7 +92,6 @@
 			"destroy": {
 				"queue_command": {
 					"command": [
-						"damage @e[type=fec:water_eidolon] 100 void",
 						"particle minecraft:huge_explosion_emitter ~~~5",
 						"particle minecraft:huge_explosion_emitter ~~~-5",
 						"particle minecraft:huge_explosion_emitter ~5~~",

@@ -1,0 +1,35 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:yamato_skill_1",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/none"
+			},
+			"particle_effects": {
+				"yamato_skill_1": "fec:yamato_skill_1"
+			},
+			"geometry": {
+				"default": "geometry.yamato_skill_1"
+			},
+			"render_controllers": [
+				"controller.render.yamato_skill_1"
+			],
+			"animations": {
+				"default": "animation.yamato_skill_1.idle"
+			},
+			"scripts": {
+				"animate": [
+					"default"
+				]
+			},
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

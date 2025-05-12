@@ -94,7 +94,7 @@
                 },
                 "skill_1": {
                     "on_entry": [
-                        "/damage @e[r=16,rm=0.1,family=!inanimate] 5 sonic_boom entity @s",
+                        "/damage @e[r=16,rm=0.1,family=!inanimate] 15 sonic_boom entity @s",
                         "/particle fec:reworked_tenacity_skill_1",
                         "/scoreboard players add @s reworked_tenacity_c1 15",
                         "/playsound mob.warden.sonic_boom @a[r=32]",
@@ -109,7 +109,7 @@
                 "skill_2": {
                     "on_entry": [
                         "/execute at @e[r=32,family=!inanimate,family=!pillars,type=!item] run particle fec:reworked_tenacity_skill_2",
-                        "/damage @e[r=32,rm=0.1,family=!inanimate,family=!pillars,type=!item] 16 entity_attack entity @s",
+                        "/damage @e[r=32,rm=0.1,family=!inanimate,family=!pillars,type=!item] 20 entity_attack entity @s",
                         "/effect @e[r=32,rm=0.1] slowness 5 3 true",
                         "/scoreboard players add @s reworked_tenacity_c2 45",
                         "/playsound mob.warden.sonic_boom @a[r=64]",

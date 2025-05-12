@@ -352,7 +352,7 @@
 				},
 				"queue_command": {
 					"command": [
-						"music play music.boss.unfiltered_calamity 1 1 loop",
+						"music play music.boss.demonic_cat 1 1 loop",
 						"gamemode 2 @a[r=64,m=d]",
 						"title @a[r=64] title Elemental Legionnaire",
 						"title @a[r=64] subtitle The Champions"
@@ -484,7 +484,7 @@
 						"summon lightning_bolt ~-3~~3",
 						"summon lightning_bolt ~-3~~-3",
 						"summon lightning_bolt ~3~~-3",
-						"damage @e[r=6,type=!fec:elemental_legionnaire] 21 lightning"
+						"damage @e[r=6,type=!fec:elemental_legionnaire] 20 void"
 					]
 				}
 			},
@@ -572,6 +572,14 @@
 								"title @a[r=64] title ! ELEMENTAL WIND GUST !",
 								"titleraw @a[r=64] subtitle {\"rawtext\":[{\"text\":\"! USE SHIELD OR UPDRAFT TO AVOID THE ATTACKS !\n! LETHAL ATTACK !\"}]}"
 							]
+						},
+						"add": {
+							"component_groups": [
+								"right_attack"
+							]
+						},
+						"set_property": {
+							"fec:legionnaire_ultimate_charge": 0
 						}
 					}
 				]

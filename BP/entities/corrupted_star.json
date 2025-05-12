@@ -1,0 +1,149 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:corrupted_star",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"max": 4,
+				"value": 4
+			},
+			"minecraft:collision_box": {
+				"width": 0.8,
+				"height": 0.8
+			},
+			"minecraft:experience_reward": {
+				"on_death": 5
+			},
+			"minecraft:movement": {
+				"value": 1.0
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/corrupted_star.json"
+			},
+			"minecraft:knockback_resistance": {
+				"value": 5,
+				"max": 5
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:fire_immune": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.charge_attack": {
+				"priority": 4,
+				"speed_multiplier": 1.3
+			},
+			"minecraft:attack_damage": {
+				"value": 4
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 3,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								}
+							]
+						}
+					}
+				],
+				"must_see": true,
+				"within_radius": 64
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 9,
+				"look_distance": 6.0,
+				"probability": 0.5
+			},
+			"minecraft:behavior.look_at_entity": {
+				"priority": 9,
+				"look_distance": 6.0,
+				"probability": 0.5,
+				"filters": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "mob"
+				}
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:nameable": {
+				"always_show": false,
+				"allow_name_tag_renaming": false
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": true
+			},
+			"minecraft:type_family": {
+				"family": [
+					"stars_creature",
+					"monster",
+					"corrupted"
+				]
+			},
+			"minecraft:follow_range": {
+				"max": 64,
+				"value": 64
+			},
+			"minecraft:persistent": {},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:game_event_movement_tracking": {
+				"emit_move": false,
+				"emit_swim": false
+			},
+			"minecraft:timer": {
+				"time": [
+					15,
+					20
+				],
+				"time_down_event": {
+					"event": "despawn"
+				}
+			}
+		},
+		"events": {
+			"fec:spawned_by_explosion": {
+				"queue_command": {
+					"command": "effect @s resistance 1 255 true"
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

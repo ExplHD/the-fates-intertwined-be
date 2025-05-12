@@ -3,7 +3,7 @@
         "type": "panel",
         "size": [
             182,
-            20
+            40
         ],
         "anchor_from": "top_middle",
         "anchor_to": "top_middle",
@@ -33,7 +33,7 @@
                         },
                         {
                             "binding_type": "view",
-                            "source_property_name": "(((#bossName - $wither_boss_string) = #bossName) and ((#bossName - $ender_dragon_boss_string) = #bossName) and ((#bossName - $elemental_legionnaire_boss_string) = #bossName)) and ((#bossName - $water_eidolon_boss_string) = #bossName)) and ((#bossName - $shadowplague_guardian_boss_string) = #bossName))",
+                            "source_property_name": "(((#bossName - $wither_boss_string) = #bossName) and ((#bossName - $ender_dragon_boss_string) = #bossName) and ((#bossName - $elemental_legionnaire_boss_string) = #bossName)) and ((#bossName - $water_eidolon_boss_string) = #bossName)) and ((#bossName - $shadowplague_guardian_boss_string) = #bossName) and ((#bossName - $star_servant_boss_string) = #bossName))",
                             "target_property_name": "#visible"
                         }
                     ]
@@ -139,6 +139,27 @@
                         {
                             "binding_type": "view",
                             "source_property_name": "(not ((#bossName - $shadowplague_guardian_boss_string) = #bossName))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "star_servant_bossbar@boss_panel.star_servant_bossbar": {
+                    "offset": [
+                        0,
+                        -16
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not ((#bossName - $star_servant_boss_string) = #bossName))",
                             "target_property_name": "#visible"
                         }
                     ]

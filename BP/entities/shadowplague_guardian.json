@@ -108,6 +108,12 @@
 						"target": "self"
 					}
 				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"damage_modifier": 0.5
+					}
+				},
 				"minecraft:behavior.nearest_attackable_target": {
 					"within_radius": 48,
 					"scan_interval": 10,
@@ -161,6 +167,12 @@
 						"target": "self"
 					}
 				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"damage_modifier": 0.5
+					}
+				},
 				"minecraft:behavior.nearest_attackable_target": {
 					"within_radius": 48,
 					"scan_interval": 10,
@@ -179,6 +191,17 @@
 							}
 						}
 					]
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"single_use": true,
+						"min_wait_time": 1,
+						"max_wait_time": 3,
+						"num_to_spawn": 4,
+						"spawn_entity": "fec:corrupted_star",
+						"spawn_sound": "plop",
+						"spawn_method": "born"
+					}
 				}
 			},
 			"attack_state_3": {
@@ -207,11 +230,17 @@
 					]
 				},
 				"minecraft:timer": {
-					"time": 5,
+					"time": 15,
 					"looping": true,
 					"time_down_event": {
 						"event": "start_charging",
 						"target": "self"
+					}
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"damage_modifier": 0.3
 					}
 				},
 				"minecraft:behavior.nearest_attackable_target": {
@@ -232,6 +261,17 @@
 							}
 						}
 					]
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"single_use": true,
+						"min_wait_time": 1,
+						"max_wait_time": 3,
+						"num_to_spawn": 8,
+						"spawn_entity": "fec:corrupted_star",
+						"spawn_sound": "plop",
+						"spawn_method": "born"
+					}
 				}
 			},
 			"timer_to_judgement": {
@@ -342,7 +382,8 @@
 			"minecraft:type_family": {
 				"family": [
 					"shadow_creature",
-					"boss"
+					"boss",
+					"corrupted"
 				]
 			},
 			"minecraft:persistent": {},
@@ -370,7 +411,7 @@
 				},
 				"queue_command": {
 					"command": [
-						"music play music.duel.scourge_of_the_universe 1 1 loop",
+						"music play music.boss.scourge_of_the_universe 1 1 loop",
 						"title @a[r=64] title Shadowplague Guardian",
 						"title @a[r=64] subtitle The Guardian of Shadow Plague",
 						"gamemode 2 @a[r=80]"
@@ -562,7 +603,7 @@
 					{
 						"queue_command": {
 							"command": [
-								"tp @s @p[r=16]"
+								"tp @s @p[r=32]"
 							]
 						}
 					},
@@ -572,7 +613,7 @@
 								"particle fec:zenith_skill_3_1 ~~~",
 								"summon fec:shadow_slash ^^^1 ~ 0",
 								"playanimation @s animation.shadowplague_guardian.attack_1",
-								"damage @e[r=8,rm=0.1] 75 entity_attack entity @s"
+								"damage @e[r=8,rm=0.1] 150 entity_attack entity @s"
 							]
 						},
 						"add": {

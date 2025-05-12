@@ -1,0 +1,62 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.corvus": {
+            "initial_state": "idle",
+            "states": {
+                "idle": {
+                    "animations": [
+                        "idle"
+                    ],
+                    "blend_transition": 0.15,
+                    "transitions": [
+                        {
+                            "move": "query.is_moving&&query.is_flying"
+                        },
+                        {
+                            "idle_flying": "q.is_moving"
+                        },
+                        {
+                            "attack": "variable.attack_time >= 0.0"
+                        }
+                    ]
+                },
+                "idle_flying": {
+                    "animations": [
+                        "idle_fly"
+                    ]
+                },
+                "move": {
+                    "animations": [
+                        "move"
+                    ],
+                    "transitions": [
+                        {
+                            "idle": "!query.is_moving&&!query.is_flying"
+                        }
+                    ]
+                },
+                "attack": {
+                    "animations": [
+                        "attack"
+                    ],
+                    "transitions": [
+                        {
+                            "idle": "query.any_animation_finished('attack')"
+                        }
+                    ]
+                },
+                "dash": {
+                    "animations": [
+                        "dash"
+                    ],
+                    "transitions": [
+                        {
+                            "idle": "query.all_animations_finished"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

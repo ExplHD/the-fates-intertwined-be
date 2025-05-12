@@ -13,7 +13,7 @@
             "minecraft:allow_off_hand": true,
             "minecraft:can_destroy_in_creative": false,
             "minecraft:damage": {
-                "value": 12
+                "value": 18
             },
             "minecraft:display_name": {
                 "value": "§4Tenacity\n§7A Scythe made from the unknown Ascended,\nHells, under the overworld and above\nthe nether. This is the true\nabomination weapons\n\n§2Right-click / Tap and Hold to :\ncast the selected skill\nSneak + Left Click / tap to :\nchange selected skill\nSneak + Right Click / tap and hold to :\nchange weapon mode"

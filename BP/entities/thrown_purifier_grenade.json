@@ -1,0 +1,67 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:thrown_purifier_grenade",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"filter": "blaze",
+						"damage": 3,
+						"knockback": true
+					},
+					"stick_in_ground": {
+						"shake_time": 0
+					},
+					"definition_event": {
+						"event_trigger": {
+							"event": "purify"
+						}
+					},
+					"particle_on_hit": {
+						"particle_type": "evaporation",
+						"num_particles": 6,
+						"on_entity_hit": true,
+						"on_other_hit": true
+					}
+				},
+				"anchor": 1,
+				"power": 1.5,
+				"gravity": 0.03,
+				"angle_offset": 0,
+				"offset": [
+					0,
+					-0.1,
+					0
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"purify": {
+				"queue_command": {
+					"command": [
+						"particle fec:purifier_grenade ~~~",
+						"fill ~-6~-6~-6~6~6~6 grass_block replace fec:shadow_corruption",
+						"playsound mob.irongolem.crack @a[r=24] ~~~ 1 1 0.3",
+						"kill @s"
+					]
+				}
+			}
+		}
+	}
+}

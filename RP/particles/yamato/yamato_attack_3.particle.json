@@ -1,0 +1,67 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "fec:yamato_attack_3",
+			"basic_render_parameters": {
+				"material": "particles_add",
+				"texture": "textures/particle/particles"
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 200
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_point": {
+				"offset": [
+					"math.cos(variable.particle_random_1*180)*(4-variable.particle_random_2)",
+					"1.5+math.cos(variable.particle_random_1*180)*(-4-variable.particle_random_1)",
+					"math.sin(variable.particle_random_1*180)*(4-variable.particle_random_1)"
+				],
+				"direction": [
+					0,
+					0,
+					1
+				]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 5
+			},
+			"minecraft:particle_initial_speed": 30,
+			"minecraft:particle_motion_dynamic": {
+				"linear_drag_coefficient": 3
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": [
+					0.2,
+					0.2
+				],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 128,
+					"texture_height": 128,
+					"uv": [
+						56,
+						72
+					],
+					"uv_size": [
+						8,
+						8
+					]
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": {
+					"interpolant": "v.particle_random_2",
+					"gradient": {
+						"0.0": "#FF0064FF",
+						"1.0": "#FF00198D"
+					}
+				}
+			}
+		}
+	}
+}

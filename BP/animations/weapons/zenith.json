@@ -13,27 +13,27 @@
 					"/playsound mob.wither.spawn"
 				],
 				"0.75": [
-					"/damage @e[rm=0.1,type=!item,r=5] 12 entity_attack entity @s",
+					"/damage @e[rm=0.1,type=!item,r=5] 18 entity_attack entity @s",
 					"/particle fec:zenith_skill_1_area ~~~",
 					"/particle fec:zenith_skill_1_shield ~~~"
 				],
 				"1.25": [
-					"/damage @e[rm=0.1,type=!item,r=5] 12 entity_attack entity @s",
+					"/damage @e[rm=0.1,type=!item,r=5] 18 entity_attack entity @s",
 					"/particle fec:zenith_skill_1_area ~~~",
 					"/particle fec:zenith_skill_1_shield ~~~"
 				],
 				"1.75": [
-					"/damage @e[rm=0.1,type=!item,r=5] 12 entity_attack entity @s",
+					"/damage @e[rm=0.1,type=!item,r=5] 18 entity_attack entity @s",
 					"/particle fec:zenith_skill_1_area ~~~",
 					"/particle fec:zenith_skill_1_shield ~~~"
 				],
 				"2.25": [
-					"/damage @e[rm=0.1,type=!item,r=5] 12 entity_attack entity @s",
+					"/damage @e[rm=0.1,type=!item,r=5] 18 entity_attack entity @s",
 					"/particle fec:zenith_skill_1_area ~~~",
 					"/particle fec:zenith_skill_1_shield ~~~"
 				],
 				"2.75": [
-					"/damage @e[rm=0.1,type=!item,r=5] 12 entity_attack entity @s",
+					"/damage @e[rm=0.1,type=!item,r=5] 18 entity_attack entity @s",
 					"/particle fec:zenith_skill_1_area ~~~",
 					"/particle fec:zenith_skill_1_shield ~~~"
 				],
@@ -58,31 +58,31 @@
 				],
 				"0.5": [
 					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
-					"/damage @e[r=12,rm=0.1,type=!item] 10 entity_attack entity @s"
+					"/damage @e[r=12,rm=0.1,type=!item] 16 entity_attack"
 				],
 				"1.0": [
 					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
-					"/damage @e[r=12,rm=0.1,type=!item] 10 entity_attack entity @s"
+					"/damage @e[r=12,rm=0.1,type=!item] 16 entity_attack"
 				],
 				"1.5": [
 					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
-					"/damage @e[r=12,rm=0.1,type=!item] 10 entity_attack entity @s"
+					"/damage @e[r=12,rm=0.1,type=!item] 16 entity_attack"
 				],
 				"2.0": [
 					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
-					"/damage @e[r=12,rm=0.1,type=!item] 10 entity_attack entity @s"
+					"/damage @e[r=12,rm=0.1,type=!item] 16 entity_attack"
 				],
 				"2.5": [
 					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
-					"/damage @e[r=12,rm=0.1,type=!item] 10 entity_attack entity @s"
+					"/damage @e[r=12,rm=0.1,type=!item] 16 entity_attack"
 				],
 				"3.0": [
 					"/playsound mob.wither.shoot @a[r=55] ~~~ 2 1 0.3",
-					"/damage @e[r=12,rm=0.1,type=!item] 10 entity_attack entity @s"
+					"/damage @e[r=12,rm=0.1,type=!item] 16 entity_attack"
 				],
 				"4.0": [
 					"/playsound random.explode @a[r=55] ~~~ 2 1 2",
-					"/damage @e[r=12,rm=0.1,type=!item] 35 entity_explosion entity @s",
+					"/damage @e[r=12,rm=0.1,type=!item] 41 entity_explosion entity @s",
 					"/inputpermission set @s movement enabled"
 				],
 				"5.0": [
@@ -113,57 +113,57 @@
 				],
 				"1.0": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s",
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s",
 					"/camera @a[r=32,rm=0.1] fade time 0 0.2 0.2 color 255 0 0"
 				],
 				"1.5": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
 				],
 				"2.0": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
 				],
 				"2.5": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
 					"/playanimation @s animation.zenith.skill_1",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
 				],
 				"3.0": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
 				],
 				"3.5": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
 				],
 				"4.0": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
 				],
 				"4.5": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
 					"/playanimation @s animation.zenith.skill_1",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
 				],
 				"5.0": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
 				],
 				"5.5": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 10 lightning entity @s"
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
 				],
 				"6.0": [
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
 					"/playsound custom_sfx.deathzone_spawn @a[r=128]",
 					"/playanimation @s animation.zenith.attack_2",
 					"/damage @e[r=32,rm=0.1,type=!xp_orb,type=!ender_dragon,type=!wither,type=!warden,type=!fec:elemental_legionnaire,type=!fec:water_eidolon,tag=!deathZone] 10 lightning entity @s",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=ender_dragon] 120 lightning entity @s",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=fec:elemental_legionnaire] 125 lightning entity @s",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=fec:water_eidolon] 125 lightning entity @s",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=wither] 65 lightning entity @s",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=warden] 60 lightning entity @s",
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=ender_dragon] 220 lightning entity @s",
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=fec:elemental_legionnaire] 180 lightning entity @s",
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=fec:water_eidolon] 190 lightning entity @s",
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=wither] 100 lightning entity @s",
+					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=warden] 100 lightning entity @s",
 					"/scoreboard players set @s zenith_c5 180",
 					"/inputpermission set @s movement enabled",
 					"/tag @s remove deathZone"

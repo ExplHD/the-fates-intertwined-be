@@ -141,14 +141,14 @@
 						"/playsound custom_sfx.villain_laugh @a[r=64]",
 						"/particle fec:spear_of_heart_skill_3 ~~1~",
 						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their Ultimate §bNatural §aFusion : §cForms of Death Sentence\"}]}",
-						"/damage @e[r=9,rm=0.1,type=!item] 10 void entity @s",
+						"/damage @e[r=9,rm=0.1,type=!item] 15 void entity @s",
 						"/effect @e[r=9,rm=0.1,type=!item] hunger 5 0",
 						"/effect @e[r=9,rm=0.1,type=!item] blindness 5 0",
 						"/effect @e[r=9,rm=0.1,type=!item] weakness 5 2",
 						"/effect @e[r=9,rm=0.1,type=!item] mining_fatigue 5 2",
 						"/effect @e[r=9,rm=0.1,type=!item] wither 5 0",
 						"/effect @e[r=9,rm=0.1,type=!item] nausea 5 0",
-						"/scoreboard players set @s spear_of_heart_c3 120"
+						"/scoreboard players set @s spear_of_heart_c3 60"
 					],
 					"transitions": [
 						{

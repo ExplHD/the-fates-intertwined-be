@@ -1,6 +1,6 @@
 import { ItemStack, world, system } from '@minecraft/server'
 
-world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
+system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent("fec:shadow_bench", {
         onPlace(e) {
             e.block.setPermutation(e.block.permutation.withState('fec:shadow_bench_item', 0))

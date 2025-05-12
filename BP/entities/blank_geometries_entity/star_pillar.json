@@ -1,0 +1,63 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "fec:star_pillar",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "despawn": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:health": {
+                "value": 500,
+                "max": 500
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                ]
+            },
+            "minecraft:physics": {
+                "has_collision": false,
+                "has_gravity": false
+            },
+            "minecraft:knockback_resistance": {
+                "value": 5
+            },
+            "minecraft:timer": {
+                "time": 1,
+                "looping": false,
+                "time_down_event": {
+                    "event": "explode",
+                    "target": "self"
+                }
+            }
+        },
+        "events": {
+            "explode": {
+                "queue_command": {
+                    "command": [
+                        "particle fec:star_pillar_explode ~~~",
+                        "particle fec:star_pillar_flash",
+                        "damage @e[r=3.7] 28 entity_explosion entity @s",
+                        "playsound custom_sfx.meteor_impact @a[r=16] ~~~ 1 1 0.2"
+                    ],
+                    "target": "self"
+                },
+                "add": {
+                    "component_groups": [
+                        "despawn"
+                    ]
+                }
+            }
+        }
+    }
+}

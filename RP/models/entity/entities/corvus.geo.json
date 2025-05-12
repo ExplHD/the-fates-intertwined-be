@@ -149,7 +149,7 @@
 						{"origin": [4, 15, -2], "size": [10, 4, 4], "uv": [24, 39]}
 					],
 					"locators": {
-						"locator": [15, 18, 0]
+						"leftUpCasterFX": [15, 17, 0]
 					}
 				},
 				{
@@ -159,7 +159,10 @@
 					"rotation": [3.86032, 9.23186, 22.81179],
 					"cubes": [
 						{"origin": [4, 13, -2], "size": [10, 4, 4], "uv": [23, 0]}
-					]
+					],
+					"locators": {
+						"leftCasterFX": [15, 15, 0]
+					}
 				},
 				{
 					"name": "rightArmUp",
@@ -170,7 +173,7 @@
 						{"origin": [-14, 15, -2], "size": [10, 4, 4], "uv": [0, 35]}
 					],
 					"locators": {
-						"locator2": [-15, 18, 0]
+						"rightUpCasterFX": [-15, 17, 0]
 					}
 				},
 				{
@@ -180,7 +183,10 @@
 					"rotation": [0, -10, -17.5],
 					"cubes": [
 						{"origin": [-14, 13, -2], "size": [10, 4, 4], "uv": [18, 12]}
-					]
+					],
+					"locators": {
+						"rightCasterFX": [-15, 15, 0]
+					}
 				},
 				{
 					"name": "leftLeg",

@@ -9,17 +9,17 @@ world.afterEvents.entityHitEntity.subscribe(stathit => {
         addScore(source, 'atkCounter', 1)
         addScore(source, 'atkCounterDelay', 10)
         if (source.getDynamicProperty("fec:statistic_health_remaining") == true && source.getDynamicProperty("fec:statistic_notification") == true) {
-            source.runCommandAsync(`titleraw "${source.name}" actionbar {"rawtext":[{"text":"§aHit Entity Statistics : §e"},{"score":{"name":"*","objective":"atkCounter"}},{"text":", Mob HP : ${damagedEntity.getComponent('minecraft:health').currentValue.toFixed(2)}"}]}`)
+            source.runCommand(`titleraw "${source?.name}" actionbar {"rawtext":[{"text":"§aHit Entity Statistics : §e"},{"score":{"name":"*","objective":"atkCounter"}},{"text":", Mob HP : ${damagedEntity?.getComponent('minecraft:health')?.currentValue.toFixed(2)} / ${damagedEntity?.getComponent('minecraft:health')?.effectiveMax}"}]}`)
         }
         if (source.getDynamicProperty("fec:statistic_health_remaining") == false && source.getDynamicProperty("fec:statistic_notification") == true) {
-            source.runCommandAsync(`titleraw "${source.name}" actionbar {"rawtext":[{"text":"§aHit Entity Statistics : §e"},{"score":{"name":"*","objective":"atkCounter"}}]}`)
+            source.runCommand(`titleraw "${source?.name}" actionbar {"rawtext":[{"text":"§aHit Entity Statistics : §e"},{"score":{"name":"*","objective":"atkCounter"}}]}`)
         }
         if (source.getDynamicProperty("fec:statistic_health_remaining") == true && source.getDynamicProperty("fec:statistic_notification") == false) {
-            source.runCommandAsync(`titleraw "${source.name}" actionbar {"rawtext":[{"text":"§aMob HP : §e${damagedEntity.getComponent('minecraft:health').currentValue.toFixed(2)}"}]}`)
+            source.runCommand(`titleraw "${source?.name}" actionbar {"rawtext":[{"text":"§aMob HP : §e${damagedEntity?.getComponent('minecraft:health')?.currentValue.toFixed(2)} / ${damagedEntity?.getComponent('minecraft:health')?.effectiveMax}"}]}`)
         }
         if (source.getDynamicProperty("fec:statistic_health_remaining") == false && source.getDynamicProperty("fec:statistic_notification") == false) return;
         if (damagedEntity.typeId === 'minecraft:player' && source.getDynamicProperty("fec:statistic_where_to_hit") == true) {
-            damagedEntity.runCommand(`title @s actionbar You were hit by §e${source.nameTag}, §c${damagedEntity.getComponent('minecraft:health').currentValue.toFixed(2)} HP Left`)
+            damagedEntity.runCommand(`title @s actionbar You were hit by §e${source?.nameTag}, §c${damagedEntity?.getComponent('minecraft:health').currentValue.toFixed(2)} / ${damagedEntity?.getComponent('minecraft:health').effectiveMax} HP Left`)
         }
     }
 })
@@ -28,7 +28,7 @@ world.afterEvents.playerPlaceBlock.subscribe(stats => {
     const player = stats.player
     addScore(player, 'placeBlockCounter', 1)
     if (player.getDynamicProperty("fec:statistic_notification") == true) {
-        player.runCommandAsync(`titleraw "${player.name}" actionbar {"rawtext":[{"text":"§aPlace Block Statistics : §e"},{"score":{"name":"*","objective":"placeBlockCounter"}}]}`)
+        player.runCommand(`titleraw "${player.name}" actionbar {"rawtext":[{"text":"§aPlace Block Statistics : §e"},{"score":{"name":"*","objective":"placeBlockCounter"}}]}`)
     }
 })
 
@@ -36,14 +36,14 @@ world.afterEvents.playerBreakBlock.subscribe(stats => {
     const player = stats.player
     addScore(player, 'breakBlockCounter', 1)
     if (player.getDynamicProperty("fec:statistic_notification"))
-        player.runCommandAsync(`titleraw "${player.name}" actionbar {"rawtext":[{"text":"§aBreak Block Statistics : §e"},{"score":{"name":"*","objective":"breakBlockCounter"}}]}`)
+        player.runCommand(`titleraw "${player.name}" actionbar {"rawtext":[{"text":"§aBreak Block Statistics : §e"},{"score":{"name":"*","objective":"breakBlockCounter"}}]}`)
 })
 
 world.afterEvents.itemUse.subscribe(({ source, itemStack }) => {
     if (itemStack.isStackable == false) {
         addScore(source, 'itemInteractCounter', 1)
         if (source.getDynamicProperty("fec:statistic_notification") == true) {
-            source.runCommandAsync(`titleraw "${source.name}" actionbar {"rawtext":[{"text":"§aItem Interact Statistics : §e"},{"score":{"name":"*","objective":"itemInteractCounter"}}]}`)
+            source.runCommand(`titleraw "${source.name}" actionbar {"rawtext":[{"text":"§aItem Interact Statistics : §e"},{"score":{"name":"*","objective":"itemInteractCounter"}}]}`)
         }
     }
 })

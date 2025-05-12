@@ -73,12 +73,25 @@
                         "sound": "random.fuse",
                         "volume": 1.0
                     },
-                    "hurt": "mob.creeper.say"
+                    "hurt": "mob.creeper.say",
+                    "plop": "custom_sfx.teleport"
                 },
                 "pitch": [
                     0.80,
                     1.20
                 ],
+                "volume": 1.0
+            },
+            "fec:star_projectile": {
+                "events": {
+                    "hurt": "stars_boss.destroy_projectile"
+                },
+                "volume": 1.0
+            },
+            "fec:star_meteor": {
+                "events": {
+                    "hurt": "stars_boss.meteor_impact"
+                },
                 "volume": 1.0
             }
         }

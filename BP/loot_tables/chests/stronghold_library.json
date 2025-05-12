@@ -6,11 +6,11 @@
         {
           "type": "item",
           "name": "fec:weapon_billet",
-          "weight": 50
+          "weight": 25
         },
         {
           "type": "empty",
-          "weight": 50
+          "weight": 75
         }
       ]
     },

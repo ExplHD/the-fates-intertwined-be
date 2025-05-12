@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "fec:star_warrior",
 			"is_spawnable": false,
-			"is_summonable": false,
+			"is_summonable": true,
 			"is_experimental": false
 		},
 		"component_groups": {
@@ -26,6 +26,9 @@
 					"time_down_event": {
 						"event": "randomize_pattern"
 					}
+				},
+				"minecraft:movement": {
+					"value": 1.0
 				}
 			},
 			"shooting_star": {
@@ -40,7 +43,7 @@
 					"burst_interval": 0.5
 				},
 				"minecraft:shooter": {
-					"def": "minecraft:small_fireball"
+					"def": "fec:star_projectile"
 				},
 				"minecraft:timer": {
 					"time": 5,
@@ -70,6 +73,9 @@
 						"event": "ultimate_strike",
 						"target": "self"
 					}
+				},
+				"minecraft:movement": {
+					"value": 0
 				}
 			},
 			"ultimate_strike": {
@@ -82,13 +88,16 @@
 						"event": "start_randomize",
 						"target": "self"
 					}
+				},
+				"minecraft:movement": {
+					"value": 0
 				}
 			}
 		},
 		"components": {
 			"minecraft:health": {
-				"max": 500,
-				"value": 500
+				"max": 700,
+				"value": 700
 			},
 			"minecraft:boss": {
 				"name": "§2§7§rStar Warrior",
@@ -104,6 +113,9 @@
 			},
 			"minecraft:movement": {
 				"value": 1.0
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/boss/star_servant.json"
 			},
 			"minecraft:is_hidden_when_invisible": {},
 			"minecraft:damage_sensor": {
@@ -123,8 +135,8 @@
 				]
 			},
 			"minecraft:knockback_resistance": {
-				"value": 1,
-				"max": 1
+				"value": 5,
+				"max": 5
 			},
 			"minecraft:navigation.walk": {
 				"can_path_over_water": true
@@ -133,9 +145,6 @@
 			"minecraft:jump.static": {},
 			"minecraft:can_climb": {},
 			"minecraft:fire_immune": {},
-			"minecraft:despawn": {
-				"despawn_from_distance": {}
-			},
 			"minecraft:behavior.float": {
 				"priority": 0
 			},
@@ -166,7 +175,8 @@
 						}
 					}
 				],
-				"must_see": true
+				"must_see": true,
+				"within_radius": 64
 			},
 			"minecraft:behavior.look_at_player": {
 				"priority": 9,
@@ -190,6 +200,20 @@
 				"has_gravity": false,
 				"has_collision": true
 			},
+			"minecraft:type_family": {
+				"family": [
+					"stars_creature",
+					"boss"
+				]
+			},
+			"minecraft:follow_range": {
+				"max": 64,
+				"value": 64
+			},
+			"minecraft:on_death": {
+				"event": "stop_music"
+			},
+			"minecraft:persistent": {},
 			"minecraft:conditional_bandwidth_optimization": {},
 			"minecraft:game_event_movement_tracking": {
 				"emit_move": false,
@@ -301,7 +325,7 @@
 					"command": [
 						"tag @s add stars_ultimate_strike",
 						"tag @s remove stars_ultimate_warning",
-						"particle fec:star_warrior_ultimate"
+						"particle fec:star_warrior_ultimate ~~~"
 					],
 					"target": "self"
 				},

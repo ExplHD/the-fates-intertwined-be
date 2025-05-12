@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "fec:anchor_potion_bottle"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "minecraft:glass_bottle",
+				"count": 3
+			},
+			{
+				"item": "minecraft:ender_pearl",
+				"count": 1
+			}
+		],
+		"unlock": [
+			{
+				"item": "minecraft:glass_bottle"
+			},
+			{
+				"item": "minecraft:ender_pearl"
+			}
+		],
+		"result": {
+			"item": "fec:anchor_potion_bottle",
+			"count": 3
+		}
+	}
+}

@@ -1,6 +1,6 @@
 import { ItemStack, system, world } from '@minecraft/server'
 
-world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
+system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent('fec:zenith_fabricator', {
         onPlayerInteract(e) {
             const block = e.block

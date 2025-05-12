@@ -6,3 +6,4 @@ scoreboard objectives remove atkCounter
 scoreboard objectives remove breakBlockCounter
 scoreboard objectives remove placeBlockCounter
 scoreboard objectives remove killCounter
+scoreboard objectives remove itemInteractCounter

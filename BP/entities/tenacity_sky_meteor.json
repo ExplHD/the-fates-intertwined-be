@@ -102,12 +102,13 @@
 				"queue_command": {
 					"command": [
 						"particle fec:mythic_tenacity_ultimate_axe_meteor_explosion ~~2~",
-						"damage @e[r=32,rm=0.01,family=!boss,type=!wither,type=!warden] 40 entity_explosion entity @s",
+						"damage @e[r=32,rm=0.01,family=!boss,type=!wither,type=!warden] 72 entity_explosion entity @s",
 						"playanimation @s animation.tenacity_sky_meteor.despawn",
 						"camerashake add @a[r=64] 1.6 3 positional",
 						"playsound random.explode @a[r=64]",
-						"damage @e[r=32,rm=0.01,type=wither] 95 entity_explosion entity @s",
+						"damage @e[r=32,rm=0.01,type=wither] 150 entity_explosion entity @s",
 						"damage @e[r=32,rm=0.01,type=warden] 500 entity_explosion entity @s",
+						"damage @e[r=32,rm=0.01,type=ender_dragon] 500 entity_explosion entity @s",
 						"damage @e[r=32,rm=0.01,family=boss] 245 entity_explosion entity @s",
 						"tag @a[tag=tenacity_invulnerble] remove tenacity_invulnerable"
 					],

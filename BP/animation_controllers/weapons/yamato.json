@@ -1,0 +1,155 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.yamato": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/scoreboard players set @s atkp_delay 0"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_1": "variable.attack_time&&!query.is_sneaking&&q.get_equipped_item_name=='yamato'"
+                        },
+                        {
+                            "skill_1": "query.get_equipped_item_name=='yamato'&&query.is_using_item&&(query.scoreboard('yamato')==0)&&(query.scoreboard('yamato_c1')>0)"
+                        },
+                        {
+                            "skill_2": "query.get_equipped_item_name=='yamato'&&query.is_using_item&&(query.scoreboard('yamato')==1)&&(query.scoreboard('yamato_c2')==0)"
+                        },
+                        {
+                            "skill_3": "query.get_equipped_item_name=='yamato'&&query.is_using_item&&(query.scoreboard('yamato')==2)&&(query.scoreboard('yamato_c3')==0)"
+                        },
+                        {
+                            "change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='yamato'"
+                        }
+                    ]
+                },
+                "atk_1": {
+                    "on_entry": [
+                        "/damage @e[r=4,rm=0.1,type=!item] 11 entity_attack entity @s",
+                        "/playanimation @s animation.yamato.attack_1",
+                        "/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1 0.4",
+                        "/scoreboard players add @s legendCounter 1"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_2": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=6)&&q.get_equipped_item_name=='yamato'"
+                        },
+                        {
+                            "default": "query.scoreboard('atkp_delay')>=30"
+                        },
+                        {
+                            "change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='yamato'"
+                        }
+                    ]
+                },
+                "atk_2": {
+                    "on_entry": [
+                        "/playanimation @s animation.yamato.attack_2",
+                        "/damage @e[r=4,rm=0.1,type=!item] 11 entity_attack entity @s",
+                        "/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.15 0.4",
+                        "/scoreboard players add @s legendCounter 1"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_3": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=8)&&q.get_equipped_item_name=='yamato'"
+                        },
+                        {
+                            "default": "query.scoreboard('atkp_delay')>=30"
+                        },
+                        {
+                            "change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='yamato'"
+                        }
+                    ]
+                },
+                "atk_3": {
+                    "on_entry": [
+                        "/damage @e[r=4,rm=0.1,type=!item] 10 entity_attack entity @s",
+                        "/playanimation @s animation.yamato.attack_3",
+                        "/scoreboard players add @s legendCounter 1",
+                        "/scriptevent fec:yamato_attack_3"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.scoreboard('atkp_delay')>=30"
+                        },
+                        {
+                            "change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='yamato'"
+                        }
+                    ]
+                },
+                "skill_1": {
+                    "on_entry": [
+                        "@s fec:yamato_skill_1",
+                        "/playanimation @s animation.yamato.attack_2",
+                        "/playsound sword_slash.medium_slash @a[r=12] ~~~ 1 1 0.3",
+                        "/scoreboard players remove @s yamato_c1 1",
+                        "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §bJudgement Cut\"}]}"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_using_item"
+                        }
+                    ]
+                },
+                "skill_2": {
+                    "on_entry": [
+                        "/playanimation @s animation.yamato.attack_1",
+                        "/scriptevent fec:yamato_skill_2",
+                        "/playsound custom_sfx.dash @a[r=12] ~~~ 1 1 0.3",
+                        "/scoreboard players set @s yamato_c2 5",
+                        "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §bStinger\"}]}"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_using_item"
+                        }
+                    ]
+                },
+                "skill_3": {
+                    "animations": [
+                        "yamato_ultimate"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s yamato_c3 30",
+                        "/scoreboard players add @s yamato_c1 3"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "change": {
+                    "on_entry": [
+                        "/scoreboard players add @s yamato 1",
+                        "/scoreboard players set @s[scores={yamato=3}] yamato 0",
+                        "/playsound random.click @s",
+                        "/tellraw @s[scores={yamato=0}] {\"rawtext\":[{\"text\": \"Judgement Cut\"}]}",
+                        "/tellraw @s[scores={yamato=1}] {\"rawtext\":[{\"text\": \"Stinger\"}]}",
+                        "/tellraw @s[scores={yamato=2}] {\"rawtext\":[{\"text\": \"Judgement Cut, end.\"}]}"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!variable.attack_time"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

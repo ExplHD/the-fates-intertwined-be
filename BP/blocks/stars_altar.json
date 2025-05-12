@@ -1,0 +1,123 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "fec:stars_altar",
+			"menu_category": {
+				"category": "items"
+			},
+			"states": {
+				"fec:stars_table_states": [
+					0,
+					1, // Fighting Stars Servant
+					2, // Fighting Corvus
+					3
+				]
+			}
+		},
+		"components": {
+			"minecraft:geometry": "geometry.stars_altar",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "fec_stars_altar",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:map_color": "#D9FF00",
+			"minecraft:display_name": "§6Stars Altar\n§8An Altar that crafted from the Legendary Fabricator, usable for\nsummoning the Stars being. Once the blocks used, you\ncannot destroy it back until reactivated using Awakened Stars",
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					15,
+					16
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1
+			},
+			"minecraft:destructible_by_explosion": false,
+			"minecraft:light_dampening": 1,
+			"minecraft:light_emission": 3,
+			"minecraft:custom_components": [
+				"fec:stars_altar"
+			]
+		},
+		"permutations": [
+			{
+				"condition": "query.block_state('fec:stars_table_states') == 0",
+				"components": {
+					"minecraft:geometry": "geometry.stars_altar",
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_stars_altar",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:destructible_by_mining": {
+						"seconds_to_destroy": 1
+					},
+					"minecraft:map_color": "#D9FF00"
+				}
+			},
+			{
+				"condition": "query.block_state('fec:stars_table_states') == 1",
+				"components": {
+					"minecraft:geometry": "geometry.stars_altar",
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_stars_altar_in_progress",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:destructible_by_mining": false,
+					"minecraft:tick": {
+						"interval_range": [
+							2400,
+							2400
+						]
+					},
+					"minecraft:map_color": "#D9FF00"
+				}
+			},
+			{
+				"condition": "query.block_state('fec:stars_table_states') == 2",
+				"components": {
+					"minecraft:geometry": "geometry.stars_altar",
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_stars_altar_in_progress",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:destructible_by_mining": false,
+					"minecraft:tick": {
+						"interval_range": [
+							2400,
+							2400
+						]
+					},
+					"minecraft:map_color": "#D9FF00"
+				}
+			},
+			{
+				"condition": "query.block_state('fec:stars_table_states') == 3",
+				"components": {
+					"minecraft:geometry": "geometry.stars_altar",
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fec_stars_altar_disabled",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:destructible_by_mining": false,
+					"minecraft:map_color": "#D9FF00"
+				}
+			}
+		]
+	}
+}

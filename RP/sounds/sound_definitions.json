@@ -65,13 +65,15 @@
 			"sounds": [
 				"sounds/custom_sfx/sword_slash_with_flashring"
 			],
-			"category": "ui"
+			"category": "player",
+			"max_distance": 32
 		},
 		"custom_sfx.clash_3x": {
 			"sounds": [
 				"sounds/custom_sfx/clash_3x"
 			],
-			"category": "ui"
+			"category": "player",
+			"max_distance": 24
 		},
 		"custom_sfx.siren": {
 			"sounds": [
@@ -88,6 +90,31 @@
 		"custom_sfx.zenith_flashbang": {
 			"sounds": [
 				"sounds/custom_sfx/zenith_flashbang"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.teleport": {
+			"sounds": [
+				"sounds/custom_sfx/teleport"
+			],
+			"category": "player",
+			"max_distance": 24
+		},
+		"custom_sfx.judgement_cut": {
+			"sounds": [
+				"sounds/custom_sfx/judgement_cut"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.dash": {
+			"sounds": [
+				"sounds/custom_sfx/dash"
+			],
+			"category": "ui"
+		},
+		"custom_sfx.judgement_cut_end": {
+			"sounds": [
+				"sounds/custom_sfx/judgement_cut_end"
 			],
 			"category": "ui"
 		},
@@ -131,6 +158,20 @@
 			"category": "ui",
 			"sounds": [
 				"sounds/shadow_revolver/reload_sound"
+			]
+		},
+		"stars_boss.meteor_impact": {
+			"category": "neutral",
+			"max_distance": 128,
+			"sounds": [
+				"sounds/stars_boss/meteor_impact"
+			]
+		},
+		"stars_boss.starexplode": {
+			"category": "neutral",
+			"max_distance": 128,
+			"sounds": [
+				"sounds/stars_boss/starexplode"
 			]
 		}
 	}

@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "fec:yamato"
+		},
+		"tags": [
+			"legendary_fabricator"
+		],
+		"ingredients": [
+			{
+				"item": "fec:javanesia_medal"
+			},
+			{
+				"item": "minecraft:trident"
+			},
+			{
+				"item": "minecraft:netherite_sword"
+			}
+		],
+		"unlock": [
+			{
+				"item": "fec:javanesia_medal"
+			}
+		],
+		"result": [
+			{
+				"item": "fec:yamato"
+			}
+		]
+	}
+}

@@ -143,6 +143,28 @@
 					"*": "material.default"
 				}
 			]
+		},
+		"controller.render.the_enigma": {
+			"textures": [
+				"texture.the_enigma"
+			],
+			"geometry": "geometry.the_enigma",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		},
+		"controller.render.yamato": {
+			"textures": [
+				"texture.yamato"
+			],
+			"geometry": "geometry.yamato",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
 		}
 	}
 }

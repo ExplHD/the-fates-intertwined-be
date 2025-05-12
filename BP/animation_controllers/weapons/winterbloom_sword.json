@@ -22,7 +22,10 @@
 							"skill_2": "query.get_equipped_item_name=='winterbloom_sword'&&query.is_using_item&&(query.scoreboard('winterbloom_sword')==1)&&(query.scoreboard('winterbloom_sword_c2')==0)"
 						},
 						{
-							"skill_3": "query.get_equipped_item_name=='winterbloom_sword'&&query.is_using_item&&(query.scoreboard('winterbloom_sword')==2)&&(query.scoreboard('winterbloom_sword_c3')==0)"
+							"skill_3": "query.get_equipped_item_name=='winterbloom_sword'&&query.is_using_item&&query.is_on_ground&&(query.scoreboard('winterbloom_sword')==2)&&(query.scoreboard('winterbloom_sword_c3')==0)"
+						},
+						{
+							"skill_3_fail": "query.get_equipped_item_name=='winterbloom_sword'&&query.is_using_item&&!query.is_on_ground&&(query.scoreboard('winterbloom_sword')==2)&&(query.scoreboard('winterbloom_sword_c3')==0)"
 						},
 						{
 							"change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='winterbloom_sword'"
@@ -131,15 +134,18 @@
 						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=64,rm=1,type=wither] add hunterTarget",
 						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=128,rm=1,type=ender_dragon] add hunterTarget",
 						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=64,rm=1,type=warden] add hunterTarget",
-						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=fec:elemental_legionnaire] add hunterTarget",
-						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=fec:water_eidolon] add hunterTarget",
-						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=20,rm=1,type=player] add hunterTarget",
+						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=64,rm=1,type=fec:elemental_legionnaire] add hunterTarget",
+						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=64,rm=1,type=fec:water_eidolon] add hunterTarget",
+						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=128,rm=1,type=fec:corvus] add hunterTarget",
+						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=64,rm=1,type=player] add hunterTarget",
 						"/playanimation @s animation.winterbloom_sword.attack_1",
 						"/playsound sword_slash.heavy_slash @a[r=16] ~~~ 1 1.1 0.4",
 						"/tp @s @e[tag=hunterTarget]",
-						"/damage @e[tag=hunterTarget] 20 entity_attack entity @s",
+						"/damage @e[tag=hunterTarget] 30 entity_attack entity @s",
 						"/tag @e[tag=hunterTarget] remove hunterTarget",
-						"/scoreboard players remove @s winterbloom_sword_ultimate_charge 1"
+						"/scoreboard players remove @s winterbloom_sword_ultimate_charge 1",
+						"/scoreboard players set @s atkp_delay 1",
+						"/scoreboard players set @s winterbloom_sword_c3 150"
 					],
 					"transitions": [
 						{
@@ -158,15 +164,18 @@
 						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=64,rm=1,type=wither] add hunterTarget",
 						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=128,rm=1,type=ender_dragon] add hunterTarget",
 						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=64,rm=1,type=warden] add hunterTarget",
-						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=fec:elemental_legionnaire] add hunterTarget",
-						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=fec:water_eidolon] add hunterTarget",
-						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=20,rm=1,type=player] add hunterTarget",
+						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=64,rm=1,type=fec:elemental_legionnaire] add hunterTarget",
+						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=64,rm=1,type=fec:water_eidolon] add hunterTarget",
+						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=128,rm=1,type=fec:corvus] add hunterTarget",
+						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=64,rm=1,type=player] add hunterTarget",
 						"/playanimation @s animation.winterbloom_sword.attack_3",
 						"/playsound sword_slash.heavy_slash @a[r=16] ~~~ 1 1 0.4",
 						"/tp @s @e[tag=hunterTarget]",
-						"/damage @e[tag=hunterTarget] 25 entity_attack entity @s",
+						"/damage @e[tag=hunterTarget] 30 entity_attack entity @s",
 						"/tag @e[tag=hunterTarget] remove hunterTarget",
-						"/scoreboard players remove @s winterbloom_sword_ultimate_charge 0"
+						"/scoreboard players remove @s winterbloom_sword_ultimate_charge 1",
+						"/scoreboard players set @s atkp_delay 1",
+						"/scoreboard players set @s winterbloom_sword_c3 150"
 					],
 					"transitions": [
 						{
@@ -184,7 +193,7 @@
 					"on_entry": [
 						"/tag @s add winterbloom_follow_area",
 						"/effect @s regeneration 2 1 true",
-						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §dLee-Enfield : Break\"}]}",
+						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §dBreak\"}]}",
 						"/playsound random.break @a[r=32]",
 						"/scoreboard players set @s winterbloom_sword_c1 40"
 					],
@@ -199,22 +208,24 @@
 						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=64,rm=1,type=wither] add hunterTarget",
 						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=128,rm=1,type=ender_dragon] add hunterTarget",
 						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=64,rm=1,type=warden] add hunterTarget",
-						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=fec:elemental_legionnaire] add hunterTarget",
-						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=fec:water_eidolon] add hunterTarget",
-						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=20,rm=1,type=player] add hunterTarget",
-						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tellraw @s {\"rawtext\":[{\"text\":\"No Target found, shortening the cooldown to 60 seconds\"}]}",
+						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=64,rm=1,type=fec:elemental_legionnaire] add hunterTarget",
+						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=64,rm=1,type=fec:water_eidolon] add hunterTarget",
+						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=128,rm=1,type=fec:corvus] add hunterTarget",
+						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=64,rm=1,type=player] add hunterTarget",
+						"/execute as @s at @s unless entity @e[tag=hunterTarget] run tellraw @s {\"rawtext\":[{\"text\":\"No Target found, shortening the cooldown to 10 seconds\"}]}",
 						"/tp @s @e[tag=hunterTarget]",
 						"/playanimation @s animation.winterbloom_sword.attack_3",
-						"/damage @e[tag=hunterTarget,type=player] 32 entity_attack entity @s",
-						"/damage @e[tag=hunterTarget,type=wither] 40 entity_attack entity @s",
-						"/damage @e[tag=hunterTarget,type=ender_dragon] 70 entity_attack entity @s",
-						"/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 85 entity_attack entity @s",
+						"/damage @e[tag=hunterTarget,type=player] 40 entity_attack entity @s",
+						"/damage @e[tag=hunterTarget,type=wither] 70 entity_attack entity @s",
+						"/damage @e[tag=hunterTarget,type=ender_dragon] 170 entity_attack entity @s",
+						"/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 100 entity_attack entity @s",
 						"/damage @e[tag=hunterTarget,type=fec:water_eidolon] 100 entity_attack entity @s",
-						"/damage @e[tag=hunterTarget,type=warden] 40 entity_attack entity @s",
+						"/damage @e[tag=hunterTarget,type=fec:corvus] 300 entity_attack entity @s",
+						"/damage @e[tag=hunterTarget,type=warden] 500 entity_attack entity @s",
 						"/damage @e[r=4,rm=0.1,type=!item] 32 entity_attack entity @s",
 						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §dI AM THE HUNTER\"}]}",
 						"/playsound custom_sfx.i_am_the_hunter @a[r=32]",
-						"/scoreboard players add @s winterbloom_sword_c2 60",
+						"/scoreboard players add @s winterbloom_sword_c2 10",
 						"/execute as @s at @s if entity @e[tag=hunterTarget] run scoreboard players add @s winterbloom_sword_c2 80",
 						"/tag @e[tag=hunterTarget] remove hunterTarget"
 					],
@@ -226,8 +237,8 @@
 				},
 				"skill_3": {
 					"on_exit": [
-						"/scoreboard players add @s winterbloom_sword_ultimate_charge 30",
-						"/effect @s regeneration 30 2 true"
+						"/scoreboard players set @s winterbloom_sword_c3 150",
+						"/inputpermission set @s movement enabled"
 					],
 					"animations": [
 						"winterbloom_sword_ultimate"
@@ -235,6 +246,9 @@
 					"transitions": [
 						{
 							"ultimate_state": "query.all_animations_finished"
+						},
+						{
+							"interrupted": "!query.is_on_ground"
 						}
 					]
 				},
@@ -243,7 +257,7 @@
 						"/scoreboard players add @s winterbloom_sword 1",
 						"/scoreboard players set @s[scores={winterbloom_sword=3}] winterbloom_sword 0",
 						"/playsound random.click @s",
-						"/tellraw @s[scores={winterbloom_sword=0}] {\"rawtext\":[{\"text\": \"Lee-Enfield : Break\"}]}",
+						"/tellraw @s[scores={winterbloom_sword=0}] {\"rawtext\":[{\"text\": \"Break\"}]}",
 						"/tellraw @s[scores={winterbloom_sword=1}] {\"rawtext\":[{\"text\": \"I am the hunter\"}]}",
 						"/tellraw @s[scores={winterbloom_sword=2}] {\"rawtext\":[{\"text\": \"The Primordial Hunter's Wrath\"}]}"
 					],
@@ -255,8 +269,43 @@
 				},
 				"change_fail": {
 					"on_entry": [
-						"/tellraw @s {\"rawtext\":[{\"text\":\"You cannot change skills while at Ultimate Hunter State\"}]}",
+						"/tellraw @s {\"rawtext\":[{\"text\":\"You cannot change skills while at Primordial Hunter State\"}]}",
 						"/playsound note.bass @s"
+					],
+					"transitions": [
+						{
+							"default": "!v.attack_time"
+						}
+					]
+				},
+				"skill_3_fail": {
+					"on_entry": [
+						"/title @s subtitle §cYou need to be grounded",
+						"/playsound note.bass @s"
+					],
+					"transitions": [
+						{
+							"default": "!v.attack_time"
+						}
+					]
+				},
+				"interrupted": {
+					"on_entry": [
+						"/camera @s fade time 0 3 1 color 0 0 0",
+						"/playsound random.break @s",
+						"/inputpermission set @s movement disabled",
+						"/inputpermission set @s camera disabled",
+						"/title @s title §c",
+						"/titleraw @s subtitle {\"rawtext\":[{\"text\":\"§c! Ultimate Interrupted !\nYou have been stunned.\"}]}"
+					],
+					"on_exit": [
+						"/inputpermission set @s movement enabled",
+						"/inputpermission set @s camera enabled"
+					],
+					"transitions": [
+						{
+							"default": "query.scoreboard('atkp_delay')>60"
+						}
 					]
 				}
 			}

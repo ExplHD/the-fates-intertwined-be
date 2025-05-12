@@ -19,7 +19,7 @@
         "component_groups": {
             "minecraft:exploding": {
                 "minecraft:timer": {
-                    "time": 3,
+                    "time": 4,
                     "time_down_event": {
                         "event": "fec:exploded"
                     }
@@ -29,7 +29,7 @@
                 "minecraft:is_baby": {},
                 "minecraft:explode": {
                     "breaks_blocks": false,
-                    "power": 25,
+                    "power": 55,
                     "fuse_lit": true,
                     "fuse_length": 0.1
                 }
@@ -38,18 +38,30 @@
         "components": {
             "minecraft:is_hidden_when_invisible": {},
             "minecraft:experience_reward": {
-                "on_death": 5
+                "on_death": 200
             },
             "minecraft:type_family": {
                 "family": [
                     "creeper",
                     "monster",
-                    "mob"
+                    "mob",
+                    "corrupted"
                 ]
             },
             "minecraft:breathable": {
                 "total_supply": 15,
                 "suffocate_time": 0
+            },
+            "minecraft:spawn_entity": {
+                "entities": {
+                    "single_use": false,
+                    "min_wait_time": 12,
+                    "max_wait_time": 15,
+                    "num_to_spawn": 4,
+                    "spawn_entity": "fec:corrupted_star",
+                    "spawn_sound": "plop",
+                    "spawn_method": "born"
+                }
             },
             "minecraft:nameable": {},
             "minecraft:collision_box": {
@@ -73,7 +85,7 @@
                 "max": 120
             },
             "minecraft:boss": {
-                "hud_range": 24,
+                "hud_range": 32,
                 "name": "§5Corrupted Creeper"
             },
             "minecraft:hurt_on_condition": {
@@ -179,6 +191,10 @@
             "minecraft:behavior.hurt_by_target": {
                 "priority": 2
             },
+            "minecraft:on_death": {
+                "event": "fec:death_event",
+                "target": "self"
+            },
             "minecraft:physics": {},
             "minecraft:pushable": {
                 "is_pushable": true,
@@ -209,6 +225,23 @@
                 "add": {
                     "component_groups": [
                         "fec:exploded"
+                    ]
+                }
+            },
+            "fec:summon_envoy": {
+                "queue_command": {
+                    "command": [
+                        "playsound custom_sfx.teleport @a[r=24] ~~~ 1 1.2 0.3"
+                    ]
+                }
+            },
+            "fec:death_event": {
+                "queue_command": {
+                    "command": [
+                        "summon fec:corrupted_star ~~~5",
+                        "summon fec:corrupted_star ~~~-5",
+                        "summon fec:corrupted_star ~5~~",
+                        "summon fec:corrupted_star ~-5~~"
                     ]
                 }
             },

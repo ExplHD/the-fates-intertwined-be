@@ -217,7 +217,7 @@
 					"/inputpermission set @s camera disabled",
 					"/inputpermission set @s movement disabled",
 					"/playanimation @s animation.eidolon_4_staff.attack_3",
-					"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their Ultimate §cInamorta\"}]}"
+					"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their Ultimate §cInnamorta\"}]}"
 				],
 				"0.45": [
 					"/summon fec:eidolon_4_pillar ~~~ ~ 0",
@@ -238,11 +238,7 @@
 					"/effect @s strength 11 4 false",
 					"/effect @s speed 11 3 true",
 					"/effect @s saturation 11 255 true",
-					"/clear @s fec:eidolon_4_staff 0 1",
 					"/playsound mob.zombie.woodbreak @a[r=24]"
-				],
-				"0.75": [
-					"/tellraw @s {\"rawtext\":[{\"text\":\"§cDo not use/change to other items, or it'll be destroyed!\"}]}"
 				],
 				"3.0": [
 					"/summon fec:eidolon_4_pillar ~~~ ~ 0",
@@ -275,7 +271,6 @@
 					"/summon fec:eidolon_4_pillar ~~~ ~180 0"
 				],
 				"12.0": [
-					"/replaceitem entity @s slot.weapon.mainhand 0 fec:eidolon_4_staff",
 					"/tag @s remove eidolon_iframe",
 					"/scoreboard players set @s eidolon_4_staff_c3 100"
 				]

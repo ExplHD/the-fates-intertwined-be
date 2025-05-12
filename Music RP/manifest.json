@@ -15,7 +15,7 @@
 	},
 	"header": {
 		"name": "The Fates Intertwined (Music)",
-		"description": "Sebuah resource pack tambahan untuk musik di server hexagovival",
+		"description": "A Music pack that used for adding more experience while fighting a boss",
 		"min_engine_version": [
 			1,
 			20,
@@ -25,7 +25,7 @@
 		"version": [
 			1,
 			0,
-			0
+			1
 		]
 	},
 	"modules": [
@@ -35,7 +35,7 @@
 			"version": [
 				1,
 				0,
-				0
+				1
 			]
 		}
 	]

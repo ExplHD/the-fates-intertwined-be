@@ -1,0 +1,53 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:yamato",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_yamato",
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:damage": 11,
+			"minecraft:should_despawn": false,
+			"minecraft:hand_equipped": true,
+			"minecraft:use_modifiers": {
+				"use_duration": 999999,
+				"movement_modifier": 1
+			},
+			"minecraft:use_animation": "none",
+			"minecraft:food": {
+				"can_always_eat": true
+			},
+			"minecraft:enchantable": {
+				"slot": "sword",
+				"value": 16
+			},
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": "minecraft:web",
+						"speed": 15
+					},
+					{
+						"block": "minecraft:bamboo",
+						"speed": 60
+					}
+				]
+			},
+			"minecraft:display_name": {
+				"value": "§6Yamato §2[Zero's Katana]\n§7A katana from the other universes.\nThis sword posses the power of space ripper\n\n§2Right-click / Tap and Hold to :\nCast the selected skill\nSneak + Left Click / tap to :\nChange selected skill"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_sword",
+					"minecraft:is_tool"
+				]
+			}
+		}
+	}
+}

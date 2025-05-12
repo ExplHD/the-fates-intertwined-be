@@ -1,0 +1,20 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fec:weapon_billet_nether",
+			"menu_category": {
+				"category": "nature"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fec_weapon_billet_nether",
+			"minecraft:hand_equipped": false,
+			"minecraft:allow_off_hand": true,
+			"minecraft:max_stack_size": 16,
+			"minecraft:display_name": {
+				"value": "§eNether Weapon Billet\n§8A Weapons blueprint that can be used as ways\nto craft weapons, but not with medalion specified weapons"
+			}
+		}
+	}
+}

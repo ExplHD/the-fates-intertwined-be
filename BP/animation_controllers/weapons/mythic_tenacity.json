@@ -58,7 +58,7 @@
                 },
                 "atk_1_scythe": {
                     "on_entry": [
-                        "/damage @e[r=5,rm=0.1,type=!item] 12 entity_attack entity @s",
+                        "/damage @e[r=5,rm=0.1,type=!item] 18 entity_attack entity @s",
                         "/playanimation @s animation.mythic_tenacity.attack_1_scythe",
                         "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 1.15 0.4",
                         "/scoreboard players add @s legendCounter 1"
@@ -80,7 +80,7 @@
                 },
                 "atk_2_scythe": {
                     "on_entry": [
-                        "/damage @e[r=5,rm=0.1,type=!item] 14 entity_attack entity @s",
+                        "/damage @e[r=5,rm=0.1,type=!item] 20 entity_attack entity @s",
                         "/playanimation @s animation.mythic_tenacity.attack_2_scythe",
                         "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 0.9 0.4",
                         "/scoreboard players add @s legendCounter 1"
@@ -102,7 +102,7 @@
                 },
                 "atk_3_scythe": {
                     "on_entry": [
-                        "/damage @e[r=5,rm=0.1,type=!item] 12 entity_attack entity @s",
+                        "/damage @e[r=5,rm=0.1,type=!item] 18 entity_attack entity @s",
                         "/playanimation @s animation.mythic_tenacity.attack_3_scythe",
                         "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 1 0.4",
                         "/scoreboard players add @s legendCounter 1"
@@ -134,7 +134,7 @@
                 },
                 "atk_1_axe": {
                     "on_entry": [
-                        "/damage @e[r=5,rm=0.1,type=!item] 16 entity_attack entity @s",
+                        "/damage @e[r=5,rm=0.1,type=!item] 22 entity_attack entity @s",
                         "/playanimation @s animation.mythic_tenacity.attack_3_scythe",
                         "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 1.15 0.4",
                         "/scoreboard players add @s legendCounter 1",
@@ -158,7 +158,7 @@
                 },
                 "atk_2_axe": {
                     "on_entry": [
-                        "/damage @e[r=5,rm=0.1,type=!item] 16 entity_attack entity @s",
+                        "/damage @e[r=5,rm=0.1,type=!item] 22 entity_attack entity @s",
                         "/playanimation @s animation.mythic_tenacity.attack_1_scythe",
                         "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 0.9 0.4",
                         "/scoreboard players add @s legendCounter 1",
@@ -182,7 +182,7 @@
                 },
                 "atk_3_axe": {
                     "on_entry": [
-                        "/damage @e[r=4,rm=0.1,type=!item] 17 entity_attack entity @s",
+                        "/damage @e[r=4,rm=0.1,type=!item] 23 entity_attack entity @s",
                         "/playanimation @s animation.mythic_tenacity.attack_2_scythe",
                         "/playsound sword_slash.heavy_slash @a[r=16]  ~~~ 1 1 0.4",
                         "/scoreboard players add @s legendCounter 1",
@@ -205,7 +205,7 @@
                 },
                 "skill_1": {
                     "on_entry": [
-                        "/damage @e[r=16,rm=0.1,family=!inanimate] 20 entity_explosion entity @s",
+                        "/damage @e[r=16,rm=0.1,family=!inanimate] 26 entity_explosion entity @s",
                         "/particle fec:mythic_tenacity_skill_1 ~~~",
                         "/scoreboard players add @s tenacity_c1 15",
                         "/playsound random.explode @a[r=32]",
@@ -249,7 +249,7 @@
                 },
                 "skill_3_scythe": {
                     "on_entry": [
-                        "/scoreboard players set @s tenacity_c3 60",
+                        "/scoreboard players set @s tenacity_c3 40",
                         "/playsound lt.reaction.fire @a[r=32]",
                         "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §6Curtain of Hellfire\"}]}",
                         "/playanimation @s animation.mythic_tenacity.attack_1_scythe",

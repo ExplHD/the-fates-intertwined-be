@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "fec:reworked_tenacity_shield",
 			"materials": {
-				"default": "entity_alphatest"
+				"default": "banner_pole"
 			},
 			"textures": {
 				"default": "textures/entity/reworked_tenacity_shield"

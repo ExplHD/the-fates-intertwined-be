@@ -1,0 +1,88 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:star_meteor",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"starexplode": {
+				"minecraft:explode": {
+					"fuse_lit": true,
+					"fuse_length": 0.1,
+					"power": 6,
+					"destroy_affected_by_griefing": false,
+					"breaks_blocks": false
+				}
+			},
+			"physics": {
+				"minecraft:physics": {
+					"has_collision": true,
+					"has_gravity": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 500,
+				"max": 500
+			},
+			"minecraft:collision_box": {
+				"height": 0.6,
+				"width": 0.5
+			},
+			"minecraft:scale": {
+				"value": 3
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": true,
+						"on_damage": {
+							"event": "starexplode",
+							"target": "self"
+						}
+					},
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+			"minecraft:timer": {
+				"time": 1,
+				"time_down_event": {
+					"event": "add_physics"
+				}
+			}
+		},
+		"events": {
+			"starexplode": {
+				"add": {
+					"component_groups": [
+						"starexplode"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"particle fec:stars_ping ~~~",
+						"playsound stars_boss.meteor_impact @a[r=64] ~~~ 1 1 0.3"
+					]
+				}
+			},
+			"add_physics": {
+				"add": {
+					"component_groups": [
+						"physics"
+					]
+				}
+			}
+		}
+	}
+}

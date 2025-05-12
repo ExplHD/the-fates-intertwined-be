@@ -1,0 +1,62 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:mythic_tenacity"
+		},
+		"tags": [
+			"legendary_fabricator"
+		],
+		"key": {
+			"O": {
+				"item": "fec:weapon_billet"
+			},
+			"N": {
+				"item": "fec:weapon_billet_nether"
+			},
+			"T": {
+				"item": "fec:weapon_billet_ender"
+			},
+			"s": {
+				"item": "minecraft:nether_star"
+			},
+			"R": {
+				"item": "fec:reworked_tenacity"
+			},
+			"a": {
+				"item": "fec:awakened_stars"
+			},
+			"W": {
+				"item": "fec:winterbloom_sword"
+			},
+			"E": {
+				"item": "fec:the_enigma"
+			},
+			"4": {
+				"item": "fec:eidolon_4_staff"
+			}
+		},
+		"pattern": [
+			"ONT",
+			"sRa",
+			"WE4"
+		],
+		"unlock": [
+			{
+				"item": "fec:reworked_tenacity"
+			},
+			{
+				"item": "fec:weapon_billet"
+			},
+			{
+				"item": "fec:weapon_billet_ender"
+			},
+			{
+				"item": "fec:weapon_billet_nether"
+			}
+		],
+		"result": {
+			"item": "fec:tenacity"
+		}
+	}
+}

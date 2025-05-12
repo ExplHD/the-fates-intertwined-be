@@ -184,6 +184,162 @@
 					}
 				}
 			}
+		},
+		"animation.corvus.teleport": {
+			"animation_length": 2,
+			"bones": {
+				"leftWing": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -80, 0],
+						"1.75": [0, -80, 0],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"rightWing": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 85, 0],
+						"1.75": [0, 85, 0],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"leftArmUp": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 72.5, 0],
+						"1.75": [0, 72.5, 0],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 72.5, 0],
+						"1.75": [0, 72.5, 0],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"rightArmUp": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-12.04549, 11.84371, 46.8412],
+						"1.75": [-12.04549, 11.84371, 46.8412],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -117.5, 0],
+						"1.75": [0, -117.5, 0],
+						"2.0": [0, 0, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "light_marker",
+						"locator": "rightUpCasterFX"
+					},
+					{
+						"effect": "light_marker",
+						"locator": "rightCasterFX"
+					}
+				],
+				"1.0": [
+					{
+						"effect": "light_marker",
+						"locator": "rightUpCasterFX"
+					},
+					{
+						"effect": "light_marker",
+						"locator": "rightCasterFX"
+					}
+				]
+			}
+		},
+		"animation.corvus.attack": {
+			"animation_length": 0.5,
+			"bones": {
+				"rightArmUp": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.0417": [0, -5.84015, 0],
+						"0.0833": [0, -23.24749, 0],
+						"0.1667": [0, -74.25251, 0],
+						"0.2083": [0, -91.65985, 0],
+						"0.25": [0, -97.5, 0],
+						"0.2917": [-2.57026, -97.04015, 0],
+						"0.3333": [-8.32481, -94.945, 0],
+						"0.375": [-15.32159, -89.97344, 0],
+						"0.4167": [-21.89648, -80.09557, 0],
+						"0.4583": [-25.26199, -60.48389, 0],
+						"0.5": [0, 0, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "light_idle",
+					"locator": "rightUpCasterFX"
+				}
+			}
+		},
+		"animation.corvus.front_pillar": {
+			"animation_length": 1.5,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [20, 0, 0],
+						"1.25": [20, 0, 0],
+						"1.5": [0, 0, 0]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 82.5, 0],
+						"1.25": [0, 82.5, 0],
+						"1.5": [0, 0, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -82.5, 0],
+						"1.25": [0, -82.5, 0],
+						"1.5": [0, 0, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "light_marker",
+						"locator": "leftCasterFX"
+					},
+					{
+						"effect": "light_marker",
+						"locator": "rightCasterFX"
+					}
+				],
+				"1.0": [
+					{
+						"effect": "light_marker",
+						"locator": "leftCasterFX"
+					},
+					{
+						"effect": "light_marker",
+						"locator": "rightCasterFX"
+					}
+				]
+			}
+		},
+		"animation.corvus.summon_core": {
+			"loop": true
 		}
 	}
 }

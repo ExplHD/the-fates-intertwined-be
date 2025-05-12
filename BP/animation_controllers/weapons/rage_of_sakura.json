@@ -137,8 +137,7 @@
 				"skill_1": {
 					"on_entry": [
 						"/effect @s instant_health 1 1",
-						"/effect @s health_boost 60 4 true",
-						"/effect @s regeneration 30 1 true",
+						"/effect @s regeneration 30 0 true",
 						"/effect @s resistance 15 2",
 						"/effect @s poison 0 0",
 						"/effect @s hunger 0 0",
@@ -184,7 +183,7 @@
 						"/effect @e[r=14,rm=0.1,type=!item] blindness 15 0",
 						"/effect @e[r=14,rm=0.1,type=!item] weakness 15 2",
 						"/effect @e[r=14,rm=0.1,type=!item] mining_fatigue 15 2",
-						"/effect @e[r=14,rm=0.1,type=!item] wither 15 2",
+						"/effect @e[r=14,rm=0.1,type=!item] wither 15 1",
 						"/effect @e[r=14,rm=0.1,type=!item] nausea 15 0",
 						"/scoreboard players set @s rage_of_sakura_c3 120"
 					],

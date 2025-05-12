@@ -125,7 +125,7 @@
 				},
 				"skill_1": {
 					"on_entry": [
-						"/camera @a[r=16,rm=0.1] fade time 0 2 1 color 255 255 255",
+						"/camera @a[r=16,rm=0.1] fade time 0 2 2 color 255 255 255",
 						"/effect @s speed 2 1 true",
 						"/particle fec:blade_of_the_end_skill_1 ~~~",
 						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §dCosmic Stars : Flash\"}]}",

@@ -72,6 +72,15 @@
 		},
 		"fec_curium_block": {
 			"textures": "textures/blocks/curium_block"
+		},
+		"fec_stars_altar": {
+			"textures": "textures/blocks/stars_altar/stars_altar"
+		},
+		"fec_stars_altar_in_progress": {
+			"textures": "textures/blocks/stars_altar/stars_altar_inprogress"
+		},
+		"fec_stars_altar_disabled": {
+			"textures": "textures/blocks/stars_altar/stars_altar_disabled"
 		}
 	}
 }

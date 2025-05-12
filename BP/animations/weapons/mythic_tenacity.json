@@ -25,20 +25,20 @@
                 "1.0": [
                     "/playsound sword_slash.light_slash @a[r=16]",
                     "/effect @s speed 1 6 true",
-                    "/damage @e[rm=0.1,r=4] 15 entity_attack entity @s",
+                    "/damage @e[rm=0.1,r=4] 21 entity_attack entity @s",
                     "/title @s actionbar §c< CHARGE! >"
                 ],
                 "1.25": [
                     "/playsound sword_slash.light_slash @a[r=16]",
-                    "/damage @e[rm=0.1,r=4] 15 entity_attack entity @s"
+                    "/damage @e[rm=0.1,r=4] 21 entity_attack entity @s"
                 ],
                 "1.5": [
                     "/playsound sword_slash.light_slash @a[r=16]",
-                    "/damage @e[rm=0.1,r=4] 15 entity_attack entity @s"
+                    "/damage @e[rm=0.1,r=4] 21 entity_attack entity @s"
                 ],
                 "1.75": [
                     "/playsound sword_slash.light_slash @a[r=16]",
-                    "/damage @e[rm=0.1,r=4] 15 entity_attack entity @s",
+                    "/damage @e[rm=0.1,r=4] 21 entity_attack entity @s",
                     "/effect @s speed 0 6 true",
                     "/effect @s levitation 0 4 true",
                     "/effect @s slowness 1 4 true",
@@ -47,7 +47,7 @@
                 "2.33": [
                     "/tp ~ ~ ~ ~ 0",
                     "/playsound sword_slash.heavy_slash @a[r=24]",
-                    "/damage @e[rm=0.1,r=6] 32 entity_attack entity @s",
+                    "/damage @e[rm=0.1,r=6] 38 entity_attack entity @s",
                     "/effect @s slowness 0 255 true",
                     "/title @a[r=16] actionbar §6< EXPLOSION IMMINENT! >"
                 ]
@@ -103,7 +103,7 @@
                 "0.6": [
                     "/inputpermission set @s movement disabled",
                     "/title @s actionbar §6> ATTACK INITIATED! <",
-                    "/damage @e[r=12,rm=0.1] 36 entity_attack entity @s",
+                    "/damage @e[r=12,rm=0.1] 42 entity_attack entity @s",
                     "/particle fec:mythic_tenacity_attack_5 ~~~",
                     "/playsound sword_slash.heavy_slash @a[r=16]",
                     "/summon fec:tenacity_orange_slash ^^^7 ~ 0",
@@ -141,38 +141,38 @@
                 ],
                 "0.1": [
                     "/tp @s @e[tag=hunterTarget]",
-                    "/damage @e[tag=hunterTarget,type=player] 35 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=wither] 48 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=ender_dragon] 85 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 100 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=fec:water_eidolon] 125 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=warden] 48 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=player] 41 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=wither] 60 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=ender_dragon] 150 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 125 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=fec:water_eidolon] 150 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=warden] 60 entity_attack entity @s",
                     "/execute as @s at @s unless entity @e[tag=hunterTarget] run tp @s @e[r=32,c=1,type=!player,family=!inanimate]",
-                    "/damage @e[r=6,family=!inanimate] 35 entity_attack @s",
+                    "/damage @e[r=6,family=!inanimate] 41 entity_attack @s",
                     "/particle fec:mythic_tenacity_ultimate_teleport_slash ~~~"
                 ],
                 "1.28": [
                     "/tp @s @e[tag=hunterTarget]",
-                    "/damage @e[tag=hunterTarget,type=player] 35 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=wither] 48 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=ender_dragon] 85 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 100 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=fec:water_eidolon] 125 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=warden] 48 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=player] 41 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=wither] 60 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=ender_dragon] 150 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 125 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=fec:water_eidolon] 150 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=warden] 60 entity_attack entity @s",
                     "/execute as @s at @s unless entity @e[tag=hunterTarget] run tp @s @e[r=32,c=1,type=!player,family=!inanimate]",
-                    "/damage @e[r=6,family=!inanimate] 35 entity_attack @s",
+                    "/damage @e[r=6,family=!inanimate] 41 entity_attack @s",
                     "/particle fec:mythic_tenacity_ultimate_teleport_slash ~~~"
                 ],
                 "3.5": [
                     "/tp @s @e[tag=hunterTarget]",
-                    "/damage @e[tag=hunterTarget,type=player] 35 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=wither] 48 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=ender_dragon] 85 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 100 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=fec:water_eidolon] 125 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=warden] 48 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=player] 41 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=wither] 60 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=ender_dragon] 150 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 125 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=fec:water_eidolon] 150 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=warden] 60 entity_attack entity @s",
                     "/execute as @s at @s unless entity @e[tag=hunterTarget] run tp @s @e[r=32,c=1,type=!player,family=!inanimate]",
-                    "/damage @e[r=6,family=!inanimate] 35 entity_attack @s",
+                    "/damage @e[r=6,family=!inanimate] 41 entity_attack @s",
                     "/particle fec:mythic_tenacity_ultimate_teleport_slash ~~~"
                 ],
                 "4.5": [
@@ -254,7 +254,7 @@
                     "/inputpermission set @a[r=3] camera disabled",
                     "/summon fec:tenacity_sky_meteor ^^60^10 ~ 0 minecraft:entity_spawned"
                 ],
-                "3.9": [
+                "3.5": [
                     "/camera @s clear",
                     "/inputpermission set @a[r=3] movement enabled",
                     "/inputpermission set @a[r=3] camera enabled",

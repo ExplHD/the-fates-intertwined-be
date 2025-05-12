@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:star_meteor",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/star_projectile"
+			},
+			"geometry": {
+				"default": "geometry.star_projectile"
+			},
+			"animations": {
+				"animate": "animation.star_projectile.default"
+			},
+			"scripts": {
+				"animate": [
+					"animate"
+				]
+			},
+			"render_controllers": [
+				"controller.render.star_meteor"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

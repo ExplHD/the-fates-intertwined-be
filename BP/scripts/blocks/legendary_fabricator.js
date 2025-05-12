@@ -1,6 +1,6 @@
 import { system, world } from '@minecraft/server'
 
-world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
+system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent("fec:legendary_fabricator", {
         onPlayerInteract(event) {
             const player = event.player

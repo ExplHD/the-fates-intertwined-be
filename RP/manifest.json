@@ -1,7 +1,7 @@
 {
 	"format_version": 2,
 	"header": {
-		"name": "The Fates Interwined 2025.2.2 (RP)",
+		"name": "The Fates Interwined 2025.5.1 (RESOURCES)",
 		"description": "A Minecraft addons that adds a lot of content that will be updated every 2-3 months",
 		"min_engine_version": [
 			1,
@@ -11,8 +11,8 @@
 		"uuid": "dbee144b-14b8-4f35-a3ad-ddadb58b487e",
 		"version": [
 			2025,
-			2,
-			2
+			5,
+			1
 		]
 	},
 	"modules": [
@@ -21,8 +21,8 @@
 			"uuid": "f3d5e580-d355-4c6c-8ccc-cb8c45d128a6",
 			"version": [
 				2025,
-				2,
-				2
+				5,
+				1
 			]
 		}
 	],
@@ -34,8 +34,8 @@
 			"uuid": "08e421a6-9c86-4a93-9704-2affcb0265df",
 			"version": [
 				2025,
-				2,
-				2
+				5,
+				1
 			]
 		}
 	],

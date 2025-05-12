@@ -18,5 +18,8 @@
 	},
 	"fec:curium_block": {
 		"sound": "metal"
+	},
+	"fec:stars_altar": {
+		"sound": "stone"
 	}
 }

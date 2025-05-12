@@ -20,7 +20,7 @@ system.runInterval(() => {
                 if (player.isJumping == true && getScore(player, "boots_of_escalation_charge") < 60 && getScore(player, "dash_cooldown") == 0) {
                     setScore(player, "boots_of_escalation_charge", 0)
                     setScore(player, "dash_cooldown", 5)
-                    player.applyKnockback(player.getViewDirection().x, player.getViewDirection().z, 0.1, 0.4)
+                    player.applyKnockback({ x: player.getViewDirection().x * 0.1, z: player.getViewDirection().z * 0.1 }, 0.4)
                     player.spawnParticle("fec:boots_of_escalation_jump_weak", player.location)
                     player.playSound('mob.breeze.jump')
                     player.cancel = true
@@ -33,7 +33,7 @@ system.runInterval(() => {
                 if (player.isJumping == true && getScore(player, "boots_of_escalation_charge") == 60 && getScore(player, "dash_cooldown") == 0) {
                     setScore(player, "boots_of_escalation_charge", 0)
                     setScore(player, "dash_cooldown", 5)
-                    player.applyKnockback(player.getViewDirection().x, player.getViewDirection().z, 0.1, 1.6)
+                    player.applyKnockback({ x: player.getViewDirection().x * 0.1, z: player.getViewDirection().z * 0.1 }, 1.6)
                     player.spawnParticle("fec:boots_of_escalation_jump_full", player.location)
                     player.addEffect("slow_falling", 100, {
                         amplifier: 1

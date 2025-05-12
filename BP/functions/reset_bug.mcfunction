@@ -14,6 +14,8 @@ scoreboard players reset @a reworked_tenacity
 scoreboard players reset @a shadow_revolver
 scoreboard players reset @a mythic_tenacity
 scoreboard players reset @a mythic_tenacity_shield
+scoreboard players reset @a the_enigma
+scoreboard players reset @a yamato
 inputpermission set @a movement enabled
 inputpermission set @a camera enabled
 inputpermission set @a dismount enabled

@@ -94,7 +94,7 @@
 					"on_entry": [
 						"/playanimation @s animation.windblade_claymore.skill_1",
 						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §lTornado Attack\"}]}",
-						"/scoreboard players add @s windblade_claymore_c1 25"
+						"/scoreboard players add @s windblade_claymore_c1 15"
 					],
 					"animations": [
 						"windblade_claymore_skill_1"
@@ -131,7 +131,7 @@
 						"/damage @e[r=64,type=fec:elemental_legionnaire] 10 entity_attack entity @s",
 						"/damage @e[r=64,type=fec:water_eidolon] 100 entity_attack entity @s",
 						"/damage @e[r=64,type=warden] 50 entity_attack entity @s",
-						"/damage @e[r=64,rm=0.1,type=!item] 20 entity_attack entity @s",
+						"/damage @e[r=64,rm=0.1,type=!item] 32 entity_attack entity @s",
 						"/particle fec:nuclear_explosion_wipe ~~1~",
 						"/tellraw @a[r=128] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their Ultimate §lPerfect Annillator\"}]}",
 						"/scoreboard players add @s windblade_claymore_c3 140"

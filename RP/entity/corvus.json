@@ -15,6 +15,18 @@
 			"render_controllers": [
 				"controller.render.corvus"
 			],
+			"animations": {
+				"corvus_controller": "controller.animation.corvus",
+				"idle": "animation.corvus.idle",
+				"idle_fly": "animation.corvus.idle_fly",
+				"idle_charging": "animation.corvus.idle_charging",
+				"rest": "animation.corvus.rest",
+				"attack": "animation.corvus.attack",
+				"dash": "animation.corvus.dash",
+				"move": "animation.corvus.walk",
+				"teleport": "animation.corvus.teleport",
+				"front_pillar_cast": "animation.corvus.front_pillar"
+			},
 			"spawn_egg": {
 				"base_color": "#000000",
 				"overlay_color": "#FFFFFF"

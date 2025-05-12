@@ -71,6 +71,20 @@
 					]
 				},
 				{
+					"name": "cape",
+					"parent": "body",
+					"pivot": [
+						0.0,
+						24.0,
+						3.0
+					],
+					"rotation": [
+						0.0,
+						180.0,
+						0.0
+					]
+				},
+				{
 					"name": "head",
 					"parent": "body",
 					"pivot": [

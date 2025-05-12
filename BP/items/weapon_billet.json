@@ -11,7 +11,7 @@
 			"minecraft:icon": "fec_weapon_billet",
 			"minecraft:hand_equipped": false,
 			"minecraft:allow_off_hand": true,
-			"minecraft:max_stack_size": 1,
+			"minecraft:max_stack_size": 16,
 			"minecraft:display_name": {
 				"value": "§eWeapon Billet\n§8A Weapons blueprint that can be used as ways\nto craft weapons, but not with medalion specified weapons"
 			}

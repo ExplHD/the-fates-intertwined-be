@@ -5,18 +5,7 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "fec:blade_of_the_end",
-                    "functions": [
-                        {
-                            "function": "specific_enchants",
-                            "enchants": [
-                                {
-                                    "id": "knockback",
-                                    "level": 4
-                                }
-                            ]
-                        }
-                    ]
+                    "name": "fec:blade_of_the_end"
                 }
             ]
         }

@@ -67,9 +67,9 @@ Players Killed : ${kill}`);
     function statisticSettings() {
         const statisticSettings = new ModalFormData();
         statisticSettings.title("Statistics Settings");
-        statisticSettings.toggle("Toggle Statistics Notification\n§7Toggle Notification being updated in actionbar", player.getDynamicProperty("fec:statistic_notification"));
-        statisticSettings.toggle("Toggle Hit Health Remaining\n§7Toggle health indicator after hitting an entity", player.getDynamicProperty("fec:statistic_health_remaining"));
-        statisticSettings.toggle("Toggle Where the Hit From\n§7Toggle where you have been hit, and your remaining HP", player.getDynamicProperty("fec:statistic_where_to_hit"));
+        statisticSettings.toggle("Toggle Statistics Notification\n§7Toggle Notification being updated in actionbar", { defaultValue: player.getDynamicProperty("fec:statistic_notification") });
+        statisticSettings.toggle("Toggle Hit Health Remaining\n§7Toggle health indicator after hitting an entity", { defaultValue: player.getDynamicProperty("fec:statistic_health_remaining") });
+        statisticSettings.toggle("Toggle Where the Hit From\n§7Toggle where you have been hit, and your remaining HP", { defaultValue: player.getDynamicProperty("fec:statistic_where_to_hit") });
         statisticSettings.show(player).then(r => {
             if (r.canceled) statisticSelect(player);
             if (r.formValues[0] == true) {

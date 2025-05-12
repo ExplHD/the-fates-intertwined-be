@@ -1,0 +1,50 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.the_enigma": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "scoped": "query.property('fec:the_enigma_ranged_status')=='scoped'"
+                        },
+                        {
+                            "ultimate_scoped": "query.property('fec:the_enigma_ranged_status')=='ultimate'"
+                        }
+                    ]
+                },
+                "scoped": {
+                    "animations": [
+                        {
+                            "the_enigma_skill_3": "!v.is_first_person"
+                        },
+                        {
+                            "the_enigma_skill_3_fpp": "v.is_first_person"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.property('fec:the_enigma_ranged_status')=='normal'"
+                        }
+                    ]
+                },
+                "ultimate_scoped": {
+                    "animations": [
+                        {
+                            "the_enigma_skill_4": "!v.is_first_person"
+                        },
+                        {
+                            "the_enigma_skill_4_fpp": "v.is_first_person"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.property('fec:the_enigma_ranged_status')=='normal'"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

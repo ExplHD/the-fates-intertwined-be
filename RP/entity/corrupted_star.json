@@ -1,0 +1,35 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:corrupted_star",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/corrupted_star"
+			},
+			"particle_effects": {
+				"corrupted_star_trail": "fec:corrupted_star_trail"
+			},
+			"geometry": {
+				"default": "geometry.corrupted_star"
+			},
+			"render_controllers": [
+				"controller.render.corrupted_star"
+			],
+			"animations": {
+				"default": "animation.corrupted_star.idle"
+			},
+			"scripts": {
+				"animate": [
+					"default"
+				]
+			},
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

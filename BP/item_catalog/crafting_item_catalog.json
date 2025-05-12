@@ -3,22 +3,42 @@
    "minecraft:crafting_items_catalog": {
       "categories": [
          {
-            // Valid values are construction, equipment, nature, and items
             "category_name": "equipment",
             "groups": [
                {
-                  // This will create a new group
                   "group_identifier": {
                      "icon": "fec:frag_grenade",
-                     // This is the name of your group which doubles as
-                     // the localization string. The namespace is required
                      "name": "fec:grenades"
                   },
                   "items": [
                      "fec:frag_grenade",
                      "fec:frag_grenade_unexplosive",
                      "fec:frag_grenade_flame",
-                     "fec:bedrock_breaker"
+                     "fec:bedrock_breaker",
+                     "fec:purifier_grenade"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "fec:reworked_tenacity",
+                     "name": "fec:legendaries"
+                  },
+                  "items": [
+                     "fec:winterbloom_sword",
+                     "fec:rage_of_sakura",
+                     "fec:murasama_calamity",
+                     "fec:spear_of_heart",
+                     "fec:blade_of_the_end",
+                     "fec:windblade_claymore",
+                     "fec:eidolon_4_staff",
+                     "fec:zenith",
+                     "fec:stars_and_crescent",
+                     "fec:reworked_tenacity",
+                     "fec:tenacity",
+                     "fec:tenacity_axe",
+                     "fec:shadow_revolver",
+                     "fec:the_enigma",
+                     "fec:yamato"
                   ]
                }
             ]
@@ -37,6 +57,19 @@
                      "fec:lightning_shard",
                      "fec:fire_shard",
                      "fec:water_shard"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "fec:shadow_heart",
+                     "name": "fec:boss_summons"
+                  },
+                  "items": [
+                     "fec:shadow_heart",
+                     "fec:star_shard",
+                     "fec:legionnaire_medalion",
+                     "fec:glorified_water_essence",
+                     "fec:awakened_stars"
                   ]
                },
                {
@@ -65,7 +98,9 @@
                      "fec:murasama_medal",
                      "fec:lightning_phoenix_medal_wireframe",
                      "fec:land_of_peace_medal",
-                     "fec:land_of_peace_medal_wireframe"
+                     "fec:land_of_peace_medal_wireframe",
+                     "fec:javanesia_medal",
+                     "fec:javanesia_medal_wireframe"
                   ]
                }
             ]
@@ -83,7 +118,8 @@
                      "fec:earth_creeper_spawn_egg",
                      "fec:fire_creeper_spawn_egg",
                      "fec:water_creeper_spawn_egg",
-                     "fec:corrupted_creeper_spawn_egg"
+                     "fec:corrupted_creeper_spawn_egg",
+                     "fec:corrupted_star_spawn_egg"
                   ]
                }
             ]

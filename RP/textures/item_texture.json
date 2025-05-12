@@ -196,6 +196,36 @@
 		},
 		"fec_curium_ingot": {
 			"textures": "textures/items/curium_ingot"
+		},
+		"fec_the_enigma": {
+			"textures": "textures/items/weapons/the_enigma"
+		},
+		"fec_purifier_grenade": {
+			"textures": "textures/items/purifier_grenade"
+		},
+		"fec_javanesia_medal_wireframe": {
+			"textures": "textures/items/medals/javanesia_medal_wireframe"
+		},
+		"fec_star_shard": {
+			"textures": "textures/items/boss_summon/star_shard"
+		},
+		"fec_awakened_stars": {
+			"textures": "textures/items/awakened_stars"
+		},
+		"fec_anchor_potion_bottle": {
+			"textures": "textures/items/anchor_potion_bottle"
+		},
+		"fec_javanesia_medal": {
+			"textures": "textures/items/medals/javanesia_medal"
+		},
+		"fec_yamato": {
+			"textures": "textures/items/weapons/yamato"
+		},
+		"fec_weapon_billet_nether": {
+			"textures": "textures/items/weapon_billet_nether"
+		},
+		"fec_weapon_billet_ender": {
+			"textures": "textures/items/weapon_billet_ender"
 		}
 	},
 	"texture_name": "atlas.items"

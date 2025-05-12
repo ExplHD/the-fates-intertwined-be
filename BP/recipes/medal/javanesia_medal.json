@@ -1,0 +1,35 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:javanesia_medal"
+		},
+		"key": {
+			"Q": {
+				"item": "minecraft:quartz"
+			},
+			"M": {
+				"item": "fec:javanesia_medal_wireframe"
+			},
+			"P": {
+				"item": "minecraft:emerald"
+			}
+		},
+		"pattern": [
+			"QPQ",
+			"PMP",
+			"QPQ"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"unlock": [
+			{
+				"item": "fec:javanesia_medal_wireframe"
+			}
+		],
+		"result": {
+			"item": "fec:javanesia_medal"
+		}
+	}
+}

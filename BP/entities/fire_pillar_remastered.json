@@ -33,7 +33,7 @@
 				},
 				"minecraft:area_attack": {
 					"cause": "entity_attack",
-					"damage_per_tick": 6,
+					"damage_per_tick": 20,
 					"damage_cooldown": 0.3,
 					"play_attack_sound": false,
 					"damage_range": 0.8,
@@ -65,7 +65,7 @@
 				},
 				"minecraft:area_attack": {
 					"cause": "entity_attack",
-					"damage_per_tick": 6,
+					"damage_per_tick": 40,
 					"damage_cooldown": 0.3,
 					"play_attack_sound": false,
 					"damage_range": 1

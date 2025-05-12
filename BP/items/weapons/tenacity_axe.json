@@ -13,7 +13,7 @@
 			"minecraft:allow_off_hand": true,
 			"minecraft:can_destroy_in_creative": false,
 			"minecraft:damage": {
-				"value": 16
+				"value": 22
 			},
 			"minecraft:digger": {
 				"use_efficiency": true,

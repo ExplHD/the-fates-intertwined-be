@@ -10,7 +10,7 @@
 		},
 		"components": {
 			"minecraft:can_destroy_in_creative": false,
-			"minecraft:damage": 11,
+			"minecraft:damage": 17,
 			"minecraft:should_despawn": false,
 			"minecraft:hand_equipped": true,
 			"minecraft:icon": "fec_zenith",

@@ -1,0 +1,43 @@
+{
+    "format_version": "1.21.10",
+    "animations": {
+        "animation.yamato.skill_3": {
+            "animation_length": 5,
+            "timeline": {
+                "0.0": [
+                    "/playanimation @s animation.yamato.skill_3",
+                    "/inputpermission set @a[r=20] movement disabled",
+                    "/effect @e[type=!player,r=20] slowness 4 255 true",
+                    "/tellraw @a[r=80] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §b§lJudgement Cut, end.\"}]}",
+                    "/playsound custom_sfx.judgement_cut_end @a[r=55] ~~~ 2 1 0.3",
+                    "/effect @s resistance 5 3 true"
+                ],
+                "0.5": [
+                    "/damage @e[r=20,rm=0.1,type=!item] 3 magic"
+                ],
+                "1.0": [
+                    "/damage @e[r=20,rm=0.1,type=!item] 3 magic"
+                ],
+                "1.5": [
+                    "/damage @e[r=20,rm=0.1,type=!item] 3 magic"
+                ],
+                "2.0": [
+                    "/damage @e[r=20,rm=0.1,type=!item] 3 magic"
+                ],
+                "2.5": [
+                    "/damage @e[r=20,rm=0.1,type=!item] 3 magic"
+                ],
+                "3.0": [
+                    "/damage @e[r=20,rm=0.1,type=!item] 3 magic"
+                ],
+                "3.8": [
+                    "/damage @e[r=20,rm=0.1,type=!item] 35 entity_explosion entity @s",
+                    "/inputpermission set @a[r=20] movement enabled"
+                ],
+                "5.0": [
+                    "/effect @s instant_health 1 0"
+                ]
+            }
+        }
+    }
+}

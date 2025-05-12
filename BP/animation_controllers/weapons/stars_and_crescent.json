@@ -70,7 +70,7 @@
 				},
 				"atk_1": {
 					"on_entry": [
-						"/damage @e[r=4.5,rm=0.1,type=!item] 11 entity_attack entity @s",
+						"/damage @e[r=4.5,rm=0.1,type=!item] 17 entity_attack entity @s",
 						"/playanimation @s animation.stars_and_crescent.attack_1",
 						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1 0.4",
 						"/scoreboard players add @s legendCounter 1"
@@ -96,7 +96,7 @@
 				"atk_2": {
 					"on_entry": [
 						"/playanimation @s animation.stars_and_crescent.attack_2",
-						"/damage @e[r=4.5,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/damage @e[r=4.5,rm=0.1,type=!item] 16 entity_attack entity @s",
 						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.1 0.4",
 						"/scoreboard players add @s legendCounter 1"
 					],
@@ -120,7 +120,7 @@
 				},
 				"atk_3": {
 					"on_entry": [
-						"/damage @e[r=4.5,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/damage @e[r=4.5,rm=0.1,type=!item] 16 entity_attack entity @s",
 						"/playanimation @s animation.stars_and_crescent.attack_3",
 						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.15 0.4",
 						"/scoreboard players add @s legendCounter 1"
@@ -145,7 +145,7 @@
 				},
 				"atk_4": {
 					"on_entry": [
-						"/damage @e[r=4.5,rm=0.1,type=!item] 10 entity_attack entity @s",
+						"/damage @e[r=4.5,rm=0.1,type=!item] 16 entity_attack entity @s",
 						"/playanimation @s animation.stars_and_crescent.attack_4",
 						"/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.05 0.4",
 						"/scoreboard players add @s legendCounter 1"
@@ -200,7 +200,7 @@
 				},
 				"skill_1": {
 					"on_entry": [
-						"/damage @e[r=8,rm=0.01] 6 entity_attack entity @s",
+						"/damage @e[r=8,rm=0.01] 12 entity_attack entity @s",
 						"/tp @s ^^^1 true",
 						"/tp @s ^^^1 true",
 						"/particle fec:light_blast ~~~",
@@ -223,7 +223,7 @@
 					"on_entry": [
 						"/playanimation @s animation.stars_and_crescent.attack_4",
 						"/particle fec:light_slash",
-						"/damage @e[r=24,rm=0.1,type=!item] 24 entity_attack entity @s",
+						"/damage @e[r=24,rm=0.1,type=!item] 30 entity_attack entity @s",
 						"/playsound custom_sfx.sword_slash_with_flashring @a[r=32]",
 						"/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §eStar Slash\"}]}",
 						"/scoreboard players add @s stars_and_crescent_c2 30"

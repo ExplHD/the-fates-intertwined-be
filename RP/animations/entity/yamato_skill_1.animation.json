@@ -1,0 +1,15 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.yamato_skill_1.idle": {
+			"loop": true,
+			"animation_length": 0.9583,
+			"particle_effects": {
+				"0.0": {
+					"effect": "yamato_skill_1",
+					"locator": "particle"
+				}
+			}
+		}
+	}
+}

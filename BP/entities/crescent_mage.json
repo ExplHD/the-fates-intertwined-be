@@ -1,0 +1,256 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:crescent_mage",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"spawn_timeout": {
+				"minecraft:timer": {
+					"time": 2,
+					"time_down_event": {
+						"event": "spawn_timeout_done",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0
+				}
+			},
+			"pattern_randomizer": {
+				"minecraft:timer": {
+					"time": 8,
+					"time_down_event": {
+						"event": "randomize_pattern",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.03
+				}
+			},
+			"meteor_timer": {
+				"minecraft:timer": {
+					"time": 1,
+					"looping": false,
+					"time_down_event": {
+						"event": "spawn_meteor"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0
+				}
+			},
+			"explosion_timer": {
+				"minecraft:timer": {
+					"time": 3,
+					"looping": false,
+					"time_down_event": {
+						"event": "explode"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 700,
+				"max": 700
+			},
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 1
+			},
+			"minecraft:knockback_resistance": {
+				"value": 5
+			},
+			"minecraft:experience_reward": {
+				"on_death": 100
+			},
+			"minecraft:movement": {
+				"value": 0.03
+			},
+			"minecraft:navigation.float": {
+				"can_path_from_air": true,
+				"can_path_over_water": true,
+				"can_path_over_lava": true
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:behavior.float_wander": {
+				"priority": 2,
+				"must_reach": true
+			},
+			"minecraft:can_fly": {},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "fall",
+					"deals_damage": false
+				}
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/boss/star_servant.json"
+			},
+			"minecraft:jump.static": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.ranged_attack": {
+				"priority": 1,
+				"attack_radius": 32,
+				"charge_shoot_trigger": 2,
+				"charge_charged_trigger": 1
+			},
+			"minecraft:shooter": {
+				"def": "fec:star_projectile"
+			},
+			"minecraft:follow_range": {
+				"value": 32,
+				"max": 32
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"entity_types": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						},
+						"max_dist": 16
+					}
+				],
+				"must_see": true
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:type_family": {
+				"family": [
+					"stars_creature",
+					"boss"
+				]
+			},
+			"minecraft:persistent": {},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"spawn_timeout"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"particle fec:crescent_pillar ~~~"
+					]
+				}
+			},
+			"spawn_timeout_done": {
+				"remove": {
+					"component_groups": [
+						"spawn_timeout"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"pattern_randomizer"
+					]
+				}
+			},
+			"randomize_pattern": {
+				"randomize": [
+					{
+						"add": {
+							"component_groups": [
+								"meteor_timer"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"pattern_randomizer"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"execute at @e[r=32,rm=0.1,c=1,family=!stars_creature,type=player] run particle fec:stars_ping ~~~",
+								"tag @e[r=48,rm=0.1,c=1,family=!stars_creature,type=player] add star_meteor",
+								"playsound random.orb @a[r=48] ~~~ 1 1 0.3",
+								"tellraw @a[r=48] {\"rawtext\":[{\"text\":\"WARNING! Meteor Inbound!\"}]}"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"explosion_timer"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"pattern_randomizer"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"execute at @e[r=24,rm=0.1,family=!stars_creature,type=!fec:star_projectile,type=!fec:star_meteor] run summon armor_stand STAREXPLODE ~~~",
+								"execute at @e[name=STAREXPLODE] run particle fec:stars_warning",
+								"effect @e[name=STAREXPLODE] invisibility 300 1 true"
+							]
+						}
+					}
+				]
+			},
+			"spawn_meteor": {
+				"remove": {
+					"component_groups": [
+						"meteor_timer"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"pattern_randomizer"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"execute at @e[tag=star_meteor] run summon fec:star_meteor ~~14~",
+						"execute at @e[tag=star_meteor] run particle fec:stars_warning",
+						"tag @e[tag=star_meteor] remove star_meteor"
+					]
+				}
+			},
+			"explode": {
+				"remove": {
+					"component_groups": [
+						"explosion_timer"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"pattern_randomizer"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"execute as @e[name=STAREXPLODE] at @s run particle fec:stars_ping ~~0.5~",
+						"execute as @e[name=STAREXPLODE] at @s run particle fec:light_blast ~~0.5~",
+						"execute as @e[name=STAREXPLODE] at @s run damage @e[r=10,family=!stars_creature] 20 entity_explosion entity @e[type=fec:crescent_mage]",
+						"execute as @e[name=STAREXPLODE] at @s run playsound stars_boss.starexplode @a[r=32] ~~~ 1 1 0.3",
+						"kill @e[name=STAREXPLODE]"
+					]
+				}
+			}
+		}
+	}
+}

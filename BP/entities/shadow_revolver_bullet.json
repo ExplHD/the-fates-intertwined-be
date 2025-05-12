@@ -13,7 +13,7 @@
 				"minecraft:projectile": {
 					"on_hit": {
 						"impact_damage": {
-							"damage": 24,
+							"damage": 30,
 							"knockback": true,
 							"destroy_on_hit": true
 						},
@@ -250,7 +250,7 @@
 						"particle fec:shadow_revolver_bullet_impact ~~0.75~",
 						"particle fec:shadow_revolver_bullet_impact_freelook ~~0.75~",
 						"particle fec:shadow_revolver_muzzle_flash ~~0.75~",
-						"damage @e[r=6] 12 entity_attack entity @s"
+						"damage @e[r=6] 15 entity_attack entity @s"
 					]
 				},
 				"trigger": "despawn"
@@ -260,7 +260,7 @@
 					"command": [
 						"particle fec:shadow_revolver_ultimate_explode ~~~",
 						"playsound random.explode @a[r=128] 1 1 0.125",
-						"damage @e[r=32] 30 entity_attack entity @s"
+						"damage @e[r=32] 36 entity_attack entity @s"
 					]
 				},
 				"trigger": "despawn"
@@ -286,12 +286,12 @@
 			"fec:nuke_executed": {
 				"queue_command": {
 					"command": [
-						"damage @e[r=32,rm=0.1,family=!boss,type=!wither,type=!warden,tag=!nuke_executor] 30 entity_attack entity @s",
-						"damage @e[r=32,type=wither] 75 entity_attack entity @s",
-						"damage @e[r=32,type=warden] 75 entity_attack entity @s",
-						"damage @e[r=32,type=ender_dragon] 150 entity_attack entity @s",
-						"damage @e[r=32,type=fec:elemental_legionnaire] 125 entity_attack entity @s",
-						"damage @e[r=32,type=fec:water_eidolon] 200 entity_attack entity @s",
+						"damage @e[r=32,rm=0.1,family=!boss,type=!wither,type=!warden,tag=!nuke_executor] 60 entity_attack entity @s",
+						"damage @e[r=32,type=wither] 300 entity_attack entity @s",
+						"damage @e[r=32,type=warden] 300 entity_attack entity @s",
+						"damage @e[r=32,type=ender_dragon] 600 entity_attack entity @s",
+						"damage @e[r=32,type=fec:elemental_legionnaire] 350 entity_attack entity @s",
+						"damage @e[r=32,type=fec:water_eidolon] 450 entity_attack entity @s",
 						"playsound custom_sfx.deathzone_spawn @a[r=128]",
 						"camerashake add @a[r=64] 1.3 3 positional",
 						"tag @a[tag=nuke_executor] remove nuke_executor",

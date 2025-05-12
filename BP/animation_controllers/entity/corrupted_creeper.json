@@ -12,8 +12,25 @@
 				},
 				"activate": {
 					"on_entry": [
-						"/fill ~-10~-5~-10 ~10~5~10 fec:shadow_corruption [] replace grass_block",
-						"/particle fec:shadow_revolver_ultimate_explode ~~~"
+						"/execute as @s at @s if entity @a[r=10] run fill ~-10~-5~-10 ~10~5~10 fec:shadow_corruption [] replace grass_block",
+						"/particle fec:shadow_revolver_ultimate_explode ~~~",
+						"/playsound custom_sfx.deathzone_spawn @a[r=192] ~~~ 1 1 0.2",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion",
+						"/summon fec:corrupted_star ~~~ ~ ~ fec:spawned_by_explosion"
 					]
 				}
 			}

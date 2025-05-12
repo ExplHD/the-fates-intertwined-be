@@ -77,7 +77,6 @@ item.fec:land_of_peace_medal_wireframe=Land of Peace Medalion Wireframe
 item.fec:legionnaire_medalion=§6Legionnaire Medalion
 item.fec:glorified_water_essence=§6Glorified Water Essence
 item.spawn_egg.entity.fec:water_core.name=Spawn Water Core
-tile.fec:legendary_fabricator.name=Legendary Fabricator
 item.fec:stardust_armor_helmet=§6Stardust Helmet
 item.fec:stardust_armor_chestplate=§6Stardust Chestplate
 item.fec:stardust_armor_leggings=§6Stardust Leggings
@@ -87,7 +86,6 @@ item.fec:corner_medal_line=Corner Shaped Iron Stick
 item.fec:circle_medal_line=Circle Bent Iron Stick
 item.fec:heart_medal_line=Heart Shaped Iron Stick
 item.fec:bird_head_medal_line=Bird Head Shaped Iron Stick
-tile.fec:zenith_fabricator.name=Zenith Fabricator
 item.spawn_egg.entity.fec:zenith_base.name=Spawn Zenith Weapon Display
 item.fec:stardust_clear_helmet=§6Stardust Clear Helmet
 item.fec:stardust_clear_chestplate=§6Stardust Clear Chestplate
@@ -131,14 +129,20 @@ entity.ender_dragon.name=§2§1§rEnder Dragon
 ## BLOCKS
 ## ------------------------------------------------------
 
+tile.fec:legendary_fabricator.name=Legendary Fabricator
+tile.fec:zenith_fabricator.name=Zenith Fabricator
+tile.fec:shadow_bench.name=Shadow Bench
 tile.fec:shadow_corruption.name=Shadow Corruption
 tile.fec:curium_block.name=Curium Block
+tile.fec:stars_altar.name=Stars Altar
 
 ## ------------------------------------------------------
 ## CATEGORIES
 ## ------------------------------------------------------
 
 fec:grenades=Grenades
+fec:legendaries=Legendaries and Mythics
+fec:boss_summons=Boss Summons
 fec:elemental_shards=Elemental Shards
 fec:elemental_essences=Elemental Essences
 fec:medals=Medals
@@ -147,3 +151,23 @@ fec:medals=Medals
 text.the_fates.welcome=Greetings player, welcome to the minecraft world. please select your class by interacting the compass to made your journey slighly easier
 
 ## Future Addition
+item.spawn_egg.entity.fec:crescent_mage.name=Spawn Crescent Mage
+entity.fec:crescent_mage.name=Crescent Mage
+item.spawn_egg.entity.fec:star_meteor.name=Spawn Star Meteor
+entity.fec:star_meteor.name=Star Meteor
+item.fec:the_enigma=The Enigma
+item.spawn_egg.entity.fec:the_enigma_bullet.name=Spawn Enigmatic Bullet
+entity.fec:the_enigma_bullet.name=Enigmatic Bullet
+item.fec:purifier_grenade=Purifier Grenade
+
+entity.fec:thrown_purifier_grenade.name=Purifier Grenade
+item.fec:javanesia_medal_wireframe=Javanesia Medal Wireframe
+item.fec:star_shard=Star Shards
+item.fec:awakened_stars=Awakened Stars
+item.fec:anchor_potion_bottle=Potion of Anchor
+item.spawn_egg.entity.fec:corrupted_star.name=Spawn Corrupted Star
+entity.fec:corrupted_star.name=Corrupted Star
+item.fec:javanesia_medal=Javanesia Medal
+item.fec:yamato=Yamato
+item.fec:weapon_billet_nether=Nether Weapon Billet
+item.fec:weapon_billet_ender=End Weapon Billet

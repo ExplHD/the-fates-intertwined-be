@@ -38,16 +38,22 @@ export function legendaryFabricator(player) {
         .button("Rage of Sakura")
         .button("Murasama Calamity")
         .button("Spear of Heart")
+        .button("Yamato")
         .button("Legionnaire Medalion")
-        .button("Stardust Armor Set");
+        .button("Stardust Armor Set")
+        .button("Tenacity")
+        .button("Awakened Stars")
     ui.show(player).then((r) => {
         if (r.canceled || r.selection === undefined) recipeUI(player);
         if (r.selection == 0) winterbloomSword(player);
         if (r.selection == 1) rageOfSakura(player);
         if (r.selection == 2) murasamaCalamity(player);
         if (r.selection == 3) spearOfHeart(player);
-        if (r.selection == 4) legionnaireMedalion(player);
-        if (r.selection == 5) stardustArmor(player);
+        if (r.selection == 4) yamato(player);
+        if (r.selection == 5) legionnaireMedalion(player);
+        if (r.selection == 6) stardustArmor(player);
+        if (r.selection == 7) tenacity(player);
+        if (r.selection == 8) awakenedStars(player);
     })
 }
 
@@ -99,6 +105,18 @@ export function spearOfHeart(player) {
     })
 }
 
+export function tenacity(player) {
+    const winterbloomSword = new MessageFormData();
+    winterbloomSword.title("Tenacity");
+    winterbloomSword.body("Recipe that you need :\n\n1 Weapon Billet\n1 Weapon Billet Nether\n1 Weapon Billet End\n1 Nether Star\n1 FReworked Tenacity\n1 Awakened Stars\n1 Winterbloom Tundra Keris\n1 The Enigma\n1 Eidolon 4 Staff : Water Sakura\nFor the pattern details, you can check the table");
+    winterbloomSword.button1("Exit");
+    winterbloomSword.button2("Back");
+    winterbloomSword.show(player).then((r) => {
+        if (r.canceled || r.selection === undefined || r.selection == 0) return;
+        if (r.selection == 1) legendaryFabricator(player);
+    })
+}
+
 export function legionnaireMedalion(player) {
     const winterbloomSword = new MessageFormData();
     winterbloomSword.title("Legionnaire Medalion");
@@ -111,10 +129,34 @@ export function legionnaireMedalion(player) {
     })
 }
 
+export function awakenedStars(player) {
+    const winterbloomSword = new MessageFormData();
+    winterbloomSword.title("Awakened Stars");
+    winterbloomSword.body("Recipe that you need :\n\n1 Nether Star\n1 Star Shard\n1 End Crystal");
+    winterbloomSword.button1("Exit");
+    winterbloomSword.button2("Back");
+    winterbloomSword.show(player).then((r) => {
+        if (r.canceled || r.selection === undefined || r.selection == 0) return;
+        if (r.selection == 1) legendaryFabricator(player);
+    })
+}
+
 export function stardustArmor(player) {
     const winterbloomSword = new MessageFormData();
     winterbloomSword.title("Stardust Armor Set");
     winterbloomSword.body("Recipe that you need :\n\n1 Netherite Armor Piece\n1 Stardust Smithing Template\n1 Quartz\n1 Amethyst Shard (optional, for craft the invisible variant)");
+    winterbloomSword.button1("Exit");
+    winterbloomSword.button2("Back");
+    winterbloomSword.show(player).then((r) => {
+        if (r.canceled || r.selection === undefined || r.selection == 0) return;
+        if (r.selection == 1) legendaryFabricator(player);
+    })
+}
+
+export function yamato(player) {
+    const winterbloomSword = new MessageFormData();
+    winterbloomSword.title("Winterbloom Weeping Keris");
+    winterbloomSword.body("Recipe that you need :\n\n1 Javanesia Medalion\n1 Netherite Sword\n1 Trident");
     winterbloomSword.button1("Exit");
     winterbloomSword.button2("Back");
     winterbloomSword.show(player).then((r) => {

@@ -62,8 +62,7 @@
 					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:winterbloom_skill_3_bullet_impact ~~~",
 					"/playsound custom_sfx.deathzone_spawn @a[r=128]",
 					"/playanimation @s animation.winterbloom_sword.attack_3",
-					"/scoreboard players set @s winterbloom_sword_c3 150",
-					"/inputpermission set @s movement enabled"
+					"/scoreboard players add @s winterbloom_sword_ultimate_charge 20"
 				],
 				"3.75": [
 					"/stopsound @a custom_sfx.deathzone_spawn"

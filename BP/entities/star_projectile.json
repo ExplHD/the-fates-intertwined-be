@@ -7,41 +7,78 @@
 			"is_summonable": true,
 			"is_experimental": false
 		},
-		"component_groups": {},
-		"components": {
-			"minecraft:timer": {
-				"time": 2,
-				"time_down_event": {
-					"event": "start_move",
-					"target": "self"
+		"component_groups": {
+			"starexplode": {
+				"minecraft:explode": {
+					"power": 1,
+					"breaks_blocks": false,
+					"fuse_lit": true,
+					"fuse_length": 0.1,
+					"destroy_affected_by_griefing": true
 				}
-			},
+			}
+		},
+		"components": {
 			"minecraft:health": {
 				"value": 10,
 				"max": 10
 			},
 			"minecraft:collision_box": {
-				"height": 0.5,
+				"height": 0.6,
 				"width": 0.5
+			},
+			"minecraft:scale": {
+				"value": 0.5
 			},
 			"minecraft:damage_sensor": {
 				"triggers": [
 					{
 						"cause": "all",
+						"deals_damage": false,
 						"on_damage": {
 							"event": "explode",
 							"target": "self"
 						}
 					}
 				]
+			},
+			"minecraft:projectile": {
+				"anchor": 0,
+				"gravity": 0.0,
+				"homing": true,
+				"power": 4,
+				"inertia": 1.1,
+				"uncertainty_base": 4,
+				"destroy_on_hurt": true,
+				"shoot_target": true,
+				"on_hit": {
+					"impact_damage": {
+						"damage": 10,
+						"knockback": true
+					},
+					"definition_event": {
+						"affect_projectile": true,
+						"event_trigger": {
+							"event": "explode",
+							"target": "self"
+						}
+					},
+					"particle_on_hit": {
+						"on_entity_hit": true,
+						"particle_type": "fec:stars_ping_small"
+					}
+				}
 			}
 		},
 		"events": {
-			"start_move": {
-				"queue_command": {
-					"command": [
-						"tag @s remove locating_target"
+			"explode": {
+				"add": {
+					"component_groups": [
+						"starexplode"
 					]
+				},
+				"queue_command": {
+					"command": "particle fec:stars_ping_small ~~~"
 				}
 			}
 		}

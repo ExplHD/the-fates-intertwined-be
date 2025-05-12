@@ -1,0 +1,184 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:the_enigma_bullet",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"component_groups": {
+			"fec:the_enigma_bullet_flash": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 10,
+							"knockback": true,
+							"destroy_on_hit": true
+						},
+						"stick_in_ground": {
+							"shake_time": 0
+						},
+						"definition_event": {
+							"event_trigger": {
+								"event": "flashed",
+								"target": "self"
+							}
+						}
+					},
+					"anchor": 1,
+					"power": 3,
+					"gravity": 0,
+					"angle_offset": 0,
+					"offset": [
+						0,
+						-0.1,
+						0
+					],
+					"shoot_target": true,
+					"catch_fire": false,
+					"reflect_on_hurt": false
+				},
+				"minecraft:variant": {
+					"value": 0
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 2,
+					"time_down_event": {
+						"event": "flashed"
+					}
+				},
+				"minecraft:physics": {
+					"has_collision": false,
+					"has_gravity": false
+				}
+			},
+			"fec:the_enigma_bullet_ultimate": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 55,
+							"knockback": true,
+							"destroy_on_hit": true
+						},
+						"stick_in_ground": {
+							"shake_time": 0
+						},
+						"definition_event": {
+							"event_trigger": {
+								"event": "ultimate_impact",
+								"target": "self"
+							}
+						}
+					},
+					"anchor": 1,
+					"power": 6,
+					"gravity": 0,
+					"angle_offset": 0,
+					"offset": [
+						0,
+						-0.1,
+						0
+					],
+					"shoot_target": true,
+					"catch_fire": false,
+					"reflect_on_hurt": false
+				},
+				"minecraft:variant": {
+					"value": 0
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 5,
+					"time_down_event": {
+						"event": "ultimate_impact"
+					}
+				}
+			},
+			"timer_to_despawn": {
+				"minecraft:timer": {
+					"time": 0.1,
+					"time_down_event": {
+						"event": "despawn"
+					}
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"height": 0.25,
+				"width": 0.25
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80.0,
+					"max_dropped_ticks": 7,
+					"use_motion_prediction_hints": true
+				}
+			}
+		},
+		"events": {
+			"fec:the_enigma_bullet_flash": {
+				"add": {
+					"component_groups": [
+						"fec:the_enigma_bullet_flash"
+					]
+				}
+			},
+			"fec:the_enigma_bullet_ultimate": {
+				"add": {
+					"component_groups": [
+						"fec:the_enigma_bullet_ultimate"
+					]
+				}
+			},
+			"flashed": {
+				"queue_command": {
+					"command": [
+						"particle fec:the_enigma_flash ~~~",
+						"camera @a[r=16] fade time 0 3 1 color 0 110 207"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"timer_to_despawn"
+					]
+				}
+			},
+			"ultimate_impact": {
+				"add": {
+					"component_groups": [
+						"timer_to_despawn"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"particle fec:the_enigma_skill_4",
+						"damage @e[r=10,rm=0.1] 35 entity_explosion entity @s",
+						"playsound stars_boss.meteor_impact @a[r=16] 1 1 0.3"
+					]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

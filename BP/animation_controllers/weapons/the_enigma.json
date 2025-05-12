@@ -1,0 +1,210 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.the_enigma": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/scoreboard players set @s atkp_delay 0"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_1": "variable.attack_time&&!query.is_sneaking&&q.get_equipped_item_name=='the_enigma'"
+                        },
+                        {
+                            "skill_1": "query.get_equipped_item_name=='the_enigma'&&query.is_using_item&&!query.is_sneaking&&(query.scoreboard('the_enigma')==0)&&(query.scoreboard('the_enigma_c1')==0)"
+                        },
+                        {
+                            "skill_2": "query.get_equipped_item_name=='the_enigma'&&query.is_using_item&&!query.is_sneaking&&(query.scoreboard('the_enigma')==1)&&(query.scoreboard('the_enigma_c2')==40)"
+                        },
+                        {
+                            "skill_3": "query.get_equipped_item_name=='the_enigma'&&query.is_using_item&&!query.is_sneaking&&(query.scoreboard('the_enigma')==2)&&(query.scoreboard('the_enigma_c3')==0)"
+                        },
+                        {
+                            "skill_4": "query.get_equipped_item_name=='the_enigma'&&query.is_using_item&&!query.is_sneaking&&(query.scoreboard('the_enigma')==3)&&(query.scoreboard('the_enigma_c4')==3)"
+                        },
+                        {
+                            "change": "variable.attack_time&&query.is_sneaking&&query.get_equipped_item_name=='the_enigma'"
+                        }
+                    ]
+                },
+                "atk_1": {
+                    "on_entry": [
+                        "/damage @e[r=4.5,rm=0.1,type=!item] 10 entity_attack entity @s",
+                        "/playanimation @s animation.the_enigma.attack_1",
+                        "/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.2 0.4",
+                        "/scoreboard players add @s legendCounter 1",
+                        "/scoreboard players add @s the_enigma_c2 1"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_2": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=10)&&q.get_equipped_item_name=='the_enigma'"
+                        },
+                        {
+                            "default": "query.scoreboard('atkp_delay')>=30"
+                        },
+                        {
+                            "change": "variable.attack_time&&query.is_sneaking&&q.get_equipped_item_name=='the_enigma'"
+                        }
+                    ]
+                },
+                "atk_2": {
+                    "on_entry": [
+                        "/damage @e[r=4.5,rm=0.1,type=!item] 10 entity_attack entity @s",
+                        "/playanimation @s animation.the_enigma.attack_2",
+                        "/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.2 0.4",
+                        "/scoreboard players add @s legendCounter 1",
+                        "/scoreboard players add @s the_enigma_c2 1"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_3": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=10)&&q.get_equipped_item_name=='the_enigma'"
+                        },
+                        {
+                            "default": "query.scoreboard('atkp_delay')>=30"
+                        },
+                        {
+                            "change": "variable.attack_time&&query.is_sneaking&&q.get_equipped_item_name=='the_enigma'"
+                        }
+                    ]
+                },
+                "atk_3": {
+                    "on_entry": [
+                        "/damage @e[r=4.5,rm=0.1,type=!item] 14 entity_attack entity @s",
+                        "/playanimation @s animation.the_enigma.attack_3",
+                        "/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.2 0.4",
+                        "/scoreboard players add @s legendCounter 1",
+                        "/scoreboard players add @s the_enigma_c2 1"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s atkp_delay 1"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_4": "(variable.attack_time)&&(query.scoreboard('atkp_delay')>=15)&&q.get_equipped_item_name=='the_enigma'"
+                        },
+                        {
+                            "default": "query.scoreboard('atkp_delay')>=30"
+                        },
+                        {
+                            "change": "variable.attack_time&&query.is_sneaking&&q.get_equipped_item_name=='the_enigma'"
+                        }
+                    ]
+                },
+                "atk_4": {
+                    "on_entry": [
+                        "/playanimation @s animation.the_enigma.attack_4",
+                        "/playsound sword_slash.medium_slash @a[r=16] ~~~ 1 1.2 0.4",
+                        "/scoreboard players add @s legendCounter 1",
+                        "/inputpermission set @s movement disabled"
+                    ],
+                    "on_exit": [
+                        "/damage @e[r=12,rm=0.1,type=!item] 12 entity_attack entity @s",
+                        "/playsound sword_slash.heavy_slash @a[r=16] ~~~ 1 1.2 0.4",
+                        "/scoreboard players add @s the_enigma_c2 1"
+                    ],
+                    "transitions": [
+                        {
+                            "atk_4_impact": "query.scoreboard('atkp_delay')>=9"
+                        },
+                        {
+                            "change": "variable.attack_time&&query.is_sneaking&&q.get_equipped_item_name=='the_enigma'"
+                        }
+                    ]
+                },
+                "atk_4_impact": {
+                    "on_exit": [
+                        "/inputpermission set @s movement enabled"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.scoreboard('atkp_delay')>=30"
+                        },
+                        {
+                            "change": "variable.attack_time&&query.is_sneaking&&q.get_equipped_item_name=='the_enigma'"
+                        }
+                    ]
+                },
+                "skill_1": {
+                    "animations": [
+                        "the_enigma_skill_1"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s the_enigma_c1 20"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "skill_2": {
+                    "animations": [
+                        "the_enigma_skill_2"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s the_enigma_c2 0"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "skill_3": {
+                    "animations": [
+                        "the_enigma_skill_3"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s the_enigma_c3 10",
+                        "/scoreboard players add @s the_enigma_c4 1"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "skill_4": {
+                    "animations": [
+                        "the_enigma_skill_4"
+                    ],
+                    "on_exit": [
+                        "/scoreboard players set @s the_enigma_c4 0"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "change": {
+                    "on_entry": [
+                        "/scoreboard players add @s the_enigma 1",
+                        "/scoreboard players set @s[scores={the_enigma=4}] the_enigma 0",
+                        "/playsound random.click @s",
+                        "/tellraw @s[scores={the_enigma=0}] {\"rawtext\":[{\"text\": \"Supress : Breakthrough\"}]}",
+                        "/tellraw @s[scores={the_enigma=1}] {\"rawtext\":[{\"text\": \"Supress : Blade Storm\"}]}",
+                        "/tellraw @s[scores={the_enigma=2}] {\"rawtext\":[{\"text\": \"Ranges : Flash Point\"}]}",
+                        "/tellraw @s[scores={the_enigma=3}] {\"rawtext\":[{\"text\": \"Ranges : Foreshadow\"}]}"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!variable.attack_time"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

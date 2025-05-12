@@ -1,0 +1,35 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fec:javanesia_medal_wireframe"
+		},
+		"key": {
+			"C": {
+				"item": "fec:corner_medal_line"
+			},
+			"I": {
+				"item": "fec:iron_stick"
+			}
+		},
+		"pattern": [
+			"CIC",
+			"I I",
+			" C "
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"unlock": [
+			{
+				"item": "fec:corner_medal_line"
+			},
+			{
+				"item": "minecraft:diamond_pickaxe"
+			}
+		],
+		"result": {
+			"item": "fec:javanesia_medal_wireframe"
+		}
+	}
+}

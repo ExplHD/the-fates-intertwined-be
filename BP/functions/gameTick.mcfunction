@@ -45,6 +45,11 @@ scoreboard objectives add reworked_tenacity_c1 dummy
 scoreboard objectives add reworked_tenacity_c2 dummy
 scoreboard objectives add reworked_tenacity_c3 dummy
 scoreboard objectives add mythic_tenacity_shield dummy
+scoreboard objectives add the_enigma_c1 dummy
+scoreboard objectives add the_enigma_c3 dummy
+scoreboard objectives add yamato_c1 dummy
+scoreboard objectives add yamato_c2 dummy
+scoreboard objectives add yamato_c3 dummy
 
 ## Cooldown Tick
 scoreboard objectives add stars_and_crescent_c1 dummy
@@ -56,6 +61,8 @@ scoreboard objectives add shadow_revolver_rounds dummy
 scoreboard objectives add voltra_charge dummy
 scoreboard objectives add winterbloom_sword_ultimate_charge dummy
 scoreboard objectives add tenacity_c3_charge dummy
+scoreboard objectives add the_enigma_c2 dummy
+scoreboard objectives add the_enigma_c4 dummy
 
 ## Skill Switcher for Weapons
 scoreboard objectives add winterbloom_sword dummy
@@ -70,6 +77,8 @@ scoreboard objectives add stars_and_crescent dummy
 scoreboard objectives add shadow_revolver dummy
 scoreboard objectives add mythic_tenacity dummy
 scoreboard objectives add reworked_tenacity dummy
+scoreboard objectives add the_enigma dummy
+scoreboard objectives add yamato dummy
 
 ## Armor Properties
 scoreboard objectives add boots_of_escalation_charge dummy
@@ -79,6 +88,8 @@ execute at @e[type=fec:dragon_fireball_gravitational] run particle minecraft:dra
 execute at @e[type=arrow] run particle minecraft:balloon_gas_particle ~~~
 execute at @e[type=fireball] run particle minecraft:mobflame_single ~~~
 execute at @e[type=small_fireball] run particle minecraft:mobflame_single ~~~
+execute at @e[type=fec:the_enigma_bullet] run particle fec:shadow_revolver_bullet_trail ~~~
+execute at @e[type=fec:star_meteor] run particle fec:star_meteor_trail ~~~
 
 # Ender Dragon Phase 2 Tick
 scoreboard objectives add ender_dragon_p2 dummy
@@ -92,7 +103,15 @@ effect @e[hasitem={item=fec:zenith,location=slot.weapon.mainhand}] resistance 1 
 effect @e[hasitem={item=fec:stars_and_crescent,location=slot.weapon.mainhand}] speed 1 3 true
 execute at @e[hasitem={item=fec:stars_and_crescent,location=slot.weapon.mainhand}] run particle fec:light_idle ~~~
 
-# Class Cooldown Tick
+## System Things
+scoreboard players add @e[scores={atkp_delay=1..}] atkp_delay 1
+scoreboard players remove @a[scores={yamato_c1=6..}] yamato_c1 1
+scoreboard players remove @a[scores={the_enigma_c2=41..}] the_enigma_c2 1
+scoreboard players remove @a[scores={the_enigma_c4=4..}] the_enigma_c4 1
+scoreboard players remove @a[scores={voltra_charge=101..}] voltra_charge 1
+scoreboard players add @a[tag=voltra_charging] voltra_charge 1
+
+# Class / Item Cooldown Tick
 scoreboard objectives add atk_cooldown dummy
 scoreboard objectives add dash_cooldown dummy
 scoreboard objectives add wind_essence dummy
@@ -128,6 +147,7 @@ execute as @e[type=fec:tenacity_orange_slash] at @s run tp @s ^^^1
 execute as @e[type=fec:tenacity_orange_slash] at @s run damage @e[type=!fec:tenacity_orange_slash,r=6] 12 entity_attack entity @s
 execute as @e[type=fec:tenacity_blue_slash] at @s run particle fec:tenacity_blue_emitter ^^1.5^
 execute as @e[type=fec:tenacity_blue_slash] at @s run tp @s ^^^1
+execute as @e[type=fec:star_projectile] at @s run particle fec:light_marker ^^^1
 execute as @e[type=fec:tenacity_blue_slash] at @s run damage @e[type=!fec:tenacity_blue_slash,r=6] 24 entity_attack entity @s
 execute as @e[type=fec:corruption_expands_beam] at @s run particle fec:shadow_revolver_corruption_expands_beam ~~~
 execute as @e[type=fec:corruption_expands_beam] at @s run damage @e[type=!fec:corruption_expands_beam,r=14,tag=!corruption_immunity] 10 entity_attack entity @s
@@ -142,3 +162,11 @@ enchant @a[hasitem={item=fec:stardust_clear_helmet,location=slot.weapon.mainhand
 enchant @a[hasitem={item=fec:stardust_clear_boots,location=slot.weapon.mainhand}] mending
 enchant @a[hasitem={item=fec:stardust_clear_chestplate,location=slot.weapon.mainhand}] mending
 enchant @a[hasitem={item=fec:stardust_clear_leggings,location=slot.weapon.mainhand}] mending
+
+# Boss Death Detector
+execute as @e[type=fec:elemental_legionnaire] at @s run gamemode 2 @a[m=d,r=80]
+execute as @e[type=fec:water_eidolon] at @s run gamemode 2 @a[m=d,r=64]
+execute as @e[type=fec:shadowplague_guardian] at @s run gamemode 2 @a[m=d,r=80]
+execute as @e[type=fec:elemental_legionnaire] at @s unless entity @a[r=80,m=2] run event entity @s despawn
+execute as @e[type=fec:water_eidolon] at @s unless entity @a[r=64,m=2] run event entity @s despawn
+execute as @e[type=fec:shadowplague_guardian] at @s unless entity @a[r=80,m=2] run event entity @s despawn

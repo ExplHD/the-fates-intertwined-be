@@ -12,6 +12,14 @@
 			"geometry": {
 				"default": "geometry.star_projectile"
 			},
+			"animations": {
+				"animate": "animation.star_projectile.default"
+			},
+			"scripts": {
+				"animate": [
+					"animate"
+				]
+			},
 			"render_controllers": [
 				"controller.render.star_projectile"
 			],

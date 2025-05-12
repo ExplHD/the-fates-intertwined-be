@@ -1,0 +1,551 @@
+	{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.yamato.hold": {
+			"loop": true,
+			"bones": {
+				"view": {
+					"rotation": [
+						0,
+						180,
+						0
+					]
+				}
+			}
+		},
+		"animation.yamato.attack_1": {
+			"animation_length": 1.25,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								-112.5,
+								0,
+								85
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [
+								22.5,
+								0,
+								85
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								22.5,
+								0,
+								85
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [
+								90,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								90,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.1667": {
+							"pre": [
+								0,
+								0,
+								0
+							],
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [
+								0,
+								0,
+								-2
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								-2
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.1667": {
+					"effect": "yamato_attack_1",
+					"locator": "winterbloom_particle"
+				}
+			}
+		},
+		"animation.yamato.attack_2": {
+			"animation_length": 1.5,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								13.12427,
+								21.46902,
+								122.49859
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3333": {
+							"post": [
+								-131.72363,
+								-20.37175,
+								108.65128
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								-131.72363,
+								-20.37175,
+								108.65128
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								-90,
+								0,
+								180
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3333": {
+							"post": [
+								-90,
+								0,
+								180
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								-90,
+								0,
+								180
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.2083": {
+					"effect": "yamato_attack_2",
+					"locator": "yamato_particle"
+				}
+			}
+		},
+		"animation.yamato.attack_3": {
+			"animation_length": 1.75,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							22.5,
+							0,
+							0
+						],
+						"1.5": [
+							22.5,
+							0,
+							0
+						],
+						"1.75": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							-90,
+							0,
+							90
+						],
+						"0.625": [
+							-90,
+							0,
+							90
+						],
+						"0.75": [
+							0,
+							0,
+							90
+						],
+						"1.5": [
+							0,
+							0,
+							90
+						],
+						"1.75": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.625": [
+							0,
+							0,
+							0
+						],
+						"0.75": [
+							90,
+							0,
+							0
+						],
+						"1.5": [
+							90,
+							0,
+							0
+						],
+						"1.75": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"leftLeg": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							-5,
+							0,
+							0
+						],
+						"1.5": [
+							-5,
+							0,
+							0
+						],
+						"1.75": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							0,
+							0,
+							-1
+						],
+						"1.5": [
+							0,
+							0,
+							-1
+						],
+						"1.75": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightLeg": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							20,
+							0,
+							0
+						],
+						"1.5": [
+							20,
+							0,
+							0
+						],
+						"1.75": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.625": [
+					{
+						"effect": "yamato_attack_3",
+						"locator": "yamato_particle"
+					},
+					{
+						"effect": "yamato_attack_3_reverse",
+						"locator": "yamato_particle"
+					}
+				]
+			}
+		},
+		"animation.yamato.skill_3": {
+			"animation_length": 5,
+			"bones": {
+				"leftArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-57.5,
+							0,
+							0
+						],
+						"3.0": [
+							-49.38593,
+							-23.03856,
+							-15.42806
+						],
+						"3.25": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-100.18513,
+							-6.77211,
+							111.47946
+						],
+						"3.0": [
+							-90.19,
+							-6.77,
+							111.48
+						],
+						"3.5417": [
+							-90.19,
+							-6.77,
+							111.48
+						],
+						"3.7917": [
+							-90.19,
+							-6.77,
+							111.48
+						],
+						"3.8333": [
+							-81.12001,
+							-6.77,
+							111.48
+						],
+						"3.875": [
+							-48.44259,
+							-6.77,
+							111.48
+						],
+						"3.9167": [
+							0.56259,
+							-6.77,
+							111.48
+						],
+						"3.9583": [
+							33.24001,
+							-6.77,
+							111.48
+						],
+						"4.0": [
+							42.31,
+							-6.77,
+							111.48
+						],
+						"4.5417": [
+							42.31,
+							-6.77,
+							111.48
+						],
+						"4.75": [
+							42.31,
+							-6.77,
+							111.48
+						],
+						"4.7917": [
+							39.77567,
+							-6.36448,
+							104.80246
+						],
+						"4.8333": [
+							32.22178,
+							-5.15579,
+							84.89917
+						],
+						"4.9167": [
+							10.08822,
+							-1.61421,
+							26.58083
+						],
+						"4.9583": [
+							2.53433,
+							-0.40552,
+							6.67754
+						],
+						"5.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "yamato_ultimate",
+					"locator": "murasama_particle"
+				},
+				"3.7917": {
+					"effect": "yamato_ultimate",
+					"locator": "murasama_particle"
+				}
+			}
+		}
+	}
+}

@@ -1,6 +1,6 @@
 import { system, world } from '@minecraft/server'
 
-world.beforeEvents.worldInitialize.subscribe(({ itemComponentRegistry }) => {
+system.beforeEvents.startup.subscribe(({ itemComponentRegistry }) => {
     itemComponentRegistry.registerCustomComponent('fec:boss_summon', {
         onUse(e) {
             const player = e.source

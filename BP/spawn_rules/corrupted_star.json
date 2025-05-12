@@ -1,0 +1,28 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:spawn_rules": {
+        "description": {
+            "identifier": "fec:corrupted_star",
+            "population_control": "monster"
+        },
+        "conditions": [
+            {
+                "minecraft:spawns_on_surface": {},
+                "minecraft:spawns_underground": {},
+                "minecraft:difficulty_filter": {
+                    "min": "easy",
+                    "max": "hard"
+                },
+                "minecraft:weight": {
+                    "default": 100
+                },
+                "minecraft:density_limit": {
+                    "surface": 5
+                },
+                "minecraft:spawns_on_block_filter": [
+                    "fec:shadow_corruption"
+                ]
+            }
+        ]
+    }
+}

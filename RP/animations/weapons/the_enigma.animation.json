@@ -1,0 +1,875 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.the_enigma.hold": {
+			"loop": true,
+			"bones": {
+				"view": {
+					"rotation": [0, 180, 0]
+				}
+			}
+		},
+		"animation.the_enigma.attack_1": {
+			"animation_length": 0.75,
+			"override_previous_animation": true,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [-78.38115, -13.08017, 70.73397],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [69.12, -13.08, 70.73],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [69.12, -13.08, 70.73],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma1"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma2"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma3"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma4"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma5"
+					}
+				],
+				"0.1667": {
+					"effect": "the_enigma_attack_1",
+					"locator": "enigma_particle"
+				}
+			}
+		},
+		"animation.the_enigma.attack_2": {
+			"animation_length": 1,
+			"override_previous_animation": true,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [-27.2842, 11.29696, 125.10985],
+							"lerp_mode": "catmullrom"
+						},
+						"0.375": {
+							"post": [-139.78, 11.3, 125.11],
+							"lerp_mode": "catmullrom"
+						},
+						"0.7917": {
+							"post": [-139.78, 11.3, 125.11],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [-100, 0, 180],
+							"lerp_mode": "catmullrom"
+						},
+						"0.7917": {
+							"post": [-100, 0, 180],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [0, -6, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.7917": {
+							"post": [0, -6, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma1"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma2"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma3"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma4"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma5"
+					}
+				],
+				"0.25": {
+					"effect": "the_enigma_attack_2",
+					"locator": "enigma_particle"
+				}
+			}
+		},
+		"animation.the_enigma.attack_3": {
+			"animation_length": 1,
+			"override_previous_animation": true,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [37.5, 0, 95],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3333": {
+							"post": [-82.5, 0, 95],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [-82.5, 0, 95],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.1667": {
+							"pre": [0, 0, 0],
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3333": {
+							"post": [82.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [82.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma1"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma2"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma3"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma4"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma5"
+					}
+				],
+				"0.25": {
+					"effect": "the_enigma_attack_3",
+					"locator": "enigma_particle"
+				}
+			}
+		},
+		"animation.the_enigma.attack_4": {
+			"animation_length": 1.25,
+			"override_previous_animation": true,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [-90.07107, 15.34456, 90.00595],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": {
+							"post": [-90.07258, 15.33999, 90.00121],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": {
+							"post": [48.88975, 11.75879, 80.22177],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [49.93, 0.34, 90.02],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.4167": {
+							"pre": [0, 0, 0],
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": {
+							"post": [45, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [45, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"waist": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2083": {
+							"post": [17.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [17.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"leftLeg": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [15, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [15, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"rightLeg": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [-15, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [-15, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma1"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma2"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma3"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma4"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma5"
+					}
+				],
+				"0.4583": {
+					"effect": "the_enigma_attack_4",
+					"locator": "enigma_particle"
+				}
+			}
+		},
+		"animation.the_enigma.skill_1": {
+			"animation_length": 1.25,
+			"bones": {
+				"waist": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2083": {
+							"post": [17.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [17.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [-90.07107, 15.34456, 90.00595],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": {
+							"post": [-90.07258, 15.33999, 90.00121],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": {
+							"post": [48.88975, 11.75879, 80.22177],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [49.93, 0.34, 90.02],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.4167": {
+							"pre": [0, 0, 0],
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": {
+							"post": [45, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [45, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"leftLeg": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [25, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [25, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"rightLeg": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [-15, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [-15, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma1"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma2"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma3"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma4"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma5"
+					}
+				],
+				"0.3333": {
+					"effect": "the_enigma_attack_3",
+					"locator": "enigma_particle"
+				},
+				"0.4167": {
+					"effect": "the_enigma_attack_3",
+					"locator": "enigma_particle"
+				},
+				"0.5": {
+					"effect": "the_enigma_attack_3",
+					"locator": "enigma_particle"
+				},
+				"0.5833": {
+					"effect": "the_enigma_attack_3",
+					"locator": "enigma_particle"
+				},
+				"0.6667": {
+					"effect": "the_enigma_attack_3",
+					"locator": "enigma_particle"
+				},
+				"0.75": {
+					"effect": "the_enigma_attack_4",
+					"locator": "enigma_particle"
+				}
+			}
+		},
+		"animation.the_enigma.skill_2": {
+			"animation_length": 1.25,
+			"bones": {
+				"waist": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2083": {
+							"post": [17.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [17.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [-90.07107, 15.34456, 90.00595],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": {
+							"post": [-90.07258, 15.33999, 90.00121],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": {
+							"post": [48.88975, 11.75879, 80.22177],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [49.93, 0.34, 90.02],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.4167": {
+							"pre": [0, 0, 0],
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": {
+							"post": [45, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [45, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"leftLeg": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [25, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [25, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"rightLeg": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [-15, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [-15, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma1"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma2"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma3"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma4"
+					},
+					{
+						"effect": "the_enigma_marker",
+						"locator": "enigma5"
+					}
+				],
+				"0.3333": {
+					"effect": "the_enigma_attack_3",
+					"locator": "enigma_particle"
+				},
+				"0.4167": {
+					"effect": "the_enigma_attack_3",
+					"locator": "enigma_particle"
+				},
+				"0.5": {
+					"effect": "the_enigma_attack_3",
+					"locator": "enigma_particle"
+				},
+				"0.5833": {
+					"effect": "the_enigma_attack_3",
+					"locator": "enigma_particle"
+				},
+				"0.6667": {
+					"effect": "the_enigma_attack_3",
+					"locator": "enigma_particle"
+				},
+				"0.75": {
+					"effect": "the_enigma_skill_2",
+					"locator": "enigma_particle"
+				}
+			}
+		},
+		"animation.the_enigma.skill_3_shoot": {
+			"animation_length": 2,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-90, 0, 0],
+						"1.25": [-90, 0, 0],
+						"1.2917": [-120, 0, 0],
+						"1.5": [-90, 0, 0],
+						"1.75": [-90, 0, 0],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [90, 0, 0],
+						"1.75": [90, 0, 0],
+						"2.0": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -1, -6],
+						"1.75": [0, -1, -6],
+						"2.0": [0, 0, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "the_enigma_aim",
+					"locator": "enigma_particle"
+				}
+			}
+		},
+		"animation.the_enigma.skill_3_fpp": {
+			"animation_length": 2,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -7.5, 0],
+						"1.25": [0, -7.5, 0],
+						"1.2917": [-20, -7.5, 0],
+						"1.5": [0, -7.5, 0],
+						"1.75": [0, -7.5, 0],
+						"2.0": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [-15.7, 4, -10],
+						"1.75": [-15.7, 4, -10],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [82.5, 6.5, -8.5],
+						"1.75": [82.5, 6.5, -8.5],
+						"2.0": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.the_enigma.skill_4_shoot": {
+			"animation_length": 3.5,
+			"bones": {
+				"leftArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-90, 45, 0],
+						"1.25": [-90, 45, 0],
+						"1.2917": [-120, 45, 0],
+						"1.5": [-90, 45, 0],
+						"2.0": [-90, 45, 0],
+						"2.0417": [-120, 45, 0],
+						"2.25": [-90, 45, 0],
+						"2.5": [-90, 45, 0],
+						"2.5417": [-120, 45, 0],
+						"2.75": [-90, 45, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-90, -45, 0],
+						"1.25": [-90, -45, 0],
+						"1.2917": [-125, -45, 0],
+						"1.5": [-90, -45, 0],
+						"1.75": [-90, -45, 0],
+						"1.7917": [-125, -45, 0],
+						"2.0": [-90, -45, 0],
+						"2.25": [-90, -45, 0],
+						"2.2917": [-125, -45, 0],
+						"2.5": [-90, -45, 0],
+						"3.25": [-90, -45, 0],
+						"3.5": [0, 0, 0]
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [89.71668, 0.20774, 45.02405],
+						"3.25": [89.71668, 0.20774, 45.02405],
+						"3.5": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -1, -6],
+						"1.5": [0, -1, -6],
+						"2.0": [0, -1, -6],
+						"2.5": [0, -1, -6],
+						"3.25": [0, -1, -6],
+						"3.5": [0, 0, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "the_enigma_aim",
+					"locator": "enigma_particle"
+				}
+			}
+		},
+		"animation.the_enigma.skill_4_fpp": {
+			"animation_length": 3.5,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -7.5, 0],
+						"1.25": [0, -7.5, 0],
+						"1.2917": [-20, -7.5, 0],
+						"1.5": [0, -7.5, 0],
+						"1.75": [0, -7.5, 0],
+						"1.7917": [-20, -7.5, 0],
+						"2.0": [0, -7.5, 0],
+						"2.25": [0, -7.5, 0],
+						"2.2917": [-20, -7.5, 0],
+						"2.5": [0, -7.5, 0],
+						"3.25": [0, -7.5, 0],
+						"3.5": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [-15.7, 4, -10],
+						"3.25": [-15.7, 4, -10],
+						"3.5": [0, 0, 0]
+					}
+				},
+				"weapon_root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [82.5, 6.5, -8.5],
+						"3.25": [82.5, 6.5, -8.5],
+						"3.5": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

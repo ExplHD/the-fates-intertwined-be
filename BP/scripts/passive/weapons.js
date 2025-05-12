@@ -6,7 +6,10 @@ let charges = [
     "shadow_revolver_rounds",
     "voltra_charge",
     "winterbloom_sword_ultimate_charge",
-    "tenacity_c3_charge"
+    "tenacity_c3_charge",
+    "the_enigma_c2",
+    "the_enigma_c4",
+    "yamato_c1"
 ]
 
 let cooldownListTick = [
@@ -58,6 +61,10 @@ let cooldownList = [
     "reworked_tenacity_c1",
     "reworked_tenacity_c2",
     "reworked_tenacity_c3",
+    "the_enigma_c1",
+    "the_enigma_c3",
+    "yamato_c2",
+    "yamato_c3",
     "mythic_tenacity_shield",
     "wind_essence_up"
 ]
@@ -74,7 +81,9 @@ let skillSwitcher = [
     "stars_and_crescent",
     "shadow_revolver",
     "mythic_tenacity",
-    "reworked_tenacity"
+    "reworked_tenacity",
+    "the_enigma",
+    "yamato"
 ]
 
 let unique_weapons = [
@@ -89,42 +98,46 @@ let unique_weapons = [
     "fec:stars_and_crescent",
     "fec:shadow_revolver",
     "fec:tenacity",
-    "fec:reworked_tenacity"
+    "fec:reworked_tenacity",
+    "fec:the_enigma"
 ]
 
-system.run(() => {
-    for (const players of world.getPlayers()) {
-        for (const cooldownSec of cooldownList) {
-            if (!world.scoreboard.getObjective(cooldownSec)) {
-                world.scoreboard.addObjective(cooldownSec)
-                addScore(players, cooldownSec, 0)
+world.afterEvents.worldLoad.subscribe((e) => {
+    system.run(() => {
+        for (const players of world.getPlayers()) {
+            for (const cooldownSec of cooldownList) {
+                if (!world.scoreboard.getObjective(cooldownSec)) {
+                    world.scoreboard.addObjective(cooldownSec)
+                    addScore(players, cooldownSec, 0)
+                }
+            }
+            for (const cooldownTick of cooldownListTick) {
+                if (!world.scoreboard.getObjective(cooldownTick)) {
+                    world.scoreboard.addObjective(cooldownTick)
+                    addScore(players, cooldownTick, 0)
+                }
+            }
+            for (const charge of charges) {
+                if (!world.scoreboard.getObjective(charge)) {
+                    world.scoreboard.addObjective(charge)
+                    addScore(players, charge, 0)
+                }
+            }
+            for (const skills of skillSwitcher) {
+                if (!world.scoreboard.getObjective(skills)) {
+                    world.scoreboard.addObjective(skills)
+                    addScore(players, skills, 0)
+                }
+            }
+            if (!world.scoreboard.getObjective('atkp_delay')) {
+                world.scoreboard.addObjective('atkp_delay')
             }
         }
-        for (const cooldownTick of cooldownListTick) {
-            if (!world.scoreboard.getObjective(cooldownTick)) {
-                world.scoreboard.addObjective(cooldownTick)
-                addScore(players, cooldownTick, 0)
-            }
-        }
-        for (const charge of charges) {
-            if (!world.scoreboard.getObjective(charge)) {
-                world.scoreboard.addObjective(charge)
-                addScore(players, charge, 0)
-            }
-        }
-        for (const skills of skillSwitcher) {
-            if (!world.scoreboard.getObjective(skills)) {
-                world.scoreboard.addObjective(skills)
-                addScore(players, skills, 0)
-            }
-        }
-        if (!world.scoreboard.getObjective('atkp_delay')) {
-            world.scoreboard.addObjective('atkp_delay')
-        }
-    }
+    })
 })
 
 system.runInterval(() => {
+    world.getDimension("overworld").runCommand('function weapons/base')
     for (const players of world.getPlayers()) {
         for (const cooldown of cooldownList) {
             addScore(players, cooldown, 0)
@@ -176,6 +189,11 @@ system.runInterval(() => {
         if (players.hasTag('tenacity_invulnerable') && getScore(players, 'mythic_tenacity_shield') > 0) {
             players.onScreenDisplay.setTitle(" ")
             players.runCommand(`titleraw @a[scores={mythic_tenacity_shield=1..}] subtitle {"rawtext":[{"text":"§b-= Invincibility : "},{"score":{"name":"*","objective":"mythic_tenacity_shield"}},{"text":" =-"}]}`)
+            players.addEffect("resistance", 20, {
+                amplifier: 255,
+                showParticles: false
+            });
+            players.spawnParticle("fec:mythic_tenacity_shield", players.location);
         }
 
         // Archived Commands, DO NOT ENABLE IT OR YOU'LL GET ERROR SPAM MESSAGES
@@ -190,82 +208,13 @@ system.runInterval(() => {
         }
         */
 
-        // Winterbloom Sword
-        players.runCommand(`titleraw @a[hasitem={item=fec:winterbloom_sword,location=slot.weapon.mainhand},scores={winterbloom_sword_ultimate_charge=..0,winterbloom_sword=0}] actionbar {"rawtext":[{"text":"§r : §a§l"},{"score":{"name":"*","objective":"winterbloom_sword_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"winterbloom_sword_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"winterbloom_sword_c3"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:winterbloom_sword,location=slot.weapon.mainhand},scores={winterbloom_sword_ultimate_charge=..0,winterbloom_sword=1}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"winterbloom_sword_c1"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"winterbloom_sword_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"winterbloom_sword_c3"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:winterbloom_sword,location=slot.weapon.mainhand},scores={winterbloom_sword_ultimate_charge=..0,winterbloom_sword=2}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"winterbloom_sword_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"winterbloom_sword_c2"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"winterbloom_sword_c3"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:winterbloom_sword,location=slot.weapon.mainhand},scores={winterbloom_sword_ultimate_charge=1..}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"winterbloom_sword_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"winterbloom_sword_c2"}},{"text":"s, §r : §a"},{"score":{"name":"*","objective":"winterbloom_sword_ultimate_charge"}},{"text":"/30"}]}`)
+        for (const charge of charges) {
+            addScore(players, charge, 0)
+        }
 
-        // Rage of Sakura
-        players.runCommand(`titleraw @a[hasitem={item=fec:rage_of_sakura,location=slot.weapon.mainhand},scores={rage_of_sakura=0}] actionbar {"rawtext":[{"text":"§r : §a§l"},{"score":{"name":"*","objective":"rage_of_sakura_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"rage_of_sakura_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"rage_of_sakura_c3"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:rage_of_sakura,location=slot.weapon.mainhand},scores={rage_of_sakura=1}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"rage_of_sakura_c1"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"rage_of_sakura_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"rage_of_sakura_c3"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:rage_of_sakura,location=slot.weapon.mainhand},scores={rage_of_sakura=2}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"rage_of_sakura_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"rage_of_sakura_c2"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"rage_of_sakura_c3"}},{"text":"s"}]}`)
-
-        // Murasama Calamity (ULTIMATE NOT READY ? READY)
-        players.runCommand(`titleraw @a[hasitem={item=fec:murasama_calamity,location=slot.weapon.mainhand},scores={murasama_calamity_c4=0..1,murasama_calamity=0}] actionbar {"rawtext":[{"text":"§r : §a§l"},{"score":{"name":"*","objective":"murasama_calamity_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"murasama_calamity_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"murasama_calamity_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"murasama_calamity_c4"}},{"text":"/2 Charge §r : §f"},{"score":{"name":"*","objective":"voltra_charge"}},{"text":"/100"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:murasama_calamity,location=slot.weapon.mainhand},scores={murasama_calamity_c4=0..1,murasama_calamity=1}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"murasama_calamity_c1"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"murasama_calamity_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"murasama_calamity_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"murasama_calamity_c4"}},{"text":"/2 Charge §r : §f"},{"score":{"name":"*","objective":"voltra_charge"}},{"text":"/100"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:murasama_calamity,location=slot.weapon.mainhand},scores={murasama_calamity_c4=0..1,murasama_calamity=2}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"murasama_calamity_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"murasama_calamity_c2"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"murasama_calamity_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"murasama_calamity_c4"}},{"text":"/2 Charge §r : §f"},{"score":{"name":"*","objective":"voltra_charge"}},{"text":"/100"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:murasama_calamity,location=slot.weapon.mainhand},scores={murasama_calamity_c4=0..1,murasama_calamity=3}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"murasama_calamity_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"murasama_calamity_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"murasama_calamity_c3"}},{"text":"s, §r : §c§l"},{"score":{"name":"*","objective":"murasama_calamity_c4"}},{"text":"/2 Charge §r : §f"},{"score":{"name":"*","objective":"voltra_charge"}},{"text":"/100"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:murasama_calamity,location=slot.weapon.mainhand},scores={murasama_calamity_c4=2..,murasama_calamity=0}] actionbar {"rawtext":[{"text":"§b : §a§l"},{"score":{"name":"*","objective":"murasama_calamity_c1"}},{"text":"s, §b : §e"},{"score":{"name":"*","objective":"murasama_calamity_c2"}},{"text":"s, §b : §e"},{"score":{"name":"*","objective":"murasama_calamity_c3"}},{"text":"s, §b : §eREADY! §r : §f"},{"score":{"name":"*","objective":"voltra_charge"}},{"text":"/100"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:murasama_calamity,location=slot.weapon.mainhand},scores={murasama_calamity_c4=2..,murasama_calamity=1}] actionbar {"rawtext":[{"text":"§b : §e"},{"score":{"name":"*","objective":"murasama_calamity_c1"}},{"text":"s, §b : §a§l"},{"score":{"name":"*","objective":"murasama_calamity_c2"}},{"text":"s, §b : §e"},{"score":{"name":"*","objective":"murasama_calamity_c3"}},{"text":"s, §b : §eREADY! §r : §f"},{"score":{"name":"*","objective":"voltra_charge"}},{"text":"/100"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:murasama_calamity,location=slot.weapon.mainhand},scores={murasama_calamity_c4=2..,murasama_calamity=2}] actionbar {"rawtext":[{"text":"§b : §e"},{"score":{"name":"*","objective":"murasama_calamity_c1"}},{"text":"s, §b : §e"},{"score":{"name":"*","objective":"murasama_calamity_c2"}},{"text":"s, §b : §a§l"},{"score":{"name":"*","objective":"murasama_calamity_c3"}},{"text":"s, §b : §eREADY! §r : §f"},{"score":{"name":"*","objective":"voltra_charge"}},{"text":"/100"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:murasama_calamity,location=slot.weapon.mainhand},scores={murasama_calamity_c4=2..,murasama_calamity=3}] actionbar {"rawtext":[{"text":"§b : §e"},{"score":{"name":"*","objective":"murasama_calamity_c1"}},{"text":"s, §b : §e"},{"score":{"name":"*","objective":"murasama_calamity_c2"}},{"text":"s, §b : §e"},{"score":{"name":"*","objective":"murasama_calamity_c3"}},{"text":"s, §b : §a§lREADY! §r : §f"},{"score":{"name":"*","objective":"voltra_charge"}},{"text":"/100"}]}`)
-
-        // Windblade Claymore
-        players.runCommand(`titleraw @a[hasitem={item=fec:windblade_claymore,location=slot.weapon.mainhand},scores={windblade_claymore=0}] actionbar {"rawtext":[{"text":"§r : §a§l"},{"score":{"name":"*","objective":"windblade_claymore_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"windblade_claymore_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"windblade_claymore_c3"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:windblade_claymore,location=slot.weapon.mainhand},scores={windblade_claymore=1}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"windblade_claymore_c1"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"windblade_claymore_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"windblade_claymore_c3"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:windblade_claymore,location=slot.weapon.mainhand},scores={windblade_claymore=2}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"windblade_claymore_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"windblade_claymore_c2"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"windblade_claymore_c3"}},{"text":"s"}]}`)
-
-        // Blade of The End
-        players.runCommand(`titleraw @a[hasitem={item=fec:blade_of_the_end,location=slot.weapon.mainhand},scores={blade_of_the_end=0}] actionbar {"rawtext":[{"text":"§r : §a§l"},{"score":{"name":"*","objective":"blade_of_the_end_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"blade_of_the_end_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"blade_of_the_end_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"blade_of_the_end_c4"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:blade_of_the_end,location=slot.weapon.mainhand},scores={blade_of_the_end=1}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"blade_of_the_end_c1"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"blade_of_the_end_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"blade_of_the_end_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"blade_of_the_end_c4"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:blade_of_the_end,location=slot.weapon.mainhand},scores={blade_of_the_end=2}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"blade_of_the_end_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"blade_of_the_end_c2"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"blade_of_the_end_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"blade_of_the_end_c4"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:blade_of_the_end,location=slot.weapon.mainhand},scores={blade_of_the_end=3}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"blade_of_the_end_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"blade_of_the_end_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"blade_of_the_end_c3"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"blade_of_the_end_c4"}},{"text":"s"}]}`)
-
-        // Spear of Heart
-        players.runCommand(`titleraw @a[hasitem={item=fec:spear_of_heart,location=slot.weapon.mainhand},scores={spear_of_heart=0}] actionbar {"rawtext":[{"text":"§r : §a§l"},{"score":{"name":"*","objective":"spear_of_heart_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"spear_of_heart_c2"}},{"text":"s, §r §e"},{"score":{"name":"*","objective":"spear_of_heart_c3"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:spear_of_heart,location=slot.weapon.mainhand},scores={spear_of_heart=1}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"spear_of_heart_c1"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"spear_of_heart_c2"}},{"text":"s, §r §e"},{"score":{"name":"*","objective":"spear_of_heart_c3"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:spear_of_heart,location=slot.weapon.mainhand},scores={spear_of_heart=2}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"spear_of_heart_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"spear_of_heart_c2"}},{"text":"s, §r §a§l"},{"score":{"name":"*","objective":"spear_of_heart_c3"}},{"text":"s"}]}`)
-
-        // ZENITH
-        players.runCommand(`titleraw @a[hasitem={item=fec:zenith,location=slot.weapon.mainhand},scores={zenith=0}] actionbar {"rawtext":[{"text":"§r : §a§l"},{"score":{"name":"*","objective":"zenith_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c4"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c5"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:zenith,location=slot.weapon.mainhand},scores={zenith=1}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"zenith_c1"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"zenith_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c4"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c5"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:zenith,location=slot.weapon.mainhand},scores={zenith=2}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"zenith_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c2"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"zenith_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c4"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c5"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:zenith,location=slot.weapon.mainhand},scores={zenith=3}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"zenith_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c3"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"zenith_c4"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c5"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:zenith,location=slot.weapon.mainhand},scores={zenith=4}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"zenith_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"zenith_c4"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"zenith_c5"}},{"text":"s"}]}`)
-
-        // Eidolon 4 Staff
-        players.runCommand(`titleraw @a[hasitem={item=fec:eidolon_4_staff,location=slot.weapon.mainhand},scores={eidolon_4_staff=0}] actionbar {"rawtext":[{"text":"§r : §a§l"},{"score":{"name":"*","objective":"eidolon_4_staff_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"eidolon_4_staff_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"eidolon_4_staff_c3"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:eidolon_4_staff,location=slot.weapon.mainhand},scores={eidolon_4_staff=1}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"eidolon_4_staff_c1"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"eidolon_4_staff_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"eidolon_4_staff_c3"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:eidolon_4_staff,location=slot.weapon.mainhand},scores={eidolon_4_staff=2}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"eidolon_4_staff_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"eidolon_4_staff_c2"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"eidolon_4_staff_c3"}},{"text":"s"}]}`)
-
-        // Stars and Crescent
-        players.runCommand(`titleraw @a[hasitem={item=fec:stars_and_crescent,location=slot.weapon.mainhand},scores={stars_and_crescent=0}] actionbar {"rawtext":[{"text":"§r : §a§l"},{"score":{"name":"*","objective":"stars_and_crescent_c1"}},{"text":" Ticks, §r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c3"}},{"text":"s §r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c4"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:stars_and_crescent,location=slot.weapon.mainhand},scores={stars_and_crescent=1}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c1"}},{"text":" Ticks, §r : §a§l"},{"score":{"name":"*","objective":"stars_and_crescent_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c3"}},{"text":"s §r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c4"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:stars_and_crescent,location=slot.weapon.mainhand},scores={stars_and_crescent=2}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c1"}},{"text":" Ticks, §r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c2"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"stars_and_crescent_c3"}},{"text":"s §r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c4"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:stars_and_crescent,location=slot.weapon.mainhand},scores={stars_and_crescent=3}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c1"}},{"text":" Ticks, §r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"stars_and_crescent_c3"}},{"text":"s §r : §a§l"},{"score":{"name":"*","objective":"stars_and_crescent_c4"}},{"text":"s"}]}`)
-
-        // Shadow Revolver
-        players.runCommand(`titleraw @a[hasitem={item=fec:shadow_revolver,location=slot.weapon.mainhand},scores={shadow_revolver=0}] actionbar {"rawtext":[{"text":"§r : §a§l"},{"score":{"name":"*","objective":"shadow_revolver_rounds"}},{"text":"/8, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c4"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:shadow_revolver,location=slot.weapon.mainhand},scores={shadow_revolver=1}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"shadow_revolver_rounds"}},{"text":"/8, §r : §a§l"},{"score":{"name":"*","objective":"shadow_revolver_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c4"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:shadow_revolver,location=slot.weapon.mainhand},scores={shadow_revolver=2}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"shadow_revolver_rounds"}},{"text":"/8, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c1"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"shadow_revolver_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c4"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:shadow_revolver,location=slot.weapon.mainhand},scores={shadow_revolver=3}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"shadow_revolver_rounds"}},{"text":"/8, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c2"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"shadow_revolver_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c4"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:shadow_revolver,location=slot.weapon.mainhand},scores={shadow_revolver=4}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"shadow_revolver_rounds"}},{"text":"/8, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"shadow_revolver_c3"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"shadow_revolver_c4"}},{"text":"s"}]}`)
-
-        // Tenacity (Dual Mode)
-        players.runCommand(`titleraw @a[hasitem={item=fec:tenacity,location=slot.weapon.mainhand},scores={mythic_tenacity=0}] actionbar {"rawtext":[{"text":"§r : §a§l"},{"score":{"name":"*","objective":"tenacity_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c4"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:tenacity,location=slot.weapon.mainhand},scores={mythic_tenacity=1}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"tenacity_c1"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"tenacity_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c4"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:tenacity,location=slot.weapon.mainhand},scores={mythic_tenacity=2}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"tenacity_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c2"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"tenacity_c3"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c4"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:tenacity,location=slot.weapon.mainhand},scores={mythic_tenacity=3}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"tenacity_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c3"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"tenacity_c4"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:tenacity_axe,location=slot.weapon.mainhand},scores={mythic_tenacity=0}] actionbar {"rawtext":[{"text":"§r : §a§l"},{"score":{"name":"*","objective":"tenacity_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c2_axe"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c3_axe"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c4_axe"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:tenacity_axe,location=slot.weapon.mainhand},scores={mythic_tenacity=1}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"tenacity_c1"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"tenacity_c2_axe"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c3_axe"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c4_axe"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:tenacity_axe,location=slot.weapon.mainhand},scores={mythic_tenacity=2}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"tenacity_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c2_axe"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"tenacity_c3_axe"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c4_axe"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:tenacity_axe,location=slot.weapon.mainhand},scores={mythic_tenacity=3}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"tenacity_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c2_axe"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"tenacity_c3_axe"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"tenacity_c4_axe"}},{"text":"s"}]}`)
-
-        // Reworked Tenacity
-        players.runCommand(`titleraw @a[hasitem={item=fec:reworked_tenacity,location=slot.weapon.mainhand},scores={reworked_tenacity=0}] actionbar {"rawtext":[{"text":"§r : §a§l"},{"score":{"name":"*","objective":"reworked_tenacity_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"reworked_tenacity_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"reworked_tenacity_c3"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:reworked_tenacity,location=slot.weapon.mainhand},scores={reworked_tenacity=1}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"reworked_tenacity_c1"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"reworked_tenacity_c2"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"reworked_tenacity_c3"}},{"text":"s"}]}`)
-        players.runCommand(`titleraw @a[hasitem={item=fec:reworked_tenacity,location=slot.weapon.mainhand},scores={reworked_tenacity=2}] actionbar {"rawtext":[{"text":"§r : §e"},{"score":{"name":"*","objective":"reworked_tenacity_c1"}},{"text":"s, §r : §e"},{"score":{"name":"*","objective":"reworked_tenacity_c2"}},{"text":"s, §r : §a§l"},{"score":{"name":"*","objective":"reworked_tenacity_c3"}},{"text":"s"}]}`)
+        for (const skillSwitch of skillSwitcher) {
+            addScore(players, skillSwitch, 0)
+        }
     }
 }, 20)
 
@@ -277,33 +226,6 @@ system.runInterval(() => {
             if (getScore(players, cooldownTick) > 0) {
                 removeScore(players, cooldownTick, -1)
             }
-        }
-
-        for (const charge of charges) {
-            addScore(players, charge, 0)
-        }
-
-        for (const skillSwitch of skillSwitcher) {
-            addScore(players, skillSwitch, 0)
-        }
-
-        if (getScore(players, 'atkp_delay') > 0) {
-            addScore(players, 'atkp_delay', 1)
-        }
-        if (getScore(players, 'voltra_charge') > 100) {
-            removeScore(players, 'voltra_charge', -1)
-        }
-
-        if (players.hasTag('tenacity_invulnerable') && getScore(players, 'mythic_tenacity_shield') > 0) {
-            players.addEffect("resistance", 5, {
-                amplifier: 255,
-                showParticles: false
-            });
-            players.spawnParticle("fec:mythic_tenacity_shield", players.location);
-        }
-
-        if (players.hasTag('voltra_charging') && getScore(players, 'voltra_charge') < 100) {
-            addScore(players, 'voltra_charge', 1)
         }
     }
 }, 0)
@@ -387,6 +309,7 @@ world.afterEvents.entityDie.subscribe((fx) => {
     }
 })
 
+// Other Mechanics
 system.afterEvents.scriptEventReceive.subscribe((weaponEvent) => {
     const {
         id,
@@ -394,7 +317,38 @@ system.afterEvents.scriptEventReceive.subscribe((weaponEvent) => {
     } = weaponEvent;
 
     if (id == 'fec:shadow_revolver_ultimate_knockback') {
-        player.applyKnockback(player.getViewDirection().x, player.getViewDirection().z, -2.0, 1)
+        player.applyKnockback({ x: player.getViewDirection().x * -2, z: player.getViewDirection().z * -2 }, 1)
         player.runCommand(`particle fec:paranoia ~~~`)
     }
+
+    if (id == 'fec:yamato_attack_3') {
+        let randomValue = Math.floor(Math.random() * 10)
+        if (randomValue > 5) { addScore(player, 'yamato_c1', 1) }
+        system.runTimeout((e) => {
+            player.applyKnockback({ x: player.getViewDirection().x * 4, z: player.getViewDirection().z * 4 }, 0.4)
+            player.dimension.playSound("sword_slash.heavy_slash", player.location, {
+                pitch: 0.8,
+                volume: 1
+            })
+            player.runCommand(`damage @e[r=5,rm=0.1,family=!inanimate,type=!item] 14 entity_attack entity @s`)
+            system.runTimeout(() => {
+                player.runCommand(`damage @e[r=5,rm=0.1,family=!inanimate,type=!item] 14 entity_attack entity @s`)
+            }, 7)
+        }, 13)
+    }
+    if (id == 'fec:yamato_skill_2') {
+        player.applyKnockback({ x: player.getViewDirection().x * 4, z: player.getViewDirection().z * 4 }, 0.4)
+        system.runTimeout(() => {
+            player.dimension.spawnParticle("fec:yamato_skill_2", player.location)
+            player.runCommand(`damage @e[r=5,rm=0.1,family=!inanimate,type=!item] 2 entity_attack entity @s`)
+        }, 10)
+    }
+    /* DRAFT
+    if (id == 'fec:the_enigma_flash') {
+        const { entity } = player.getEntitiesFromViewDirection({ maxDistance: 32, type: 'fec:the_enigma_bullet' });
+    
+        if (!entity) return;
+        console.log("FLASH!")
+        player.runCommand(`camera "${player.name}" fade time 0 2 1 color 0 110 207`)
+    }*/
 })
