@@ -1,7 +1,7 @@
 {
 	"format_version": 2,
 	"header": {
-		"name": "The Fates Interwined 2025.5.1 (RESOURCES)",
+		"name": "The Fates Interwined 2025.5.3 (RESOURCES)",
 		"description": "A Minecraft addons that adds a lot of content that will be updated every 2-3 months",
 		"min_engine_version": [
 			1,
@@ -12,7 +12,7 @@
 		"version": [
 			2025,
 			5,
-			1
+			3
 		]
 	},
 	"modules": [
@@ -22,7 +22,7 @@
 			"version": [
 				2025,
 				5,
-				1
+				3
 			]
 		}
 	],
@@ -35,7 +35,7 @@
 			"version": [
 				2025,
 				5,
-				1
+				3
 			]
 		}
 	],

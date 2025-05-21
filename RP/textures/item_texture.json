@@ -210,7 +210,7 @@
 			"textures": "textures/items/boss_summon/star_shard"
 		},
 		"fec_awakened_stars": {
-			"textures": "textures/items/awakened_stars"
+			"textures": "textures/items/boss_summon/awakened_stars"
 		},
 		"fec_anchor_potion_bottle": {
 			"textures": "textures/items/anchor_potion_bottle"

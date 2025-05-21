@@ -4,9 +4,8 @@
             "rolls": 1,
             "conditions": [
                 {
-                    "condition": "random_chance_with_looting",
-                    "chance": 0.04,
-                    "looting_multiplier": 0.04
+                    "condition": "random_chance",
+                    "chance": 0.04
                 }
             ],
             "entries": [

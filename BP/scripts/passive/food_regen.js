@@ -6,7 +6,7 @@ world.afterEvents.itemCompleteUse.subscribe((fr) => {
     const sourceHealth = source.getComponent("health").currentValue
     const itemDuration = fr.useDuration
 
-    if (item?.hasTag("minecraft:is_food") && sourceHealth < source.getComponent("health").effectiveMax) {
+    if (item?.hasTag("minecraft:is_food") && sourceHealth < source.getComponent("health").effectiveMax * 0.8) {
         source.getComponent("health").setCurrentValue(sourceHealth + 6)
         source.addEffect("hunger", 20, {
             amplifier: 255,
