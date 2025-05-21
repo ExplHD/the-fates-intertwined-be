@@ -65,7 +65,15 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "fec:shadowcore"
+                    "name": "fec:shadowcore",
+                    "functions": [
+                        {
+                            "function": "set_lore",
+                            "lore": [
+                                "This item is from the forgotten shadows of stars"
+                            ]
+                        }
+                    ]
                 }
             ]
         }
