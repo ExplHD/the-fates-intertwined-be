@@ -22,6 +22,20 @@ system.beforeEvents.startup.subscribe((altar) => {
                 block.dimension.runCommand('music play music.boss.unholy_ambush 1 0 loop')
             }
 
+            if (blockStates == 0 && equippedItem.typeId === "fec:awakened_stars" && equippedItem.amount >= 6) {
+                block.setPermutation(block.permutation.withState("fec:stars_table_states", 1))
+                block.dimension.runCommand(`summon fec:star_warrior ${x + Math.random(-20, 20)} ${y + Math.random(0, 10)} ${z + Math.random(-20, 20)}`)
+                block.dimension.runCommand(`summon fec:crescent_mage ${x + Math.random(-20, 20)} ${y + Math.random(0, 10)} ${z + Math.random(-20, 20)}`)
+                block.dimension.runCommand(`summon fec:corvus ${x + Math.random(-20, 20)} ${y + Math.random(0, 10)} ${z + Math.random(-20, 20)}`)
+                block.dimension.spawnParticle("fec:light_blast", block.center())
+                block.dimension.spawnParticle("fec:stars_ping", block.center())
+                block.dimension.spawnParticle("fec:stars_ping_small", block.center())
+                block.dimension.runCommand("playsound random.explode @a[r=64] ~~~ 1 1 0.3")
+                player.runCommand('replaceitem entity @s slot.weapon.mainhand 0 air')
+                player.sendMessage("New Objective : Survive in this trial.")
+                block.dimension.runCommand('music play music.boss.unholy_ambush 1 0 loop')
+            }
+
             if (blockStates == 3 && equippedItem.typeId === "fec:awakened_stars") {
                 block.setPermutation(block.permutation.withState("fec:stars_table_states", 0))
                 block.dimension.spawnParticle("fec:light_blast", block.center())

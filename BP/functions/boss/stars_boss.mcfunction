@@ -7,4 +7,5 @@ execute as @e[type=fec:star_warrior] at @s if entity @e[type=player,c=1,rm=32] r
 ## Crescent Mage
 execute as @e[type=fec:crescent_mage] at @s unless entity @e[type=fec:star_warrior,r=32] run tp @s @e[type=fec:star_warrior,c=1]
 
-## Corvus
+## Corvus Star
+execute as @e[type=fec:corvus_star] at @s if entity @e[type=player,c=1,rm=48] run tp @s @e[type=player,c=1]

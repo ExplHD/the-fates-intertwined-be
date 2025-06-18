@@ -40,19 +40,19 @@
                         "item": {
                             "tags": "query.all_tags('minecraft:is_shovel', 'minecraft:wooden_tier')"
                         },
-                        "destroy_speed": 0.7
+                        "destroy_speed": 0.5
                     },
                     {
                         "item": {
                             "tags": "query.all_tags('minecraft:is_shovel', 'minecraft:stone_tier')"
                         },
-                        "destroy_speed": 0.56
+                        "destroy_speed": 0.30
                     },
                     {
                         "item": {
                             "tags": "query.all_tags('minecraft:is_shovel', 'minecraft:iron_tier')"
                         },
-                        "destroy_speed": 0.4
+                        "destroy_speed": 0.27
                     },
                     {
                         "item": {
@@ -64,18 +64,16 @@
                         "item": {
                             "tags": "query.all_tags('minecraft:is_shovel', 'minecraft:diamond_tier')"
                         },
-                        "destroy_speed": 0.22
+                        "destroy_speed": 0.15
                     },
                     {
                         "item": {
                             "tags": "query.all_tags('minecraft:is_shovel', 'minecraft:netherite_tier')"
                         },
-                        "destroy_speed": 0.125
+                        "destroy_speed": 0.1
                     }
                 ]
             },
-            "tag:grass": {},
-            "tag:dirt": {},
             "tag:minecraft:is_shovel_item_destructible": {}
         },
         "permutations": [

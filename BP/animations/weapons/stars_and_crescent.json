@@ -1,4 +1,4 @@
-	{
+{
 	"format_version": "1.21.10",
 	"animations": {
 		"animation.stars_and_crescent.attack_5": {
@@ -20,6 +20,37 @@
 					"/tp @s ^^^1 true",
 					"/tp @s ^^^1 true",
 					"/playsound sword_slash.clash @a[r=16] ~~~ 1 1 0.4"
+				]
+			}
+		},
+		"animation.stars_and_crescent.ultimate": {
+			"animation_length": 5.1,
+			"timeline": {
+				"0.0": [
+					"/playanimation @s animation.stars_and_crescent.skill_5",
+					"/playsound custom_sfx.build_up_railgun @a[r=256] ~~~ 1 1 0.3",
+					"/tellraw @a[r=256] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their ability §e§lStar Manipulation : Compress!\"}]}",
+					"/particle fec:star_pressured ^^1.5^1.3",
+					"/camera @s set minecraft:third_person",
+					"/inputpermission set @s movement disabled",
+					"/inputpermission set @s camera disabled"
+				],
+				"4.9": [
+					"/camera @s clear",
+					"/inputpermission set @s movement enabled",
+					"/inputpermission set @s camera enabled",
+					"/playsound custom_sfx.deathzone_spawn @a[r=256] ~~~ 1 1 0.3",
+					"/damage @e[r=100,rm=0.1,type=!wither,type=!player,type=!ender_dragon,family=!boss] 30 entity_explosion entity @s",
+					"/damage @e[r=100,rm-0.1,type=ender_dragon] 100 entity_explosion entity @s",
+					"/damage @e[r=100,rm-0.1,type=fec:elemental_legionnaire] 100 entity_explosion entity @s",
+					"/damage @e[r=100,rm-0.1,type=fec:shadowplague_guardian] 100 entity_explosion entity @s",
+					"/damage @e[r=100,rm-0.1,type=fec:water_eidolon] 100 entity_explosion entity @s",
+					"/damage @e[r=100,rm-0.1,type=fec:corvus] 100 entity_explosion entity @s",
+					"/damage @a[r=100,rm=0.1,has_property={fec:player_health_level=1},tag=!earth_iframe] 10 void entity @s",
+					"/damage @a[r=100,rm=0.1,has_property={fec:player_health_level=2},tag=!earth_iframe] 15 void entity @s",
+					"/damage @a[r=100,rm=0.1,has_property={fec:player_health_level=3},tag=!earth_iframe] 20 void entity @s",
+					"/damage @a[r=100,rm=0.1,has_property={fec:player_health_level=4},tag=!earth_iframe] 25 void entity @s",
+					"/damage @a[r=100,rm=0.1,has_property={fec:player_health_level=5},tag=!earth_iframe] 30 void entity @s"
 				]
 			}
 		}

@@ -10,14 +10,14 @@
 		},
 		"components": {
 			"minecraft:emitter_rate_steady": {
-				"spawn_rate": 1250,
-				"max_particles": 1300
+				"spawn_rate": 1350,
+				"max_particles": 1500
 			},
 			"minecraft:emitter_lifetime_once": {
 				"active_time": 7
 			},
 			"minecraft:emitter_shape_sphere": {
-				"radius": 32,
+				"radius": 48,
 				"surface_only": true,
 				"direction": "outwards"
 			},

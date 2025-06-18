@@ -1,0 +1,35 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fec:corvus_star",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/corrupted_star"
+			},
+			"particle_effects": {
+				"corrupted_star_trail": "fec:corvus_star"
+			},
+			"geometry": {
+				"default": "geometry.corrupted_star"
+			},
+			"render_controllers": [
+				"controller.render.corvus_star"
+			],
+			"animations": {
+				"default": "animation.corvus_star.idle"
+			},
+			"scripts": {
+				"animate": [
+					"default"
+				]
+			},
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

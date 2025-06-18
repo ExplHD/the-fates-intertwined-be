@@ -37,7 +37,7 @@
 					}
 				},
 				"minecraft:boss": {
-					"hud_range": 55,
+					"hud_range": 64,
 					"name": "§2§4§rElemental Legionnaire",
 					"should_darken_sky": false
 				},

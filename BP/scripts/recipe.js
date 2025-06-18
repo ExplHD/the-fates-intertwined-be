@@ -1,4 +1,4 @@
-import { system, world } from '@minecraft/server'
+	import { system, world } from '@minecraft/server'
 import { ActionFormData, MessageFormData } from '@minecraft/server-ui'
 
 export function recipeUI(player) {
@@ -132,7 +132,7 @@ export function legionnaireMedalion(player) {
 export function awakenedStars(player) {
     const winterbloomSword = new MessageFormData();
     winterbloomSword.title("Awakened Stars");
-    winterbloomSword.body("Recipe that you need :\n\n1 Nether Star\n1 Star Shard\n1 End Crystal");
+    winterbloomSword.body("Recipe that you need :\n\n8 Star Shard\n1 End Crystal");
     winterbloomSword.button1("Exit");
     winterbloomSword.button2("Back");
     winterbloomSword.show(player).then((r) => {

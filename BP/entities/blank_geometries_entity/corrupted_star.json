@@ -18,8 +18,8 @@
 				"value": 4
 			},
 			"minecraft:collision_box": {
-				"width": 0.8,
-				"height": 0.8
+				"width": 1,
+				"height": 1
 			},
 			"minecraft:experience_reward": {
 				"on_death": 5
@@ -58,7 +58,7 @@
 				"speed_multiplier": 1.3
 			},
 			"minecraft:attack_damage": {
-				"value": 4
+				"value": 6
 			},
 			"minecraft:behavior.nearest_attackable_target": {
 				"priority": 3,

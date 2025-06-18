@@ -1,0 +1,15 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.corvus_star.idle": {
+			"loop": true,
+			"animation_length": 0.9583,
+			"particle_effects": {
+				"0.0": {
+					"effect": "corrupted_star_trail",
+					"locator": "particle"
+				}
+			}
+		}
+	}
+}

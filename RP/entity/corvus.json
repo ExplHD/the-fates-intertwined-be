@@ -15,17 +15,31 @@
 			"render_controllers": [
 				"controller.render.corvus"
 			],
+			"particle_effects": {
+				"light_marker": "fec:light_marker"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+				],
+				"animate": [
+					"root",
+					{
+						"rest_spawn": "query.property('fec:corvus_status')=='spawn_rest'"
+					}
+				]
+			},
 			"animations": {
-				"corvus_controller": "controller.animation.corvus",
+				"root": "controller.animation.corvus",
 				"idle": "animation.corvus.idle",
-				"idle_fly": "animation.corvus.idle_fly",
-				"idle_charging": "animation.corvus.idle_charging",
-				"rest": "animation.corvus.rest",
+				"fly": "animation.corvus.fly",
 				"attack": "animation.corvus.attack",
 				"dash": "animation.corvus.dash",
 				"move": "animation.corvus.walk",
 				"teleport": "animation.corvus.teleport",
-				"front_pillar_cast": "animation.corvus.front_pillar"
+				"front_pillar_attack": "animation.corvus.front_pillar",
+				"rest": "animation.corvus.rest",
+				"rest_spawn": "animation.corvus.rest_spawn"
 			},
 			"spawn_egg": {
 				"base_color": "#000000",

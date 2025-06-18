@@ -9,7 +9,7 @@
 		},
 		"components": {
 			"minecraft:icon": "fec_awakened_stars",
-			"minecraft:max_stack_size": 1,
+			"minecraft:max_stack_size": 16,
 			"minecraft:display_name": {
 				"value": "§6Awakened Star\n\n§8A Stars that crafted from End Crystal\nand Star Shards, Used for boss\nsummoning"
 			}

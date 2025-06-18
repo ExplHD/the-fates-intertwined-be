@@ -5,7 +5,18 @@
 			"identifier": "fec:star_meteor",
 			"is_spawnable": false,
 			"is_summonable": true,
-			"is_experimental": false
+			"is_experimental": false,
+			"properties": {
+				"fec:meteor_id": {
+					"type": "int",
+					"client_sync": false,
+					"default": 0,
+					"range": [
+						0,
+						1
+					]
+				}
+			}
 		},
 		"component_groups": {
 			"starexplode": {
@@ -13,8 +24,15 @@
 					"fuse_lit": true,
 					"fuse_length": 0.1,
 					"power": 6,
-					"destroy_affected_by_griefing": false,
-					"breaks_blocks": false
+					"destroy_affected_by_griefing": true
+				}
+			},
+			"starexplode_corvus": {
+				"minecraft:explode": {
+					"fuse_lit": true,
+					"fuse_length": 0.1,
+					"power": 8,
+					"destroy_affected_by_griefing": true
 				}
 			},
 			"physics": {
@@ -63,18 +81,72 @@
 			}
 		},
 		"events": {
-			"starexplode": {
-				"add": {
-					"component_groups": [
-						"starexplode"
-					]
-				},
-				"queue_command": {
-					"command": [
-						"particle fec:stars_ping ~~~",
-						"playsound stars_boss.meteor_impact @a[r=64] ~~~ 1 1 0.3"
-					]
+			"minecraft:entity_spawned": {
+				"set_property": {
+					"fec:meteor_id": 0
 				}
+			},
+			"corvus_star_meteor": {
+				"set_property": {
+					"fec:meteor_id": 1
+				}
+			},
+			"starexplode": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "int_property",
+							"subject": "self",
+							"domain": "fec:meteor_id",
+							"operator": "==",
+							"value": 0
+						},
+						"add": {
+							"component_groups": [
+								"starexplode"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"particle fec:stars_ping ~~~",
+								"playsound stars_boss.meteor_impact @a[r=64] ~~~ 1 1 0.3"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "int_property",
+							"subject": "self",
+							"domain": "fec:meteor_id",
+							"operator": "==",
+							"value": 1
+						},
+						"add": {
+							"component_groups": [
+								"starexplode"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"particle fec:stars_ping ~~~",
+								"particle fec:light_blast ~~~",
+								"playsound stars_boss.meteor_impact @a[r=64] ~~~ 1 1 0.3",
+								"summon fec:star_pillar ~~~5",
+								"summon fec:star_pillar ~~~-5",
+								"summon fec:star_pillar ~5~~",
+								"summon fec:star_pillar ~-5~~",
+								"summon fec:star_pillar ~~~10",
+								"summon fec:star_pillar ~~~-10",
+								"summon fec:star_pillar ~10~~",
+								"summon fec:star_pillar ~-10~~",
+								"summon fec:star_pillar ~7.5~~7.5",
+								"summon fec:star_pillar ~-7.5~~-7.5",
+								"summon fec:star_pillar ~7.5~~-7.5",
+								"summon fec:star_pillar ~-7.5~~7.5"
+							]
+						}
+					}
+				]
 			},
 			"add_physics": {
 				"add": {

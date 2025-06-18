@@ -30,6 +30,7 @@ scoreboard objectives add eidolon_4_staff_c3 dummy
 scoreboard objectives add stars_and_crescent_c2 dummy
 scoreboard objectives add stars_and_crescent_c3 dummy
 scoreboard objectives add stars_and_crescent_c4 dummy
+scoreboard objectives add stars_and_crescent_c5 dummy 
 scoreboard objectives add shadow_revolver_c1 dummy
 scoreboard objectives add shadow_revolver_c2 dummy
 scoreboard objectives add shadow_revolver_c3 dummy
@@ -135,7 +136,7 @@ titleraw @a[hasitem={item=feather,location=slot.weapon.mainhand},tag=speed_range
 execute as @e[type=fec:eidolon_4_pillar] at @s run tp @s ^^^1
 execute as @e[type=fec:eidolon_4_pillar] at @s run damage @e[type=!fec:eidolon_4_pillar,r=3,tag=!eidolon_iframe] 20 entity_attack entity @s
 execute at @e[type=fec:eidolon_4_pillar] run particle fec:eidolon_4_pillar ~~~
-execute as @e[type=fec:crescent_pillar] at @s run tp @s ^^^1 ~5 0
+execute as @e[type=fec:crescent_pillar] at @s run tp @s ^^^2 ~5 0
 execute as @e[type=fec:crescent_pillar] at @s run damage @e[type=!fec:crescent_pillar,r=3,tag=!stars_and_crescent_immunity] 15 entity_attack entity @s
 execute at @e[type=fec:crescent_pillar] run particle fec:crescent_pillar ~~~
 execute as @e[type=fec:zenith_base] at @s run tp @s ^^^ ~5 0
@@ -150,7 +151,7 @@ execute as @e[type=fec:tenacity_blue_slash] at @s run tp @s ^^^1
 execute as @e[type=fec:star_projectile] at @s run particle fec:light_marker ^^^1
 execute as @e[type=fec:tenacity_blue_slash] at @s run damage @e[type=!fec:tenacity_blue_slash,r=6] 24 entity_attack entity @s
 execute as @e[type=fec:corruption_expands_beam] at @s run particle fec:shadow_revolver_corruption_expands_beam ~~~
-execute as @e[type=fec:corruption_expands_beam] at @s run damage @e[type=!fec:corruption_expands_beam,r=14,tag=!corruption_immunity] 10 entity_attack entity @s
+execute as @e[type=fec:corruption_expands_beam] at @s run damage @e[type=!fec:corruption_expands_beam,r=32,tag=!corruption_immunity] 20 entity_attack entity @s
 execute as @e[type=fec:dark_cover_smoke] at @s run effect @a[r=3] invisibility 1 0 true
 
 # Auto enchant Mending

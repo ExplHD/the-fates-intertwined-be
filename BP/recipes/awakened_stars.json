@@ -10,11 +10,7 @@
 		"ingredients": [
 			{
 				"item": "fec:star_shard",
-				"count": 1
-			},
-			{
-				"item": "minecraft:nether_star",
-				"count": 1
+				"count": 8
 			},
 			{
 				"item": "minecraft:end_crystal",
@@ -28,7 +24,7 @@
 		],
 		"result": {
 			"item": "fec:awakened_stars",
-			"count": 1
+			"count": 2
 		}
 	}
 }

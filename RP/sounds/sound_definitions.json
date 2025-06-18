@@ -173,6 +173,13 @@
 			"sounds": [
 				"sounds/stars_boss/starexplode"
 			]
+		},
+		"stars_boss.the_stars_raijin": {
+			"category": "hostile",
+			"max_distance": 256,
+			"sounds": [
+				"sounds/stars_boss/the_stars_raijin"
+			]
 		}
 	}
 }

@@ -7,10 +7,10 @@
                 "default": {
                     "transitions": [
                         {
-                            "scoped": "query.property('fec:the_enigma_ranged_status')=='scoped'"
+                            "scoped": "query.get_equipped_item_name=='the_enigma'&&query.is_using_item&&query.property('fec:the_enigma_ranged_status')=='scoped'"
                         },
                         {
-                            "ultimate_scoped": "query.property('fec:the_enigma_ranged_status')=='ultimate'"
+                            "ultimate_scoped": "query.get_equipped_item_name=='the_enigma'&&query.is_using_item&&query.property('fec:the_enigma_ranged_status')=='ultimate'"
                         }
                     ]
                 },
@@ -25,7 +25,7 @@
                     ],
                     "transitions": [
                         {
-                            "default": "query.property('fec:the_enigma_ranged_status')=='normal'"
+                            "default": "query.all_animations_finished"
                         }
                     ]
                 },
@@ -40,7 +40,7 @@
                     ],
                     "transitions": [
                         {
-                            "default": "query.property('fec:the_enigma_ranged_status')=='normal'"
+                            "default": "query.all_animations_finished"
                         }
                     ]
                 }

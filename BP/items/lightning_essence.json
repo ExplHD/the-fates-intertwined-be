@@ -8,7 +8,7 @@
 			}
 		},
 		"components": {
-			"minecraft:max_stack_size": 1,
+			"minecraft:max_stack_size": 16,
 			"minecraft:icon": "fec_lightning_essence",
 			"minecraft:cooldown": {
 				"category": "lightning_essence",

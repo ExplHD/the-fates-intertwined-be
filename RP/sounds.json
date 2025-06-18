@@ -93,6 +93,12 @@
                     "hurt": "stars_boss.meteor_impact"
                 },
                 "volume": 1.0
+            },
+            "fec:corvus": {
+                "events": {
+                    "ram_impact": "stars_boss.meteor_impact"
+                },
+                "volume": 1.0
             }
         }
     }

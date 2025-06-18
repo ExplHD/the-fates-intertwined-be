@@ -260,7 +260,7 @@
 					"command": [
 						"particle fec:shadow_revolver_ultimate_explode ~~~",
 						"playsound random.explode @a[r=128] 1 1 0.125",
-						"damage @e[r=32] 36 entity_attack entity @s"
+						"damage @e[r=64] 60 entity_attack entity @s"
 					]
 				},
 				"trigger": "despawn"
@@ -270,7 +270,7 @@
 					"command": [
 						"playsound custom_sfx.build_up_railgun @a[r=128]",
 						"particle fec:shadow_revolver_ultimate_nuke_timing ~~~",
-						"tellraw @a[r=32,tag=!nuke_executor] {\"rawtext\":[{\"text\":\"Protocol Impact : 0078 starts ticking into the explosion, RUN!!!\"}]}",
+						"tellraw @a[r=64,tag=!nuke_executor] {\"rawtext\":[{\"text\":\"Protocol Impact : 0078 starts ticking into the explosion, RUN!!!\"}]}",
 						"title @a[tag=nuke_executor] title §r",
 						"title @a[tag=nuke_executor] subtitle §d-= Protocol Impact : 0078 Initiated =-",
 						"summon fec:corruption_expands_beam ~~~"
@@ -286,12 +286,13 @@
 			"fec:nuke_executed": {
 				"queue_command": {
 					"command": [
-						"damage @e[r=32,rm=0.1,family=!boss,type=!wither,type=!warden,tag=!nuke_executor] 60 entity_attack entity @s",
-						"damage @e[r=32,type=wither] 300 entity_attack entity @s",
-						"damage @e[r=32,type=warden] 300 entity_attack entity @s",
-						"damage @e[r=32,type=ender_dragon] 600 entity_attack entity @s",
-						"damage @e[r=32,type=fec:elemental_legionnaire] 350 entity_attack entity @s",
-						"damage @e[r=32,type=fec:water_eidolon] 450 entity_attack entity @s",
+						"damage @e[r=64,rm=0.1,family=!boss,type=!wither,type=!warden,tag=!nuke_executor] 60 entity_attack entity @s",
+						"damage @e[r=64,type=wither] 300 entity_attack entity @s",
+						"damage @e[r=64,type=fec:corvus] 600 entity_attack entity @s",
+						"damage @e[r=64,type=warden] 300 entity_attack entity @s",
+						"damage @e[r=64,type=ender_dragon] 600 entity_attack entity @s",
+						"damage @e[r=64,type=fec:elemental_legionnaire] 350 entity_attack entity @s",
+						"damage @e[r=64,type=fec:water_eidolon] 450 entity_attack entity @s",
 						"playsound custom_sfx.deathzone_spawn @a[r=128]",
 						"camerashake add @a[r=64] 1.3 3 positional",
 						"tag @a[tag=nuke_executor] remove nuke_executor",

@@ -42,6 +42,7 @@
 				"eidolon_4_staff_ultimate": "animation.eidolon_4_staff.ultimate",
 				"stars_and_crescent": "controller.animation.stars_and_crescent",
 				"stars_and_crescent_atk_5": "animation.stars_and_crescent.attack_5",
+				"stars_and_crescent_ultimate": "animation.stars_and_crescent.ultimate",
 				"shadow_revolver": "controller.animation.shadow_revolver",
 				"shadow_revolver_fire": "animation.shadow_revolver.fire",
 				"shadow_revolver_hip_fire": "animation.shadow_revolver.hip_fire",

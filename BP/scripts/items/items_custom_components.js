@@ -25,7 +25,7 @@ system.beforeEvents.startup.subscribe((initEvent) => {
 
             if (itemStack.typeId === 'fec:earth_essence') {
                 player.runCommand('tag @s add earth_iframe')
-                player.runCommand('effect @s resistance 3 255 true')
+                player.runCommand('effect @s resistance 5 255 true')
                 player.runCommand('playsound mob.zombie.remedy @a[r=16]')
                 player.startItemCooldown("earth_essence", 600)
             }

@@ -14,7 +14,8 @@ import { } from './passive/class_passive'
 import { } from './passive/weapons'
 import { } from './passive/food_regen'
 import { } from './statistics/statistics_runner'
-import { } from './statistics/statistics_check'
+import { statisticSelect, statisticCheck, statisticPlayer, statisticSettings } from './statistics/statistics_check'
+import { } from './statistics/statistics_check_compass'
 import { recipeUI, legendaryFabricator, shadowBench, winterbloomSword, rageOfSakura, murasamaCalamity, spearOfHeart, legionnaireMedalion, stardustArmor, shadowBench1, shadowBench2, shadowBench3 } from 'recipe.js'
 
 // General Functions
@@ -347,8 +348,18 @@ system.beforeEvents.startup.subscribe((init) => {
         system.run(() => {
             for (const player of world.getPlayers()) {
                 player.sendMessage(`Current Ticks per second is : ${TPS.toFixed(2)}`)
+                console.log(`Current Ticks per second is : ${TPS.toFixed(2)}`)
             }
         })
     }
     init.customCommandRegistry.registerCommand(tps, tpsReturn)
+
+    const statistic = {
+        name: 'fec:statistic',
+        description: 'Command to open the statistics UI, from checking, to setting the notification',
+        permissionLevel: CommandPermissionLevel.Any,
+        cheatsRequired: false
+    }
+
+    init.customCommandRegistry.registerCommand(statistic, statisticSelect)
 })

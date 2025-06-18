@@ -1,4 +1,4 @@
-import { system, world } from '@minecraft/server'
+import { system, world, GameMode } from '@minecraft/server'
 import { addScore, removeScore, setScore, getScore } from 'main.js'
 
 let charges = [
@@ -47,6 +47,7 @@ let cooldownList = [
     "stars_and_crescent_c2",
     "stars_and_crescent_c3",
     "stars_and_crescent_c4",
+    "stars_and_crescent_c5",
     "shadow_revolver_c1",
     "shadow_revolver_c2",
     "shadow_revolver_c3",
@@ -342,6 +343,11 @@ system.afterEvents.scriptEventReceive.subscribe((weaponEvent) => {
             player.dimension.spawnParticle("fec:yamato_skill_2", player.location)
             player.runCommand(`damage @e[r=5,rm=0.1,family=!inanimate,type=!item] 2 entity_attack entity @s`)
         }, 10)
+    }
+    if (id == 'fec:death') {
+        system.runTimeout((e) => {
+            player.setGameMode(GameMode.spectator)
+        }, 6)
     }
     /* DRAFT
     if (id == 'fec:the_enigma_flash') {

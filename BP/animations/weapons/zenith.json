@@ -112,58 +112,58 @@
 					"/particle fec:zenith_skill_5_circle"
 				],
 				"1.0": [
-					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s",
-					"/camera @a[r=32,rm=0.1] fade time 0 0.2 0.2 color 255 0 0"
+					"/execute at @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning"
 				],
 				"1.5": [
-					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
+					"/execute at @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning"
 				],
 				"2.0": [
-					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
+					"/execute at @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning"
 				],
 				"2.5": [
-					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
+					"/execute at @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
 					"/playanimation @s animation.zenith.skill_1",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning"
 				],
 				"3.0": [
-					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
+					"/execute at @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning"
 				],
 				"3.5": [
-					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
+					"/execute at @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning"
 				],
 				"4.0": [
-					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
+					"/execute at @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning"
 				],
 				"4.5": [
-					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
+					"/execute at @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
 					"/playanimation @s animation.zenith.skill_1",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning"
 				],
 				"5.0": [
-					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
+					"/execute at @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning"
 				],
 				"5.5": [
-					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning entity @s"
+					"/execute at @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] 20 lightning"
 				],
 				"6.0": [
-					"/execute at @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
+					"/execute at @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,family=!pillars] run particle fec:zenith_skill_5_bullet_impact ~~~",
 					"/playsound custom_sfx.deathzone_spawn @a[r=128]",
 					"/playanimation @s animation.zenith.attack_2",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,type=!ender_dragon,type=!wither,type=!warden,type=!fec:elemental_legionnaire,type=!fec:water_eidolon,tag=!deathZone] 10 lightning entity @s",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=ender_dragon] 220 lightning entity @s",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=fec:elemental_legionnaire] 180 lightning entity @s",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=fec:water_eidolon] 190 lightning entity @s",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=wither] 100 lightning entity @s",
-					"/damage @e[r=32,rm=0.1,type=!xp_orb,tag=!deathZone,type=warden] 100 lightning entity @s",
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,type=!ender_dragon,type=!wither,type=!warden,type=!fec:elemental_legionnaire,type=!fec:water_eidolon,tag=!deathZone] 40 lightning entity @s",
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,type=ender_dragon] 220 lightning entity @s",
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,type=fec:corvus] 270 lightning entity @s",
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,type=fec:elemental_legionnaire] 180 lightning entity @s",
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,type=fec:water_eidolon] 190 lightning entity @s",
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,type=wither] 100 lightning entity @s",
+					"/damage @e[r=48,rm=0.1,type=!xp_orb,tag=!deathZone,type=warden] 100 lightning entity @s",
 					"/scoreboard players set @s zenith_c5 180",
 					"/inputpermission set @s movement enabled",
 					"/tag @s remove deathZone"

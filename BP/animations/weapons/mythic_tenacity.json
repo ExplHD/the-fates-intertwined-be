@@ -128,9 +128,10 @@
                     "/tellraw @a[r=64] {\"rawtext\":[{\"selector\":\"@s\"},{\"text\":\" used their Ultimate §6The Domain of Origin\"}]}",
                     "/effect @s resistance 6 255 true",
                     "/particle fec:mythic_tenacity_ultimate_scythe_clock ~~~",
-                    "/playsound custom_sfx.clash_3x @a[r=64]",
+                    "/playsound custom_sfx.clash_3x @a[r=64] ~~~ 1 1 0.3",
                     "/playanimation @s animation.mythic_tenacity.ultimate_scale",
                     "/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=wither] add hunterTarget",
+                    "/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=fec:corvus] add hunterTarget",
                     "/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=ender_dragon] add hunterTarget",
                     "/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=warden] add hunterTarget",
                     "/execute as @s at @s unless entity @e[tag=hunterTarget] run tag @e[r=32,rm=1,type=fec:elemental_legionnaire] add hunterTarget",
@@ -146,7 +147,8 @@
                     "/damage @e[tag=hunterTarget,type=ender_dragon] 150 entity_attack entity @s",
                     "/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 125 entity_attack entity @s",
                     "/damage @e[tag=hunterTarget,type=fec:water_eidolon] 150 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=warden] 60 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=fec:corvus] 240 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=warden] 100 entity_attack entity @s",
                     "/execute as @s at @s unless entity @e[tag=hunterTarget] run tp @s @e[r=32,c=1,type=!player,family=!inanimate]",
                     "/damage @e[r=6,family=!inanimate] 41 entity_attack @s",
                     "/particle fec:mythic_tenacity_ultimate_teleport_slash ~~~"
@@ -158,7 +160,8 @@
                     "/damage @e[tag=hunterTarget,type=ender_dragon] 150 entity_attack entity @s",
                     "/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 125 entity_attack entity @s",
                     "/damage @e[tag=hunterTarget,type=fec:water_eidolon] 150 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=warden] 60 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=fec:corvus] 240 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=warden] 100 entity_attack entity @s",
                     "/execute as @s at @s unless entity @e[tag=hunterTarget] run tp @s @e[r=32,c=1,type=!player,family=!inanimate]",
                     "/damage @e[r=6,family=!inanimate] 41 entity_attack @s",
                     "/particle fec:mythic_tenacity_ultimate_teleport_slash ~~~"
@@ -170,7 +173,8 @@
                     "/damage @e[tag=hunterTarget,type=ender_dragon] 150 entity_attack entity @s",
                     "/damage @e[tag=hunterTarget,type=fec:elemental_legionnaire] 125 entity_attack entity @s",
                     "/damage @e[tag=hunterTarget,type=fec:water_eidolon] 150 entity_attack entity @s",
-                    "/damage @e[tag=hunterTarget,type=warden] 60 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=fec:corvus] 240 entity_attack entity @s",
+                    "/damage @e[tag=hunterTarget,type=warden] 100 entity_attack entity @s",
                     "/execute as @s at @s unless entity @e[tag=hunterTarget] run tp @s @e[r=32,c=1,type=!player,family=!inanimate]",
                     "/damage @e[r=6,family=!inanimate] 41 entity_attack @s",
                     "/particle fec:mythic_tenacity_ultimate_teleport_slash ~~~"
@@ -181,7 +185,7 @@
                 ],
                 "5.0": [
                     "/kill @e[name=TPTAG,r=5]",
-                    "/scoreboard players add @s tenacity_c4 135"
+                    "/scoreboard players add @s tenacity_c4 125"
                 ]
             }
         },
@@ -258,7 +262,7 @@
                     "/camera @s clear",
                     "/inputpermission set @a[r=3] movement enabled",
                     "/inputpermission set @a[r=3] camera enabled",
-                    "/scoreboard players set @s tenacity_c4_axe 200"
+                    "/scoreboard players set @s tenacity_c4_axe 180"
                 ]
             }
         }

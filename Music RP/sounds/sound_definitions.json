@@ -30,6 +30,12 @@
 				"sounds/music/boss/unholy_ambush"
 			],
 			"category": "ui"
+		},
+		"music.boss.tuba_archmage": {
+			"sounds": [
+				"sounds/music/boss/tuba_archmage"
+			],
+			"category": "ui"
 		}
 	}
 }

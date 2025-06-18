@@ -4,36 +4,9 @@
 		"description": {
 			"identifier": "fec:corvus",
 			"is_spawnable": false,
-			"is_summonable": false,
+			"is_summonable": true,
 			"is_experimental": false,
 			"properties": {
-				"fec:flow_sequence_state": {
-					"type": "int",
-					"client_sync": true,
-					"default": 0,
-					"range": [
-						0,
-						9
-					]
-				},
-				"fec:pattern_used": {
-					"type": "int",
-					"client_sync": true,
-					"default": 0,
-					"range": [
-						0,
-						1
-					]
-				},
-				"fec:tp_used": {
-					"type": "int",
-					"client_sync": false,
-					"default": 0,
-					"range": [
-						0,
-						2
-					]
-				},
 				"fec:corvus_status": {
 					"type": "enum",
 					"client_sync": true,
@@ -44,25 +17,34 @@
 						"running",
 						"flying"
 					]
+				},
+				"fec:meteor_summoned": {
+					"type": "int",
+					"range": [
+						0,
+						30
+					],
+					"default": 0
 				}
 			}
 		},
 		"component_groups": {
-			"spawn_timeout": {
+			"fec:corvus_low_hp": {
 				"minecraft:environment_sensor": {
 					"triggers": [
 						{
 							"filters": {
-								"test": "has_tag",
+								"test": "actor_health",
 								"subject": "self",
-								"operator": "!=",
-								"value": "corvus_timeout"
+								"operator": "<",
+								"value": 2000
 							},
-							"event": "fec:timeout_clear_and_start_dash",
-							"target": "self"
+							"event": "fec:summon_summons"
 						}
 					]
-				},
+				}
+			},
+			"spawn_timeout": {
 				"minecraft:damage_sensor": {
 					"triggers": [
 						{
@@ -80,14 +62,39 @@
 				"minecraft:movement": {
 					"value": 0
 				},
-				"minecraft:behavior.look_at_target": {}
+				"minecraft:behavior.look_at_target": {},
+				"minecraft:timer": {
+					"time": 30,
+					"looping": false,
+					"time_down_event": {
+						"event": "fec:timeout_clear_and_start_dash"
+					}
+				},
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 1,
+							"max_wait_time": 1,
+							"num_to_spawn": 2,
+							"spawn_entity": "minecraft:xp_bottle",
+							"single_use": false
+						}
+					]
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"damage_modifier": 1.2,
+						"deals_damage": true
+					}
+				}
 			},
 			"timer_to_tp": {
 				"minecraft:timer": {
 					"time": 1,
 					"looping": false,
 					"time_down_event": {
-						"event": "fec:tp_dash_1",
+						"event": "fec:tp_dash",
 						"target": "self"
 					}
 				},
@@ -95,39 +102,36 @@
 					"value": 0
 				}
 			},
-			"tp_1": {
+			"timer_to_tp_2": {
 				"minecraft:timer": {
-					"time": 0.3,
-					"looping": true,
-					"time_down_event": {
-						"event": "fec:tp_dash_1",
-						"target": "self"
-					}
-				}
-			},
-			"tp_2": {
-				"minecraft:timer": {
-					"time": 0.3,
+					"time": 1,
 					"looping": false,
 					"time_down_event": {
-						"event": "fec:tp_dash",
+						"event": "fec:tp_dash_2",
 						"target": "self"
 					}
+				},
+				"minecraft:movement": {
+					"value": 0
 				}
 			},
-			"tp_3": {
+			"timer_to_tp_3": {
 				"minecraft:timer": {
-					"time": 0.3,
+					"time": 1,
 					"looping": false,
 					"time_down_event": {
-						"event": "fec:tp_dash",
+						"event": "fec:tp_dash_3",
 						"target": "self"
 					}
+				},
+				"minecraft:movement": {
+					"value": 0
 				}
 			},
 			"run_and_attack": {
 				"minecraft:behavior.melee_box_attack": {
 					"horizontal_reach": 0.3,
+					"require_complete_path": true,
 					"priority": 1
 				},
 				"minecraft:behavior.nearest_attackable_target": {
@@ -150,40 +154,356 @@
 					]
 				},
 				"minecraft:movement": {
-					"value": 0.45
+					"value": 0.4
 				},
 				"minecraft:timer": {
 					"looping": true,
 					"time": 15,
 					"time_down_event": {
-						"event": "fec:run_and_attack_end",
+						"event": "fec:run_and_attack_end_1",
 						"target": "self"
 					}
 				}
 			},
 			"front_star_pillar": {
 				"minecraft:behavior.summon_entity": {
-					"priority": 2,
+					"priority": 0,
 					"summon_choices": [
 						{
-							"cast_duration": 0.2,
-							"min_activation_range": 1,
-							"max_activation_range": 32,
-							"cooldown_time": 3,
+							"min_activation_range": 0,
+							"max_activation_range": 48,
+							"cooldown_time": 1,
+							"weight": 3,
+							"cast_duration": 0.5,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "cast.spell",
 							"sequence": [
 								{
 									"shape": "line",
-									"summon_cap": 24,
-									"size": 32,
-									"num_entities_spawned": 24,
-									"base_delay": 0.02,
+									"summon_cap": 96,
+									"size": 96,
+									"num_entities_spawned": 96,
+									"base_delay": 0.5,
 									"target": "self",
 									"entity_type": "fec:star_pillar",
-									"summon_cap_radius": 32
+									"summon_cap_radius": 96,
+									"delay_per_summon": 0.03
+								},
+								{
+									"shape": "circle",
+									"summon_cap": 96,
+									"size": 3,
+									"num_entities_spawned": 12,
+									"base_delay": 0.3,
+									"target": "target",
+									"entity_type": "fec:star_pillar",
+									"summon_cap_radius": 5,
+									"delay_per_summon": 0
 								}
 							]
 						}
 					]
+				},
+				"minecraft:movement": {
+					"value": 0.4
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 10,
+					"time_down_event": {
+						"event": "fec:front_star_pillar_end",
+						"target": "self"
+					}
+				}
+			},
+			"star_blast_attack": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3,
+					"time_down_event": {
+						"event": "fec:star_blast_attack_end",
+						"target": "self"
+					}
+				}
+			},
+			"run_and_attack_2": {
+				"minecraft:behavior.melee_box_attack": {
+					"horizontal_reach": 0.3,
+					"require_complete_path": true,
+					"priority": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"within_radius": 48,
+					"scan_interval": 10,
+					"target_invisible_multiplier": 0.3,
+					"target_sneak_visibility_multiplier": 0.8,
+					"priority": 0,
+					"must_see": false,
+					"entity_types": [
+						{
+							"max_dist": 64,
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "stars_creature"
+							}
+						}
+					]
+				},
+				"minecraft:movement": {
+					"value": 0.4
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 15,
+					"time_down_event": {
+						"event": "fec:run_and_attack_end_2",
+						"target": "self"
+					}
+				}
+			},
+			"circle_pillar": {
+				"minecraft:behavior.summon_entity": {
+					"priority": 0,
+					"summon_choices": [
+						{
+							"min_activation_range": 0,
+							"max_activation_range": 64,
+							"cooldown_time": 1,
+							"weight": 1,
+							"cast_duration": 1,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.25,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 80,
+									"entity_type": "fec:star_pillar",
+									"size": 64,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.25,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 76,
+									"entity_type": "fec:star_pillar",
+									"size": 61,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.25,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 74,
+									"entity_type": "fec:star_pillar",
+									"size": 58,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.25,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 70,
+									"entity_type": "fec:star_pillar",
+									"size": 55,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.25,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 66,
+									"entity_type": "fec:star_pillar",
+									"size": 52,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.25,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 62,
+									"entity_type": "fec:star_pillar",
+									"size": 49,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "line",
+									"summon_cap": 96,
+									"size": 96,
+									"num_entities_spawned": 96,
+									"base_delay": 0.3,
+									"target": "self",
+									"entity_type": "fec:star_pillar",
+									"summon_cap_radius": 96,
+									"delay_per_summon": 0
+								}
+							]
+						},
+						{
+							"min_activation_range": 0,
+							"max_activation_range": 64,
+							"cooldown_time": 1,
+							"weight": 1,
+							"cast_duration": 1,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.25,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 8,
+									"entity_type": "fec:star_pillar",
+									"size": 3,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.25,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 16,
+									"entity_type": "fec:star_pillar",
+									"size": 6,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.25,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 24,
+									"entity_type": "fec:star_pillar",
+									"size": 9,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.25,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 32,
+									"entity_type": "fec:star_pillar",
+									"size": 12,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.25,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 40,
+									"entity_type": "fec:star_pillar",
+									"size": 15,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.25,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 48,
+									"entity_type": "fec:star_pillar",
+									"size": 18,
+									"sound_event": "prepare.attack",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "line",
+									"summon_cap": 96,
+									"size": 96,
+									"num_entities_spawned": 96,
+									"base_delay": 0.3,
+									"target": "self",
+									"entity_type": "fec:star_pillar",
+									"summon_cap_radius": 96,
+									"delay_per_summon": 0
+								}
+							]
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": 16,
+					"looping": true,
+					"time_down_event": {
+						"event": "fec:circle_pillar_end",
+						"target": "self"
+					}
+				}
+			},
+			"run_and_attack_3": {
+				"minecraft:behavior.melee_box_attack": {
+					"horizontal_reach": 0.3,
+					"require_complete_path": true,
+					"priority": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"within_radius": 48,
+					"scan_interval": 10,
+					"target_invisible_multiplier": 0.3,
+					"target_sneak_visibility_multiplier": 0.8,
+					"priority": 0,
+					"must_see": false,
+					"entity_types": [
+						{
+							"max_dist": 64,
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "stars_creature"
+							}
+						}
+					]
+				},
+				"minecraft:movement": {
+					"value": 0.4
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 25,
+					"time_down_event": {
+						"event": "fec:run_and_attack_end_3",
+						"target": "self"
+					}
+				}
+			},
+			"flying_raijin": {
+				"minecraft:timer": {
+					"time": 1,
+					"time_down_event": {
+						"event": "fec:flying_raijin_summon",
+						"target": "self"
+					}
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": false
+					}
 				}
 			}
 		},
@@ -193,8 +513,8 @@
 				"max": 4500
 			},
 			"minecraft:boss": {
-				"name": "Corvus : Ruler of Bright Stars",
-				"hud_range": 128
+				"name": "Corvus : The Ultimate Stars Abomination",
+				"hud_range": 256
 			},
 			"minecraft:collision_box": {
 				"height": 3,
@@ -212,14 +532,8 @@
 			"minecraft:behavior.look_at_target": {
 				"priority": 0
 			},
-			"minecraft:equipment": {
-				"table": "loot_tables/equipment/boss/corvus.json",
-				"slot_drop_chance": [
-					{
-						"drop_chance": 100,
-						"slot": "slot.weapon.mainhand"
-					}
-				]
+			"minecraft:loot": {
+				"table": "loot_tables/equipment/boss/corvus.json"
 			},
 			"minecraft:behavior.random_stroll": {
 				"priority": 1,
@@ -237,9 +551,35 @@
 					"boss"
 				]
 			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:experience_reward": {
+				"on_death": 15000
+			},
+			"minecraft:on_death": {
+				"event": "despawn"
+			},
+			"minecraft:movement.generic": {},
+			"minecraft:navigation.generic": {
+				"avoid_water": true,
+				"can_jump": true,
+				"can_swim": true,
+				"can_walk": true,
+				"can_walk_in_lava": true,
+				"can_path_over_lava": true,
+				"avoid_damage_blocks": false
+			},
 			"minecraft:knockback_resistance": {
 				"value": 100,
 				"max": 100
+			},
+			"minecraft:jump.static": {
+				"jump_power": 0.7
+			},
+			"minecraft:breathable": {
+				"breathes_air": true,
+				"breathes_water": true,
+				"breathes_solids": true,
+				"breathes_lava": true
 			},
 			"minecraft:persistent": {},
 			"minecraft:physics": {},
@@ -251,22 +591,90 @@
 				"require_complete_path": false,
 				"priority": 3
 			},
-			"minecraft:conditional_bandwidth_optimization": {}
+			"minecraft:behavior.random_look_around": {
+				"priority": 2,
+				"look_distance": 48
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 2,
+				"look_distance": 48,
+				"probability": 0.8
+			},
+			"minecraft:game_event_movement_tracking": {
+				"emit_move": true
+			}
 		},
 		"events": {
 			"minecraft:entity_spawned": {
 				"add": {
 					"component_groups": [
-						"spawn_timeout"
+						"spawn_timeout",
+						"fec:corvus_low_hp"
 					]
+				},
+				"set_property": {
+					"fec:corvus_status": "spawn_rest"
 				},
 				"queue_command": {
 					"command": [
 						"title @a[r=128] title <-= Corvus =->",
 						"title @a[r=128] subtitle The Ultimate Stars Abomination",
 						"tag @s add corvus_timeout",
-						"gamemode 2 @a[r=128]",
-						"music play music.boss.unholy_ambush loop"
+						"gamemode 2 @a[r=256,m=d]"
+					]
+				}
+			},
+			"despawn": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "actor_health",
+							"subject": "self",
+							"operator": ">=",
+							"value": 1
+						},
+						"queue_command": {
+							"command": [
+								"music stop 3",
+								"kill @s",
+								"kill @e[r=6]",
+								"tellraw @a[r=256] {\"rawtext\":[{\"text\":\"§cYou must dodge and counter them next time, their attacks are very powerful\"}]}",
+								"gamemode d @a[r=256,m=2]",
+								"event entity @e[type=fec:corvus_star] despawn"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "actor_health",
+							"subject": "self",
+							"operator": "<",
+							"value": 1
+						},
+						"queue_command": {
+							"command": [
+								"music stop 3",
+								"particle fec:corvus_explode ~~2~",
+								"clear @p fec:legionnaire_medalion 0 1",
+								"gamemode d @a[r=256,m=2]",
+								"event entity @e[type=fec:corvus_star] despawn"
+							]
+						}
+					}
+				]
+			},
+			"fec:summon_summons": {
+				"queue_command": {
+					"command": [
+						"summon fec:corvus_star",
+						"summon fec:corvus_star",
+						"summon fec:corvus_star",
+						"tellraw @a[r=256] {\"rawtext\":[{\"text\":\"§aYou can ignore the stars, they are invincible\"}]}"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"fec:corvus_low_hp"
 					]
 				}
 			},
@@ -281,134 +689,294 @@
 						"timer_to_tp"
 					]
 				},
-				"set_property": {
-					"fec:flow_sequence_state": 1
+				"queue_command": {
+					"command": [
+						"playanimation @s animation.corvus.teleport",
+						"music play music.boss.tuba_archmage 1 1 play_once"
+					]
 				}
 			},
-			"fec:tp_dash_1": {
+			"fec:tp_dash": {
+				"queue_command": {
+					"command": [
+						"spreadplayers ~ ~ 0.1 20 @s ~",
+						"particle fec:star_ping ~~~",
+						"particle fec:light_blast ~~~",
+						"particle fec:star_pillar_flash ~~~",
+						"playsound custom_sfx.teleport @a[r=24] ~~~ 1 1 0.2"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"run_and_attack"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"timer_to_tp"
+					]
+				},
+				"set_property": {
+					"fec:corvus_status": "running"
+				}
+			},
+			"fec:run_and_attack_end_1": {
+				"remove": {
+					"component_groups": [
+						"run_and_attack"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"front_star_pillar"
+					]
+				}
+			},
+			"fec:front_star_pillar_end": {
+				"remove": {
+					"component_groups": [
+						"front_star_pillar"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"star_blast_attack"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"title @a title ! WARNING !",
+						"title @a subtitle ! STAR BLASTS INCOMING, DODGE THEM QUICK !",
+						"execute at @e[r=64,rm=0.1,family=!stars_creature,type=!fec:star_projectile,type=!fec:star_meteor,type=!fec:star_pillar] run summon armor_stand STAREXPLODE ~~~",
+						"execute at @e[name=STAREXPLODE] run particle fec:stars_warning",
+						"effect @e[name=STAREXPLODE] invisibility 300 1 true"
+					]
+				}
+			},
+			"fec:star_blast_attack_end": {
+				"remove": {
+					"component_groups": [
+						"star_blast_attack"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"timer_to_tp_2"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"execute as @e[name=STAREXPLODE] at @s run particle fec:stars_ping ~~0.5~",
+						"execute as @e[name=STAREXPLODE] at @s run particle fec:light_blast ~~0.5~",
+						"execute as @e[name=STAREXPLODE] at @s run damage @e[r=10,family=!stars_creature] 40 entity_explosion entity @e[type=fec:crescent_mage]",
+						"execute as @e[name=STAREXPLODE] at @s run playsound stars_boss.starexplode @a[r=32] ~~~ 1 1 0.3",
+						"kill @e[name=STAREXPLODE]"
+					]
+				}
+			},
+			"fec:tp_dash_2": {
+				"queue_command": {
+					"command": [
+						"spreadplayers ~ ~ 0.1 20 @s ~",
+						"particle fec:star_ping ~~~",
+						"particle fec:light_blast ~~~",
+						"particle fec:star_pillar_flash ~~~",
+						"playsound custom_sfx.teleport @a[r=24] ~~~ 1 1 0.2"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"run_and_attack_2"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"timer_to_tp_2"
+					]
+				}
+			},
+			"fec:run_and_attack_end_2": {
+				"remove": {
+					"component_groups": [
+						"run_and_attack_2"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"circle_pillar"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"title @a title ! WARNING !",
+						"title @a subtitle ! THE CORVUS IS DEFENDING ITSELF, DODGE THEM QUICK !"
+					]
+				}
+			},
+			"fec:circle_pillar_end": {
+				"queue_command": {
+					"command": [
+						"title @a title ! WARNING !",
+						"title @a subtitle ! SMALL AMOUNT OF METEOR ARE COMING !",
+						"effect @s slowness 5 255 true",
+						"execute at @e[rm=6,r=64,c=5,type=!item,type=!xp_orb,family=!inanimate,type=!fec:star_pillar] run summon fec:star_meteor ~~40~ ~~ corvus_star_meteor",
+						"execute at @e[rm=6,r=64,c=5,type=!item,type=!xp_orb,family=!inanimate,type=!fec:star_pillar] run particle fec:stars_warning ~~1~"
+					],
+					"target": "self"
+				},
+				"add": {
+					"component_groups": [
+						"run_and_attack_3"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"circle_pillar"
+					]
+				}
+			},
+			"fec:run_and_attack_end_3": {
+				"remove": {
+					"component_groups": [
+						"run_and_attack_3"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"timer_to_tp_3"
+					]
+				}
+			},
+			"fec:tp_dash_3": {
+				"queue_command": {
+					"command": [
+						"spreadplayers ~ ~ 0.1 30 @s ~",
+						"particle fec:star_ping ~~~",
+						"particle fec:light_blast ~~~",
+						"particle fec:star_pillar_flash ~~~",
+						"playsound custom_sfx.teleport @a[r=24] ~~~ 1 1 0.2",
+						"playanimation @s animation.corvus.fly",
+						"effect @s levitation 31 0 true",
+						"effect @s slow_falling 40 1 true",
+						"effect @a[r=128] night_vision 40 1 true",
+						"tellraw @a[r=128] {\"rawtext\":[{\"text\":\"§e<Corvus> this is the Light of §6§lThe Stars Raijin\"}]}",
+						"tellraw @a[r=128] {\"rawtext\":[{\"text\":\"§cWatch Out for the Raijin Meteor in the sky\"}]}",
+						"particle fec:the_stars_raijin ~~40~",
+						"particle fec:the_stars_raijin_wall ~~2~",
+						"playsound stars_boss.the_stars_raijin @a[r=256] ~~~ 1 1 0.3"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"flying_raijin"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"timer_to_tp_3"
+					]
+				}
+			},
+			"fec:flying_raijin_summon": {
 				"sequence": [
 					{
 						"filters": {
 							"test": "int_property",
 							"subject": "self",
-							"domain": "fec:tp_used",
-							"operator": "==",
-							"value": 0
+							"domain": "fec:meteor_summoned",
+							"operator": "<",
+							"value": 30
 						},
 						"queue_command": {
 							"command": [
-								"spreadplayers ~ ~ 0.1 10 @s ~",
-								"particle fec:star_pillar_explode ~~~",
-								"particle fec:star_pillar_flash ~~~",
-								"playsound custom_sfx.teleport @a[r=24] ~~~ 1 1 0.2"
-							]
-						},
-						"add": {
-							"component_groups": [
-								"tp_1"
+								"execute at @e[rm=6,r=80,type=!item,type=!xp_orb,family=!inanimate,type=!fec:star_pillar,type=!fec:star_meteor,c=10] run summon fec:star_meteor ~~40~ ~~ corvus_star_meteor",
+								"execute at @e[rm=6,r=80,type=!item,type=!xp_orb,family=!inanimate,type=!fec:star_pillar,type=!fec:star_meteor,c=10] run particle fec:stars_warning ~~1~"
 							]
 						},
 						"set_property": {
-							"fec:tp_used": "query.property('fec:tp_used') + 1"
+							"fec:meteor_summoned": "query.property('fec:meteor_summoned')+1"
 						}
 					},
 					{
 						"filters": {
 							"test": "int_property",
 							"subject": "self",
-							"domain": "fec:tp_used",
+							"domain": "fec:meteor_summoned",
 							"operator": "==",
-							"value": 0
+							"value": 21
 						},
 						"queue_command": {
 							"command": [
-								"spreadplayers ~ ~ 0.1 10 @s ~",
-								"particle fec:star_pillar_explode ~~~",
-								"particle fec:star_pillar_flash ~~~",
-								"playsound custom_sfx.teleport @a[r=24] ~~~ 1 1.1 0.2"
+								"summon armor_stand BLACKHOLE ~~~",
+								"effect @e[name=BLACKHOLE,type=armor_stand] invisibility 3000 255 true",
+								"spreadplayers ~ ~ 0.1 30 @e[name=BLACKHOLE,type=armor_stand] ~"
 							]
-						},
-						"set_property": {
-							"fec:tp_used": "query.property('fec:tp_used') + 1"
 						}
 					},
 					{
 						"filters": {
 							"test": "int_property",
 							"subject": "self",
-							"domain": "fec:tp_used",
+							"domain": "fec:meteor_summoned",
 							"operator": "==",
-							"value": 2
+							"value": 22
 						},
 						"queue_command": {
 							"command": [
-								"spreadplayers ~ ~ 0.1 14 @s ~",
-								"particle fec:star_ping ~~~",
-								"particle fec:light_blast ~~~",
-								"particle fec:star_pillar_flash ~~~",
-								"playsound custom_sfx.teleport @a[r=24] ~~~ 1 1.3 0.2"
+								"execute at @e[name=BLACKHOLE,type=armor_stand] run particle fec:black_hole ~~5~",
+								"execute at @e[name=BLACKHOLE,type=armor_stand] run particle fec:black_hole_ring ~~5~",
+								"execute at @e[name=BLACKHOLE,type=armor_stand] run particle fec:black_hole_ambient ~~5~",
+								"title @a title ! LETHAL ATTACK !",
+								"title @a subtitle ! THE BLACK HOLE ARE GOING TO EXPLODE, USE EARTH ESSENCE. !"
 							]
+						}
+					},
+					{
+						"filters": {
+							"test": "int_property",
+							"subject": "self",
+							"domain": "fec:meteor_summoned",
+							"operator": "==",
+							"value": 27
+						},
+						"queue_command": {
+							"command": [
+								"execute at @e[name=BLACKHOLE,type=armor_stand] run particle fec:pressured_star_explode ~~5~",
+								"execute at @e[name=BLACKHOLE,type=armor_stand] run particle fec:black_hole_explode ~~5~",
+								"execute as @e[name=BLACKHOLE,type=armor_stand] at @s run damage @e[r=64,type=!fec:corvus,tag=!earth_iframe] 500 void entity @e[type=fec:corvus,c=1]",
+								"camerashake add @a[r=64] 2 1.4 positional"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "int_property",
+							"subject": "self",
+							"domain": "fec:meteor_summoned",
+							"operator": "==",
+							"value": 30
+						},
+						"queue_command": {
+							"command": [
+								"execute at @e[rm=6,r=64,type=!item,type=!xp_orb,family=!inanimate,type=!fec:star_pillar,type=!fec:star_meteor,c=-10] run summon fec:star_meteor ~~40~ ~~ corvus_star_meteor",
+								"execute at @e[rm=6,r=64,type=!item,type=!xp_orb,family=!inanimate,type=!fec:star_pillar,type=!fec:star_meteor,c=-10] run particle fec:stars_warning ~~1~",
+								"playanimation @s animation.corvus.rest"
+							],
+							"target": "self"
+						},
+						"set_property": {
+							"fec:meteor_summoned": 0
 						},
 						"remove": {
 							"component_groups": [
-								"tp_1"
+								"flying_raijin"
 							]
 						},
 						"add": {
 							"component_groups": [
-								"run_and_attack"
+								"rest"
 							]
-						},
-						"set_property": {
-							"fec:tp_used": 0,
-							"fec:flow_sequence_state": 2
-						},
-						"randomize": [
-							{
-								"set_property": {
-									"fec:pattern_used": 0
-								}
-							},
-							{
-								"set_property": {
-									"fec:pattern_used": 1
-								}
-							}
-						]
-					}
-				]
-			},
-			"fec:run_and_attack_end": {
-				"sequence": [
-					{
-						"filters": {
-							"test": "int_property",
-							"subject": "self",
-							"domain": "fec:flow_sequence_state",
-							"operator": "==",
-							"value": 2
-						},
-						"sequence": [
-							{
-								"filters": {
-									"test": "int_property",
-									"subject": "self",
-									"domain": "fec:pattern_used",
-									"operator": "==",
-									"value": 0
-								},
-								"add": {
-									"component_groups": [
-										"front_star_pillar"
-									]
-								},
-								"remove": {
-									"component_groups": [
-										"run_and_attack"
-									]
-								}
-							}
-						]
+						}
 					}
 				]
 			}

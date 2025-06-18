@@ -42,13 +42,18 @@
             }
         },
         "events": {
+            "minecraft:entity_spawned": {
+                "queue_command": {
+                    "command": "particle fec:stars_ping_small ~~~"
+                }
+            },
             "explode": {
                 "queue_command": {
                     "command": [
                         "particle fec:star_pillar_explode ~~~",
                         "particle fec:star_pillar_flash",
                         "damage @e[r=3.7] 28 entity_explosion entity @s",
-                        "playsound custom_sfx.meteor_impact @a[r=16] ~~~ 1 1 0.2"
+                        "playsound custom_sfx.meteor_impact @a[r=12] ~~~ 1 1 0.2"
                     ],
                     "target": "self"
                 },

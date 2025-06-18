@@ -1,0 +1,166 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fec:corvus_star",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"max": 4,
+				"value": 4
+			},
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 1
+			},
+			"minecraft:experience_reward": {
+				"on_death": 5
+			},
+			"minecraft:movement": {
+				"value": 0.7
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 5,
+				"max": 5
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:fire_immune": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.charge_attack": {
+				"priority": 4,
+				"speed_multiplier": 1.3
+			},
+			"minecraft:attack_damage": {
+				"value": -1
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 3,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								}
+							]
+						}
+					}
+				],
+				"must_see": true,
+				"within_radius": 64
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 9,
+				"look_distance": 6.0,
+				"probability": 0.5
+			},
+			"minecraft:behavior.look_at_entity": {
+				"priority": 9,
+				"look_distance": 6.0,
+				"probability": 0.5,
+				"filters": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "mob"
+				}
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:nameable": {
+				"always_show": false,
+				"allow_name_tag_renaming": false
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": true
+			},
+			"minecraft:type_family": {
+				"family": [
+					"stars_creature",
+					"boss"
+				]
+			},
+			"minecraft:follow_range": {
+				"max": 64,
+				"value": 64
+			},
+			"minecraft:persistent": {},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:game_event_movement_tracking": {
+				"emit_move": true,
+				"emit_swim": true,
+				"emit_flap": true
+			},
+			"minecraft:timer": {
+				"time": [
+					10,
+					30
+				],
+				"time_down_event": {
+					"event": "randomize_pattern"
+				}
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"randomize_pattern": {
+				"randomize": [
+					{
+						"weight": 1,
+						"queue_command": {
+							"command": [
+								"particle fec:corvus_star_explode ~~~",
+								"damage @e[rm=0.2,r=10,family=!fec:corvus] 20 entity_explosion entity @s",
+								"playsound stars_boss.starexplode @a[r=24] ~~~ 1 1 0.3"
+							]
+						}
+					},
+					{
+						"weight": 1,
+						"queue_command": {
+							"command": [
+								"particle fec:corvus_star_explode ~~~",
+								"effect @e[type=fec:corvus] instant_health 1 4",
+								"effect @e[r=10] instant_health 1 1",
+								"playsound stars_boss.starexplode @a[r=24] ~~~ 1 1 0.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

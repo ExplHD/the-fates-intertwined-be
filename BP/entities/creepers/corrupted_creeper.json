@@ -55,8 +55,8 @@
             "minecraft:spawn_entity": {
                 "entities": {
                     "single_use": false,
-                    "min_wait_time": 12,
-                    "max_wait_time": 15,
+                    "min_wait_time": 28,
+                    "max_wait_time": 30,
                     "num_to_spawn": 4,
                     "spawn_entity": "fec:corrupted_star",
                     "spawn_sound": "plop",

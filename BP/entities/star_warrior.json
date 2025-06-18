@@ -210,9 +210,6 @@
 				"max": 64,
 				"value": 64
 			},
-			"minecraft:on_death": {
-				"event": "stop_music"
-			},
 			"minecraft:persistent": {},
 			"minecraft:conditional_bandwidth_optimization": {},
 			"minecraft:game_event_movement_tracking": {

@@ -11,19 +11,17 @@
                     "blend_transition": 0.15,
                     "transitions": [
                         {
-                            "move": "query.is_moving&&query.is_flying"
-                        },
-                        {
-                            "idle_flying": "q.is_moving"
+                            "move": "q.modified_move_speed > 0.4"
                         },
                         {
                             "attack": "variable.attack_time >= 0.0"
+                        },
+                        {
+                            "dash": "query.is_ram_attacking"
+                        },
+                        {
+                            "front_pillar_attack": "query.is_casting"
                         }
-                    ]
-                },
-                "idle_flying": {
-                    "animations": [
-                        "idle_fly"
                     ]
                 },
                 "move": {
@@ -32,7 +30,7 @@
                     ],
                     "transitions": [
                         {
-                            "idle": "!query.is_moving&&!query.is_flying"
+                            "idle": "q.modified_move_speed < 0.4"
                         }
                     ]
                 },
@@ -42,7 +40,7 @@
                     ],
                     "transitions": [
                         {
-                            "idle": "query.any_animation_finished('attack')"
+                            "idle": "query.all_animations_finished"
                         }
                     ]
                 },
@@ -54,6 +52,11 @@
                         {
                             "idle": "query.all_animations_finished"
                         }
+                    ]
+                },
+                "front_pillar_attack": {
+                    "animations": [
+                        "front_pillar_attack"
                     ]
                 }
             }

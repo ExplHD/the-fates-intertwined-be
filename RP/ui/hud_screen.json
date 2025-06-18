@@ -250,8 +250,8 @@
                                         "item_text_label": {
                                             "type": "label",
                                             "max_size": [
-                                                200,
-                                                16
+                                                "100%",
+                                                12
                                             ],
                                             "text_alignment": "center",
                                             "layer": 31,
@@ -262,7 +262,12 @@
                                             "bindings": [
                                                 {
                                                     "binding_name": "$text_binding",
-                                                    "binding_name_override": "#text"
+                                                    "binding_name_override": "#item_text"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "(#item_text - '...')",
+                                                    "target_property_name": "#text"
                                                 }
                                             ]
                                         }

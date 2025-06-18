@@ -9,7 +9,7 @@
 		},
 		"components": {
 			"minecraft:icon": "fec_fire_essence",
-			"minecraft:max_stack_size": 1,
+			"minecraft:max_stack_size": 16,
 			"minecraft:cooldown": {
 				"category": "fire_essence",
 				"duration": 20
